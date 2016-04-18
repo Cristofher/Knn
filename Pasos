@@ -1,0 +1,6 @@
+git pull origin master
+para asegurarnos de que no exista ningún cambio
+q nosotros no tengamos
+
+git push origin master
+subimos los cambios
