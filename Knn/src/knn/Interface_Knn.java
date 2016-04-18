@@ -15,6 +15,10 @@ public class Interface_Knn extends javax.swing.JFrame {
     String Ruta_DB;
     String Ruta_Queries;
     String Num_threads;
+    int tamanho_DB;
+    int tamanho_Queries;
+    String TOPK;
+    String DIM;
     boolean flag_Secuencial = false;
     boolean flag_Multihilos = false;
     boolean flag_Xenon_Phi = false;
@@ -56,6 +60,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
+        Tipo = new javax.swing.ButtonGroup();
         jPanel_Archivos = new javax.swing.JPanel();
         jLabel_Archivo_BD = new javax.swing.JLabel();
         jLabel_Archivo_Queries = new javax.swing.JLabel();
@@ -71,9 +76,10 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextField_Archivo_Queries3 = new javax.swing.JTextField();
         jTextField_Archivo_Queries4 = new javax.swing.JTextField();
         jLabel_TOPK = new javax.swing.JLabel();
-        jRadioButton_Int = new javax.swing.JRadioButton();
-        Float = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
         jRadioButton_Double = new javax.swing.JRadioButton();
+        Float = new javax.swing.JRadioButton();
+        jRadioButton_Int = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_Vista_Queries = new javax.swing.JTextArea();
@@ -101,14 +107,21 @@ public class Interface_Knn extends javax.swing.JFrame {
         jButton2.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
+
+        jPanel_Archivos.setBorder(javax.swing.BorderFactory.createTitledBorder("Entrada de datos"));
 
         jLabel_Archivo_BD.setText("Archivo BD");
 
         jLabel_Archivo_Queries.setText("Archivo Queries");
 
         jLabel_Hilos.setText("Hilos");
+
+        jTextField_Archivo_BD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_Archivo_BDActionPerformed(evt);
+            }
+        });
 
         jButton_Examinar_BD.setText("Examinar");
         jButton_Examinar_BD.addActionListener(new java.awt.event.ActionListener() {
@@ -135,8 +148,12 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_TOPK.setText("TOPK");
 
-        jRadioButton_Int.setText("Int");
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo entrada"));
 
+        Tipo.add(jRadioButton_Double);
+        jRadioButton_Double.setText("Double");
+
+        Tipo.add(Float);
         Float.setText("Float");
         Float.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +161,33 @@ public class Interface_Knn extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton_Double.setText("Double");
+        Tipo.add(jRadioButton_Int);
+        jRadioButton_Int.setText("Int");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton_Int)
+                            .addComponent(Float))
+                        .addGap(16, 16, 16))
+                    .addComponent(jRadioButton_Double))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jRadioButton_Int)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Float)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Double))
+        );
 
         javax.swing.GroupLayout jPanel_ArchivosLayout = new javax.swing.GroupLayout(jPanel_Archivos);
         jPanel_Archivos.setLayout(jPanel_ArchivosLayout);
@@ -181,64 +224,49 @@ public class Interface_Knn extends javax.swing.JFrame {
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                         .addComponent(jSeparator1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton_Int)
-                            .addComponent(Float))
-                        .addGap(100, 100, 100)
-                        .addComponent(jButton_Hilos)
-                        .addGap(27, 27, 27))
-                    .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addComponent(jRadioButton_Double)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(9, 9, 9)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton_Hilos)
+                .addGap(58, 58, 58))
         );
         jPanel_ArchivosLayout.setVerticalGroup(
             jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ArchivosLayout.createSequentialGroup()
                 .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jRadioButton_Int)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Float)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton_Double)
-                        .addGap(42, 42, 42))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                    .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel_Archivo_BD)
-                                        .addComponent(jLabel_Archivo_Queries))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                    .addComponent(jLabel_Archivo_Queries3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField_Archivo_Queries3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                    .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel_TOPK)
-                                        .addComponent(jLabel_Hilos))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField_Archivo_Queries4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jButton_Hilos)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel_Archivo_BD)
+                            .addComponent(jLabel_Archivo_Queries)
+                            .addComponent(jLabel_Archivo_Queries3)
+                            .addComponent(jLabel_TOPK)
+                            .addComponent(jLabel_Hilos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Archivo_Queries3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Archivo_Queries4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton_Examinar_BD)
                             .addComponent(jButton_Examinar_Queries))
-                        .addGap(32, 32, 32)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jButton_Hilos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
 
         jTextArea_Vista_Queries.setColumns(20);
         jTextArea_Vista_Queries.setRows(5);
@@ -301,11 +329,13 @@ public class Interface_Knn extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel_Vista_Queries1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(45, 45, 45))
         );
 
         jButton_Exportar_PDF.setText("Exportar PDF");
@@ -371,24 +401,23 @@ public class Interface_Knn extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel_Archivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel_Archivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel_Archivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, Short.MAX_VALUE)
+                .addComponent(jPanel_Archivos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -403,6 +432,11 @@ public class Interface_Knn extends javax.swing.JFrame {
         if (seleccion == 0) {
             jTextField_Archivo_BD.setText(archivo.getName());
             Ruta_DB = archivo.getPath();
+            try {
+                tamanho_DB = tamanhoArchivo(Ruta_DB);
+            } catch (IOException ex) {
+                Logger.getLogger(Interface_Knn.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 muestraContenidoDB(Ruta_DB);
             } catch (IOException ex) {
@@ -422,6 +456,11 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Archivo_Queries.setText(archivo.getName());
             Ruta_Queries = archivo.getPath();
             try {
+                tamanho_Queries = tamanhoArchivo(Ruta_Queries);
+            } catch (IOException ex) {
+                Logger.getLogger(Interface_Knn.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
                 muestraContenidoQueries(Ruta_Queries);
             } catch (IOException ex) {
                 Logger.getLogger(Interface_Knn.class.getName()).log(Level.SEVERE, null, ex);
@@ -437,10 +476,12 @@ public class Interface_Knn extends javax.swing.JFrame {
         if (sSistemaOperativo.equals("Linux")) {
             if (flag_Secuencial == true) {
                 try {
+                    TOPK=jTextField_Archivo_Queries4.getText();
+                    DIM=jTextField_Archivo_Queries3.getText();                    
                     jTextArea_Resultados.setText("Consulta Secuencial...");
                     String path;
                     String Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial.out";
-                    path = Ejecutable_Secuencial + " " + Ruta_DB + " 95325 " + Ruta_Queries + " 23831";
+                    path = Ejecutable_Secuencial + " " + Ruta_DB +" "+ tamanho_DB +" "+ Ruta_Queries +" "+ tamanho_Queries;
                     Process p = Runtime.getRuntime().exec(path);
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(p.getInputStream()));
@@ -522,8 +563,12 @@ public class Interface_Knn extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_MultihilosActionPerformed
 
     private void FloatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FloatActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FloatActionPerformed
+
+    private void jTextField_Archivo_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Archivo_BDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_Archivo_BDActionPerformed
 
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
@@ -537,6 +582,18 @@ public class Interface_Knn extends javax.swing.JFrame {
                 linea++;
             }
         }
+    }
+
+    @SuppressWarnings("empty-statement")
+    int tamanhoArchivo(String archivo) throws FileNotFoundException, IOException {
+        int linea = 0;
+        FileReader f = new FileReader(archivo);
+        try (BufferedReader b = new BufferedReader(f)) {
+            while ((b.readLine()) != null) {;
+                linea++;
+            }
+        }
+        return linea;
     }
 
     void muestraContenidoQueries(String archivo) throws FileNotFoundException, IOException {
@@ -573,6 +630,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JRadioButton Float;
     private javax.swing.JMenu JMenu_Nuevo;
     private javax.swing.JMenuBar Menu_Principal;
+    public static javax.swing.ButtonGroup Tipo;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton_Examinar_BD;
     private javax.swing.JButton jButton_Examinar_Queries;
@@ -597,6 +655,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_Archivos;
     private javax.swing.JRadioButton jRadioButton_Double;
     private javax.swing.JRadioButton jRadioButton_Int;
