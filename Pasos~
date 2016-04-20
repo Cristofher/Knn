@@ -1,0 +1,19 @@
+crear o ingresar en la carpeta q queremos clonar el 
+repositorio
+git clone https://github.com/soulsetneuf/git-ej...
+
+abrir el gui de git mediante el comando, para eso 
+tenemos q estar en la carpeta donde clonamos el git
+git gui
+
+poner el nombre del usuario en git
+git config --global user.name nombre
+colocar email del usuario
+git config --global user.email email
+
+git pull origin master
+para asegurarnos de que no exista ningún cambio
+q nosotros no tengamos
+
+git push origin master
+subimos los cambios
