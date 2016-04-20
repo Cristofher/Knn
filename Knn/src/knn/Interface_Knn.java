@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class Interface_Knn extends javax.swing.JFrame {
 
@@ -24,7 +25,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     boolean flag_Xenon_Phi = false;
     boolean flag_GPU = false;
 
-    public Interface_Knn() {
+    public Interface_Knn() throws IOException {
         this.Ruta_Queries = null;
         this.Ruta_DB = null;
         this.Num_threads = null;
@@ -49,8 +50,16 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextArea_Vista_Queries.setVisible(false);
         jTextField_Archivo_BD.setVisible(false);
         jTextField_Archivo_Queries.setVisible(false);
+        String procesadores = "/home/cristofher/Tesis/Procesadores.out";
+        Process p = Runtime.getRuntime().exec(procesadores);
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(p.getInputStream()));
+        String line;
+        while ((line = in.readLine()) != null) {
+            Nucleo.setText(line);
+        }
+        jTextField_Hilos.setText(Nucleo.getText());
         setTitle("Knn: Finder nearest neighbor");
-        setSize(1000, 641);
         setResizable(false);
         setLocationRelativeTo(null);
     }
@@ -73,12 +82,12 @@ public class Interface_Knn extends javax.swing.JFrame {
         jButton_Examinar_Queries = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel_Archivo_Queries3 = new javax.swing.JLabel();
-        jTextField_Archivo_Queries3 = new javax.swing.JTextField();
-        jTextField_Archivo_Queries4 = new javax.swing.JTextField();
+        jTextField_Dim = new javax.swing.JTextField();
+        jTextField_TOPK = new javax.swing.JTextField();
         jLabel_TOPK = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jRadioButton_Double = new javax.swing.JRadioButton();
-        Float = new javax.swing.JRadioButton();
+        JRadioButton_Float = new javax.swing.JRadioButton();
         jRadioButton_Int = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -88,12 +97,16 @@ public class Interface_Knn extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea_Vista_DB = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jLabel_VistaBD = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel_Vista_Queries = new javax.swing.JLabel();
         jLabel_Vista_Queries1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jButton_Exportar_PDF = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton_Exportar_PDF1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        Nucleo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         Menu_Principal = new javax.swing.JMenuBar();
         jMenu_File = new javax.swing.JMenu();
         JMenu_Nuevo = new javax.swing.JMenu();
@@ -117,9 +130,18 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_Hilos.setText("Hilos");
 
+        jTextField_Archivo_BD.setEditable(false);
         jTextField_Archivo_BD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_Archivo_BDActionPerformed(evt);
+            }
+        });
+
+        jTextField_Archivo_Queries.setEditable(false);
+
+        jTextField_Hilos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_HilosKeyTyped(evt);
             }
         });
 
@@ -130,7 +152,8 @@ public class Interface_Knn extends javax.swing.JFrame {
             }
         });
 
-        jButton_Hilos.setText("Aceptar");
+        jButton_Hilos.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton_Hilos.setText("Procesar Consultas");
         jButton_Hilos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_HilosActionPerformed(evt);
@@ -146,6 +169,18 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_Archivo_Queries3.setText("Dimensión Obj");
 
+        jTextField_Dim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_DimKeyTyped(evt);
+            }
+        });
+
+        jTextField_TOPK.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_TOPKKeyTyped(evt);
+            }
+        });
+
         jLabel_TOPK.setText("TOPK");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo entrada"));
@@ -153,11 +188,11 @@ public class Interface_Knn extends javax.swing.JFrame {
         Tipo.add(jRadioButton_Double);
         jRadioButton_Double.setText("Double");
 
-        Tipo.add(Float);
-        Float.setText("Float");
-        Float.addActionListener(new java.awt.event.ActionListener() {
+        Tipo.add(JRadioButton_Float);
+        JRadioButton_Float.setText("Float");
+        JRadioButton_Float.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FloatActionPerformed(evt);
+                JRadioButton_FloatActionPerformed(evt);
             }
         });
 
@@ -171,11 +206,8 @@ public class Interface_Knn extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton_Int)
-                            .addComponent(Float))
-                        .addGap(16, 16, 16))
+                    .addComponent(jRadioButton_Int)
+                    .addComponent(JRadioButton_Float)
                     .addComponent(jRadioButton_Double))
                 .addContainerGap())
         );
@@ -184,7 +216,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jRadioButton_Int)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Float)
+                .addComponent(JRadioButton_Float)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton_Double))
         );
@@ -197,98 +229,103 @@ public class Interface_Knn extends javax.swing.JFrame {
                 .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel_Archivo_BD)
-                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Examinar_BD))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton_Examinar_Queries)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_Archivo_Queries)
-                                    .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(35, 35, 35)
-                                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel_Archivo_Queries3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField_Archivo_Queries3))
-                                .addGap(35, 35, 35)
-                                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_TOPK)
-                                    .addComponent(jTextField_Archivo_Queries4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(35, 35, 35)
+                                .addComponent(jLabel_Archivo_BD)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton_Examinar_BD)))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
+                                .addComponent(jLabel_Archivo_Queries)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Examinar_Queries)))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_Archivo_Queries3)
+                            .addComponent(jTextField_Dim, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_TOPK)
+                            .addComponent(jTextField_TOPK, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_Hilos)
-                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35))
-                    .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGap(9, 9, 9)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32))
+                    .addComponent(jSeparator1))
+                .addGap(95, 95, 95)
                 .addComponent(jButton_Hilos)
-                .addGap(58, 58, 58))
+                .addContainerGap())
         );
         jPanel_ArchivosLayout.setVerticalGroup(
             jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ArchivosLayout.createSequentialGroup()
                 .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel_Archivo_Queries)
+                                    .addComponent(jLabel_Archivo_Queries3)
+                                    .addComponent(jLabel_TOPK)
+                                    .addComponent(jLabel_Hilos)
+                                    .addComponent(jButton_Examinar_Queries)
+                                    .addComponent(jButton_Examinar_BD)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ArchivosLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel_Archivo_BD)))
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Dim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_TOPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel_Archivo_BD)
-                            .addComponent(jLabel_Archivo_Queries)
-                            .addComponent(jLabel_Archivo_Queries3)
-                            .addComponent(jLabel_TOPK)
-                            .addComponent(jLabel_Hilos))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Archivo_Queries3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Archivo_Queries4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton_Examinar_BD)
-                            .addComponent(jButton_Examinar_Queries))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jButton_Hilos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(125, 125, 125))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados (Se muestran las primeras 1000 lineas)"));
 
+        jTextArea_Vista_Queries.setEditable(false);
         jTextArea_Vista_Queries.setColumns(20);
         jTextArea_Vista_Queries.setRows(5);
         jScrollPane2.setViewportView(jTextArea_Vista_Queries);
 
+        jTextArea_Resultados.setEditable(false);
         jTextArea_Resultados.setColumns(20);
         jTextArea_Resultados.setRows(5);
         jScrollPane3.setViewportView(jTextArea_Resultados);
 
+        jTextArea_Vista_DB.setEditable(false);
         jTextArea_Vista_DB.setColumns(20);
         jTextArea_Vista_DB.setRows(5);
         jScrollPane4.setViewportView(jTextArea_Vista_DB);
 
         jLabel1.setText("Vista Previa: ");
 
-        jLabel_VistaBD.setText("Archivo BD");
-
         jLabel3.setText("Vista Previa: ");
 
         jLabel_Vista_Queries.setText("Archivo Queries");
 
         jLabel_Vista_Queries1.setText("Resultado: ");
+
+        jButton_Exportar_PDF.setText("TXT");
+
+        jLabel2.setText("Exportar resultado a:");
+
+        jButton_Exportar_PDF1.setText(" PDF");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -297,10 +334,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel_VistaBD)))
+                    .addComponent(jLabel1))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -309,53 +343,57 @@ public class Interface_Knn extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel_Vista_Queries)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel_Vista_Queries1))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel_Vista_Queries1)
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_Exportar_PDF)
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton_Exportar_PDF1)
+                        .addGap(22, 22, 22))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel_Vista_Queries)
+                    .addComponent(jLabel_Vista_Queries1)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton_Exportar_PDF)
+                    .addComponent(jButton_Exportar_PDF1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel_VistaBD)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel_Vista_Queries))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel_Vista_Queries1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(45, 45, 45))
+                .addGap(55, 55, 55))
         );
-
-        jButton_Exportar_PDF.setText("Exportar PDF");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Exportar_PDF)
-                .addGap(43, 43, 43))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_Exportar_PDF)
-                .addGap(39, 39, 39))
+            .addGap(0, 61, Short.MAX_VALUE)
         );
+
+        Nucleo.setText("n");
+
+        jLabel4.setText("El S.O detecto");
+
+        jLabel5.setText("nucleos");
 
         jMenu_File.setText("Archivo");
 
@@ -400,13 +438,18 @@ public class Interface_Knn extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel_Archivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nucleo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel_Archivos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -414,10 +457,18 @@ public class Interface_Knn extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel_Archivos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Nucleo)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -475,13 +526,22 @@ public class Interface_Knn extends javax.swing.JFrame {
         System.out.println(sSistemaOperativo);
         if (sSistemaOperativo.equals("Linux")) {
             if (flag_Secuencial == true) {
+                chequear_Secuencial();
+                String Ejecutable_Secuencial = null;
+                if (jRadioButton_Int.isSelected()) {
+                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Int.out";
+                }
+                if (jRadioButton_Double.isSelected()) {
+                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Double.out";
+                }
+                if (JRadioButton_Float.isSelected()) {
+                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Float.out";
+                }
                 try {
-                    TOPK=jTextField_Archivo_Queries4.getText();
-                    DIM=jTextField_Archivo_Queries3.getText();                    
-                    jTextArea_Resultados.setText("Consulta Secuencial...");
+                    TOPK = jTextField_TOPK.getText();
+                    DIM = jTextField_Dim.getText();
                     String path;
-                    String Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial.out";
-                    path = Ejecutable_Secuencial + " " + Ruta_DB +" "+ tamanho_DB +" "+ Ruta_Queries +" "+ tamanho_Queries;
+                    path = Ejecutable_Secuencial + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + TOPK + " " + DIM;
                     Process p = Runtime.getRuntime().exec(path);
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(p.getInputStream()));
@@ -497,28 +557,38 @@ public class Interface_Knn extends javax.swing.JFrame {
 
                 }
             }
-        }
-        if (flag_Multihilos == true) {
-            try {
-                jTextArea_Resultados.setText("Consulta con multihilos...");
+            if (flag_Multihilos == true) {
+                chequear_Multihilos();
+                String Ejecutable_Multihilos = null;
                 String path;
-                Num_threads = jTextField_Hilos.getText();
-                String Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos.out";
-                path = Ejecutable_Multihilos + " " + Ruta_DB + " 95325 " + Ruta_Queries + " 23831 " + Num_threads;
-                Process p = Runtime.getRuntime().exec(path);
-
-                BufferedReader in = new BufferedReader(
-                        new InputStreamReader(p.getInputStream()));
-                String line;
-                String texto;
-                while ((line = in.readLine()) != null) {
-                    texto = jTextArea_Resultados.getText() + "\n";
-                    System.out.println(line);
-                    jTextArea_Resultados.append(path);
-                    jTextArea_Resultados.setText(texto + line);
+                if (jRadioButton_Int.isSelected()) {
+                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Int.out";
                 }
-            } catch (IOException e) {
+                if (jRadioButton_Double.isSelected()) {
+                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Double.out";
+                }
+                if (JRadioButton_Float.isSelected()) {
+                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Float.out";
+                }
+                try {
+                    TOPK = jTextField_TOPK.getText();
+                    DIM = jTextField_Dim.getText();
+                    Num_threads = jTextField_Hilos.getText();
+                    path = Ejecutable_Multihilos + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM;
+                    Process p = Runtime.getRuntime().exec(path);
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(p.getInputStream()));
+                    String line;
+                    String texto;
+                    while ((line = in.readLine()) != null) {
+                        texto = jTextArea_Resultados.getText() + "\n";
+                        System.out.println(line);
+                        jTextArea_Resultados.append(path);
+                        jTextArea_Resultados.setText(texto + line);
+                    }
+                } catch (IOException e) {
 
+                }
             }
         }
     }//GEN-LAST:event_jButton_HilosActionPerformed
@@ -562,13 +632,56 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextArea_Vista_Queries.setVisible(true);
     }//GEN-LAST:event_jMenuItem_MultihilosActionPerformed
 
-    private void FloatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FloatActionPerformed
+    private void JRadioButton_FloatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton_FloatActionPerformed
 
-    }//GEN-LAST:event_FloatActionPerformed
+    }//GEN-LAST:event_JRadioButton_FloatActionPerformed
 
     private void jTextField_Archivo_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Archivo_BDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_Archivo_BDActionPerformed
+
+    private void jTextField_DimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_DimKeyTyped
+
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+            Object msj = "Solo ingrese Números";
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jTextField_DimKeyTyped
+
+    private void jTextField_TOPKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_TOPKKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+            Object msj = "Solo ingrese Números";
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextField_TOPKKeyTyped
+
+    private void jTextField_HilosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_HilosKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+            getToolkit().beep();
+            evt.consume();
+            Object msj = "Solo ingrese Números";
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextField_HilosKeyTyped
 
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
@@ -615,35 +728,45 @@ public class Interface_Knn extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interface_Knn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interface_Knn.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            new Interface_Knn().setVisible(true);
+            try {
+                new Interface_Knn().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Interface_Knn.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton Float;
     private javax.swing.JMenu JMenu_Nuevo;
+    private javax.swing.JRadioButton JRadioButton_Float;
     private javax.swing.JMenuBar Menu_Principal;
+    private javax.swing.JLabel Nucleo;
     public static javax.swing.ButtonGroup Tipo;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton_Examinar_BD;
     private javax.swing.JButton jButton_Examinar_Queries;
     private javax.swing.JButton jButton_Exportar_PDF;
+    private javax.swing.JButton jButton_Exportar_PDF1;
     private javax.swing.JButton jButton_Hilos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel_Archivo_BD;
     private javax.swing.JLabel jLabel_Archivo_Queries;
     private javax.swing.JLabel jLabel_Archivo_Queries3;
     private javax.swing.JLabel jLabel_Hilos;
     private javax.swing.JLabel jLabel_TOPK;
-    private javax.swing.JLabel jLabel_VistaBD;
     private javax.swing.JLabel jLabel_Vista_Queries;
     private javax.swing.JLabel jLabel_Vista_Queries1;
     private javax.swing.JMenuItem jMenuItem_GPU;
@@ -668,8 +791,70 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea_Vista_Queries;
     private javax.swing.JTextField jTextField_Archivo_BD;
     private javax.swing.JTextField jTextField_Archivo_Queries;
-    private javax.swing.JTextField jTextField_Archivo_Queries3;
-    private javax.swing.JTextField jTextField_Archivo_Queries4;
+    private javax.swing.JTextField jTextField_Dim;
     private javax.swing.JTextField jTextField_Hilos;
+    private javax.swing.JTextField jTextField_TOPK;
     // End of variables declaration//GEN-END:variables
+
+    void chequear_Secuencial() {
+        Object msj = "Faltan los siquientes argumentos:";
+        String nl = System.getProperty("line.separator");
+        if ("".equals(jTextField_Archivo_BD.getText()) || "".equals(jTextField_Archivo_Queries.getText())
+                || "".equals(jTextField_Dim.getText()) || "".equals(jTextField_TOPK.getText())
+                || (!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+            if ("".equals(jTextField_Archivo_BD.getText())) {
+                msj = msj + nl + "- Archivo BD";
+            }
+            if ("".equals(jTextField_Archivo_Queries.getText())) {
+                msj = msj + nl + "- Archivo Queries ";
+            }
+            if ("".equals(jTextField_Dim.getText())) {
+                msj = msj + nl + "- Dimension del objeto";
+            }
+            if ("".equals(jTextField_TOPK.getText())) {
+                msj = msj + nl + "- TOPK";
+            }
+            if ((!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+                msj = msj + nl + "- Tipo";
+            }
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Mensaje de Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }
+
+    void chequear_Multihilos() {
+        Object msj = "Faltan los siquientes argumentos:";
+        String nl = System.getProperty("line.separator");
+        if ("".equals(jTextField_Archivo_BD.getText()) || "".equals(jTextField_Archivo_Queries.getText())
+                || "".equals(jTextField_Dim.getText()) || "".equals(jTextField_TOPK.getText()) || "".equals(jTextField_Hilos.getText())
+                || (!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+            if ("".equals(jTextField_Archivo_BD.getText())) {
+                msj = msj + nl + "- Archivo BD";
+            }
+            if ("".equals(jTextField_Archivo_Queries.getText())) {
+                msj = msj + nl + "- Archivo Queries ";
+            }
+            if ("".equals(jTextField_Dim.getText())) {
+                msj = msj + nl + "- Dimension del objeto";
+            }
+            if ("".equals(jTextField_TOPK.getText())) {
+                msj = msj + nl + "- TOPK";
+            }
+            if ("".equals(jTextField_Hilos.getText())) {
+                msj = msj + nl + "- Número de hilos";
+            }
+            if ((!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+                msj = msj + nl + "- Tipo";
+            }
+
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Mensaje de Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }
 }
