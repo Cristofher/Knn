@@ -1,1 +1,0 @@
-(float *)((char *) A + (int) pitch * 3 ) * [2]

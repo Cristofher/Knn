@@ -1,1 +1,0 @@
-ssh -X crojas@sinapsis.ucm.cl
