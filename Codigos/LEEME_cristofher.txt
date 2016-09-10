@@ -1,0 +1,23 @@
+NASA_80: BD de vectores (de dimensión 20) que representan imágenes. Tiene
+95325 vectores.
+
+NASA_20: Es el archivo de consultas para NASA_80. Contiene 23831 vectores de
+dimensión 20.
+
+Compilación programa secuencial: gcc -O3 -lm fuerza_bruta_knn_NASA.c
+
+Ejecución: ./a.out archivo_BD Num_elem archivo_queries Num_queries
+Ejemplo:   ./a.out NASA_80 95325 NASA_20 23831
+
+
+Como observarás, el cuantos datos cargas como Base de datos y la cantidad de consultas que usas
+la puedes ajustar al momento de ejecutar el programa.
+
+
+Compilación programa multi-hilo: gcc -O3 -lm -fopenmp fuerza_bruta_knn_NASA_openmp.c
+
+Ejecución: ./a.out archivo_BD Num_elem archivo_queries Num_queries N_THREADS
+Ejemplo:   ./a.out NASA_80 95325 NASA_20 23831 8
+
+Aquí además puedes modificar el número de hilos a utilizar al momento de
+ejecutar el programa.
