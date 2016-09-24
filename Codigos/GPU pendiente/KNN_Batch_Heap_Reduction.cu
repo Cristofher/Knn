@@ -43,8 +43,8 @@
 	if (T_per_BLOCK > 512)//Assuming that 512 is the maximum of threads per CUDA Block
 		T_per_BLOCK = 512;
 */
-
-
+#define ERROR -1
+int DIM;
 //The elements to be sorted are made by a float (in this case represents a distance), and an int (that represents the ID of the element)
 struct _Elem 
 {
@@ -53,28 +53,144 @@ struct _Elem
 };
 typedef struct _Elem Elem;
 
+//Funciones apartes
+void copiavalor(double *a, double *b);
+int leedato(double *dato, FILE *file);
+
+
 __device__ void pushH(Elem *heap, Elem *elem, int *n_elem, int pitch, int id);
 __device__ void popH(Elem *heap, int *n_elem, int pitch, int id, Elem *eresult);
 __device__ float topH(Elem *heap, int id);
 __device__ void popushH(Elem *heap, Elem *elem, int *n_elem, int pitch, int id);
 __global__ void Batch_Heap_Reduction(Elem *heap, int pitch_H, Elem *arr_Dist, int pitch_Dist, Elem *res_final);
 
+__global__ void prueba(double *CudaDB, size_t pitch_DB, double *CudaConsultas, size_t pitch_Consultas){}
+
 
 main(int argc, char *argv[])
 {
-   int i, j;
+   int i, j,N_QUERIES,N_DB;
+   char *ruta_db, *ruta_queries;
+   double **DB, **Consultas,**DB_in, **Consultas_in,*CudaDB, *CudaConsultas;
    Elem *res_final, *res_final_H;
    Elem *HEAPS_dev, *arr_Dist, **arr_Dist_H;
-   size_t pitch_H, pitch_Dist;
-	//Variable for time:
+   size_t pitch_H, pitch_Dist, pitch_DB, pitch_Consultas;
+	 
+   //Variable for time:
    struct rusage r1, r2;
    float user_time, sys_time, real_time;
    struct timeval t1, t2;
 
+   FILE *f_dist, *fquery;
+   double dato[DIM];
 
    printf("\nLength of the arrays = %d" , LENGTH_ARRAY);
    printf("\nTOPK = %d" , TOPK);
    fflush(stdout);
+
+   if (argc != 6){
+     printf("Error :: Ejecutar como : main.out archivo_BD Num_elem archivo_queries Num_queries dim\n");
+     return 1;
+   }
+
+     ruta_db = (char *)malloc(sizeof(char)*(strlen(argv[1])+1));
+     strcpy(ruta_db, argv[1]);
+     N_DB = atoi(argv[2]);
+     ruta_queries = (char *)malloc(sizeof(char)*(strlen(argv[3])+1));
+     strcpy(ruta_queries, argv[3]);
+     N_QUERIES = atoi(argv[4]);
+     DIM = atoi(argv[5]);
+
+     printf("\nAbriendo %s... ", argv[1]);
+    fflush(stdout);
+    f_dist = fopen(ruta_db, "r");
+    printf("OK\n");
+    fflush(stdout);
+
+    Consultas = (double **) malloc(sizeof (double *)*N_QUERIES);
+    for (i = 0; i < N_QUERIES; i++)
+        Consultas[i] = (double *) malloc(sizeof (double)*DIM);
+
+    DB = (double **) malloc(sizeof (double *)*N_DB);
+    for (i = 0; i < N_DB; i++)
+        DB[i] = (double *) malloc(sizeof (double)*DIM);
+
+    Consultas_in = (double **) malloc(sizeof (double *)*DIM);
+    for (i = 0; i < DIM; i++)
+        Consultas_in[i] = (double *) malloc(sizeof (double)*N_QUERIES);
+
+    DB_in = (double **) malloc(sizeof (double *)*DIM);
+    for (i = 0; i < DIM; i++)
+        DB_in[i] = (double *) malloc(sizeof (double)*N_DB);
+
+    printf("\nCargando DB... ");
+    fflush(stdout);
+    for (i = 0; i < N_DB; i++) {
+        if (leedato(dato, f_dist) == ERROR || feof(f_dist)) {
+            printf("\n\nERROR :: N_DB mal establecido\n\n");
+            fflush(stdout);
+            fclose(f_dist);
+            break;
+        }
+        copiavalor(DB[i], dato);
+    }
+    fclose(f_dist);
+    printf("OK\n");
+    fflush(stdout);
+
+    if ((fquery = fopen(ruta_queries, "r")) == NULL)
+        printf("Error al abrir para lectura el archivo de queries: %s\n", ruta_queries);
+    else
+        printf("Abriendo  para lectura %s\n", ruta_queries);
+    printf("\nCargando Consultas... ");
+    fflush(stdout);
+    for (i = 0; i < N_QUERIES;   i++) {
+        if (leedato(dato, fquery) == ERROR || feof(fquery)) {
+            printf("\n\nERROR :: N_QUERIES mal establecido, Menos queries que las indicadas\n\n");
+            fflush(stdout);
+            fclose(fquery);
+            break;
+        }
+        copiavalor(Consultas[i], dato);
+    }
+    fclose(fquery);
+    printf("OK\n");
+    fflush(stdout);
+
+
+    for( i = 0; i < DIM; i++ ){
+        for( j = 0; j < N_DB; j++ ){
+            DB_in[i][j] = DB[j][i];
+        }
+    }
+
+    for( i = 0; i < DIM; i++ ){
+        for( j = 0; j < N_QUERIES; j++ ){
+            Consultas_in[i][j] = Consultas[j][i];
+        }
+    }
+
+    printf("\nLength of the arrays = %d" , LENGTH_ARRAY);
+    printf("\nTOPK = %d" , TOPK);
+    fflush(stdout);
+
+
+
+
+   //cuda para abajoo
+
+   if (cudaSuccess != cudaMallocPitch((void **)&CudaDB, &pitch_DB, DIM * sizeof(double), N_DB)){
+    printf("\nERROR :: cudaMallocPitch :: CudaDB\n");
+    cudaThreadExit();
+    return 0;
+   }
+
+   if (cudaSuccess != cudaMallocPitch((void **)&CudaConsultas, &pitch_Consultas, DIM * sizeof(double), N_QUERIES)){
+    printf("\nERROR :: cudaMallocPitch :: CudaConsultas\n");
+    cudaThreadExit();
+    return 0;
+   }
+
 
 	//Allocating space to store the results
    if (cudaSuccess != cudaMalloc((void **)&res_final, sizeof(Elem)*TOPK*N_BLOQUES))
@@ -347,6 +463,19 @@ __global__ void Batch_Heap_Reduction(Elem *heap, int pitch_H, Elem *arr_Dist, in
   return;
 }
 
+void copiavalor(double *a, double *b) {
+    int i;
+    for (i = 0; i < DIM; i++)
+        a[i] = b[i];
+    return;
+}
+int leedato(double *dato, FILE *file) {
+    int i = 0;
 
+    for (i = 0; i < DIM; i++)
+        if (fscanf(file, "%lf", &dato[i]) < 1)
+            return ERROR;
+        return 1;
+}
 
 
