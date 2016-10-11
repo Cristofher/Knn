@@ -32,20 +32,28 @@ __device__ void popH(Elem *heap, int *n_elem, int pitch, int id, Elem *eresult);
 __device__ float topH(Elem *heap, int id);
 __device__ void popushH(Elem *heap, Elem *elem, int *n_elem, int pitch, int id);
 __global__ void Batch_Heap_Reduction(Elem *heap, int pitch_H, Elem *arr_Dist, int pitch_Dist, Elem *res_final);
+__global__ void distancias(double *CudaConsultas, size_t pitch_Consultas, double *CudaDB, size_t pitch_DB, double *arr_Dist, int pitch_Dist){
 
+    int col, row;
+    double d = 0, resultado=0;
+    //Memoria compartida de max 49kb
+    __shared__ double query[N_QUERIES];
 
-__global__ void matrix_add(double *CudaConsultas, size_t pitch_Consultas, int N_QUERIES)
-{
-    int row, col;
-    row = threadIdx.x;
-    /* j represents the column index */
-    for (col=0; col < N_QUERIES; col++)
-    {
-        ((double *)((char *)CudaConsultas + (row*(int)pitch_Consultas)))[col] = 1.0;
-        if (threadIdx.x == 0 && col == 0)
-            printf("\nKERNEL :: CudaConsultas[%d][%d] = %lf\n", row, col, ((double *)((char *)CudaConsultas + row*pitch_Consultas))[col]);
+    if (threadIdx.x < N_QUERIES)
+        query[threadIdx.x] = ((double *)((char *)CudaConsultas + threadIdx.x*(int)pitch_Consultas))[blockIdx.x];
+    __syncthreads();
+
+    for (col=threadIdx.x; col < N_QUERIES; col += blockDim.x){
+        d=0;
+        for (row=0; row < N_DB; row++){
+            resultado = query[row] - ((double *)((char *)CudaDB + row*(int)pitch_DB))[col];
+            d += (resultado * resultado);
+        }
+        ((double *)((char *)arr_Dist + row*(int)pitch_Dist))[col] = sqrt(d);
     }
 }
+
+
 
 main(int argc, char *argv[]){
     int i, j;
@@ -67,9 +75,9 @@ main(int argc, char *argv[]){
     ruta_queries = (char *)malloc(sizeof(char)*(strlen(argv[3])+1));
     strcpy(ruta_queries, argv[3]);
     N_QUERIES = atoi(argv[4]);
-    printf("N_QUERIES:: -> :: %d\n",N_QUERIES );
+    //printf("N_QUERIES:: -> :: %d\n",N_QUERIES );
     DIM = atoi(argv[5]);
-    printf("dim:: %d\n",DIM );
+    //printf("dim:: %d\n",DIM );
     Elem *res_final, *res_final_H;
     Elem *HEAPS_dev, *arr_Dist, **arr_Dist_H;
     size_t pitch_H, pitch_Dist;
@@ -177,7 +185,7 @@ main(int argc, char *argv[]){
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
     cudaEventRecord(start, NULL);
-    matrix_add<<< 1, 10 >>>(CudaConsultas, pitch_Consultas,N_QUERIES);
+    distancias<<<N_QUERIES, N_DB>>>(CudaConsultas, pitch_Consultas, CudaDB, pitch_DB, arr_Dist, pitch_Dist);
     cudaEventRecord(stop, NULL);
     cudaEventSynchronize(stop);
     cudaMemcpy2D(*Consultas_in, sizeof(double)*N_QUERIES, CudaConsultas, pitch_Consultas, sizeof(double)*N_QUERIES, DIM, cudaMemcpyDeviceToHost);
@@ -228,12 +236,13 @@ main(int argc, char *argv[]){
        printf("\nERROR 3 :: cudaMallocPitch :: Heaps_dev col=%lld :: row=%d\n", (long long)(sizeof(Elem)*N_BLOQUES*T_per_BLOCK), TOPK);
        cudaThreadExit();
        return 0;
-       }
+       }*/
 
-       arr_Dist_H = (Elem **)malloc(sizeof(Elem *)*N_BLOQUES);
+       /*arr_Dist_H = (Elem **)malloc(sizeof(Elem *)*N_BLOQUES);
        for (i=0; i<N_BLOQUES; i++)
-       arr_Dist_H[i] = (Elem *)malloc(sizeof(Elem)*LENGTH_ARRAY);
+       arr_Dist_H[i] = (Elem *)malloc(sizeof(Elem)*LENGTH_ARRAY);*/
 
+/*
        for (i=0; i<N_BLOQUES; i++)
        for (j=0; j<LENGTH_ARRAY; j++){
        arr_Dist_H[i][j].ind = (LENGTH_ARRAY*i) + j; //Setting an ID
@@ -480,21 +489,21 @@ int leedato_DB(double *dato, FILE *file) {
     for (i = 0; i < DIM; i++)
         if (fscanf(file, "%lf", &dato[i]) < 1)
             return ERROR;
-    return 1;
-}
+        return 1;
+    }
 
-void copiavalor_QUERIES(double **a, double *b, int j) {
-    int i;
-    for (i = 0; i < DIM; i++)
-        a[i][j] = b[i];
-    return;
-}
+    void copiavalor_QUERIES(double **a, double *b, int j) {
+        int i;
+        for (i = 0; i < DIM; i++)
+            a[i][j] = b[i];
+        return;
+    }
 
-int leedato_QUERIES(double *dato, FILE *file) {
-    int i = 0;
+    int leedato_QUERIES(double *dato, FILE *file) {
+        int i = 0;
 
-    for (i = 0; i < DIM; i++)
-        if (fscanf(file, "%lf", &dato[i]) < 1)
-            return ERROR;
-    return 1;
-}
+        for (i = 0; i < DIM; i++)
+            if (fscanf(file, "%lf", &dato[i]) < 1)
+                return ERROR;
+            return 1;
+        }
