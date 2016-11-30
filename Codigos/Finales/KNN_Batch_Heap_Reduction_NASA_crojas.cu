@@ -112,6 +112,10 @@ main(int argc, char *argv[])
      return 0;
    }
 
+   if (TOPK > N_DB){
+      printf("ERROR  :: TOPK muy grande\n");
+   }
+
    if (T_x_BLOCK > N_ELEM)
         T_per_BLOCK = N_ELEM;
    else
