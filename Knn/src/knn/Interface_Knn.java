@@ -85,10 +85,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextField_Dim = new javax.swing.JTextField();
         jTextField_TOPK = new javax.swing.JTextField();
         jLabel_TOPK = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jRadioButton_Double = new javax.swing.JRadioButton();
-        JRadioButton_Float = new javax.swing.JRadioButton();
-        jRadioButton_Int = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_Vista_Queries = new javax.swing.JTextArea();
@@ -183,44 +179,6 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_TOPK.setText("TOPK");
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo entrada"));
-
-        Tipo.add(jRadioButton_Double);
-        jRadioButton_Double.setText("Double");
-
-        Tipo.add(JRadioButton_Float);
-        JRadioButton_Float.setText("Float");
-        JRadioButton_Float.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRadioButton_FloatActionPerformed(evt);
-            }
-        });
-
-        Tipo.add(jRadioButton_Int);
-        jRadioButton_Int.setText("Int");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton_Int)
-                    .addComponent(JRadioButton_Float)
-                    .addComponent(jRadioButton_Double))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jRadioButton_Int)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JRadioButton_Float)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton_Double))
-        );
-
         javax.swing.GroupLayout jPanel_ArchivosLayout = new javax.swing.GroupLayout(jPanel_Archivos);
         jPanel_Archivos.setLayout(jPanel_ArchivosLayout);
         jPanel_ArchivosLayout.setHorizontalGroup(
@@ -229,22 +187,20 @@ public class Interface_Knn extends javax.swing.JFrame {
                 .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
                         .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                                 .addComponent(jLabel_Archivo_BD)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_Examinar_BD)))
+                                .addComponent(jButton_Examinar_BD))
+                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
                                 .addComponent(jLabel_Archivo_Queries)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton_Examinar_Queries)))
-                        .addGap(27, 27, 27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton_Examinar_Queries))
+                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_Archivo_Queries3)
                             .addComponent(jTextField_Dim, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -258,42 +214,32 @@ public class Interface_Knn extends javax.swing.JFrame {
                             .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addComponent(jSeparator1))
-                .addGap(95, 95, 95)
+                .addGap(30, 30, 30)
                 .addComponent(jButton_Hilos)
                 .addContainerGap())
         );
         jPanel_ArchivosLayout.setVerticalGroup(
             jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ArchivosLayout.createSequentialGroup()
-                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel_Archivo_Queries)
-                                    .addComponent(jLabel_Archivo_Queries3)
-                                    .addComponent(jLabel_TOPK)
-                                    .addComponent(jLabel_Hilos)
-                                    .addComponent(jButton_Examinar_Queries)
-                                    .addComponent(jButton_Examinar_BD)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ArchivosLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel_Archivo_BD)))
-                        .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Dim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_TOPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel_ArchivosLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Archivo_Queries)
+                    .addComponent(jLabel_Archivo_Queries3)
+                    .addComponent(jLabel_TOPK)
+                    .addComponent(jLabel_Hilos)
+                    .addComponent(jButton_Examinar_Queries)
+                    .addComponent(jButton_Examinar_BD)
+                    .addComponent(jLabel_Archivo_BD))
+                .addGroup(jPanel_ArchivosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_Archivo_Queries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Dim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_TOPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Hilos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125))
+                .addGap(30, 30, 30))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados (Se muestran las primeras 1000 lineas)"));
@@ -456,7 +402,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel_Archivos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel_Archivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,15 +474,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             if (flag_Secuencial == true) {
                 chequear_Secuencial();
                 String Ejecutable_Secuencial = null;
-                if (jRadioButton_Int.isSelected()) {
-                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Int.out";
-                }
-                if (jRadioButton_Double.isSelected()) {
-                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Double.out";
-                }
-                if (JRadioButton_Float.isSelected()) {
-                    Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial_Float.out";
-                }
+                Ejecutable_Secuencial = "/home/cristofher/Tesis/Secuencial.out";
                 try {
                     TOPK = jTextField_TOPK.getText();
                     DIM = jTextField_Dim.getText();
@@ -561,15 +499,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                 chequear_Multihilos();
                 String Ejecutable_Multihilos = null;
                 String path;
-                if (jRadioButton_Int.isSelected()) {
-                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Int.out";
-                }
-                if (jRadioButton_Double.isSelected()) {
-                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Double.out";
-                }
-                if (JRadioButton_Float.isSelected()) {
-                    Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos_Float.out";
-                }
+                Ejecutable_Multihilos = "/home/cristofher/Tesis/Multihilos.out";
                 try {
                     TOPK = jTextField_TOPK.getText();
                     DIM = jTextField_Dim.getText();
@@ -632,16 +562,11 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextArea_Vista_Queries.setVisible(true);
     }//GEN-LAST:event_jMenuItem_MultihilosActionPerformed
 
-    private void JRadioButton_FloatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRadioButton_FloatActionPerformed
-
-    }//GEN-LAST:event_JRadioButton_FloatActionPerformed
-
     private void jTextField_Archivo_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_Archivo_BDActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField_Archivo_BDActionPerformed
 
     private void jTextField_DimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_DimKeyTyped
-
         char c = evt.getKeyChar();
         if (Character.isLetter(c) || Character.isSpaceChar(c)) {
             getToolkit().beep();
@@ -653,7 +578,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                     "Advertencia",
                     JOptionPane.WARNING_MESSAGE);
         }
-
     }//GEN-LAST:event_jTextField_DimKeyTyped
 
     private void jTextField_TOPKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_TOPKKeyTyped
@@ -747,7 +671,6 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JMenu_Nuevo;
-    private javax.swing.JRadioButton JRadioButton_Float;
     private javax.swing.JMenuBar Menu_Principal;
     private javax.swing.JLabel Nucleo;
     public static javax.swing.ButtonGroup Tipo;
@@ -778,10 +701,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_Archivos;
-    private javax.swing.JRadioButton jRadioButton_Double;
-    private javax.swing.JRadioButton jRadioButton_Int;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -800,8 +720,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         Object msj = "Faltan los siquientes argumentos:";
         String nl = System.getProperty("line.separator");
         if ("".equals(jTextField_Archivo_BD.getText()) || "".equals(jTextField_Archivo_Queries.getText())
-                || "".equals(jTextField_Dim.getText()) || "".equals(jTextField_TOPK.getText())
-                || (!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+                || "".equals(jTextField_Dim.getText()) || "".equals(jTextField_TOPK.getText())) {
             if ("".equals(jTextField_Archivo_BD.getText())) {
                 msj = msj + nl + "- Archivo BD";
             }
@@ -813,9 +732,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             }
             if ("".equals(jTextField_TOPK.getText())) {
                 msj = msj + nl + "- TOPK";
-            }
-            if ((!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
-                msj = msj + nl + "- Tipo";
             }
             JOptionPane.showMessageDialog(null,
                     msj,
@@ -830,7 +746,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         String nl = System.getProperty("line.separator");
         if ("".equals(jTextField_Archivo_BD.getText()) || "".equals(jTextField_Archivo_Queries.getText())
                 || "".equals(jTextField_Dim.getText()) || "".equals(jTextField_TOPK.getText()) || "".equals(jTextField_Hilos.getText())
-                || (!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
+            ) {
             if ("".equals(jTextField_Archivo_BD.getText())) {
                 msj = msj + nl + "- Archivo BD";
             }
@@ -846,10 +762,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             if ("".equals(jTextField_Hilos.getText())) {
                 msj = msj + nl + "- Número de hilos";
             }
-            if ((!jRadioButton_Int.isSelected() && !jRadioButton_Double.isSelected() && !JRadioButton_Float.isSelected())) {
-                msj = msj + nl + "- Tipo";
-            }
-
             JOptionPane.showMessageDialog(null,
                     msj,
                     "Mensaje de Error",

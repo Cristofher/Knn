@@ -6,16 +6,19 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define DIM 20
+//Libreria con valores
+#include "libreria.h"
+
+#define DIM DEFINE_DIMENSION
 //#define DIM 254
 //#define DIM 64
 
 /* T_x_BLOCK es la cantidad de hilos por Bloque. Si la BD tiene menos elementos que T_x_BLOCK, se ejecutan tantos hilos como elementos hayan */
-#define T_x_BLOCK 64
+#define T_x_BLOCK devProp_maximumThreadsPerBlock 
 
 #define ERROR -1
 
-#define TOPK 32
+#define TOPK DEFINE_TOPK
 
 //#define NE 95325 //Num de elementos
 //#define NE 499865
@@ -27,7 +30,7 @@
 //#define NE 1500000
 //#define NE 2000000
 //#define NE 8480 //Num de elementos
-#define NE 3999
+#define NE DEFINE_N_ELEM
 
 #define TAM_WARP 32 //Num de threads maximo de un warp
 
@@ -37,7 +40,7 @@
 //#define Q 2979 //NASA_200000
 //#define Q 1324 //NASA_500000
 //#define Q 662 //NASA_999996
-#define Q 442 //NASA_1500000 // Cophir 500000
+#define Q 3999 //NASA_1500000 // Cophir 500000
 //#define Q 331 //NASA_2000000 // Cophir 1000000 // Cophir 1700000
 
 struct _Elem
@@ -66,7 +69,7 @@ int N_QUERIES;
 
 main(int argc, char *argv[])
 {
-   int i, N_ELEM, dimension, tam_elem, j;
+   int i, N_ELEM, dimension, j;
    FILE *pf;
    double **vectores;
    struct rusage r1, r2;
@@ -75,28 +78,28 @@ main(int argc, char *argv[])
    double *Elems, *QUERY_dev;
    double **consultas, *res_final, *res_final_H;
    int retorno, T_per_BLOCK, N_BLOQUES, contQ, cont;
-   Elem *HEAPS_dev, *arr_res1, *arr_res1H, *arr_Dist;
-   size_t pitch, pitch_H, pitch_Q, pitch_Dist;
-   int *resT, *resTH;
-   long long ED_total=0;
+   Elem *HEAPS_dev, *arr_Dist;
+   size_t pitch, pitch_H, pitch_Q, pitch_Dist;  
    double prom, prom_cont;
 
 //   cudaSetDevice(1);
+  printf("#define DEFINE_TOPK     %d\n",  DEFINE_TOPK);
+  printf("#define TOPK     %d\n",  TOPK);
 
-   if (argc != 6)
+   if (argc != 1)
    {
-      printf("\nEjecutar como: a.out archivo_BD archivo_queries N_DB N_QUERIES DIM\n");
+      printf("\nEjecutar como: a.out archivo_BD archivo_queries N_ELEM N_QUERIES DIM\n");
       return 0;
    }
-   if ((pf = fopen(argv[1], "r")) == NULL)
+   if ((pf = fopen(DEFINE_archivo_BD, "r")) == NULL)
    {
-      printf("\nNo se pudo abrir el archivo %s\n" ,argv[1]);
+      printf("\nNo se pudo abrir el archivo %s\n" ,DEFINE_archivo_BD);
       return 0;
    }
 
-   N_ELEM = atoi(argv[3]);
-   N_QUERIES = atoi(argv[4]);
-   dimension = atoi(argv[5]);
+   N_ELEM = DEFINE_N_ELEM;
+   N_QUERIES = DEFINE_N_QUERIES;
+   dimension = DEFINE_DIMENSION;
 
    if (dimension != DIM )
    {
@@ -112,7 +115,7 @@ main(int argc, char *argv[])
      return 0;
    }
 
-   if (TOPK > N_DB){
+   if (TOPK > N_ELEM){
       printf("ERROR  :: TOPK muy grande debe ser menor de numero de elementos de la base de datos\n");
    }
 
@@ -222,9 +225,9 @@ main(int argc, char *argv[])
       consultas[i] = (double *)malloc(sizeof(double)*dimension);
 
    //Leo las queries
-   if ((pf = fopen(argv[2], "r")) == NULL)
+   if ((pf = fopen(DEFINE_archivo_queries, "r")) == NULL)
    {
-      printf("\nNo se pudo abrir el archivo %s\n" ,argv[2]);
+      printf("\nNo se pudo abrir el archivo %s\n" ,DEFINE_archivo_queries);
       return 0;
    }
 /*

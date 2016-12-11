@@ -114,7 +114,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel_Archivos" min="-2" pref="161" max="-2" attributes="0"/>
+              <Component id="jPanel_Archivos" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="18" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="378" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -153,26 +153,24 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField_Archivo_BD" min="-2" pref="200" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel_Archivo_BD" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton_Examinar_BD" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jTextField_Archivo_BD" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField_Archivo_Queries" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="jLabel_Archivo_Queries" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton_Examinar_Queries" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jTextField_Archivo_Queries" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel_Archivo_Queries3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField_Dim" min="-2" pref="80" max="-2" attributes="0"/>
@@ -191,7 +189,7 @@
                       </Group>
                       <Component id="jSeparator1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jButton_Hilos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -200,43 +198,27 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel_Archivo_Queries3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton_Examinar_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton_Examinar_BD" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel_Archivo_BD" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_Dim" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton_Hilos" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="jTextField_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel_Archivo_Queries3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton_Examinar_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton_Examinar_BD" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField_Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton_Hilos" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="jTextField_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="0" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -324,71 +306,6 @@
             <Property name="text" type="java.lang.String" value="TOPK"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel3">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Tipo entrada"/>
-              </Border>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jRadioButton_Int" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="JRadioButton_Float" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton_Double" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jRadioButton_Int" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="JRadioButton_Float" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jRadioButton_Double" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton_Double">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="Tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Double"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="JRadioButton_Float">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="Tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Float"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRadioButton_FloatActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton_Int">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="Tipo"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Int"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
