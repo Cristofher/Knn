@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
 public class Interface_Knn extends javax.swing.JFrame {
 
@@ -617,41 +616,42 @@ public class Interface_Knn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     class MenuActionSecuencial implements ActionListener {
-  public void actionPerformed(ActionEvent e) {
-    System.out.println("Selected: " + e.getActionCommand());
-        flag_GPU = false;
-        flag_Multihilos = false;
-        flag_Xenon_Phi = false;
-        flag_Secuencial = true;
-        jLabel_Hilos.setVisible(false);
-        jTextField_Hilos.setVisible(false);
-        jButton_Examinar_BD.setVisible(true);
-        jButton_Examinar_Queries.setVisible(true);
-        jButton_Exportar_PDF.setVisible(true);
-        jButton_Procesar_Consultas.setVisible(true);
-        jLabel_Archivo_BD.setVisible(true);
-        jLabel_Archivo_Queries.setVisible(true);
-        jLabel_Hilos.setVisible(false);
-        jTextArea_Vista_Queries.setVisible(true);
-        jTextField_Archivo_BD.setVisible(true);
-        jTextField_Archivo_Queries.setVisible(true);
-        jTextField_Hilos.setVisible(false);
-        jLabel_Archivo_Queries3.setVisible(true);
-        jTextField_Dim.setVisible(true);
-        jLabel_TOPK.setVisible(true);
-        jTextField_TOPK.setVisible(true);
-        jTextArea_Vista_DB.setVisible(true);
-        jLabel1.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel_Vista_Queries.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-        jLabel_Vista_Queries1.setVisible(true);
-        jLabel2.setVisible(true);
-        jButton_Exportar_PDF1.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-  }
-}
-    
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Selected: " + e.getActionCommand());
+            flag_GPU = false;
+            flag_Multihilos = false;
+            flag_Xenon_Phi = false;
+            flag_Secuencial = true;
+            jLabel_Hilos.setVisible(false);
+            jTextField_Hilos.setVisible(false);
+            jButton_Examinar_BD.setVisible(true);
+            jButton_Examinar_Queries.setVisible(true);
+            jButton_Exportar_PDF.setVisible(true);
+            jButton_Procesar_Consultas.setVisible(true);
+            jLabel_Archivo_BD.setVisible(true);
+            jLabel_Archivo_Queries.setVisible(true);
+            jLabel_Hilos.setVisible(false);
+            jTextArea_Vista_Queries.setVisible(true);
+            jTextField_Archivo_BD.setVisible(true);
+            jTextField_Archivo_Queries.setVisible(true);
+            jTextField_Hilos.setVisible(false);
+            jLabel_Archivo_Queries3.setVisible(true);
+            jTextField_Dim.setVisible(true);
+            jLabel_TOPK.setVisible(true);
+            jTextField_TOPK.setVisible(true);
+            jTextArea_Vista_DB.setVisible(true);
+            jLabel1.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel_Vista_Queries.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+            jLabel_Vista_Queries1.setVisible(true);
+            jLabel2.setVisible(true);
+            jButton_Exportar_PDF1.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+        }
+    }
+
     private void jButton_Examinar_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Examinar_BDActionPerformed
         JFileChooser explorador = new JFileChooser();
         explorador.setDialogTitle("Seleccionar DB...");
@@ -855,7 +855,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_Procesar_ConsultasActionPerformed
 
     private void jMenuItem_SecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_SecuencialActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItem_SecuencialActionPerformed
 
     private void jMenuItem_MultihilosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_MultihilosActionPerformed
