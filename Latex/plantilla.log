@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  15 NOV 2016 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  13 DEC 2016 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,10 +1076,6 @@ LaTeX Warning: Unused global option(s):
 (./plantilla.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
-
-
-LaTeX Warning: Label `sec:des-intro' multiply defined.
-
 )
 \openout1 = `plantilla.aux'.
 
@@ -1357,15 +1353,17 @@ LaTeX Info: Redefining \% on input line 1.
 
  [5
 
-] (./plantilla.lof
+]
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+ [6] (./plantilla.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lof=\write4
 \openout4 = `plantilla.lof'.
 
-
-[6
+ [7
 
 ] (./plantilla.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -1374,13 +1372,13 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write5
 \openout5 = `plantilla.lot'.
 
- [7
+ [8
 
 ] (./plantilla.loa)
 \tf@loa=\write6
 \openout6 = `plantilla.loa'.
 
- [8
+ [9
 
 ] (./introduccion.tex
 Cap\'{\i }tulo 1.
@@ -1438,9 +1436,6 @@ LaTeX Info: Redefining \% on input line 7.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  )
 (\end occurred inside a group at level 1)
 
@@ -1449,7 +1444,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14379 strings out of 493029
  250272 string characters out of 6136233
- 297057 words of memory out of 5000000
+ 297018 words of memory out of 5000000
  17685 multiletter control sequences out of 15000+600000
  61822 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1465,10 +1460,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on plantilla.pdf (17 pages, 134806 bytes).
+Output written on plantilla.pdf (18 pages, 136449 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

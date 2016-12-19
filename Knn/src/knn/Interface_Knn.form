@@ -24,6 +24,29 @@
                 <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
               <SubComponents>
+                <Menu class="javax.swing.JMenu" name="jMenu_Secuencial">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Secuencial"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_SecuencialActionPerformed"/>
+                  </Events>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu_Multihilos">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Multihilos"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu_Xeon_phi">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Xeon Phi"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu_GPU">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="GPU"/>
+                  </Properties>
+                </Menu>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Secuencial">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Secuencial"/>
@@ -44,11 +67,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Xenon Phi"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem_Xenon_PhiActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_GPU">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="GPU"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem_GPUActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
@@ -56,6 +85,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem_SalirActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -190,7 +222,7 @@
                       <Component id="jSeparator1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jButton_Hilos" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_Procesar_Consultas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -213,7 +245,7 @@
                       <Component id="jTextField_Dim" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton_Hilos" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="jButton_Procesar_Consultas" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="jTextField_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="11" max="32767" attributes="0"/>
@@ -265,7 +297,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Examinar_BDActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton_Hilos">
+        <Component class="javax.swing.JButton" name="jButton_Procesar_Consultas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="15" style="1"/>
@@ -273,7 +305,7 @@
             <Property name="text" type="java.lang.String" value="Procesar Consultas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_HilosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Procesar_ConsultasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton_Examinar_Queries">
