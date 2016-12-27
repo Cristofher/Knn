@@ -40,8 +40,14 @@ public class Interface_Knn extends javax.swing.JFrame {
     String[] nombres_GPU;
 
     JMenuItem[] menus_Secuencial;
+    JMenuItem[] menus_Multihilos;
+    JMenuItem[] menus_Xeon_Phi;
+    JMenuItem[] menus_GPU;
 
     int num_secuenciales = 0;
+    int num_xeon_phi = 0;
+    int num_gpu=0;
+    int num_multihilos=0;
 
     String Num_threads;
     String TOPK;
@@ -49,6 +55,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     int tamanho_DB;
     int tamanho_Queries;
+    int opcion = -1;
 
     //Banderas 
     boolean flag_Secuencial = false;
@@ -93,7 +100,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         //INICIO Lectura de archivos secuenciales
         String cadena;
-        FileReader CfSecuenciales = new FileReader("Knn/Secuenciales/Fuentes/fuentes.dat");
+        FileReader CfSecuenciales = new FileReader("/usr/lib/knn/Knn/Secuenciales/Fuentes/fuentes.dat");
         BufferedReader b = new BufferedReader(CfSecuenciales);
 
         while ((cadena = b.readLine()) != null) {
@@ -106,33 +113,32 @@ public class Interface_Knn extends javax.swing.JFrame {
         nombres_Secuenciales = new String[num_secuenciales];
         menus_Secuencial = new JMenuItem[num_secuenciales];
         num_secuenciales = 0;
-        FileReader CfSecuenciales2 = new FileReader("Knn/Secuenciales/Fuentes/fuentes.dat");
+
+        FileReader CfSecuenciales2 = new FileReader("/usr/lib/knn/Knn/Secuenciales/Fuentes/fuentes.dat");
         BufferedReader b2 = new BufferedReader(CfSecuenciales2);
         while ((cadena = b2.readLine()) != null) {
             if (!"".equals(cadena)) {
                 rutas_Secuenciales[num_secuenciales] = cadena;
-                System.out.println(cadena);
             }
             num_secuenciales++;
         }
         b.close();
 
-        FileReader MnSecuenciales = new FileReader("Knn/Secuenciales/Menus/nombres.dat");
+        FileReader MnSecuenciales = new FileReader("/usr/lib/knn/Knn/Secuenciales/Menus/nombres.dat");
         b = new BufferedReader(MnSecuenciales);
         for (int i = 0; i < num_secuenciales; i++) {
             nombres_Secuenciales[i] = b.readLine();
-            System.out.println(nombres_Secuenciales[i]);
             menus_Secuencial[i] = new JMenuItem(nombres_Secuenciales[i]);
-            menus_Secuencial[i].addActionListener(new MenuActionSecuencial());
+            menus_Secuencial[i].addActionListener(new MenuActionSecuencial(i));
             jMenu_Secuencial.add(menus_Secuencial[i]);
         }
         b.close();
         //FIN Lectura de archivos secuenciales
 
         //INICIO Lectura de archivos Multihilos
-        FileReader CfMultihilos = new FileReader("Knn/Multihilos/Fuentes/fuentes.dat");
+        FileReader CfMultihilos = new FileReader("/usr/lib/knn/Knn/Multihilos/Fuentes/fuentes.dat");
         b = new BufferedReader(CfMultihilos);
-        int num_multihilos = 0;
+        num_multihilos = 0;
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
                 num_multihilos++;
@@ -140,8 +146,10 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
         rutas_Multihilos = new String[num_multihilos];
         nombres_Multihilos = new String[num_multihilos];
+        menus_Multihilos = new JMenuItem[num_multihilos];
+
         num_multihilos = 0;
-        CfMultihilos = new FileReader("Knn/Multihilos/Fuentes/fuentes.dat");
+        CfMultihilos = new FileReader("/usr/lib/knn/Knn/Multihilos/Fuentes/fuentes.dat");
         b = new BufferedReader(CfMultihilos);
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
@@ -151,21 +159,21 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
         b.close();
 
-        FileReader MnMultihilos = new FileReader("Knn/Multihilos/Menus/nombres.dat");
+        FileReader MnMultihilos = new FileReader("/usr/lib/knn/Knn/Multihilos/Menus/nombres.dat");
         b = new BufferedReader(MnMultihilos);
         for (int i = 0; i < num_multihilos; i++) {
             nombres_Multihilos[i] = b.readLine();
-            JMenuItem menu = new JMenuItem(nombres_Multihilos[i]);
-            jMenu_Multihilos.add(menu);
+            menus_Multihilos[i] = new JMenuItem(nombres_Multihilos[i]);
+            menus_Multihilos[i].addActionListener(new MenuActionMultihilos(i));
+            jMenu_Multihilos.add(menus_Multihilos[i]);
         }
         b.close();
         //FIN Lectura de archivos Multihilos
 
         //INICIO Lectura de archivos Xeon Phi
-        System.out.println("aca todo bien");
-        FileReader CfXeon_phi = new FileReader("Knn/Xeon_Phi/Fuentes/fuentes.dat");
+        FileReader CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
         b = new BufferedReader(CfXeon_phi);
-        int num_xeon_phi = 0;
+        num_xeon_phi = 0;
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
                 num_xeon_phi++;
@@ -173,32 +181,32 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
         rutas_Xeon_phi = new String[num_xeon_phi];
         nombres_Xeon_phi = new String[num_xeon_phi];
+        menus_Xeon_Phi = new JMenuItem[num_xeon_phi];
         num_xeon_phi = 0;
-        CfXeon_phi = new FileReader("Knn/Xeon_Phi/Fuentes/fuentes.dat");
+        CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
         b = new BufferedReader(CfXeon_phi);
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
-                System.out.println(cadena);
                 rutas_Xeon_phi[num_xeon_phi] = cadena;
             }
             num_xeon_phi++;
         }
         b.close();
-        FileReader MnXeon_phi = new FileReader("Knn/Xeon_Phi/Menus/nombres.dat");
+        FileReader MnXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat");
         b = new BufferedReader(MnXeon_phi);
         for (int i = 0; i < num_xeon_phi; i++) {
             nombres_Xeon_phi[i] = b.readLine();
-            System.out.println(nombres_Xeon_phi[i]);
-            JMenuItem menu = new JMenuItem(nombres_Xeon_phi[i]);
-            jMenu_Xeon_phi.add(menu);
+            menus_Xeon_Phi[i] = new JMenuItem(nombres_Xeon_phi[i]);
+            menus_Xeon_Phi[i].addActionListener(new MenuActionXeonPhi(i));
+            jMenu_Xeon_phi.add(menus_Xeon_Phi[i]);
         }
         b.close();
         //FIN Lectura de archivos XeonPhi
 
         //INICIO Lectura de archivos Nvidia GPU
-        FileReader CfGpu = new FileReader("Knn/Gpu/Fuentes/fuentes.dat");
+        FileReader CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
         b = new BufferedReader(CfGpu);
-        int num_gpu = 0;
+        num_gpu = 0;
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
                 num_gpu++;
@@ -206,8 +214,10 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
         rutas_GPU = new String[num_gpu];
         nombres_GPU = new String[num_gpu];
+        menus_GPU = new JMenuItem[num_gpu];
+
         num_gpu = 0;
-        CfGpu = new FileReader("Knn/Gpu/Fuentes/fuentes.dat");
+        CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
         b = new BufferedReader(CfGpu);
         while ((cadena = b.readLine()) != null) {
             if (!"".equals(cadena)) {
@@ -217,12 +227,13 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
         b.close();
 
-        FileReader MnGpu = new FileReader("Knn/Gpu/Menus/nombres.dat");
+        FileReader MnGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Menus/nombres.dat");
         b = new BufferedReader(MnGpu);
         for (int i = 0; i < num_gpu; i++) {
             nombres_GPU[i] = b.readLine();
-            JMenuItem menu = new JMenuItem(nombres_GPU[i]);
-            jMenu_GPU.add(menu);
+            menus_GPU[i] = new JMenuItem(nombres_GPU[i]);
+            menus_GPU[i].addActionListener(new MenuActionGPU(i));
+            jMenu_GPU.add(menus_GPU[i]);
         }
         b.close();
 
@@ -282,12 +293,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         jMenu_Multihilos = new javax.swing.JMenu();
         jMenu_Xeon_phi = new javax.swing.JMenu();
         jMenu_GPU = new javax.swing.JMenu();
-        jMenuItem_Secuencial = new javax.swing.JMenuItem();
-        jMenuItem_Multihilos = new javax.swing.JMenuItem();
-        jMenuItem_Xenon_Phi = new javax.swing.JMenuItem();
-        jMenuItem_GPU = new javax.swing.JMenuItem();
         jMenuItem_Salir = new javax.swing.JMenuItem();
-        jMenu_Edit = new javax.swing.JMenu();
 
         jButton2.setText("jButton1");
 
@@ -517,6 +523,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         JMenu_Nuevo.setText("Nuevo");
 
         jMenu_Secuencial.setText("Secuencial");
+
         JMenu_Nuevo.add(jMenu_Secuencial);
 
         jMenu_Multihilos.setText("Multihilos");
@@ -528,38 +535,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jMenu_GPU.setText("GPU");
         JMenu_Nuevo.add(jMenu_GPU);
 
-        jMenuItem_Secuencial.setText("Secuencial");
-        jMenuItem_Secuencial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_SecuencialActionPerformed(evt);
-            }
-        });
-        JMenu_Nuevo.add(jMenuItem_Secuencial);
-
-        jMenuItem_Multihilos.setText("Multihilos");
-        jMenuItem_Multihilos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_MultihilosActionPerformed(evt);
-            }
-        });
-        JMenu_Nuevo.add(jMenuItem_Multihilos);
-
-        jMenuItem_Xenon_Phi.setText("Xenon Phi");
-        jMenuItem_Xenon_Phi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_Xenon_PhiActionPerformed(evt);
-            }
-        });
-        JMenu_Nuevo.add(jMenuItem_Xenon_Phi);
-
-        jMenuItem_GPU.setText("GPU");
-        jMenuItem_GPU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_GPUActionPerformed(evt);
-            }
-        });
-        JMenu_Nuevo.add(jMenuItem_GPU);
-
         jMenu_File.add(JMenu_Nuevo);
 
         jMenuItem_Salir.setText("Salir");
@@ -567,9 +542,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jMenu_File.add(jMenuItem_Salir);
 
         Menu_Principal.add(jMenu_File);
-
-        jMenu_Edit.setText("Edit");
-        Menu_Principal.add(jMenu_Edit);
 
         setJMenuBar(Menu_Principal);
 
@@ -615,10 +587,61 @@ public class Interface_Knn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    class MenuActionSecuencial implements ActionListener {
+    class MenuActionMultihilos implements ActionListener {
+
+        private final int i;
+
+        public MenuActionMultihilos(int i) {
+            this.i = i;
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Selected: " + e.getActionCommand());
+            opcion = i;
+            flag_GPU = false;
+            flag_Multihilos = true;
+            flag_Xenon_Phi = false;
+            flag_Secuencial = false;
+            jLabel_Hilos.setVisible(true);
+            jTextField_Archivo_BD.setVisible(true);
+            jTextField_Archivo_Queries.setVisible(true);
+            jTextField_Hilos.setVisible(true);
+            jButton_Examinar_BD.setVisible(true);
+            jButton_Examinar_Queries.setVisible(true);
+            jButton_Exportar_PDF.setVisible(true);
+            jButton_Procesar_Consultas.setVisible(true);
+            jLabel_Archivo_BD.setVisible(true);
+            jLabel_Archivo_Queries.setVisible(true);
+            jLabel_Hilos.setVisible(true);
+            jTextArea_Vista_Queries.setVisible(true);
+            jLabel_Archivo_Queries3.setVisible(true);
+            jTextField_Dim.setVisible(true);
+            jLabel_TOPK.setVisible(true);
+            jTextField_TOPK.setVisible(true);
+            jTextArea_Vista_DB.setVisible(true);
+            jLabel1.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel_Vista_Queries.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+            jLabel_Vista_Queries1.setVisible(true);
+            jLabel2.setVisible(true);
+            jButton_Exportar_PDF1.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+
+        }
+    }
+
+    class MenuActionSecuencial implements ActionListener {
+
+        private final int i;
+
+        public MenuActionSecuencial(int i) {
+            this.i = i;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            opcion = i;
             flag_GPU = false;
             flag_Multihilos = false;
             flag_Xenon_Phi = false;
@@ -636,6 +659,92 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Archivo_BD.setVisible(true);
             jTextField_Archivo_Queries.setVisible(true);
             jTextField_Hilos.setVisible(false);
+            jLabel_Archivo_Queries3.setVisible(true);
+            jTextField_Dim.setVisible(true);
+            jLabel_TOPK.setVisible(true);
+            jTextField_TOPK.setVisible(true);
+            jTextArea_Vista_DB.setVisible(true);
+            jLabel1.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel_Vista_Queries.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+            jLabel_Vista_Queries1.setVisible(true);
+            jLabel2.setVisible(true);
+            jButton_Exportar_PDF1.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+        }
+    }
+
+    class MenuActionXeonPhi implements ActionListener {
+
+        private final int i;
+
+        public MenuActionXeonPhi(int i) {
+            this.i = i;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            opcion = i;
+            flag_GPU = false;
+            flag_Multihilos = false;
+            flag_Xenon_Phi = true;
+            flag_Secuencial = false;
+            jLabel_Hilos.setVisible(false);
+            jTextField_Archivo_BD.setVisible(true);
+            jTextField_Archivo_Queries.setVisible(true);
+            jTextField_Hilos.setVisible(false);
+            jButton_Examinar_BD.setVisible(true);
+            jButton_Examinar_Queries.setVisible(true);
+            jButton_Exportar_PDF.setVisible(true);
+            jButton_Procesar_Consultas.setVisible(true);
+            jLabel_Archivo_BD.setVisible(true);
+            jLabel_Archivo_Queries.setVisible(true);
+            jLabel_Hilos.setVisible(false);
+            jTextArea_Vista_Queries.setVisible(true);
+            jLabel_Archivo_Queries3.setVisible(true);
+            jTextField_Dim.setVisible(true);
+            jLabel_TOPK.setVisible(true);
+            jTextField_TOPK.setVisible(true);
+            jTextArea_Vista_DB.setVisible(true);
+            jLabel1.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel_Vista_Queries.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+            jLabel_Vista_Queries1.setVisible(true);
+            jLabel2.setVisible(true);
+            jButton_Exportar_PDF1.setVisible(true);
+            jTextArea_Resultados.setVisible(true);
+        }
+    }
+
+    class MenuActionGPU implements ActionListener {
+
+        private final int i;
+
+        public MenuActionGPU(int i) {
+            this.i = i;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            opcion = i;
+            flag_GPU = true;
+            flag_Multihilos = false;
+            flag_Xenon_Phi = false;
+            flag_Secuencial = false;
+            jLabel_Hilos.setVisible(false);
+            jTextField_Archivo_BD.setVisible(true);
+            jTextField_Archivo_Queries.setVisible(true);
+            jTextField_Hilos.setVisible(false);
+            jButton_Examinar_BD.setVisible(true);
+            jButton_Examinar_Queries.setVisible(true);
+            jButton_Exportar_PDF.setVisible(true);
+            jButton_Procesar_Consultas.setVisible(true);
+            jLabel_Archivo_BD.setVisible(true);
+            jLabel_Archivo_Queries.setVisible(true);
+            jLabel_Hilos.setVisible(false);
+            jTextArea_Vista_Queries.setVisible(true);
             jLabel_Archivo_Queries3.setVisible(true);
             jTextField_Dim.setVisible(true);
             jLabel_TOPK.setVisible(true);
@@ -727,14 +836,12 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     private void jButton_Procesar_ConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Procesar_ConsultasActionPerformed
         String sSistemaOperativo = System.getProperty("os.name");
-        System.out.println(sSistemaOperativo);
-        if (sSistemaOperativo.equals("Linux")) {
+        if (sSistemaOperativo.equals("Linux") && opcion != -1) {
             if (flag_Secuencial == true) {
                 flag_GPU = false;
                 flag_Multihilos = false;
                 flag_Xenon_Phi = false;
-                int i = 0;
-                chequear_Secuencial(i);
+                chequear_Secuencial(opcion);
                 if (Ejecutable_Secuencial != null) {
                     try {
                         TOPK = jTextField_TOPK.getText();
@@ -743,7 +850,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         path = Ejecutable_Secuencial + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
 
                         //path = Ejecutable_Secuencial + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + 1 + " " + 8;
-                        System.out.println(path);
                         //ProcessBuilder pb = new ProcessBuilder(path);
                         //Process p = pb.start();
                         Process p = Runtime.getRuntime().exec(path);
@@ -753,7 +859,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         String texto;
                         while ((line = in.readLine()) != null) {
                             texto = jTextArea_Resultados.getText() + "\n";
-                            System.out.println(line);
                             jTextArea_Resultados.setText(texto + line);
                             jTextArea_Resultados.updateUI();
                         }
@@ -783,7 +888,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         String texto;
                         while ((line = in.readLine()) != null) {
                             texto = jTextArea_Resultados.getText() + "\n";
-                            System.out.println(line);
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
                         }
@@ -812,7 +916,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         String texto;
                         while ((line = in.readLine()) != null) {
                             texto = jTextArea_Resultados.getText() + "\n";
-                            System.out.println(line);
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
                         }
@@ -841,7 +944,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         String texto;
                         while ((line = in.readLine()) != null) {
                             texto = jTextArea_Resultados.getText() + "\n";
-                            System.out.println(line);
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
                         }
@@ -853,42 +955,6 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButton_Procesar_ConsultasActionPerformed
-
-    private void jMenuItem_SecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_SecuencialActionPerformed
-
-    }//GEN-LAST:event_jMenuItem_SecuencialActionPerformed
-
-    private void jMenuItem_MultihilosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_MultihilosActionPerformed
-        flag_GPU = false;
-        flag_Multihilos = true;
-        flag_Xenon_Phi = false;
-        flag_Secuencial = false;
-        jLabel_Hilos.setVisible(true);
-        jTextField_Archivo_BD.setVisible(true);
-        jTextField_Archivo_Queries.setVisible(true);
-        jTextField_Hilos.setVisible(true);
-        jButton_Examinar_BD.setVisible(true);
-        jButton_Examinar_Queries.setVisible(true);
-        jButton_Exportar_PDF.setVisible(true);
-        jButton_Procesar_Consultas.setVisible(true);
-        jLabel_Archivo_BD.setVisible(true);
-        jLabel_Archivo_Queries.setVisible(true);
-        jLabel_Hilos.setVisible(true);
-        jTextArea_Vista_Queries.setVisible(true);
-        jLabel_Archivo_Queries3.setVisible(true);
-        jTextField_Dim.setVisible(true);
-        jLabel_TOPK.setVisible(true);
-        jTextField_TOPK.setVisible(true);
-        jTextArea_Vista_DB.setVisible(true);
-        jLabel1.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel_Vista_Queries.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-        jLabel_Vista_Queries1.setVisible(true);
-        jLabel2.setVisible(true);
-        jButton_Exportar_PDF1.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-    }//GEN-LAST:event_jMenuItem_MultihilosActionPerformed
 
     private void jTextField_DimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_DimKeyTyped
         char c = evt.getKeyChar();
@@ -930,70 +996,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                     JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jTextField_HilosKeyTyped
-
-    private void jMenuItem_Xenon_PhiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_Xenon_PhiActionPerformed
-        flag_GPU = false;
-        flag_Multihilos = false;
-        flag_Xenon_Phi = true;
-        flag_Secuencial = false;
-        jLabel_Hilos.setVisible(false);
-        jTextField_Archivo_BD.setVisible(true);
-        jTextField_Archivo_Queries.setVisible(true);
-        jTextField_Hilos.setVisible(false);
-        jButton_Examinar_BD.setVisible(true);
-        jButton_Examinar_Queries.setVisible(true);
-        jButton_Exportar_PDF.setVisible(true);
-        jButton_Procesar_Consultas.setVisible(true);
-        jLabel_Archivo_BD.setVisible(true);
-        jLabel_Archivo_Queries.setVisible(true);
-        jLabel_Hilos.setVisible(false);
-        jTextArea_Vista_Queries.setVisible(true);
-        jLabel_Archivo_Queries3.setVisible(true);
-        jTextField_Dim.setVisible(true);
-        jLabel_TOPK.setVisible(true);
-        jTextField_TOPK.setVisible(true);
-        jTextArea_Vista_DB.setVisible(true);
-        jLabel1.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel_Vista_Queries.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-        jLabel_Vista_Queries1.setVisible(true);
-        jLabel2.setVisible(true);
-        jButton_Exportar_PDF1.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-    }//GEN-LAST:event_jMenuItem_Xenon_PhiActionPerformed
-
-    private void jMenuItem_GPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_GPUActionPerformed
-        flag_GPU = true;
-        flag_Multihilos = false;
-        flag_Xenon_Phi = false;
-        flag_Secuencial = false;
-        jLabel_Hilos.setVisible(false);
-        jTextField_Archivo_BD.setVisible(true);
-        jTextField_Archivo_Queries.setVisible(true);
-        jTextField_Hilos.setVisible(false);
-        jButton_Examinar_BD.setVisible(true);
-        jButton_Examinar_Queries.setVisible(true);
-        jButton_Exportar_PDF.setVisible(true);
-        jButton_Procesar_Consultas.setVisible(true);
-        jLabel_Archivo_BD.setVisible(true);
-        jLabel_Archivo_Queries.setVisible(true);
-        jLabel_Hilos.setVisible(false);
-        jTextArea_Vista_Queries.setVisible(true);
-        jLabel_Archivo_Queries3.setVisible(true);
-        jTextField_Dim.setVisible(true);
-        jLabel_TOPK.setVisible(true);
-        jTextField_TOPK.setVisible(true);
-        jTextArea_Vista_DB.setVisible(true);
-        jLabel1.setVisible(true);
-        jLabel3.setVisible(true);
-        jLabel_Vista_Queries.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-        jLabel_Vista_Queries1.setVisible(true);
-        jLabel2.setVisible(true);
-        jButton_Exportar_PDF1.setVisible(true);
-        jTextArea_Resultados.setVisible(true);
-    }//GEN-LAST:event_jMenuItem_GPUActionPerformed
 
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
@@ -1061,7 +1063,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Secuencial = rutas_Secuenciales[1];
+            Ejecutable_Secuencial = rutas_Secuenciales[i];
         }
     }
 
@@ -1095,7 +1097,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Multihilos = rutas_Multihilos[2];
+            Ejecutable_Multihilos = rutas_Multihilos[i];
         }
     }
 
@@ -1129,8 +1131,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Xeon_Phi = rutas_Xeon_phi[3];
-            System.out.println(rutas_Xeon_phi[3]);
+            Ejecutable_Xeon_Phi = rutas_Xeon_phi[i];
         }
     }
 
@@ -1214,12 +1215,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_TOPK;
     private javax.swing.JLabel jLabel_Vista_Queries;
     private javax.swing.JLabel jLabel_Vista_Queries1;
-    private javax.swing.JMenuItem jMenuItem_GPU;
-    private javax.swing.JMenuItem jMenuItem_Multihilos;
     private javax.swing.JMenuItem jMenuItem_Salir;
-    private javax.swing.JMenuItem jMenuItem_Secuencial;
-    private javax.swing.JMenuItem jMenuItem_Xenon_Phi;
-    private javax.swing.JMenu jMenu_Edit;
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JMenu jMenu_GPU;
     private javax.swing.JMenu jMenu_Multihilos;
