@@ -1039,6 +1039,11 @@ public class Interface_Knn extends javax.swing.JFrame {
                         Process p = Runtime.getRuntime().exec(path);
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(p.getInputStream()));
+
+                        BufferedReader errinput = new BufferedReader(new InputStreamReader(
+                                p.getErrorStream()));
+                        
+                        System.out.println(errinput);
                         String line;
                         String texto;
                         while ((line = in.readLine()) != null) {
