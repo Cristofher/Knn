@@ -1,5 +1,6 @@
 package knn;
 
+import com.sun.tracing.dtrace.ArgsAttributes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,6 +15,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 public class Interface_Knn extends javax.swing.JFrame {
 
@@ -46,8 +49,8 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     int num_secuenciales = 0;
     int num_xeon_phi = 0;
-    int num_gpu=0;
-    int num_multihilos=0;
+    int num_gpu = 0;
+    int num_multihilos = 0;
 
     String Num_threads;
     String TOPK;
@@ -253,6 +256,16 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         Tipo = new javax.swing.ButtonGroup();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jFrame1 = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jRadioButton_Xp = new javax.swing.JRadioButton();
+        jRadioButton_Gp = new javax.swing.JRadioButton();
+        jRadioButton_Mh = new javax.swing.JRadioButton();
+        jRadioButton_Sc = new javax.swing.JRadioButton();
         jPanel_Archivos = new javax.swing.JPanel();
         jLabel_Archivo_BD = new javax.swing.JLabel();
         jLabel_Archivo_Queries = new javax.swing.JLabel();
@@ -294,8 +307,75 @@ public class Interface_Knn extends javax.swing.JFrame {
         jMenu_Xeon_phi = new javax.swing.JMenu();
         jMenu_GPU = new javax.swing.JMenu();
         jMenuItem_Salir = new javax.swing.JMenuItem();
+        Anadir_menu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jButton2.setText("jButton1");
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("File");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar1.add(jMenu3);
+
+        jRadioButton_Xp.setText("Xeon Phi");
+
+        jRadioButton_Gp.setText("GPU");
+        jRadioButton_Gp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton_GpActionPerformed(evt);
+            }
+        });
+
+        jRadioButton_Mh.setText("Multihilos");
+
+        jRadioButton_Sc.setText("Secuencial");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton_Sc)
+                    .addComponent(jRadioButton_Xp)
+                    .addComponent(jRadioButton_Mh)
+                    .addComponent(jRadioButton_Gp))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButton_Sc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton_Mh)
+                .addGap(15, 15, 15)
+                .addComponent(jRadioButton_Xp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton_Gp)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -309,6 +389,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         jLabel_Hilos.setText("Hilos");
 
         jTextField_Archivo_BD.setEditable(false);
+
 
         jTextField_Archivo_Queries.setEditable(false);
 
@@ -543,6 +624,23 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         Menu_Principal.add(jMenu_File);
 
+        Anadir_menu.setText("Menús");
+
+        jMenuItem1.setText("Añadir menú");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregar_menu(evt);
+            }
+        });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Anadir_menu.add(jMenuItem1);
+
+        Menu_Principal.add(Anadir_menu);
+
         setJMenuBar(Menu_Principal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -761,6 +859,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
     }
 
+
     private void jButton_Examinar_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Examinar_BDActionPerformed
         JFileChooser explorador = new JFileChooser();
         explorador.setDialogTitle("Seleccionar DB...");
@@ -847,7 +946,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         TOPK = jTextField_TOPK.getText();
                         DIM = jTextField_Dim.getText();
                         String path;
-                        path = Ejecutable_Secuencial + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
+                        path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/" + Ejecutable_Secuencial + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
 
                         //path = Ejecutable_Secuencial + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + 1 + " " + 8;
                         //ProcessBuilder pb = new ProcessBuilder(path);
@@ -880,7 +979,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         DIM = jTextField_Dim.getText();
                         Num_threads = jTextField_Hilos.getText();
                         String path;
-                        path = Ejecutable_Multihilos + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM;
+                        path = "/usr/lib/knn/Knn/Multihilos/Fuentes/" + Ejecutable_Multihilos + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM;
                         Process p = Runtime.getRuntime().exec(path);
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(p.getInputStream()));
@@ -908,7 +1007,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         DIM = jTextField_Dim.getText();
                         Num_threads = jTextField_Hilos.getText();
                         String path;
-                        path = Ejecutable_Xeon_Phi + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
+                        path = "/usr/lib/knn/Knn/Xeon_Phi/Fuentes/" + Ejecutable_Xeon_Phi + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
                         Process p = Runtime.getRuntime().exec(path);
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(p.getInputStream()));
@@ -936,7 +1035,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         DIM = jTextField_Dim.getText();
                         Num_threads = jTextField_Hilos.getText();
                         String path;
-                        path = Ejecutable_Xeon_Phi + " " + Ruta_DB + " " + Ruta_Queries + " " + tamanho_DB + " " + tamanho_Queries + " " + DIM + " " + TOPK;
+                        path = "/usr/lib/knn/Knn/Gpu/Fuentes/" + Ejecutable_GPU + ".out" + " " + Ruta_DB + " " + Ruta_Queries + " " + tamanho_DB + " " + tamanho_Queries + " " + DIM + " " + TOPK;
                         Process p = Runtime.getRuntime().exec(path);
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(p.getInputStream()));
@@ -997,6 +1096,16 @@ public class Interface_Knn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField_HilosKeyTyped
 
+    private void agregar_menu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_menu
+    }//GEN-LAST:event_agregar_menu
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new Agregar_menu().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jRadioButton_GpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_GpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton_GpActionPerformed
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
         jTextArea_Vista_DB.setText(" ");
@@ -1193,6 +1302,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Anadir_menu;
     private javax.swing.JMenu JMenu_Nuevo;
     private javax.swing.JMenuBar Menu_Principal;
     private javax.swing.JLabel Nucleo;
@@ -1203,6 +1313,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Exportar_PDF;
     private javax.swing.JButton jButton_Exportar_PDF1;
     private javax.swing.JButton jButton_Procesar_Consultas;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1215,6 +1326,11 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_TOPK;
     private javax.swing.JLabel jLabel_Vista_Queries;
     private javax.swing.JLabel jLabel_Vista_Queries1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem_Salir;
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JMenu jMenu_GPU;
@@ -1223,7 +1339,12 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_Xeon_phi;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_Archivos;
+    private javax.swing.JRadioButton jRadioButton_Gp;
+    private javax.swing.JRadioButton jRadioButton_Mh;
+    private javax.swing.JRadioButton jRadioButton_Sc;
+    private javax.swing.JRadioButton jRadioButton_Xp;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
