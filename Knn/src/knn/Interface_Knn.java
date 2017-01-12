@@ -1,6 +1,5 @@
 package knn;
 
-import com.sun.tracing.dtrace.ArgsAttributes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,8 +14,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 
 public class Interface_Knn extends javax.swing.JFrame {
 
@@ -955,14 +952,17 @@ public class Interface_Knn extends javax.swing.JFrame {
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(p.getInputStream()));
                         String line;
-                        String texto;
+                        String texto = null;
+                                                
                         while ((line = in.readLine()) != null) {
-                            texto = jTextArea_Resultados.getText() + "\n";
-                            jTextArea_Resultados.setText(texto + line);
-                            jTextArea_Resultados.updateUI();
+                            System.out.println(line);
+                            jTextArea_Resultados.setText(texto + line);                            
+                        }    
+                        if (p.exitValue() == 0) {
+                            JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
                         }
                     } catch (IOException e) {
-
+                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
                     }
                 }
             }
@@ -990,8 +990,11 @@ public class Interface_Knn extends javax.swing.JFrame {
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
                         }
+                                                if (p.exitValue() == 0) {
+                            JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                        }
                     } catch (IOException e) {
-
+                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
                     }
                 }
             }
@@ -1017,9 +1020,11 @@ public class Interface_Knn extends javax.swing.JFrame {
                             texto = jTextArea_Resultados.getText() + "\n";
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
+                        }                        if (p.exitValue() == 0) {
+                            JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
                         }
                     } catch (IOException e) {
-
+                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
                     }
                 }
             }
@@ -1042,7 +1047,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
                         BufferedReader errinput = new BufferedReader(new InputStreamReader(
                                 p.getErrorStream()));
-                        
+
                         System.out.println(errinput);
                         String line;
                         String texto;
@@ -1051,8 +1056,11 @@ public class Interface_Knn extends javax.swing.JFrame {
                             jTextArea_Resultados.append(path);
                             jTextArea_Resultados.setText(texto + line);
                         }
+                                                if (p.exitValue() == 0) {
+                            JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                        }
                     } catch (IOException e) {
-
+                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
                     }
                 }
             }
@@ -1177,7 +1185,8 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Secuencial = rutas_Secuenciales[i];
+            String[] split = rutas_Secuenciales[i].split("\\.");
+            Ejecutable_Secuencial = split[0];
         }
     }
 
@@ -1211,7 +1220,8 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Multihilos = rutas_Multihilos[i];
+            String[] split = rutas_Multihilos[i].split("\\.");
+            Ejecutable_Multihilos = split[0];
         }
     }
 
@@ -1245,7 +1255,8 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_Xeon_Phi = rutas_Xeon_phi[i];
+            String[] split = rutas_Xeon_phi[i].split("\\.");
+            Ejecutable_Xeon_Phi = split[0];
         }
     }
 
@@ -1279,7 +1290,9 @@ public class Interface_Knn extends javax.swing.JFrame {
             Ejecutable_Secuencial = null;
             Ejecutable_Xeon_Phi = null;
         } else {
-            Ejecutable_GPU = rutas_GPU[i];
+
+            String[] split = rutas_GPU[i].split("\\.");
+            Ejecutable_GPU = split[0];
         }
     }
 

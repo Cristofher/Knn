@@ -3,8 +3,6 @@ package knn;
 import java.io.IOException;
 import javax.swing.*;
 import javax.swing.UIManager;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.SwingUtilities;
 
 public class Knn {
 
@@ -19,7 +17,7 @@ public class Knn {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
         } catch (UnsupportedLookAndFeelException e) {
-            JOptionPane.showMessageDialog(null, "error" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error \n" + e.getMessage());
         }
         Interface_Knn obj = new Interface_Knn();
         obj.setVisible(true);
