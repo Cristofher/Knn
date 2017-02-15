@@ -1,0 +1,14 @@
+\begin{thebibliography}{CJvdP07}
+
+\bibitem[CJvdP07]{libroOpenMP}
+Barbara Chapman, Gabriele Jost, and Ruud van~der Pas.
+\newblock {\em Using OpenMP: Portable Shared Memory Parallel Programming}.
+\newblock The MIT Press, 2007.
+
+\bibitem[NBF96]{libroPthreads}
+Bradford\ Nichols, Dick Buttlar, and Jacqueline~Proulx Farrell.
+\newblock {\em Pthreads Programming: A POSIX Standard for Better
+  Multiprocessing}.
+\newblock O'Reilly, 1996.
+
+\end{thebibliography}
