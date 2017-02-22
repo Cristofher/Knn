@@ -60,7 +60,6 @@ int leedato(double *dato, FILE *file);
 int leedato_cophir(double *dato, FILE *file);
 int leedato_trans(double **dato, FILE *file, int col);
 int leedato_trans_cophir(double **dato, FILE *file, int col);
-->Funcion<-
 
 
 int N_QUERIES;
@@ -497,4 +496,16 @@ int leedato_trans_cophir(double **dato, FILE *file, int col)
    }
    return 1;
 }
-    
+
+
+#include <stdio.h>
+#include <omp.h>
+
+int main()
+{
+
+printf("%d\n", omp_get_num_procs());
+
+return 0;	
+}
+
