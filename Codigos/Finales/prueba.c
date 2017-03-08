@@ -8,7 +8,7 @@ int main()
 	char textoExtraido [1000];
 	char file1[200], file2[200], file3[200];
 	char cadena[1000];
-	char cad;
+	char cad[1000];
 	printf("Escribe el nombre del primer archivo a unir: ");
 	scanf("%s", file1);
 	printf("Escribe el nombre del segundo archivo a unir: ");
@@ -79,7 +79,30 @@ int main()
 	printf("%d\n", len);
 	fprintf( fp,"%s",textoExtraido);
 
-	while (fgets(textoExtraido))
+	int largo = 0, aux = 0,var=0;
+	while (textoExtraido[largo]!='\0'){
+
+		if(textoExtraido[largo]==95){
+			aux++;
+		}
+				largo++;
+		if(aux==4){
+			while(textoExtraido[largo] != 40){
+			cad[var] = textoExtraido[largo];
+			var++;
+			largo++;
+			}
+			if (textoExtraido[largo]==40)
+			{
+				break;
+			}
+		}
+		if(aux > 4){
+			break;
+		}
+	}
+
+	printf("%s\n",cad );
 
 
 	fclose(p);

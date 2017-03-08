@@ -60,8 +60,8 @@ int leedato(double *dato, FILE *file);
 int leedato_cophir(double *dato, FILE *file);
 int leedato_trans(double **dato, FILE *file, int col);
 int leedato_trans_cophir(double **dato, FILE *file, int col);
-
-C Programming LanguageRIES;
+C Programming Language 
+IES;
 //double vectores[DIM][NE];
 
 
