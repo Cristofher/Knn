@@ -1,0 +1,8 @@
+Package: Knn
+Version: 1.0
+Section: Education
+Priority: optional
+Architecture: all
+Maintainer: Cristofher <cristofherrojas.cr@gmail.com>
+Installed-Size: 171
+Description: Resolver las k consultas más cercanas

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Knn
+Comment=Knn K nearest neighbor
+Exec=java -jar /usr/lib/knn/Knn.jar
+Icon=/usr/share/icon.png
+Terminal=java -jar usr/lib/knn/Knn.jar
+Type=Application
+Categories=Education;Documentation;Other
+StartupNotify=true
+Name[es]=Knn K-Nearest Neighbord

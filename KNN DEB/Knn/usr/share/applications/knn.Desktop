@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Knn
+Comment=Knn K nearest neighbor
+Exec=/usr/bin/knn
+Icon=
+Terminal=false
+Type=Application	
+Categories=Education;Documentation;Other
+StartupNotify=true
