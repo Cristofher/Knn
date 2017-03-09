@@ -5,7 +5,7 @@ int main()
 {
 	FILE *p, *q, *r, *fp;
 	char c;
-	char textoExtraido [1000];
+	char textoExtraido [1000],nombre_funcion[1000];
 	char file1[200], file2[200], file3[200];
 	char cadena[1000];
 	char cad[1000];
@@ -19,6 +19,8 @@ int main()
 	q=fopen(file2, "r+");
 	r=fopen(file3, "w");
 	char palabra[1000] = "->Funcion<-";
+	char argumentos[1000] = "<<< N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);";
+
 
 	while(!feof(p))
 	{
@@ -85,12 +87,12 @@ int main()
 		if(textoExtraido[largo]==95){
 			aux++;
 		}
-				largo++;
+		largo++;
 		if(aux==4){
 			while(textoExtraido[largo] != 40){
-			cad[var] = textoExtraido[largo];
-			var++;
-			largo++;
+				cad[var] = textoExtraido[largo];
+				var++;
+				largo++;
 			}
 			if (textoExtraido[largo]==40)
 			{
@@ -102,8 +104,34 @@ int main()
 		}
 	}
 
-	printf("%s\n",cad );
+	largo = 0,aux=0, var = 0;
+	while (cad[largo]!='\0'){
 
+		if(cad[largo]==32){
+			printf("Entro\n");
+			aux++;
+		}
+		largo++;
+		if(aux==2){
+			while(cad[largo] != 32){
+				nombre_funcion[var] = cad[largo];
+				var++;
+				largo++;
+			}
+			if (cad[largo]==32)
+			{
+				break;
+			}
+		}
+		if(aux > 2){
+			break;
+		}
+	}
+
+	printf("NOMBRE: %s\n",nombre_funcion);
+	strcat(nombre_funcion,argumentos);
+
+	printf("FUNCION: %s\n",nombre_funcion);
 
 	fclose(p);
 	fclose(q);
