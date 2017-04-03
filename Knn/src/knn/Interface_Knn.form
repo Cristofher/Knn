@@ -172,12 +172,12 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="Anadir_menu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Men&#xfa;s"/>
+            <Property name="text" type="java.lang.String" value="Menus"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="A&#xf1;adir men&#xfa;"/>
+                <Property name="text" type="java.lang.String" value="Add menus"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="agregar_menu"/>
@@ -225,7 +225,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel2" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel_Archivos" max="32767" attributes="0"/>
+                  <Component id="Input" max="32767" attributes="0"/>
                   <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -236,7 +236,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel_Archivos" min="-2" max="-2" attributes="0"/>
+              <Component id="Input" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="18" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="378" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -259,7 +259,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel_Archivos">
+    <Container class="javax.swing.JPanel" name="Input">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -267,6 +267,9 @@
           </Border>
         </Property>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Input"/>
+      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -309,10 +312,10 @@
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" pref="757" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jButton_Procesar_Consultas" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton_Procesar_Consultas" min="-2" pref="170" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -348,17 +351,17 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel_Archivo_BD">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Archivo BD"/>
+            <Property name="text" type="java.lang.String" value="Data Base"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Archivo_Queries">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Archivo Queries"/>
+            <Property name="text" type="java.lang.String" value="Data Queries"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Hilos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hilos"/>
+            <Property name="text" type="java.lang.String" value="Threads"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_Archivo_BD">
@@ -392,7 +395,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="15" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Procesar Consultas"/>
+            <Property name="text" type="java.lang.String" value="Start!"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Procesar_ConsultasActionPerformed"/>
@@ -410,7 +413,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Archivo_Queries3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Dimensi&#xf3;n Obj"/>
+            <Property name="text" type="java.lang.String" value="Size Obj"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_Dim">
@@ -425,7 +428,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_TOPK">
           <Properties>
-            <Property name="text" type="java.lang.String" value="TOPK"/>
+            <Property name="text" type="java.lang.String" value="K"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -445,7 +448,11 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel_Vista_Queries2" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -459,18 +466,20 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jLabel_Vista_Queries1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <EmptySpace pref="147" max="32767" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jButton_Exportar_PDF" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="jButton_Exportar_PDF1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jTextArea_Resultados" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -478,20 +487,23 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel_Vista_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel_Vista_Queries1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton_Exportar_PDF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton_Exportar_PDF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_Vista_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_Exportar_PDF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_Exportar_PDF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_Vista_Queries2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel_Vista_Queries1" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jScrollPane4" alignment="0" pref="295" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" alignment="0" pref="295" max="32767" attributes="0"/>
-                      <Component id="jTextArea_Resultados" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" alignment="1" pref="295" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
@@ -533,22 +545,22 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vista Previa: "/>
+            <Property name="text" type="java.lang.String" value="Preview"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vista Previa: "/>
+            <Property name="text" type="java.lang.String" value="Preview"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Vista_Queries">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Archivo Queries"/>
+            <Property name="text" type="java.lang.String" value="Data Queries"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Vista_Queries1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Resultado: "/>
+            <Property name="text" type="java.lang.String" value="Result"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton_Exportar_PDF">
@@ -558,7 +570,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Exportar resultado a:"/>
+            <Property name="text" type="java.lang.String" value="Export to"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton_Exportar_PDF1">
@@ -566,11 +578,27 @@
             <Property name="text" type="java.lang.String" value=" PDF"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextArea_Resultados">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextArea_ResultadosActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JLabel" name="jLabel_Vista_Queries2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data Base"/>
+          </Properties>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea_Resultados">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -595,12 +623,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="El S.O detecto"/>
+        <Property name="text" type="java.lang.String" value="The s.o. detect"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="nucleos"/>
+        <Property name="text" type="java.lang.String" value="cores"/>
       </Properties>
     </Component>
   </SubComponents>
