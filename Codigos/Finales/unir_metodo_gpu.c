@@ -1,8 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 
+int return_major(cudaDeviceProp devProp)
+{
+    return devProp.major;
+}
+int return_minor(cudaDeviceProp devProp)
+{
+    return devProp.minor;
+}
+int major, minor;
 int main(int argc, char *argv[])
 {
+
+	 int devCount;
+    cudaGetDeviceCount(&devCount);
+
+
+    // Iterate through devices
+    for (int i = 0; i < devCount; ++i)
+    {
+        // Get device properties
+        cudaDeviceProp devProp;
+        cudaGetDeviceProperties(&devProp, i);
+        printDevProp(devProp);
+
+        major = return_major(devProp);
+        minor = return_minor(devProp);
+
+    }
 
 	if (argc != 4) {
 		printf("\nError :: Ejecutar como : salida.out file1 file2 file3\n");
@@ -75,7 +101,7 @@ int main(int argc, char *argv[])
 	rewind(q);
 	if (fgets(textoExtraido, 256, q)!= NULL)
 
-	rewind(temp);
+		rewind(temp);
 
 	fseek( temp, 1862, SEEK_SET );
 	int len = strlen(textoExtraido);
@@ -154,6 +180,19 @@ int main(int argc, char *argv[])
 
 	fclose(temp);
 	fclose(r);
+
+	int existe = existsFile(argv[3]);
+	if (existe == 1){
+		char programa[500];
+		sprintf(programa, "nvcc %s -arch=sm_%d,%d -o %s", argv[3],major,minor,argv[4]);
+		printf("%s\n",programa );
+
+		system(programa);
+	}else{
+		printf("ERROR\n");
+	}
+
+	
 
 	
 

@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+int existsFile(char* filename);
+
 int main(int argc, char *argv[])
 {
 
-	if (argc != 4) {
+	if (argc != 5) {
 		printf("\nError :: Ejecutar como : salida.out file1 file2 file3\n");
 		return 0;
 	}
 
 	FILE *p, *q, *r, *fp, *temp;
 	char c;
-	char textoExtraido [1000],nombre_funcion[1000];
 	char file1[200], file2[200], file3[200];
-	char cadena[1000],cad[1000];
+	char cadena[1000];
 
 	sprintf(file1, "%s", argv[1]);
 	printf("\nAbriendo %s... ", argv[1]);
@@ -66,7 +67,30 @@ int main(int argc, char *argv[])
 	fclose(q);
 	fclose(r);
 
+
+	int existe = existsFile(argv[3]);
+	if (existe == 1){
+		char programa[500];
+    	sprintf(programa, "gcc %s -o %s", argv[3],argv[4]);
+    	printf("%s\n",programa );
+	
+    system(programa);
+	}else{
+		printf("ERROR\n");
+	}
+
 	
 
 	return 0; 
+}
+
+int existsFile(char* filename) {
+	FILE* f = NULL;
+	f = fopen(filename,"r");
+	if (f == NULL) 
+		return 0;
+	else {
+		fclose(f);
+		return 1;
+	}
 }
