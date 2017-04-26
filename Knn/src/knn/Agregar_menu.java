@@ -28,6 +28,7 @@ public class Agregar_menu extends javax.swing.JFrame {
     private void initComponents() {
 
         grupo = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jRadioButton_Xp = new javax.swing.JRadioButton();
         jRadioButton_Gp = new javax.swing.JRadioButton();
@@ -45,8 +46,9 @@ public class Agregar_menu extends javax.swing.JFrame {
         muestra_contenido = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        nombre_menú = new javax.swing.JTextField();
+        nombre_menu = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Añadir menú");
@@ -66,10 +68,10 @@ public class Agregar_menu extends javax.swing.JFrame {
         });
 
         grupo.add(jRadioButton_Mh);
-        jRadioButton_Mh.setText("Multihilos");
+        jRadioButton_Mh.setText("Multicore");
 
         grupo.add(jRadioButton_Sc);
-        jRadioButton_Sc.setText("Secuencial");
+        jRadioButton_Sc.setText("Sequential");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -98,9 +100,9 @@ public class Agregar_menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setText("Tipo de menú");
+        jLabel1.setText("Menu");
 
-        jLabel2.setText("Archivo fuente");
+        jLabel2.setText("Source code");
 
         jTextField_archivo.setEditable(false);
         jTextField_archivo.addActionListener(new java.awt.event.ActionListener() {
@@ -109,14 +111,14 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
         });
 
-        Boton_examinar.setText("Examinar");
+        Boton_examinar.setText("Search");
         Boton_examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Boton_examinarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Compilar & añadir menú");
+        jButton2.setText("Compile & Add menu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -133,9 +135,9 @@ public class Agregar_menu extends javax.swing.JFrame {
         muestra_contenido.setRows(5);
         jScrollPane2.setViewportView(muestra_contenido);
 
-        jLabel3.setText("Archivo fuente");
+        jLabel3.setText("Preview source code:");
 
-        jLabel5.setText("Salida");
+        jLabel5.setText("Output:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,13 +168,25 @@ public class Agregar_menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        nombre_menú.addActionListener(new java.awt.event.ActionListener() {
+        nombre_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombre_menúActionPerformed(evt);
+                nombre_menuActionPerformed(evt);
+            }
+        });
+        nombre_menu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombre_menuKeyTyped(evt);
             }
         });
 
-        jLabel4.setText("Nombre menú");
+        jLabel4.setText("Menu name");
+
+        jLabel6.setText("View information about code source");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,26 +195,29 @@ public class Agregar_menu extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Boton_examinar))))
+                        .addComponent(jLabel1)))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Boton_examinar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nombre_menú, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nombre_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)))
                         .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
@@ -212,18 +229,20 @@ public class Agregar_menu extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Boton_examinar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nombre_menú, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(nombre_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -258,8 +277,8 @@ public class Agregar_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Boton_examinarActionPerformed
 
-    private void nombre_menúActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_menúActionPerformed
-    }//GEN-LAST:event_nombre_menúActionPerformed
+    private void nombre_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_menuActionPerformed
+    }//GEN-LAST:event_nombre_menuActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String sSistemaOperativo = System.getProperty("os.name");
@@ -268,28 +287,28 @@ public class Agregar_menu extends javax.swing.JFrame {
             chequear(seleccion);
             if ("Secuencial".equals(seleccion)) {
                 try {
-                        String path;
-                        path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/Knn_secuencial.out" +" "+ ruta_fuente;
-                        Process p = Runtime.getRuntime().exec(path);
-                        BufferedReader in = new BufferedReader(
-                                new InputStreamReader(p.getInputStream()));
-                        String line;
-                        String texto = "algo";
-                        System.out.println("Corriendo");
-                        while ((line = in.readLine()) != null) {
-                            texto = salida.getText() + "\n";
-                            salida.setText(texto + line);
-                            salida.updateUI();
-                        }
-                        p.waitFor();
-                        System.out.println("Termino");
-                        System.out.println(p.exitValue());
-                        if(p.exitValue()==0){
-                            JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
-                        }
-                    } catch (IOException | InterruptedException e) {
-                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                    String path;
+                    path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/Knn_secuencial.out" + " " + ruta_fuente;
+                    Process p = Runtime.getRuntime().exec(path);
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(p.getInputStream()));
+                    String line;
+                    String texto = "algo";
+                    System.out.println("Corriendo");
+                    while ((line = in.readLine()) != null) {
+                        texto = salida.getText() + "\n";
+                        salida.setText(texto + line);
+                        salida.updateUI();
                     }
+                    p.waitFor();
+                    System.out.println("Termino");
+                    System.out.println(p.exitValue());
+                    if (p.exitValue() == 0) {
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                }
             }
             if ("Multihilos".equals(seleccion)) {
                 System.out.println("2");
@@ -301,9 +320,76 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
             if ("GPU".equals(seleccion)) {
                 System.out.println("4");
+                try {
+                    String path;
+                    String Snombre_menu = nombre_menu.getText();
+                    String path_base = "/usr/lib/knn/Knn/Ejecutable/";
+                    String path_base_gpu = "/usr/lib/knn/Knn/Ejecutable/base_gpu.c";
+                    String path_ejecutable = "/usr/lib/knn/Knn/Ejecutable/unir_metodo_gpu.out";
+                    String path_fuente = jTextField_archivo.getText();
+                    path = path_ejecutable + " " + path_base_gpu + " " + path_fuente + " " + path_base + Snombre_menu + ".c";
+                    System.out.println(path);
+                    Process p = Runtime.getRuntime().exec(path);
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(p.getInputStream()));
+                    String line;
+                    String texto = "algo";
+                    System.out.println("Corriendo");
+                    while ((line = in.readLine()) != null) {
+                        texto = salida.getText() + "\n";
+                        salida.setText(texto + line);
+                        salida.updateUI();
+                    }
+                    p.waitFor();
+                    System.out.println("Termino");
+                    System.out.println(p.exitValue());
+                    if (p.exitValue() == 0) {
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                }
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void nombre_menuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_menuKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && !Character.isLetter(c) && c != '_') {
+            getToolkit().beep();
+            evt.consume();
+            Object msj = "Solo ingrese Números";
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_nombre_menuKeyTyped
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        String seleccion = getSelectedButtonText(grupo);
+        if (seleccion == null) {
+            getToolkit().beep();
+            evt.consume();
+            Object msj = "Choose a menu";
+            JOptionPane.showMessageDialog(null,
+                    msj,
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        if ("Sequential".equals(seleccion)) {
+            JOptionPane.showMessageDialog(null, "Mensaje dentro de la ventana", "Mensaje en la barra de titulo", JOptionPane.INFORMATION_MESSAGE);
+        }
+        if ("Multicores".equals(seleccion)) {
+            JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
+        }
+        if ("Xeon Phi".equals(seleccion)) {
+            JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
+        }
+        if ("GPU".equals(seleccion)) {
+            JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
+        }
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     public String getSelectedButtonText(ButtonGroup buttonGroup) {
         for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
@@ -338,14 +424,14 @@ public class Agregar_menu extends javax.swing.JFrame {
         Object msj = "Faltan los siquientes argumentos:";
         String nl = System.getProperty("line.separator");
         if ("".equals(muestra_contenido.getText()) || "".equals(jTextField_archivo.getText())
-                || "".equals(nombre_menú.getText()) || seleccion==null) {
+                || "".equals(nombre_menu.getText()) || seleccion == null) {
             if (seleccion == null) {
                 msj = msj + nl + "- No ha seleccionado el tipo de menú";
             }
             if ("".equals(jTextField_archivo.getText()) || "".equals(muestra_contenido.getText())) {
                 msj = msj + nl + "- No se ha seleccionado un archivo fuente ";
             }
-            if ("".equals(nombre_menú.getText())) {
+            if ("".equals(nombre_menu.getText())) {
                 msj = msj + nl + "- No ha escrito el nombre del menú";
             }
             JOptionPane.showMessageDialog(null,
@@ -360,6 +446,7 @@ public class Agregar_menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton_examinar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup grupo;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -367,6 +454,7 @@ public class Agregar_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton_Gp;
@@ -377,7 +465,7 @@ public class Agregar_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField_archivo;
     private javax.swing.JTextArea muestra_contenido;
-    private javax.swing.JTextField nombre_menú;
+    private javax.swing.JTextField nombre_menu;
     private javax.swing.JTextArea salida;
     // End of variables declaration//GEN-END:variables
 

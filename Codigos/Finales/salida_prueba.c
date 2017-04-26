@@ -120,7 +120,12 @@ int main(int argc, char *argv[]) {
     fflush(stdout);
 
 
-    omp_set_num_threads(N_THREADS);
+
+omp_set_num_threads(N_THREADS);
+#pragma omp parallel shared(Consultas, DB, N_QUERIES, N_DB, N_THREADS, acum, DIM)
+    {
+
+omp_set_num_threads(N_THREADS);
 #pragma omp parallel shared(Consultas, DB, N_QUERIES, N_DB, N_THREADS, acum, DIM)
     {
         float real_time;
@@ -203,6 +208,29 @@ int main(int argc, char *argv[]) {
         }
         free(heap);
 
+    }//end pragma omp parallell
+
+#pragma omp master
+    {
+        gettimeofday(&t2, 0);
+        real_time = (t2.tv_sec - t1.tv_sec) + (float) (t2.tv_usec - t1.tv_usec) / 1000000;
+
+        Salida_Multihilo = fopen("Salida_Multihilo.txt", "w");
+        for (i = 0; i < N_QUERIES; ++i){
+          fprintf(Salida_Multihilo, "Consulta id:: %d\n",i);
+          for (j = 0; j < TOPK; ++j){
+            fprintf(Salida_Multihilo,"ind = %d :: dist = %f\n",answer[(i*TOPK)+j].ind,answer[(i*TOPK)+j].dist);
+        }
+        fprintf(Salida_Multihilo, "---------------------------------\n");
+    }
+    fclose(Salida_Multihilo);
+
+    printf("\n\nK = %d", TOPK);
+    printf("\nReal Time = %f segundos.\n", real_time);
+    fflush(stdout);
+}
+free(heap);
+
     }//end pragma omp parallel
 
     return 0;
@@ -230,52 +258,48 @@ int leedato(double *dato, FILE *file) {
     for (i = 0; i < DIM; i++)
         if (fscanf(file, "%lf", &dato[i]) < 1)
             return ERROR;
-    return 1;
-}
+        return 1;
+    }
 
-int leedato_cophir(double *dato, FILE *file) {
-    int i = 0;
-    int num_f;
+    int leedato_cophir(double *dato, FILE *file) {
+        int i = 0;
+        int num_f;
 
-    for (i = 0; i < DIM; i++) {
-        if (fscanf(file, "%d", &num_f) < 1)
-            return ERROR;
-
-        dato[i] = (double) num_f;
-        if (i + 1 < DIM)
-            if (fgetc(file) != ',') {
-                printf("\nERROR :: ',' no encontrada\n");
+        for (i = 0; i < DIM; i++) {
+            if (fscanf(file, "%d", &num_f) < 1)
                 return ERROR;
+
+            dato[i] = (double) num_f;
+            if (i + 1 < DIM)
+                if (fgetc(file) != ',') {
+                    printf("\nERROR :: ',' no encontrada\n");
+                    return ERROR;
+                }
             }
-    }
-    return 1;
-}
+            return 1;
+        }
 
-//inserta2 y extrae2 usan el arreglo del heap desde el elemento 0
+        void inserta2(Elem *heap, Elem *elem, int *n_elem) {
+            int i;
+            Elem temp;
 
-void inserta2(Elem *heap, Elem *elem, int *n_elem) {
-    int i;
-    Elem temp;
-
-    heap[*n_elem].dist = elem->dist;
-    heap[*n_elem].ind = elem->ind;
-    (*n_elem)++;
-    for (i = *n_elem; i > 1 && heap[i - 1].dist > heap[(i / 2) - 1].dist; i = i / 2) {
+            heap[*n_elem].dist = elem->dist;
+            heap[*n_elem].ind = elem->ind;
+            (*n_elem)++;
+            for (i = *n_elem; i > 1 && heap[i - 1].dist > heap[(i / 2) - 1].dist; i = i / 2) {
         //Intercambiamos con el padre
-        temp = heap[i - 1];
-        heap[i - 1] = heap[(i / 2) - 1];
-        heap[(i / 2) - 1] = temp;
-    }
-}
+                temp = heap[i - 1];
+                heap[i - 1] = heap[(i / 2) - 1];
+                heap[(i / 2) - 1] = temp;
+            }
+        }
 
-//inserta2 y extrae2 usan el arreglo del heap desde el elemento 0
+        void extrae2(Elem *heap, int *n_elem, Elem *elem_extraido) {
+            int i, k;
+            Elem temp;
 
-void extrae2(Elem *heap, int *n_elem, Elem *elem_extraido) {
-    int i, k;
-    Elem temp;
-
-    (*elem_extraido).dist = heap[0].dist;
-    (*elem_extraido).ind = heap[0].ind;
+            (*elem_extraido).dist = heap[0].dist;
+            (*elem_extraido).ind = heap[0].ind;
 
     heap[0] = heap[(*n_elem) - 1]; // Movemos el ultimo a la raiz y achicamos el heap
     (*n_elem)--;
@@ -325,6 +349,8 @@ double topH(Elem *heap, int *n_elem) {
         return MAXFLOAT;
     return heap[0].dist;
 }
+
+
 
 
 

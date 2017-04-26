@@ -1,4 +1,4 @@
-__global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final)
+__global__ void Batch_Heap_Reduction_prueba(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final)
 {
   int i, j, n_elem=0, n_elemWarp=0;
   int id;

@@ -263,7 +263,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Entrada de datos"/>
+            <TitledBorder title="Input"/>
           </Border>
         </Property>
       </Properties>
@@ -437,7 +437,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Resultados (Se muestran las primeras 1000 lineas)"/>
+            <TitledBorder title="Result (Only 1000 lines)"/>
           </Border>
         </Property>
       </Properties>

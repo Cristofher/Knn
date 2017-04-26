@@ -378,7 +378,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Input.setBorder(javax.swing.BorderFactory.createTitledBorder("Entrada de datos"));
+        Input.setBorder(javax.swing.BorderFactory.createTitledBorder("Input"));
 
         jLabel_Archivo_BD.setText("Data Base");
 
@@ -502,7 +502,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados (Se muestran las primeras 1000 lineas)"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result (Only 1000 lines)"));
 
         jTextArea_Vista_Queries.setEditable(false);
         jTextArea_Vista_Queries.setColumns(20);
@@ -1043,7 +1043,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     private void jTextField_DimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_DimKeyTyped
         char c = evt.getKeyChar();
-        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+        if (!Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -1057,7 +1057,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     private void jTextField_TOPKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_TOPKKeyTyped
         char c = evt.getKeyChar();
-        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+        if (!Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -1071,7 +1071,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     private void jTextField_HilosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_HilosKeyTyped
         char c = evt.getKeyChar();
-        if (Character.isLetter(c) || Character.isSpaceChar(c)) {
+        if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
             Object msj = "Solo ingrese Números";

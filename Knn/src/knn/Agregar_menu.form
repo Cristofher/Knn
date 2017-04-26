@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="grupo">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
@@ -36,20 +38,17 @@
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jTextField_archivo" min="-2" pref="188" max="-2" attributes="0"/>
-                          <Component id="Boton_examinar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField_archivo" min="-2" pref="188" max="-2" attributes="0"/>
+                  <Component id="Boton_examinar" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -57,10 +56,18 @@
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="nombre_menú" min="-2" pref="176" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="nombre_menu" min="-2" pref="176" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -77,21 +84,23 @@
                   <Component id="jLabel2" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton2" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="Boton_examinar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombre_menú" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nombre_menu" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField_archivo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="jButton2" min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -159,7 +168,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grupo"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Multihilos"/>
+            <Property name="text" type="java.lang.String" value="Multicore"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRadioButton_Sc">
@@ -167,19 +176,19 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grupo"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Secuencial"/>
+            <Property name="text" type="java.lang.String" value="Sequential"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tipo de men&#xfa;"/>
+        <Property name="text" type="java.lang.String" value="Menu"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Archivo fuente"/>
+        <Property name="text" type="java.lang.String" value="Source code"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField_archivo">
@@ -192,7 +201,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Boton_examinar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Examinar"/>
+        <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Boton_examinarActionPerformed"/>
@@ -200,7 +209,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Compilar &amp; a&#xf1;adir men&#xfa;"/>
+        <Property name="text" type="java.lang.String" value="Compile &amp; Add menu"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -279,25 +288,34 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Archivo fuente"/>
+            <Property name="text" type="java.lang.String" value="Preview source code:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Salida"/>
+            <Property name="text" type="java.lang.String" value="Output:"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="nombre_men&#xfa;">
+    <Component class="javax.swing.JTextField" name="nombre_menu">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombre_men&#xfa;ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombre_menuActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombre_menuKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre men&#xfa;"/>
+        <Property name="text" type="java.lang.String" value="Menu name"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View information about code source"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
