@@ -1,51 +1,16 @@
 \chapter[Estado del Arte]{\label{ch:estado-arte}Estado del Arte}
 
-El paralelimos en computación es una técnica de programación la cual permite que varias intrucciones se puedan ejecutar similtaneamente. Se base en el principio de la división de grandes problemas en varios problemas mas pequeños, que son resueltos de forma concurrente.
-\\
-\section{Tipos de paralelismo}
-Existen diversos tipos de niveles de paralelismo que se describiran a continuación:
-\subsection{Nivel de bit}
-En la decada de 1970 hasta alrededor de 1986, la aceleración en la arquitectura de computadores lo logro aumentar el tamaño de una palabra, reduciendo asi el numero de instrucciones que un procesador debia realizar, de este modo se logro por ejemplo reducir el proceso de instrucciones en un procesador de 8 bits al sumar dos números de 16 bits.
 
-\subsection{Nivel de instrucción}
-Los avances en esta área se realizarón alrededor de 1980 y 1990, donde esto constaba con el reordenamiento y combinación de instrucciones en grupos que luego son ejecutadas en paralelo sin cambiar el resultado del programa. Actualmente los procesadores cuentan con "pipeline" de instrucciones de varias etapas, Cada etapa en el pipeline corresponde a una acción diferente que el procesador realiza en la instrucción correspondiente a la etapa; un procesador con un pipeline de N etapas puede tener hasta n instrucciones diferentes en diferentes etapas de finalización
-\subsection{Datos}
+La regla del vecino más cercano fue originalmente propuesta por Cover y Hart \cite{hart1966asymptotic}, \cite{cover1967nearest} y a lo largo de las investigaciones está siendo utilizada por varios investigadores. Una razón para el uso de esta regla es su simplicidad conceptual, que conduce a la programación directa, si no necesariamente la más eficiente. Este algoritmo utiliza la idea central de la distancia euclidiana entre dos puntos en el espacio, en base a este cálculo se analiza la similud entre todos los puntos existentes.
+En un artículo posterior, Hart \cite{hilborn1968dg} sugirió un medio de disminución de la memoria y los requisitos de computación. Este artículo introduce una técnica, la regla del vecino más cercano reducido, que puede conducir a más ahorros. Los resultados de esta regla se demuestran aplicándola a los datos de $"Iris"$ \cite{freeman1969experiments}.
 
-El paralelismo de datos es el paralelismo inherente en programas con ciclos, de este modo corresponde a la subdivición de los datos de entrada a un programa, de modo que a cada procesador le corresponda un subconjunto de los datos divididos.\\
-Este paradigma es mejor orientado para operaciones con matrices o vectores, debido que se realiza la misma operación sobra cada uno de los elementos.
+El algoritmo k-NN \cite{knn1} \cite{knn2} tiene grandes requisitos de almacenamiento, pero pueden reducir significativamente el trabajo de aprendizaje de otro tipo de técnicas y aumentar la precisión en la clasificación. Uno de los problemas más grandes que presenta este algoritmo es el alto costo de procesamiento y memoria para revolver las consultas.\\
 
-\subsection{Tareas}
+Se aplica ampliamente en el reconocimiento de patrones y en clasificación para minería de datos, debido a su simplicidad y baja tasa de error. Antes de la aparición masiva de plataformas paralelas, la realización por fuerza bruta (exhaustivamente) no se consideraba como una opción válida, especialmente para grandes bases de datos de entrenamiento y espacios de alta densidad. Para reducir el espacio de búsqueda y evitar tantos cálculos de distancia como sea posible, se han propuesto muchos enfoques de indexación. La mayoría de los métodos de recuperación se basan en kd-trees \cite{bentley1979data}. Hay una gran cantidad de trabajo sobre las adaptaciones de la estructura básica kd-tree para el problema k-NN \cite{brisaboa2008clustering} \cite{paredes2009egnat}. También se han propuesto estructuras no-tree que dividen eficientemente el espacio de búsqueda \cite{chavez2000effective} \cite{brisaboa2006similarity} .Las implementaciones basadas en MPI que utilizan estas estructuras también aparecen con mucha frecuencia en la literatura \cite{plaku2007distributed}.\\
+La principal desventaja de estos métodos es que necesitan construir y mantener estructuras de datos complejas para el conjunto de datos de referencia. De manera que, k-NN se implementa típicamente utilizando métodos de fuerza bruta. 
 
-El paralelismo de tareas es la característica de un programa paralelo en la que cálculos completamente diferentes se pueden realizar en cualquier conjunto igual o diferente de datos. Esto contrasta con el paralelismo de datos, donde se realiza el mismo cálculo en distintos o mismos grupos de datos. El paralelismo de tareas por lo general no escala con el tamaño de un problema.
-\\
+Por lo tanto, las soluciones actuales de GPU han sido de alguna manera más simples y menos eficientes desde el punto de vista del algoritmo. Por ejemplo, Benjamin Bustos et al. \cite{bustos2006graphics} propuso una implementación no-CUDA explotar memorias de textura GPU. Su implementación sólo busca el elemento mínimo, lo que simplifica significativamente el problema.
 
-Actualmente la computación paralela ha aumentado su interes debido a las restricciones fisicas, en base a la arquitectura computacional que se han masificados los computadores con procesadores múltinúcleos. Según el hardware que posee el equipo se puede clasificar el nivel de paralelismo que admite, como por ejemplo los computadores multinucleos y multiprocesos permiten realizar varios procesamientos en una misma maquina, mientras que a su vez los clusters, los MPP y los grids emplean varios computadores para trabajar en la misma tarea.
-\\
-En los ultimos años el uso de coprocesadores ha sido un área de basto interes en temas de investigación en el campo de la computación paralela, con el fin de acelerar procesos secuenciales, los cuales pueden ser acelerados con los procesadores propios del equipo o bien con coprocesadores integrados.
+El cálculo de la distancia exhaustiva en conjunción con la clasificación en paralelo se propuso en \cite{garcia2008fast}, \cite{kuang2009practical}. Vecente Garcia et al. \cite{garcia2008fast} propuso un orden de inserción paralelo modificado con el fin de obtener sólo los k elementos más cercanos, mientras que Kuang et al. \cite{kuang2009practical} propuso un mejor Radix-sort para realizar la clasificación final.
 
-\section{Procesadores y Coprocesadores} 
-
-\subsection{Procesadores}
-
-Un multiprocesador es un conjunto de dos o más procesadores los cuales se encuentran a menudo integrados en un solo circuito. Hoy en día los multiprocesadores mas conocidos son dual-core, quad-core, octa-core con dos, cuatro y ocho núcleos respectivamente. Estos multiprocesadores permiten un paralelismo a nivel de hilos (threads) conocido como TLP (thread-level parallelism), aca no se consideran los microprocesadores en paquetes separados.
-\\
-Es posible que se realice un procesamiento simultaneo utilizando dos o más procesadores en un pc, o bien realizando la conección de dos o más pc, este ultimo suele ser mas restrintivo debido a las caracteristicas de cada uno de los pcs conectados, que en algunos casos se realiza la superposición entre ellos.
-
-\subsection{Coprocesadores}
-
-Un coprocesador es un microprocesador de un ordenador utilizado como suplemento de las funciones del procesador principal (la CPU). Las operaciones ejecutadas por uno de estos coprocesadores pueden ser operaciones de aritmética, procesamiento gráfico, de señales, procesado de texto o criptografía, etcétera.
-\\
-Las lineas más famosas de coprocesadores en el ámbito de la investigación son INTEL con su tecnología MIC y NVIDIA GPU con su tecnología CUDA
-
-\subsection{Intel}
-Intel a desarrollado una tecnología propía, orientada a computo intensivo en computación paralela conocido como MIC (Many integrated core) asociados a su familia Xeon, similar a la Nvidia Tesla que forman una arquitectura de alto rendimiento. \\
-Se puede considerar que cada núcleo del co-procesador Xeon Phi es una unidad de ejecución
-multi-hilo completamente funcional. Poseen un rendimiento de hasta 1,2 teraFlops  (operaciones de coma flotante por segundo) por coprocesador para algunas de las aplicaciones más exigentes de hoy día.
-
-\subsection{NVIDIA}
-NVIDIA se ha dedicado a la elaboración de GPUs (Unidades de procesamiento gráfico) los cuales son procesadores de varios núcleos que ofrecen un alto rendimiento, tambien dedicados al procesamiento de graficos o bien operaciones de punto flotante. \\
-NVIDIA ha desarrollado una tecnología de acuerdo a su hardware conocida como CUDA, que cuenta con una plataforma de computación paralela y un modelo de programación. Esta tecnología permite aumentos considerables en el rendimiento computacional al aprovechar la potencia de la GPU.
-
-\section{KNN (k-nearest neighbors)}
-
-Conocido por sus siglas en ingles como KNN (K-nearest neighbors) k vecinos más cercanos, es un método de clasificación de objetos, siendo la clafisicación de objetos un área muy importante en variados campos de investigación y de aplicaciones, como lo son el reconocimiento de patrones, inteligencia artificial, psicología cognitiva, analísis de videos y medicina.  
+Además existe una versión de GPU de Quicksort que fue propuesta por Daniel Cederman y Philippas Tsigas \cite{cederman2009gpu}, que mostró ser más rápido que los algoritmos de clasificación anteriores. Este trabajo se basa en la propuesta que también calcula exhaustivamente todas las distancias, pero utiliza una metodología específica basada en heap para encontrar los k elementos más cercanos, propuesta por Ricardo Barrientos y José Gómez \cite{barrientos2010heap} 

@@ -18,8 +18,8 @@
 \newlabel{sub@cod_gpu_sync-b}{{(b)}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph  {warp}.}}{4}}
 \newlabel{cod_gpu_sync}{{2}{4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Caption Subfigura 1}}}{4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Caption Subfigura 2}}}{4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Subfigura 1}}}{4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Subfigura 2}}}{4}}
 \newlabel{cap:ALGgnat:-b=FAsqueda-por-rango}{{1}{4}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \emph  {EGNAT}: b'usqueda por rango $r$ para la consulta $q$.}}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  Caracter'isticas Generales}}{4}}
@@ -29,42 +29,98 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:intro}{{1}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Objetivos}{1}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Estado del Arte}{2}}
+\citation{libroPthreads}
+\citation{libroTBB}
+\citation{libroOpenMP}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:estado-arte}{{2}{2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Tipos de paralelismo}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Nivel de bit}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Nivel de instrucci\IeC {\'o}n}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Datos}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Tareas}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Procesadores y Coprocesadores}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Procesadores}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Coprocesadores}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Intel}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}NVIDIA}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}KNN (k-nearest neighbors)}{5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Marco Te\IeC {\'o}rico}{6}}
+\newlabel{ch:marco-teorico}{{2}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Sistemas Multi-core y OpenMP}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Threads}{2}}
+\citation{xeonphi1}
+\citation{wange2014}
+\citation{xeonphila}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Coprocesadores}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Intel Xeon Phi}{3}}
+\citation{cuda}
+\newlabel{estructuraxeon}{{2.2.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}}
+\newlabel{estructuraxeon2}{{2.2.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}NVIDIA GPU}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplo de suma de vectores con CUDA.}}{9}}
+\newlabel{ejemplo_gpu_suma}{{2.3}{9}}
+\newlabel{cod_gpu_sync-a}{{2.4(a)}{10}}
+\newlabel{sub@cod_gpu_sync-a}{{(a)}{10}}
+\newlabel{cod_gpu_sync-b}{{2.4(b)}{10}}
+\newlabel{sub@cod_gpu_sync-b}{{(b)}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph  {warp}.}}{10}}
+\newlabel{cod_gpu_sync}{{2.4}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Caption Subfigura 1}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Caption Subfigura 2}}}{10}}
+\citation{hart1966asymptotic}
+\citation{cover1967nearest}
+\citation{hilborn1968dg}
+\citation{freeman1969experiments}
+\citation{knn1}
+\citation{knn2}
+\citation{bentley1979data}
+\citation{brisaboa2008clustering}
+\citation{paredes2009egnat}
+\citation{chavez2000effective}
+\citation{brisaboa2006similarity}
+\citation{plaku2007distributed}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Estado del Arte}{11}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:marco-teorico}{{3}{6}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Desarrollo}{7}}
+\newlabel{ch:estado-arte}{{3}{11}}
+\citation{bustos2006graphics}
+\citation{garcia2008fast}
+\citation{kuang2009practical}
+\citation{garcia2008fast}
+\citation{kuang2009practical}
+\citation{cederman2009gpu}
+\citation{barrientos2010heap}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Desarrollo}{13}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:desarrollo}{{4}{7}}
-\newlabel{sec:des-intro}{{4.1}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{7}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Experimentos}{8}}
+\newlabel{ch:desarrollo}{{4}{13}}
+\newlabel{sec:des-intro}{{4.1}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{13}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Experimentos}{14}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:experimentos}{{5}{8}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusiones}{9}}
+\newlabel{ch:experimentos}{{5}{14}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusiones}{15}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusiones}{{6}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Trabajos Futuros}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Contribuciones de la Tesis}{9}}
+\newlabel{ch:conclusiones}{{6}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Trabajos Futuros}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Contribuciones de la Tesis}{15}}
 \bibstyle{alpha}
 \bibdata{biblio}
+\bibcite{knn1}{AKA91}
+\bibcite{bustos2006graphics}{BDHK06}
+\bibcite{bentley1979data}{BF79}
+\bibcite{brisaboa2006similarity}{BFPR06}
+\bibcite{barrientos2010heap}{BGTP10}
+\bibcite{brisaboa2008clustering}{BPS{$^{+}$}08}
+\bibcite{cover1967nearest}{CH67a}
+\bibcite{knn2}{CH67b}
 \bibcite{libroOpenMP}{CJvdP07}
+\bibcite{chavez2000effective}{CN00}
+\bibcite{cederman2009gpu}{CT09}
+\bibcite{cuda}{cud}
+\bibcite{freeman1969experiments}{Fre69}
+\bibcite{garcia2008fast}{GDB08}
+\bibcite{hart1966asymptotic}{Har66}
+\bibcite{hilborn1968dg}{HIL68}
+\bibcite{kuang2009practical}{KZ09}
+\bibcite{xeonphila}{LA17}
 \bibcite{libroPthreads}{NBF96}
+\bibcite{plaku2007distributed}{PK07}
+\bibcite{paredes2009egnat}{PN09}
+\bibcite{libroTBB}{Rei07}
+\bibcite{wange2014}{Wan14}
+\bibcite{xeonphi1}{xeo}

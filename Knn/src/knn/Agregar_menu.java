@@ -21,6 +21,7 @@ public class Agregar_menu extends javax.swing.JFrame {
 
     public Agregar_menu() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -286,14 +287,23 @@ public class Agregar_menu extends javax.swing.JFrame {
             String seleccion = getSelectedButtonText(grupo);
             chequear(seleccion);
             if ("Secuencial".equals(seleccion)) {
+
+            }
+            if ("Multicore".equals(seleccion)) {
                 try {
                     String path;
-                    path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/Knn_secuencial.out" + " " + ruta_fuente;
+                    String Snombre_menu = nombre_menu.getText();
+                    String path_base = "/usr/lib/knn/Knn/Ejecutable/";
+                    String path_base_gpu = "/usr/lib/knn/Knn/Ejecutable/base_multihilos.c";
+                    String path_ejecutable = "/usr/lib/knn/Knn/Ejecutable/unir_multihilos.out";
+                    String path_fuente = jTextField_archivo.getText();
+                    path = path_ejecutable + " " + path_base_gpu + " " + path_fuente + " " + path_base + Snombre_menu + ".c";
+                    System.out.println(path);
                     Process p = Runtime.getRuntime().exec(path);
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(p.getInputStream()));
                     String line;
-                    String texto = "algo";
+                    String texto = "";
                     System.out.println("Corriendo");
                     while ((line = in.readLine()) != null) {
                         texto = salida.getText() + "\n";
@@ -310,16 +320,40 @@ public class Agregar_menu extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
                 }
             }
-            if ("Multihilos".equals(seleccion)) {
-                System.out.println("2");
-            }
 
             if ("Xeon Phi".equals(seleccion)) {
-                System.out.println("3");
+                                try {
+                    String path;
+                    String Snombre_menu = nombre_menu.getText();
+                    String path_base = "/usr/lib/knn/Knn/Ejecutable/";
+                    String path_base_gpu = "/usr/lib/knn/Knn/Ejecutable/base_mic.c";
+                    String path_ejecutable = "/usr/lib/knn/Knn/Ejecutable/unir_mic.out";
+                    String path_fuente = jTextField_archivo.getText();
+                    path = path_ejecutable + " " + path_base_gpu + " " + path_fuente + " " + path_base + Snombre_menu + ".c";
+                    System.out.println(path);
+                    Process p = Runtime.getRuntime().exec(path);
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(p.getInputStream()));
+                    String line;
+                    String texto = "";
+                    System.out.println("Corriendo");
+                    while ((line = in.readLine()) != null) {
+                        texto = salida.getText() + "\n";
+                        salida.setText(texto + line);
+                        salida.updateUI();
+                    }
+                    p.waitFor();
+                    System.out.println("Termino");
+                    System.out.println(p.exitValue());
+                    if (p.exitValue() == 0) {
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                }
 
             }
             if ("GPU".equals(seleccion)) {
-                System.out.println("4");
                 try {
                     String path;
                     String Snombre_menu = nombre_menu.getText();
@@ -333,7 +367,7 @@ public class Agregar_menu extends javax.swing.JFrame {
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(p.getInputStream()));
                     String line;
-                    String texto = "algo";
+                    String texto = "";
                     System.out.println("Corriendo");
                     while ((line = in.readLine()) != null) {
                         texto = salida.getText() + "\n";

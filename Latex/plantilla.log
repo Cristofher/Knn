@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  21 JAN 2017 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  17 MAY 2017 02:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,6 +1076,22 @@ LaTeX Warning: Unused global option(s):
 (./plantilla.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
+
+
+LaTeX Warning: Label `cod_gpu_sync-a' multiply defined.
+
+
+LaTeX Warning: Label `sub@cod_gpu_sync-a' multiply defined.
+
+
+LaTeX Warning: Label `cod_gpu_sync-b' multiply defined.
+
+
+LaTeX Warning: Label `sub@cod_gpu_sync-b' multiply defined.
+
+
+LaTeX Warning: Label `cod_gpu_sync' multiply defined.
+
 )
 \openout1 = `plantilla.aux'.
 
@@ -1347,17 +1363,15 @@ LaTeX Info: Redefining \% on input line 1.
 
  [5
 
-]
-LaTeX Info: Redefining \. on input line 250.
-LaTeX Info: Redefining \% on input line 250.
- [6] (./plantilla.lof
+] (./plantilla.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lof=\write4
 \openout4 = `plantilla.lof'.
 
- [7
+
+[6
 
 ] (./plantilla.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -1366,101 +1380,268 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write5
 \openout5 = `plantilla.lot'.
 
- [8
+ [7
 
 ] (./plantilla.loa)
 \tf@loa=\write6
 \openout6 = `plantilla.loa'.
 
- [9
+ [8
 
 ] (./introduccion.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
-) (./estado_arte.tex [1
+) (./marco_teorico.tex [1
 
 
 ]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+\T1/ptm/m/n/12 Actualmente las ar-qui-tec-tu-ras de los dis-po-si-ti-vos per-so
+-na-les es-tan di-se-ña-das con
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
 
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
-[2
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-LaTeX Info: Redefining \. on input line 33.
-LaTeX Info: Redefining \% on input line 33.
-[3]
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
- [4]) (./marco_teorico.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [5]
-Cap\'{\i }tulo 3.
-) (./desarrollo.tex [6
+[2
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+<fig/core.png, id=69, 314.17375pt x 553.06625pt>
+File: fig/core.png Graphic file (type png)
+ <use fig/core.png>
+Package pdftex.def Info: fig/core.png used on input line 43.
+(pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
+File: fig/core.png Graphic file (type png)
+
+<use fig/core.png>
+Package pdftex.def Info: fig/core.png used on input line 50.
+(pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 56.
+
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+[4]
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+ [5 <./fig/core.png>]
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 58.
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 64--65
+[]\T1/ptm/m/n/12 Cada nú-cleo cuen-ta con sus pro-pios re-gis-tros y to-dos los
+ nú-cleos del mis-mo
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 66--67
+[]\T1/ptm/b/n/12 Shared me-mory \T1/ptm/m/n/12 es una me-mo-ria que se en-cuen-
+tra pró-xi-ma a los nú-cleos del
+ []
+
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+[6]
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+ [7] <fig/Ejemplo_gpu.png, id=83, 623.32875pt x 817.0525pt>
+File: fig/Ejemplo_gpu.png Graphic file (type png)
+
+<use fig/Ejemplo_gpu.png>
+Package pdftex.def Info: fig/Ejemplo_gpu.png used on input line 121.
+(pdftex.def)             Requested size: 374.00014pt x 490.23529pt.
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+ [8]
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+ [9 <./fig/Ejemplo_gpu.png>]
+Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
+(epstopdf)                    date: 2011-04-11 23:13:34
+(epstopdf)                    size: 3857 bytes
+(epstopdf)             Output file: <fig/cod_gpu_sync-a-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-13 20:06:58
+(epstopdf)                    size: 6579 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-a-eps-con
+verted-to.pdf fig/cod_gpu_sync-a.eps>
+(epstopdf)             \includegraphics on input line 137.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/cod_gpu_sync-a-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/cod_gpu_sync-a-eps-converted-to.pdf>
+Package pdftex.def Info: fig/cod_gpu_sync-a-eps-converted-to.pdf used on input 
+line 137.
+(pdftex.def)             Requested size: 142.27376pt x 113.81174pt.
+Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
+(epstopdf)                    date: 2011-04-11 23:17:44
+(epstopdf)                    size: 3844 bytes
+(epstopdf)             Output file: <fig/cod_gpu_sync-b-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-13 20:06:58
+(epstopdf)                    size: 7190 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-b-eps-con
+verted-to.pdf fig/cod_gpu_sync-b.eps>
+(epstopdf)             \includegraphics on input line 141.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/cod_gpu_sync-b-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig/cod_gpu_sync-b-eps-converted-to.pdf>
+Package pdftex.def Info: fig/cod_gpu_sync-b-eps-converted-to.pdf used on input 
+line 141.
+(pdftex.def)             Requested size: 142.26378pt x 130.18513pt.
+) (./estado_arte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [10]
+Cap\'{\i }tulo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+[11
+
+]) (./desarrollo.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [12]
 Cap\'{\i }tulo 4.
-) (./experimentos.tex [7
+) (./experimentos.tex [13
 
 ]
 Cap\'{\i }tulo 5.
-) (./conclusiones.tex [8
+) (./conclusiones.tex [14
 
 ]
 Cap\'{\i }tulo 6.
-) [9
+) [15
 
-] (./plantilla.bbl
-Underfull \hbox (badness 2644) in paragraph at lines 9--13
+] (./plantilla.bbl [16
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 72.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+
+Underfull \hbox (badness 1430) in paragraph at lines 96--100
+\T1/ptm/m/it/12 In-ter-na-tio-nal sym-po-sium on com-pu-ter scien-ce and compu-
+tatio-nal tech-no-logy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+[]\T1/ptm/m/n/12 Intel LA.  Pro-ce-sa-do-res intel[] xeon phi$[]$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+\T1/ptm/m/n/12 urlhttps://www.intel.la/content/www/xl/es/products/processors/xe
+on-phi/xeon-
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 109--113
 []\T1/ptm/m/n/12 Bradford Ni-chols, Dick Buttlar, and Jac-que-li-ne Proulx Fa-r
 rell.  \T1/ptm/m/it/12 Pth-reads
  []
 
-) [10
-
-
-] (./plantilla.aux
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+[17])
+LaTeX Info: Redefining \. on input line 284.
+LaTeX Info: Redefining \% on input line 284.
+ [18] (./plantilla.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
-) )
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 47 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14386 strings out of 493029
- 250372 string characters out of 6136233
- 297036 words of memory out of 5000000
- 17690 multiletter control sequences out of 15000+600000
- 61822 words of font info for 70 fonts, out of 8000000 for 9000
+ 14456 strings out of 493029
+ 251499 string characters out of 6136233
+ 297301 words of memory out of 5000000
+ 17753 multiletter control sequences out of 15000+600000
+ 64801 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,7n,42p,10403b,1768s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/us
-r/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/t
-exmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
+f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on plantilla.pdf (19 pages, 141851 bytes).
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on plantilla.pdf (26 pages, 298420 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 176 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

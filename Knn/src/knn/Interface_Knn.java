@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -64,6 +63,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     boolean flag_GPU = false;
 
     public Interface_Knn() throws IOException {
+        setLocationRelativeTo(null);
         initComponents();
         Ruta_Queries = null;
         Ruta_DB = null;
@@ -97,6 +97,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextArea_Vista_Queries.setVisible(false);
         jTextField_Archivo_BD.setVisible(false);
         jTextField_Archivo_Queries.setVisible(false);
+        jCheck.setVisible(false);
 
         //INICIO Lectura de archivos secuenciales
         String cadena;
@@ -236,10 +237,16 @@ public class Interface_Knn extends javax.swing.JFrame {
             jMenu_GPU.add(menus_GPU[i]);
         }
         b.close();
+        
+                String procesadores;
+        FileReader numProce = new FileReader("/usr/lib/knn/Knn/Procesadores.dat");
+        b = new BufferedReader(numProce);
+        procesadores = b.readLine();
+        b.close();
 
         //FIN Lectura de archivos Nvidia GPU
-        //String procesadores = rutas[0];
-        //Nucleo.setText(procesadores);
+
+        Nucleo.setText(procesadores);
         jTextField_Hilos.setText(Nucleo.getText());
         setTitle("Knn: Finder nearest neighbor");
         setResizable(false);
@@ -278,6 +285,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextField_Dim = new javax.swing.JTextField();
         jTextField_TOPK = new javax.swing.JTextField();
         jLabel_TOPK = new javax.swing.JLabel();
+        jCheck = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_Vista_Queries = new javax.swing.JTextArea();
@@ -321,11 +329,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jRadioButton_Xp.setText("Xeon Phi");
 
         jRadioButton_Gp.setText("GPU");
-        jRadioButton_Gp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_GpActionPerformed(evt);
-            }
-        });
 
         jRadioButton_Mh.setText("Multihilos");
 
@@ -387,11 +390,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         jLabel_Hilos.setText("Threads");
 
         jTextField_Archivo_BD.setEditable(false);
-        jTextField_Archivo_BD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_Archivo_BDActionPerformed(evt);
-            }
-        });
+
 
         jTextField_Archivo_Queries.setEditable(false);
 
@@ -439,11 +438,13 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_TOPK.setText("K");
 
+        jCheck.setText("Profiler mode");
+
         javax.swing.GroupLayout InputLayout = new javax.swing.GroupLayout(Input);
         Input.setLayout(InputLayout);
         InputLayout.setHorizontalGroup(
             InputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InputLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InputLayout.createSequentialGroup()
                 .addGroup(InputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InputLayout.createSequentialGroup()
                         .addContainerGap()
@@ -475,7 +476,9 @@ public class Interface_Knn extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_Procesar_Consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(InputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheck)
+                    .addComponent(jButton_Procesar_Consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         InputLayout.setVerticalGroup(
@@ -499,7 +502,8 @@ public class Interface_Knn extends javax.swing.JFrame {
                     .addComponent(jTextField_Archivo_BD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(9, 9, 9)
+                .addComponent(jCheck))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Result (Only 1000 lines)"));
@@ -607,16 +611,12 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel5.setText("cores");
 
-        jMenu_File.setText("Archivo");
+        jMenu_File.setText("File");
 
-        JMenu_Nuevo.setText("Nuevo");
+        JMenu_Nuevo.setText("New");
 
         jMenu_Secuencial.setText("Secuencial");
-        jMenu_Secuencial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_SecuencialActionPerformed(evt);
-            }
-        });
+
         JMenu_Nuevo.add(jMenu_Secuencial);
 
         jMenu_Multihilos.setText("Multihilos");
@@ -630,12 +630,8 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jMenu_File.add(JMenu_Nuevo);
 
-        jMenuItem_Salir.setText("Salir");
-        jMenuItem_Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_SalirActionPerformed(evt);
-            }
-        });
+        jMenuItem_Salir.setText("Exit");
+
         jMenu_File.add(jMenuItem_Salir);
 
         Menu_Principal.add(jMenu_File);
@@ -643,11 +639,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         Anadir_menu.setText("Menus");
 
         jMenuItem1.setText("Add menus");
-        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                agregar_menu(evt);
-            }
-        });
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -698,8 +689,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Input.getAccessibleContext().setAccessibleName("Input");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -743,6 +732,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel2.setVisible(true);
             jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
+            jCheck.setVisible(true);
 
         }
     }
@@ -788,6 +778,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel2.setVisible(true);
             jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
+            jCheck.setVisible(false);
         }
     }
 
@@ -831,6 +822,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel2.setVisible(true);
             jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
+            jCheck.setVisible(false);
         }
     }
 
@@ -874,9 +866,9 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel2.setVisible(true);
             jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
+            jCheck.setVisible(false);
         }
     }
-
 
     private void jButton_Examinar_BDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Examinar_BDActionPerformed
         JFileChooser explorador = new JFileChooser();
@@ -976,12 +968,34 @@ public class Interface_Knn extends javax.swing.JFrame {
                     }
                 }
             }
-            if (flag_Multihilos == true) {
+            if (flag_Multihilos == true && !jCheck.isSelected()) {
                 flag_GPU = false;
                 flag_Secuencial = false;
                 flag_Xenon_Phi = false;
                 int i = 0;
                 chequear_Multihilos(i);
+
+                if (Ejecutable_Multihilos != null) {
+                    try {
+                        TOPK = jTextField_TOPK.getText();
+                        DIM = jTextField_Dim.getText();
+                        Num_threads = jTextField_Hilos.getText();
+                        String path;
+                        path = "/usr/lib/knn/Knn/Multihilos/Fuentes/" + Ejecutable_Multihilos + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM;
+                        Process p = Runtime.getRuntime().exec(path);
+                        muestraContenidoResultados(p);
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                    }
+                }
+            }
+                        if (flag_Multihilos == true && jCheck.isSelected()) {
+                flag_GPU = false;
+                flag_Secuencial = false;
+                flag_Xenon_Phi = false;
+                int i = 0;
+                chequear_Multihilos(i);
+                Ejecutable_Multihilos = "multihilos_papic.out";
 
                 if (Ejecutable_Multihilos != null) {
                     try {
@@ -1045,13 +1059,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
-
             evt.consume();
-            Object msj = "Solo ingrese Números";
-            JOptionPane.showMessageDialog(null,
-                    msj,
-                    "Advertencia",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jTextField_DimKeyTyped
 
@@ -1059,13 +1067,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
-
             evt.consume();
-            Object msj = "Solo ingrese Números";
-            JOptionPane.showMessageDialog(null,
-                    msj,
-                    "Advertencia",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jTextField_TOPKKeyTyped
 
@@ -1074,24 +1076,13 @@ public class Interface_Knn extends javax.swing.JFrame {
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
-            Object msj = "Solo ingrese Números";
-            JOptionPane.showMessageDialog(null,
-                    msj,
-                    "Advertencia",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jTextField_HilosKeyTyped
-
-    private void agregar_menu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_menu
-    }//GEN-LAST:event_agregar_menu
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         new Agregar_menu().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jRadioButton_GpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_GpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_GpActionPerformed
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
         jTextArea_Vista_DB.setText(" ");
@@ -1143,6 +1134,10 @@ public class Interface_Knn extends javax.swing.JFrame {
             }
             if (p.exitValue() == 0) {
                 JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                //Se abre la ventana de resultados
+                Resultados nuevo = new Resultados();
+                nuevo.setVisible(true);
+                nuevo.cadena1="HOLA";
             }
         }
     }
@@ -1321,6 +1316,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Exportar_PDF;
     private javax.swing.JButton jButton_Exportar_PDF1;
     private javax.swing.JButton jButton_Procesar_Consultas;
+    private javax.swing.JCheckBox jCheck;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

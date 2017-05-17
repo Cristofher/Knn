@@ -1,10 +1,16 @@
 \select@language {spanish}
 \contentsline {figure}{\numberline {1}{\ignorespaces Plataforma multi-core.}}{3}
 \contentsline {figure}{\numberline {2}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caption Subfigura 1}}}{4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Caption Subfigura 2}}}{4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Subfigura 1}}}{4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Subfigura 2}}}{4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplo de suma de vectores con CUDA.}}{9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caption Subfigura 1}}}{10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Caption Subfigura 2}}}{10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

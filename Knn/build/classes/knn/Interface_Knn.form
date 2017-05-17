@@ -127,12 +127,12 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu_File">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Archivo"/>
+            <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="JMenu_Nuevo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo"/>
+                <Property name="text" type="java.lang.String" value="New"/>
               </Properties>
               <SubComponents>
                 <Menu class="javax.swing.JMenu" name="jMenu_Secuencial">
@@ -162,7 +162,7 @@
             </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Salir">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Salir"/>
+                <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem_SalirActionPerformed"/>
@@ -267,14 +267,11 @@
           </Border>
         </Property>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Input"/>
-      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -315,7 +312,10 @@
                       <Component id="jSeparator1" pref="757" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton_Procesar_Consultas" min="-2" pref="170" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jCheck" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton_Procesar_Consultas" min="-2" pref="170" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -343,7 +343,8 @@
                   </Group>
                   <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="0" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Component id="jCheck" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -429,6 +430,11 @@
         <Component class="javax.swing.JLabel" name="jLabel_TOPK">
           <Properties>
             <Property name="text" type="java.lang.String" value="K"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheck">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Profiler mode"/>
           </Properties>
         </Component>
       </SubComponents>

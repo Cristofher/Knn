@@ -3,34 +3,34 @@
 
 int return_major(cudaDeviceProp devProp)
 {
-    return devProp.major;
+	return devProp.major;
 }
 int return_minor(cudaDeviceProp devProp)
 {
-    return devProp.minor;
+	return devProp.minor;
 }
 int major, minor;
 int main(int argc, char *argv[])
 {
 
-	 int devCount;
-    cudaGetDeviceCount(&devCount);
+	int devCount;
+	cudaGetDeviceCount(&devCount);
 
 
     // Iterate through devices
-    for (int i = 0; i < devCount; ++i)
-    {
+	for (int i = 0; i < devCount; ++i)
+	{
         // Get device properties
-        cudaDeviceProp devProp;
-        cudaGetDeviceProperties(&devProp, i);
-        printDevProp(devProp);
+		cudaDeviceProp devProp;
+		cudaGetDeviceProperties(&devProp, i);
+		printDevProp(devProp);
 
-        major = return_major(devProp);
-        minor = return_minor(devProp);
+		major = return_major(devProp);
+		minor = return_minor(devProp);
 
-    }
+	}
 
-	if (argc != 4) {
+	if (argc != 5) {
 		printf("\nError :: Ejecutar como : salida.out file1 file2 file3\n");
 		return 0;
 	}
@@ -41,7 +41,18 @@ int main(int argc, char *argv[])
 	char file1[200], file2[200], file3[200];
 	char cadena[1000],cad[1000];
 	temp = tmpfile();
+	char ruta_fuentes[256] = "usr/lib/knn/Knn/Gpu/Fuentes/";
+	char ruta_menu[256] = "usr/lib/knn/Knn/Gpu/Menus/";
+	char archivo_nuevo[256];
+	char palabra[1000] = "->Funcion<-";
+	char argumentos[1000] = "<<< N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);";
+	char llamada_funcion[256];
+	strcpy(llamada_funcion,"Batch_Heap_Reduction<<< N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);");
+	char cade[256];
 
+
+	sprintf(archivo_nuevo,"%s%s",ruta_fuentes,argv[3]);
+	printf("Ubicacion %s\n",archivo_nuevo );
 
 
 	sprintf(file1, "%s", argv[1]);
@@ -56,19 +67,14 @@ int main(int argc, char *argv[])
 	q = fopen(file2, "r+");
 	printf("OK\n");
 
-	sprintf(file3, "%s", argv[3]);
+
+	sprintf(file3, "%s", archivo_nuevo);
 	printf("\nCreando %s... ", argv[3]);
 	fflush(stdout);
 	r = fopen(file3, "w");
 	printf("OK\n");
 
 	fflush(stdout);
-
-	char palabra[1000] = "->Funcion<-";
-	char argumentos[1000] = "<<< N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);";
-	char llamada_funcion[256];
-	strcpy(llamada_funcion,"Batch_Heap_Reduction<<< N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);");
-	char cade[256];
 
 	while(!feof(p))
 	{
@@ -181,13 +187,24 @@ int main(int argc, char *argv[])
 	fclose(temp);
 	fclose(r);
 
-	int existe = existsFile(argv[3]);
+	int existe = existsFile(archivo_nuevo);
 	if (existe == 1){
+		char comando[256];
+		sprintf(comando,"ls %s",ruta_fuentes);
+		system(comando);
 		char programa[500];
 		sprintf(programa, "nvcc %s -arch=sm_%d,%d -o %s", argv[3],major,minor,argv[4]);
-		printf("%s\n",programa );
-
+		printf("%s\n",programa);
 		system(programa);
+		int executable = existsFile(argv[4]);
+		if (executable){
+			char fuentes[256];
+			char menus[256]
+			sprintf(fuentes,"echo \"%s\" >> %sfuentes.dat",argv[5],ruta_fuentes);
+			sprintf(fuentes,"echo \"%s\" >> %snombres.dat",argv[5],ruta_fuentes);
+			system();
+		}
+		
 	}else{
 		printf("ERROR\n");
 	}

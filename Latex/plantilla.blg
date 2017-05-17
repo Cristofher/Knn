@@ -3,44 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: plantilla.aux
 The style file: alpha.bst
 Database file #1: biblio.bib
-You've used 2 entries,
+Warning--to sort, need author, organization, or key in xeonphi1
+Warning--to sort, need author or key in cuda
+Warning--empty author in cuda
+Warning--empty year in cuda
+You've used 24 entries,
             2543 wiz_defined-function locations,
-            570 strings with 4760 characters,
-and the built_in function-call counts, 760 in all, are:
-= -- 64
-> -- 50
-< -- 0
-+ -- 18
-- -- 18
-* -- 52
-:= -- 144
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 12
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 30
-empty$ -- 51
-format.name$ -- 20
-if$ -- 146
-int.to.chr$ -- 1
+            688 strings with 8237 characters,
+and the built_in function-call counts, 9868 in all, are:
+= -- 1007
+> -- 430
+< -- 14
++ -- 150
+- -- 145
+* -- 663
+:= -- 1558
+add.period$ -- 76
+call.type$ -- 24
+change.case$ -- 143
+chr.to.int$ -- 23
+cite$ -- 30
+duplicate$ -- 426
+empty$ -- 758
+format.name$ -- 172
+if$ -- 2083
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 13
-num.names$ -- 6
-pop$ -- 20
+missing$ -- 25
+newline$ -- 121
+num.names$ -- 66
+pop$ -- 171
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 171
 quote$ -- 0
-skip$ -- 22
+skip$ -- 348
 stack$ -- 0
-substring$ -- 14
-swap$ -- 2
-text.length$ -- 0
-text.prefix$ -- 0
+substring$ -- 533
+swap$ -- 96
+text.length$ -- 14
+text.prefix$ -- 6
 top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 6
-width$ -- 4
-write$ -- 26
+type$ -- 176
+warning$ -- 4
+while$ -- 97
+width$ -- 29
+write$ -- 306
+(There were 4 warnings)

@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		{
 			if (strcmp(cadena,palabra)==10)
 			{
-				printf("Entro\n");
+				//printf("Entro\n");
 				while(!feof(q))
 				{
 					fscanf(q, "%c", &c);
@@ -66,7 +66,29 @@ int main(int argc, char *argv[])
 	fclose(q);
 	fclose(r);
 
+	int existe = existsFile(argv[3]);
+	if (existe == 1){
+		char programa[500];
+		sprintf(programa, "gcc %s -o %s", argv[3],argv[4]);
+		printf("%s\n",programa );
+
+		system(programa);
+	}else{
+		printf("ERROR\n");
+	}
+
 	
 
 	return 0; 
+}
+
+int existsFile(char* filename) {
+	FILE* f = NULL;
+	f = fopen(filename,"r");
+	if (f == NULL) 
+		return 0;
+	else {
+		fclose(f);
+		return 1;
+	}
 }

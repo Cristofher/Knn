@@ -1,0 +1,286 @@
+\documentclass[headings=optiontohead,12pt,letterpaper,oneside,spanish]{book}
+\usepackage[spanish, activeacute]{babel}% Utilizamos el paquete para utilizar espa\~nol
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}%Esto evita los problemas derivados al hacer dvipdf con el paquete '[T1]{fontenc}'. The Debian package that includes this fonts should be installed and its name is lmodern.deb
+
+\usepackage{graphicx}% Utilizamos el paquete para gestionar imagenes jpg
+\usepackage{amsmath}
+\usepackage{amssymb}%Para simbolos matematicos como el \\mathbb{R}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=2.5cm,bmargin=2cm,lmargin=3.5cm,rmargin=2cm}
+%\pagestyle{plain}
+
+%Para usar Times New Roman
+\usepackage{times}
+
+%%%%%%%%%%%%%%%%%%%%%% Esto es para que la cabecera no quede con todas las letras en mayusculas %%%%%
+\usepackage{regexpatch}% http://ctan.org/pkg/regexpatch
+\makeatletter
+% \*patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+\xpatchcmd{\chaptermark}{\MakeUppercase}{}{}{}%
+%\xpatchcmd{\sectionmark}{\MakeUppercase}{}{}{}%
+%\xpatchcmd*{\tableofcontents}{\MakeUppercase}{}{}{}%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+\usepackage{longtable}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{listings}%para escribir codigo C
+\usepackage{subfigure}%para figuras una al lado de otras
+
+\makeatletter
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Para atenuar el corte de palabras
+\sloppy 
+\hyphenpenalty=10000
+
+%Interlineado en 1.5
+\usepackage{setspace}
+\spacing{1.5}
+
+
+%Esto es para que se coloque la palabra 'Algoritmo' en vez de 'Algorithm'
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algoritmo}
+
+
+
+
+\begin{document}
+
+%Los 2 comando de a continuacion cambian el nombre 
+%"Cuadro" por "Tabla"
+\renewcommand{\listtablename}{'Indice de tablas}
+\renewcommand{\tablename}{Tabla}
+
+\thispagestyle{empty}
+
+%\begin{flushleft}
+\textbf{
+\small{
+\hspace{-0.2cm}UNIVERSIDAD CATÓLICA DEL MAULE  \\
+Facultad de Ciencias de la Ingeniería  \hfill  Profesor Guía\hspace{-0.1cm}\\
+Escuela de Ingeniería Civil Informática \hfill  Nombre\_profesor\_Guía\\
+}
+}
+\vspace{5cm}
+\begin{center}
+		{\bf {\normalsize TÍTULO DE LA TESIS}}\\
+\vspace{1cm}
+        {\bf {\normalsize NOMBRE(S) ALUMNO(S) TESISTA(S)}}\\
+\vspace{1cm}
+        {\normalsize Tesis  para optar al}\\
+        {\normalsize Título Profesional de Ingeniero Civil Informático}
+%\end{flushleft}
+\vfill
+\textbf{Talca, MES 20XX}
+\end{center}
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{
+    UNIVERSIDAD CATÓLICA DEL MAULE\\
+    FACULTAD DE xCIENCIAS DE LA INGENIERÍA\\
+    ESCUELA DE INGENIERÍA CIVIL INFORMÁTICA\\
+}
+\vspace{1.5cm}
+
+TESIS PARA OPTAR AL\\
+TÍTULO PROFESIONAL DE INGENIERO CIVIL INFORMÁTICO\\
+
+\vspace{1.2cm}
+
+``TÍTULO DE LA TESIS''\\
+NOMBRE(S) ALUMNO(S) TESISTA(S)\\
+
+\end{center}
+
+\vspace{0.5cm}
+
+%\begin{tabular}{l}
+    \textbf{COMISIÓN EXAMINADORA \hfill FIRMA}\hspace*{2cm}\\
+%\vspace{0.5cm}
+
+    PROFESOR GUÍA \hfill \\
+    NOMBRE\_PROFESOR\_GUÍA \hfill \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+%\vspace{0.5cm}
+
+    PROFESOR COMISIÓN \hfill \\
+    NOMBRE\_PROFESOR\_COMISIÓN \hfill \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+%\vspace{0.5cm}
+
+    PROFESOR COMISIÓN \hfill \\
+    NOMBRE\_PROFESOR\_COMISIÓN \hfill \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+%\vspace{0.8cm}
+
+    NOTA FINAL EXAMEN DE TÍTULO\hfill \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+%\end{tabular}
+
+\vfill
+
+\begin{center}
+\textbf{TALCA, MES DE 20XX}
+\end{center}
+
+
+
+
+\newpage
+
+%\thispagestyle{empty}
+
+%%%%%    Dedicatoria (Opcional)     %%%%%%%%%%
+%\vspace{5cm}
+%\begin{flushright}\textbf{\Large A Persona-1 y Persona-2}\end{flushright}
+
+
+
+%%%%    Capítulo de Agradecimiento (Opcional)   %%%%%%
+%\chapter{Agradecimientos}
+%TEXTO
+%\begin{flushright}\emph{Autor}, Fecha.\end{flushright}
+
+
+
+\chapter*{Sumario}
+
+resumen trabajo.... (máximo 3 páginas)\\
+
+A continuación algunos ejemplos de figuras, referencia, cita, tabla y algoritmo:\\
+
+\begin{figure}
+\begin{center}
+   \includegraphics[scale=0.5]{fig/plataforma.eps}
+\end{center}
+\caption{\label{fig:plataforma}Plataforma multi-core.}
+\end{figure}
+
+
+Una referencia a la Figura \ref{fig:plataforma} y a las subfiguras \ref{cod_gpu_sync-a} y \ref{cod_gpu_sync-b}.
+Una cita a libro de Pthreads \cite{libroPthreads}
+y OpenMP (\cite{libroOpenMP}).
+
+\begin{figure}
+\begin{center}
+\subfigure[Subfigura 1]{
+	\includegraphics[width=3.5cm,height=4cm]{fig/cod_gpu_sync-a.eps}
+    \label{cod_gpu_sync-a}
+}~~~~~~~~~~~~
+\subfigure[Subfigura 2]{
+	\includegraphics[width=3.5cm]{fig/cod_gpu_sync-b.eps}
+    \label{cod_gpu_sync-b}
+}
+\caption{\label{cod_gpu_sync}Ejemplos para ilustrar la sincronizaci'on
+de los threads de un \emph{warp}.}
+\end{center}
+\end{figure}
+%Los caracteres '~' sirven para controlar el espacio entre las figuras. Si están presentes entonces las figuras quedarán una al lado de la otra obligatoriamente.
+
+
+
+\begin{algorithm}
+busquedarango(Nodo \emph{P}, Consulta \emph{q}, Rango \emph{r})
+\footnotesize{
+\begin{algorithmic}[1]
+\STATE \COMMENT{Sea R el conjunto resultado}
+\STATE $R \leftarrow \emptyset$
+\STATE $d \leftarrow dist(p_0,q)$
+\IF{$d<=r$}
+\STATE se reporta $p_0$
+\ENDIF
+\STATE $range(p_0,q)\leftarrow [d-r,d+r]$
+\FORALL {$ x \in P$}
+\IF{$range(p_0,q) \cap range(p_0,D_{p_x}) \neq \emptyset$}
+\STATE se agrega $x$ a $R$
+\IF{$dist(x,q)<=r$}
+\STATE se reporta $x$
+\ENDIF
+\ENDIF
+\ENDFOR
+\FORALL {$ p_i \in R$}
+\STATE busquedarango($D_{p_i}$,q,r)
+\ENDFOR
+
+\end{algorithmic}
+}
+\caption{\emph{\label{cap:ALGgnat:-b=FAsqueda-por-rango}EGNAT}: b'usqueda por
+rango $r$ para la consulta $q$.}
+\end{algorithm}
+
+
+   \begin{table}
+\begin{center} 
+   \caption{\label{tabla_hardware} Caracter'isticas Generales}
+   \begin{tabular}{|c|c|}
+\hline
+   Processor& 2xIntel Quad-Xeon (2.66 GHz)\\
+   \hline
+   L1 Cache&8x32KB + 8x32KB (inst.+data)\\
+   &8-way associative, 64byte per line\\
+   \hline
+   L2 Unifed Cache&4x4MB (4MB shared per 2 procs)\\
+   &16-way associative, 64 byte per line\\
+   \hline
+   Memory&16GBytes\\
+   & (4x4GB) 667MHz DIMM memory\\
+   & 1333 MHz system bus\\
+   \hline
+   Operating System&GNU Debian System Linux\\
+   &kernel 2.6.22-SMP for 64 bits\\
+   \hline
+   \end{tabular}
+\end{center}
+   \end{table}
+
+
+
+\tableofcontents{}
+
+\listoffigures
+
+\listoftables
+
+\listof{algorithm}{\'Indice de Algoritmos}
+
+\mainmatter
+
+
+%%%  CAPÍTULOS  %%%
+\input{introduccion}
+\input{marco_teorico}
+\input{estado_arte}
+\input{desarrollo}
+\input{experimentos}
+\input{conclusiones}
+
+
+
+%%% Apendices Opcionales  %%%%
+%\appendixpage
+%\begin{appendices}
+%\input{anexo-1}
+%\input{anexo-2}
+%\end{appendices}
+
+
+
+
+\backmatter
+
+\bibliographystyle{alpha}
+\bibliography{biblio}
+
+\end{document}
+
+

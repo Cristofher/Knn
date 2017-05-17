@@ -1,14 +1,144 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{CJvdP07}
+
+\bibitem[AKA91]{knn1}
+David~W Aha, Dennis Kibler, and Marc~K Albert.
+\newblock Instance-based learning algorithms.
+\newblock {\em Machine learning}, 6(1):37--66, 1991.
+
+\bibitem[BDHK06]{bustos2006graphics}
+Benjamin Bustos, Oliver Deussen, Stefan Hiller, and Daniel Keim.
+\newblock A graphics hardware accelerated algorithm for nearest neighbor
+  search.
+\newblock In {\em International Conference on Computational Science}, pages
+  196--199. Springer, 2006.
+
+\bibitem[BF79]{bentley1979data}
+Jon~Louis Bentley and Jerome~H Friedman.
+\newblock Data structures for range searching.
+\newblock {\em ACM Computing Surveys (CSUR)}, 11(4):397--409, 1979.
+
+\bibitem[BFPR06]{brisaboa2006similarity}
+Nieves~R Brisaboa, Antonio Farina, Oscar Pedreira, and Nora Reyes.
+\newblock Similarity search using sparse pivots for efficient multimedia
+  information retrieval.
+\newblock In {\em Multimedia, 2006. ISM'06. Eighth IEEE International Symposium
+  on}, pages 881--888. IEEE, 2006.
+
+\bibitem[BGTP10]{barrientos2010heap}
+RJ~Barrientos, JI~G{\'o}mez, C~Tenllado, and M~Prieto.
+\newblock Heap based k-nearest neighbor search on gpus.
+\newblock In {\em Congreso Espanol de Inform{\'a}tica (CEDI)}, pages 559--566,
+  2010.
+
+\bibitem[BPS{\etalchar{+}}08]{brisaboa2008clustering}
+Nieves Brisaboa, Oscar Pedreira, Diego Seco, Roberto Solar, and Roberto Uribe.
+\newblock Clustering-based similarity search in metric spaces with sparse
+  spatial centers.
+\newblock In {\em International Conference on Current Trends in Theory and
+  Practice of Computer Science}, pages 186--197. Springer, 2008.
+
+\bibitem[CH67a]{cover1967nearest}
+Thomas Cover and Peter Hart.
+\newblock Nearest neighbor pattern classification.
+\newblock {\em IEEE transactions on information theory}, 13(1):21--27, 1967.
+
+\bibitem[CH67b]{knn2}
+Thomas Cover and Peter Hart.
+\newblock Nearest neighbor pattern classification.
+\newblock {\em IEEE transactions on information theory}, 13(1):21--27, 1967.
 
 \bibitem[CJvdP07]{libroOpenMP}
 Barbara Chapman, Gabriele Jost, and Ruud van~der Pas.
 \newblock {\em Using OpenMP: Portable Shared Memory Parallel Programming}.
 \newblock The MIT Press, 2007.
 
+\bibitem[CN00]{chavez2000effective}
+Edgar Ch{\'a}vez and Gonzalo Navarro.
+\newblock An effective clustering algorithm to index high dimensional metric
+  spaces.
+\newblock In {\em String Processing and Information Retrieval, 2000. SPIRE
+  2000. Proceedings. Seventh International Symposium on}, pages 75--86. IEEE,
+  2000.
+
+\bibitem[CT09]{cederman2009gpu}
+Daniel Cederman and Philippas Tsigas.
+\newblock Gpu-quicksort: A practical quicksort algorithm for graphics
+  processors.
+\newblock {\em Journal of Experimental Algorithmics (JEA)}, 14:4, 2009.
+
+\bibitem[cud]{cuda}
+Cuda: Compute unified device architecture.
+\newblock In {\em \textcopyright 2007 NVIDIA Corporation}.
+
+\bibitem[Fre69]{freeman1969experiments}
+JJ~Freeman.
+\newblock Experiments in discrimination and classification.
+\newblock {\em Pattern Recognition}, 1(3):207--218, 1969.
+
+\bibitem[GDB08]{garcia2008fast}
+Vincent Garcia, Eric Debreuve, and Michel Barlaud.
+\newblock Fast k nearest neighbor search using gpu.
+\newblock In {\em Computer Vision and Pattern Recognition Workshops, 2008.
+  CVPRW'08. IEEE Computer Society Conference on}, pages 1--6. IEEE, 2008.
+
+\bibitem[Har66]{hart1966asymptotic}
+Peter~E Hart.
+\newblock An asymptotic analysis of the nearest-neighbor decision rule.
+\newblock Technical report, DTIC Document, 1966.
+
+\bibitem[HIL68]{hilborn1968dg}
+CG~HILBORN.
+\newblock Dg lainiotis.
+\newblock {\em IEEE transactions on information theory}, 1968.
+
+\bibitem[KZ09]{kuang2009practical}
+Quansheng Kuang and Lei Zhao.
+\newblock A practical gpu based knn algorithm.
+\newblock In {\em International symposium on computer science and computational
+  technology (ISCSCT)}, pages 151--155. Citeseer, 2009.
+
+\bibitem[LA17]{xeonphila}
+Intel LA.
+\newblock Procesadores intel® xeon phi™.
+\newblock
+  {url{https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}},,
+  jan 2017.
+
 \bibitem[NBF96]{libroPthreads}
 Bradford\ Nichols, Dick Buttlar, and Jacqueline~Proulx Farrell.
 \newblock {\em Pthreads Programming: A POSIX Standard for Better
   Multiprocessing}.
 \newblock O'Reilly, 1996.
+
+\bibitem[PK07]{plaku2007distributed}
+Erion Plaku and Lydia~E Kavraki.
+\newblock Distributed computation of the knn graph for large high-dimensional
+  point sets.
+\newblock {\em Journal of parallel and distributed computing}, 67(3):346--359,
+  2007.
+
+\bibitem[PN09]{paredes2009egnat}
+Roberto~Uribe Paredes and Gonzalo Navarro.
+\newblock Egnat: A fully dynamic metric access method for secondary memory.
+\newblock In {\em Proceedings of the 2009 Second International Workshop on
+  Similarity Search and Applications}, pages 57--64. IEEE Computer Society,
+  2009.
+
+\bibitem[Rei07]{libroTBB}
+James Reinders.
+\newblock {\em Intel threading building blocks: outfitting C++ for multi-core
+  processor parallelism}.
+\newblock O'Reilly, 2007.
+
+\bibitem[Wan14]{wange2014}
+Q.~Shen B. Zhang G. Lu X. Wu Q. Wang~Y. Wang, E.~Zhang.
+\newblock {\em High-Performance Computing on the Intel Xeon Phi(TM): How to
+  Fully Exploit MIC Architectures}.
+\newblock Springer, New York, 2014.
+
+\bibitem[xeo]{xeonphi1}
+{\em PRACE (Partnership for Advanced Computing in Europe). Best Practice Guide
+  - Intel Xeon Phi}.
 
 \end{thebibliography}

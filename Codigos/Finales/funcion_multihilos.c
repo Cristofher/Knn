@@ -1,6 +1,3 @@
-omp_set_num_threads(N_THREADS);
-#pragma omp parallel shared(Consultas, DB, N_QUERIES, N_DB, N_THREADS, acum, DIM)
-    {
         float real_time;
         struct timeval t1, t2;
         int i, j;
@@ -59,26 +56,3 @@ omp_set_num_threads(N_THREADS);
         }
 
 #pragma omp barrier
-
-#pragma omp master
-        {
-            gettimeofday(&t2, 0);
-            real_time = (t2.tv_sec - t1.tv_sec) + (float) (t2.tv_usec - t1.tv_usec) / 1000000;
-
-            Salida_Multihilo = fopen("Salida_Multihilo.txt", "w");
-            for (i = 0; i < N_QUERIES; ++i){
-              fprintf(Salida_Multihilo, "Consulta id:: %d\n",i);
-                for (j = 0; j < TOPK; ++j){
-                    fprintf(Salida_Multihilo,"ind = %d :: dist = %f\n",answer[(i*TOPK)+j].ind,answer[(i*TOPK)+j].dist);
-                }
-                    fprintf(Salida_Multihilo, "---------------------------------\n");
-            }
-            fclose(Salida_Multihilo);
-
-            printf("\n\nK = %d", TOPK);
-            printf("\nReal Time = %f segundos.\n", real_time);
-            fflush(stdout);
-        }
-        free(heap);
-
-    }//end pragma omp parallel
