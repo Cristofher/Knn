@@ -1,23 +1,42 @@
-
 \chapter[Introducción]{\label{ch:intro}Introducción}
 
-texto...
+En esta tesis se propone un software pensado en usuarios que poseen poco o nulo conocimientos de programación, de modo que puedan utilizar eventualmente este software para resolver consultas K-nn. Para esto se han recopilado distintas versiones del algoritmo K-nn propuestos en la literatura, de modo que se presentan al menos cuatro algoritmos diferentes, estos son: Algoritmo secuencial K-nn, Algoritmo paralelo K-nn utilizando la librería OpenMP (Multi-núcleo o  Multi-hilos), Algoritmo paralelo K-nn utilizando librería OpenMP para Intel Xeon Phi, Algoritmo paralelo K-nn GPU.
+Se utilizo JAVA 8 \cite{java} para programar la interfaz gráfica del software debido a que este lenguaje es soportado en los distintos sistemas operativos:
+\\Windows en sus versiones 10, 8.x (Escritorio), 7 SP1, Vista SP2, Windows Server 2008 R2 SP1 (64 bits), Windows Server 2012 y 2012 R2 (64 bits) y los recursos necesarios son 128 MB de RAM, un espacio minino de 124 MB, procesador pentium 2 a 266 MHz, a su vez en MAC OSx equipos Mac con Intel que ejecuta Mac OS X 10.8.3+, 10.9+, la instalación se debe realizar en modo administrador, En linux en cambio esta disponible para Oracle Linux desde la versión 5.5+ o en versiones superiores, en Red Hat Enterprise Linux desde la versión 5.5+ o en versiones superiores, Suse Linux Enterprise Server desde 10 SP2+ o versiones superiores y en Ubuntu Linux en desde versiones 12.04 LTS o en versiones superiores.\\
+\\
+Para la programación de los algoritmos se empleo el lenguaje de programación C \cite{c} dado que este lenguaje puede ser utilizando en diversos sistemas operativos, además de poder utilizar librerías que permiten el uso del paralelismo en los distintos tipos de plataformas paralelas, como son Multi-Hilos, Intel Xeon Phi y GPU.\\
+\\
+Las plataformas paralelas que se emplean en esta tesis son las mencionadas anteriormente, tanto para Multi-hilos y Intel Xeon Phi se utiliza la librería OpenMP \cite{libroOpenMP}\cite{libroPthreads}, esta librería esta pensada para lenguajes como C, C++ y Fortran, disponible además para diversos tipos de arquitecturas, incluidas algunas plataformas como Windows y Unix.
+A su vez para GPU se cuenta con librerías propuestas por NVIDIA y CUDA \cite{cuda} la cual permite trabajar las concurrencias en GPU y poder utilizar los hilos y bloques que propone GPU.   
 
 
 \section{Objetivos}
 
-El objetivo general de esta tesis se centra en la recopilación de algoritmos de vecinos más cercanos (k-nearest neighbor) encontrados en la literatura que proponene una solución más optima en tiempos de ejecución, para esto se establecio que los objetivos que cumplen con esta condición son aquellos que han sido propuestos en las lineas de paralelismo, donde a su vez se emplean heap para la resolución de este algoritmo.
+El objetivo general de esta tesis se centra en la recopilación de algoritmos de vecinos más cercanos (k-nearest neighbor) encontrados en la literatura que proponen una solución más óptima en tiempos de ejecución, para esto se estableció que los objetivos que cumplen con esta condición son aquellos que han sido propuestos en las lineas de paralelismo, donde a su vez se emplean heap para la resolución de este algoritmo.
 
-Para poder realizar la unión de los diferentes algoritmos paralelos, se propone un software el cual permite la agrupación de algoritmos de diferentes plataformas paralelas, además de añadir el algoritmo secuencial base como un agregado. En base a lo anteriormente mensionado se pretende que el software sea diseñado en consideración a usuarios los cuales no esten familiarizados con la programación de estos metodos, de modo que la utilización del software no se vea ligada a sus conocimientos en áreas de programación, además tomar en consideración que la 
+Para poder realizar la unión de los diferentes algoritmos paralelos, se propone un software el cual permite la agrupación de algoritmos de diferentes plataformas paralelas, además de añadir el algoritmo secuencial base como un agregado. En base a lo anteriormente mencionado se pretende que el software sea diseñado en consideración a usuarios los cuales no estén familiarizados con la programación de estos metidos, de modo que la utilización del software no se vea ligada a sus conocimientos en áreas de programación.
 
 
 Los objetivos específicos son los siguientes:
 
 \begin{itemize}
+
 \item Realizar la interfaz gráfica del software
-	Esta se realiza en JAVA debido a su capacidad de ser interpretada tanto en Windows, Linux y OSx
-\item objetivo-especifico-2
-\item objetivo-especifico-N
+
+	\subitem Esta se realiza en JAVA debido a su capacidad de ser interpretada tanto en Windows, Linux y OSx
+\item Añadir los algoritmos K-nn al software
+	\subitem K-nn multi-núcleo
+	\subitem K-nn Xeon Phi
+	\subitem K-nn GPU
+	 
+\item Añadir menú para añadir nuevos métodos
+
+\item Permitir al usuario exportación de los resultados en los siguientes formatos
+	\subitem Excel
+	\subitem Word
+	\subitem Archivo de texto plano (TXT)
+	\subitem Documento portátil PDF
+	
 \end{itemize}
 
 

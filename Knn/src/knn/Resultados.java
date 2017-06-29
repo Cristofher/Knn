@@ -20,6 +20,9 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -30,12 +33,15 @@ public class Resultados extends javax.swing.JFrame {
 
     private int entero1;
     String cadena1;
+    String property;
+    String path;
 
     public Resultados() throws IOException {
         initComponents();
         setLocationRelativeTo(null);
-        System.out.println("Cadena 1 : "+cadena1);
-        //jTextArea1.setText(cadena1);
+        property = System.getProperty("user.name");
+        path = "/home/"+property+"/Salida.txt";
+        muestraContenido(path);
     }
 
     @SuppressWarnings("unchecked")
@@ -55,6 +61,7 @@ public class Resultados extends javax.swing.JFrame {
 
         jLabel1.setText("Result");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -340,4 +347,28 @@ public class Resultados extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    void muestraContenido(String archivo) throws FileNotFoundException, IOException {
+        String cadena;
+        jTextArea1.setText(" ");
+        int linea = 0;
+        FileReader f = new FileReader(archivo);
+        try (BufferedReader b = new BufferedReader(f)) {
+            while ((cadena = b.readLine()) != null && linea < 100) {
+                String texto = jTextArea1.getText();
+                jTextArea1.setText(texto + cadena + "\n");
+                linea++;
+            }
+        }
+        eliminararchivo(archivo);
+    }
+
+    
+    public void eliminararchivo(String archivo){
+     File fichero = new File(archivo);
+     if(fichero.delete()){
+          System.out.println("archivo eliminado");
+     }
+}                    
+    
 }

@@ -157,16 +157,12 @@ int main(int argc, char *argv[]) {
                     e_temp.ind = j;
                     inserta2(heap, &e_temp, &n_elem);
                 }
-                if (n_elem==TOPK){
+                else{
                 if (d < topH(heap, &n_elem)) {
                     e_temp.dist = d;
                     e_temp.ind = j;
-                    //Si el heap no está lleno, se inserta el elemento
-                    if (n_elem < TOPK)
-                        inserta2(heap, &e_temp, &n_elem);
-                        //Si el heap está lleno, se inserta el elemento nuevo y se saca el que era antes de mayor de distancia. popush2() hace las operaciones de sacar el elemento mayor e insertar el nuevo.
-                    else
-                        popush2(heap, &n_elem, &e_temp);
+                    //Si el heap está lleno, se inserta el elemento nuevo y se saca el que era antes de mayor de distancia. popush2() hace las operaciones de sacar el elemento mayor e insertar el nuevo.
+                    popush2(heap, &n_elem, &e_temp);
                 }}
             }
             

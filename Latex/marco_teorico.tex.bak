@@ -2,22 +2,30 @@
 
 \section{Sistemas Multi-core y OpenMP}
 
-En este capitulo se describen los conocimientos basicos sobre programación multi-nucleos, programación en coprocesadores tales como progración en Intel Xeon Phi, programación en GPU y trabajos relacionados que dan base a esta tesis.\\
-Actualmente las arquitecturas de los dispositivos personales estan diseñadas con multiprocesadores o coprocesadores, desde un equipo de bolsillo como un celular (Smartphone) hasta un computador personal (notebook), esto quiere decir que los dispositivos cuentan con varios nucleos en una sola CPU (Unidad central de procesamiento) en el caso de multiprocesadores y con más de una CPU en el caso de un Coprocesador.\\
+En este capitulo se describen los conocimientos básicos sobre programación multi-núcleos, programación en coprocesadores tales como programación en Intel Xeon Phi, programación en GPU y trabajos relacionados que dan base a esta tesis.\\
+Actualmente las arquitecturas de los dispositivos personales están diseñadas con multiprocesadores o coprocesadores, desde un equipo de bolsillo como un celular (Smartphone) hasta un computador personal (notebook), esto quiere decir que los dispositivos cuentan con varios núcleos en una sola CPU (Unidad central de procesamiento) en el caso de multiprocesadores y con más de una CPU en el caso de un Coprocesador.\\ Imagen de referencia \ref{fig:plataforma}
 
 \subsection{Threads}
 Existen varias bibliotecas que permiten la programación en multi-hilos, con esto somos capaces de ejecutar hilos en paralelo, ejecutándose en un núcleo diferente.\\
-Exiten diferentes modelos y estandares que permiten la programación de múltiples hilos, tales como Pthreads \cite{libroPthreads}, TBB \cite{libroTBB} u OpenMP \cite{libroOpenMP}, en particular en esta tesis se selecciono el uso de la biblioteca OpenMP que fue desarrollada en 1997. Además es importante mencionar el hecho de que actualmente los compiladores en esta linea son bastante robustos, como tambien el hecho de que el equipo que gestiona OpenMP esta conformado por diferentes compañias (AMD, Intel, Sun Mycrosystem y otros) y no siendo gestionada por una sola, esto nos proporciona confianza.\\
+Existen diferentes modelos y estándares que permiten la programación de múltiples hilos, tales como Pthreads \cite{libroPthreads}, TBB \cite{libroTBB} u OpenMP \cite{libroOpenMP}, en particular en esta tesis se selecciono el uso de la biblioteca OpenMP que fue desarrollada en 1997. Además es importante mencionar el hecho de que actualmente los compiladores en esta linea son bastante robustos, como tambien el hecho de que el equipo que gestiona OpenMP esta conformado por diferentes compañías (AMD, Intel, Sun Mycrosystem y otros) y no siendo gestionada por una sola, esto nos proporciona confianza.\\
 
-\section{Coprocesadores}
+\begin{figure}
+\begin{center}
+   \includegraphics[scale=0.5]{fig/plataforma.eps}
+\end{center}
+\caption{\label{fig:plataforma}Plataforma multi-core.}
+\end{figure}
 
-Un Coprocesador es utilizado para desligar funciones de la CPU, en esta linea existen desde coprocesadores matematicos hasta coprocesadores graficos, estos poseen caracteristicas y espeficiaciones a ciertos tipos de operaciones, por ejemplo un coprocesador matematico solo esta desarrollado para revolver problemas aritmeticos o afines al área esto quiere decir que pueden realizar operaciones matematicas a una velocidad mayor que el procesador principal (CPU), a su vez un coprocesador gráfico esta diseñado en otra área. Estos proporcionan al hardware una acelaración en la operación solo cuando se ejecuta una tárea o software que se haya diseñado para aprovechar el coprocesador, las intrucciones para un coprocesador son diferentes que las intrucciones de una CPU de modo que existe un programa que detecta la existencia de un coprocesador y entonces se ejecutan las intrucciones escritas explicitamente para aquel coprocesador, por tanto existen diferentes lineas de coprocesadores en el mercado pero en esta tesis solo consideramos Intel Xeon Phi y GPU NVIDIA.
+
+\section{Coprocesadores} \label{cap:coprocesadores}
+
+Un Coprocesador es utilizado para desligar funciones de la CPU, en esta linea existen desde coprocesadores matemáticos hasta coprocesadores gráficos, estos poseen características y especificaciones a ciertos tipos de operaciones, por ejemplo un coprocesador matemático solo esta desarrollado para revolver problemas aritméticos o afines al área esto quiere decir que pueden realizar operaciones matemáticas a una velocidad mayor que el procesador principal (CPU), a su vez un coprocesador gráfico esta diseñado en otra área. Estos proporcionan al hardware una aceleración en la operación solo cuando se ejecuta una tarea o software que se haya diseñado para aprovechar el coprocesador, las instrucciones para un coprocesador son diferentes que las instrucciones de una CPU de modo que existe un programa que detecta la existencia de un coprocesador y entonces se ejecutan las instrucciones escritas explícitamente para aquel coprocesador, por tanto existen diferentes lineas de coprocesadores en el mercado pero en esta tesis solo consideramos Intel Xeon Phi y GPU NVIDIA.
 
 \subsection{Intel Xeon Phi}
 
 El coprocesador Intel Xeon Phi \cite{xeonphi1} \cite{wange2014} \cite{xeonphila} consta de hasta 72 conectados en un anillo bidireccional de alto rendimiento en el chip. El coprocesador ejecuta un sistema operativo linux y es compatible con todas las principales herramientas de desarrollo de Intel como C / C ++, Fortran, MPI y OpenMP. El coprocesador se conecta a un procesador Intel Xeon (el host) a través del bus PCI Express (PCIe). Las propiedades más importantes de la arquitectura MIC se muestran en figura \ref{estructuraxeon}.\\
 
-\textbf{Core:} El núcleo de la intel Xeon phi (Scalar Unit en la figura \ref{estructuraxeon}) es una arquitectura de orden (basada en la familia de procesadores Intel Pentium),Implementa instrucciones de recuperación y decodificación para 4 hilos (hardware) por núcleo. Las intrucciones vectoriales que posee el coprocesador Intel Xeon Phi, utiliza una unidad de punto flotante (VPU) dedicada, con un ancho de 512-bit, la que está disponible en cada núcleo. Un núcleo puede ejecutar dos intrucciones por ciclo de reloj, una en U-pipe y otra en V-pipe (no todos los tipos de instrucciones pueden ser ejecutadas por el V-pipe). Cada núcleo compone una interconexión en anillo mediante la CRI (Core Ring Interface).\\
+\textbf{Core:} El núcleo de la intel Xeon phi (Scalar Unit en la figura \ref{estructuraxeon}) es una arquitectura de orden (basada en la familia de procesadores Intel Pentium),Implementa instrucciones de recuperación y decodificación para 4 hilos (hardware) por núcleo. Las instrucciones vectoriales que posee el coprocesador Intel Xeon Phi, utiliza una unidad de punto flotante (VPU) dedicada, con un ancho de 512-bit, la que está disponible en cada núcleo. Un núcleo puede ejecutar dos instrucciones por ciclo de reloj, una en U-pipe y otra en V-pipe (no todos los tipos de instrucciones pueden ser ejecutadas por el V-pipe). Cada núcleo compone una interconexión en anillo mediante la CRI (Core Ring Interface).\\
 
 \textbf{Vector Processing Unit (VPU):} La VPU incluye la EMU (Extended Math Unit), y es capaz de realizar 16
 operaciones en punto flotante con precisión simple por ciclo, 16 operaciones de enteros de 32-bit por ciclo u
@@ -41,22 +49,28 @@ La Figura \ref{estructuraxeon2} ilustra una visión general de la arquitectura, 
 \centering
 \label{estructuraxeon}
 \includegraphics[scale=0.5]{fig/core.png}
-\caption{Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}
+\caption{Diagrama de una arquitectura MIC de un núcleo de un coprocesador Xeon Phi}
 \end{figure}
 
 \begin{figure}[hbtp]
 \centering
 \label{estructuraxeon2}
 \includegraphics[scale=0.5]{fig/core.png}
-\caption{Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}
+\caption{Diagrama de una arquitectura MIC de un núcleo de un coprocesador Xeon Phi}
 \end{figure}
 
 \subsection{NVIDIA GPU}
 
-Todas las implementaciones sobre GPU se realizaron usando el modelo de programación CUDA \cite{cuda} de NVIDIA. Este modelo hace una distinción entre el código ejecutado en la CPU (host) con su propia DRAM (host memory) y el ejecutado en GPU (device) sobre su DRAM (device memory). La GPU se representa como un coprocesador capaz de ejecutar funciones denominadas kernels, y provee extensiones para el lenguaje C que permiten alojar datos en la memoria de la GPU y transferir datos entre GPU y CPU. Por lo tanto, la GPU sólo puede ejecutar las funciones declaradas como kernels dentro del programa, y sólo puede usar variables alojadas en device memory, lo cual significa que todos los datos necesarios deberán ser movidos a esta memoria de forma previa a la ejecución La figura \ref{} muestra un esquema de la diferencia entre una CPU y una GPU. Esta última está especializada para cómputo intensivo, y por lo tanto más transistores están dedicados para el procesamiento de datos en vez de caching de datos y control de flujo. 
+Todas las implementaciones sobre GPU se realizaron usando el modelo de programación CUDA \cite{cuda} de NVIDIA. Este modelo hace una distinción entre el código ejecutado en la CPU (host) con su propia DRAM (host memory) y el ejecutado en GPU (device) sobre su DRAM (device memory). La GPU se representa como un coprocesador capaz de ejecutar funciones denominadas kernels, y provee extensiones para el lenguaje C que permiten alojar datos en la memoria de la GPU y transferir datos entre GPU y CPU. Por lo tanto, la GPU sólo puede ejecutar las funciones declaradas como kernels dentro del programa, y sólo puede usar variables alojadas en device memory, lo cual significa que todos los datos necesarios deberán ser movidos a esta memoria de forma previa a la ejecución la figura \ref{fig:composicion} muestra un esquema de la diferencia entre una CPU y una GPU. Esta última está especializada para cómputo intensivo, y por lo tanto más transistores están dedicados para el procesamiento de datos en vez de caching de datos y control de flujo. 
 
-Esto implica que la GPU es capaz de realizar un mayor número de operaciones aritméticas en punto flotante que una CPU. El correcto aprovechamiento del sistema de memoria en la GPU es primordial. La figura \ref{} muestra un esquema del hardware de una GPU, la que consta de las siguientes características:
+\begin{figure}
+\begin{center}
+   \includegraphics[width=12cm]{fig/p.png}
+\end{center}
+\caption{\label{fig:device}Composición del \textit{device}}
+\end{figure}
 
+Esto implica que la GPU es capaz de realizar un mayor número de operaciones aritméticas en punto flotante que una CPU. El correcto aprovechamiento del sistema de memoria en la GPU es primordial. La figura \ref{fig:device} muestra un esquema del hardware de una GPU, la que consta de las siguientes características:
 
 \begin{itemize}
 	\item Una GPU está constituida por una serie de \textit{multiprocesadores}, donde cada uno de éstos cuenta con varios núcleos.
@@ -76,14 +90,46 @@ Esto implica que la GPU es capaz de realizar un mayor número de operaciones ari
 \end{itemize}
 
 
+\begin{figure}
+\begin{center}
+   \includegraphics[width=5cm]{fig/threads.png}
+\end{center}
+\caption{\label{fig:threads}Esquema de división de threads.}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+   \includegraphics[width=12cm]{fig/ab.png}
+\end{center}
+\caption{\label{fig:composicion}Composición de la GPU a) vs. CPU b).}
+\end{figure}
+
 
 \subsection*{Organización y ejecución de threads}
 
 Los threads son organizados en \textit{CUDA Blocks}, y cada uno de estos se ejecuta completamente en un único multiprocesador. Esto permite que todos los threads de un mismo CUDA Block compartan la misma \textit{shared memory}.
 Un \textit{kernel} puede ser ejecutado por un número limitado de CUDA Blocks, y cada CUDA Block por un número acotado de threads. Sólo los threads que pertenecen al mismo CUDA Block pueden ser sincronizados. Es decir, hilos que pertenezcan a CUDA Blocks distintos sólo pueden ser sincronizados realizando un nuevo lanzamiento de kernel.
 
-Para soportar la gran cantidad de threads en ejecución se emplea una arquitectura SIMT
-(Single-Instruction, Multiple-Thread). La unidad de ejecución no es un thread, sino un \textit{warp}, que es un conjunto de threads, y un \textit{half-warp} corresponde a la primera o segunda mitad del conjunto de threads de un \textit{warp}. La forma en que un CUDA Block es dividido en \textit{warps} es siempre la misma, el primer conjunto de threads representan el primer \textit{warp}, el segundo conjunto consecutivo de threads el segundo \textit{warp} y así sucesivamente.
+Para soportar la gran cantidad de threads en ejecución se emplea una arquitectura SIMT (Single-Instruction, Multiple-Thread). La unidad de ejecución no es un thread, sino un \textit{warp}, que es un conjunto de threads, y un \textit{half-warp} corresponde a la primera o segunda mitad del conjunto de threads de un \textit{warp}. La forma en que un CUDA Block es dividido en \textit{warps} es siempre la misma, el primer conjunto de threads representan el primer \textit{warp}, el segundo conjunto consecutivo de threads el segundo \textit{warp} y así sucesivamente.\\\\
+
+En la figura \ref{fig:threads} se aprecia como jerarquía donde los threads se agrupan en estructuras de 1, 2 ó 3 dimensiones denominados bloques, los bloques a su vez, se agrupan en un grid de bloques que también puede ser de 1, 2 ó 3 dimensiones.\\
+En la figura \ref{fig:composicion} se aprecia la comparación de una CPU (a) y GPU (b), estas poseen diferencias técnicas, como se aprecia en la siguiente tabla \ref{tabla_gpu}.\\
+\begin{table}
+	\begin{center} 
+   	\caption{\label{tabla_gpu} Tabla comparativa CPU vs GPU}
+	\begin{tabular}{|l|l|}
+	\hline 
+	\textbf{CPU} & \textbf{GPU} \\ 
+	\hline 
+	Procesador escalar & Procesador vectorial \\ 
+	Acceso aleatorio a memoria & Acceso secuencial a memoria \\  
+	Modelo de programación muy conocido & Modelo de programación poco conocido \\  
+	20 GB/s Ancho de banda & 100 -150 GB/s Ancho de banda \\  
+	Consumo de 1 Gflop/watt & Consumo de 10 Gflop/watt \\ 
+	\hline 
+	\end{tabular} 
+\end{center}
+\end{table}
 
 \subsection*{Reducción de lecturas a memoria}
 
@@ -143,3 +189,22 @@ Los threads de un warp siempre están sincronizados, es decir, ningún thread se
 de los threads de un \emph{warp}.}
 \end{center}
 \end{figure}
+
+\section{Plataforma JAVA}
+
+Una plataforma es el entorno de hardware o software en el cual se ejecuta un programa. A diferencia de las plataformas tradicionales como Linux, Windows y Solaris, la plataforma Java está basada sólo en software que se ejecuta sobre otras plataformas basadas en hardware. Por esto la plataforma Java y su software puede ser utilizado sobre variados sistemas operativos y hardware. 
+\\La plataforma Java está constituida de tres componentes: el lenguaje, la máquina virtual
+y las bibliotecas. \cite[pág. 5]{nunez2003investigacion}
+
+\subsection{Lenguaje JAVA}
+
+El lenguaje Java es un lenguaje de propósito general, de alto nivel, que utiliza el paradigma de orientación a objetos. Su sintaxis y tipos están basados principalmente en C++, sin embargo, las diferencias principales con éste son la administración de memoria, siendo ejecutada por la máquina virtual automáticamente y no por el código de cada programa, y el soporte de procesos livianos o threads a nivel del lenguaje, que ayuda a controlar la sincronización de procesos paralelos. Estas características dan al lenguaje Java las propiedades de robustez y seguridad, evitando por ejemplo problemas de buffer overflow utilizados en ataques a sistemas. \cite[pág. 5]{nunez2003investigacion}
+
+\subsection{La maquina virtual}
+
+Los programas escritos en Java son compilados como archivos ejecutables de una máquina virtual llamada Java Virtual Machine (JVM). Existen implementaciones de esta máquina para múltiples plataformas, permitiendo ejecutar en diferentes arquitecturas el mismo programa ya compilado. La característica de independencia de la plataforma hace posible el libre intercambio de software desarrollado en Java sin necesidad de modificaciones, lo que ha sido llamado “Write once, Run anywhere”. \cite{deepak2001core}
+Java es un lenguaje compilado e interpretado a la vez. Compilado ya que previo a su ejecución un programa debe ser transformado a un lenguaje intermedio, llamado Java bytecodes. Interpretado porque cada programa luego debe ser procesado y ejecutado por alguna implementación de la JVM específica a la plataforma. \cite[pág. 6]{nunez2003investigacion}
+
+\subsection{Bibliotecas}
+
+El conjunto de bibliotecas del lenguaje es conocido como la Java Application Programming Interface (Java API) que es un gran conjunto de componentes que proporcionan diferentes herramientas para el desarrollo de programas Java. La API de Java está agrupada en conjuntos de bibliotecas relacionadas conocidas como paquetes, que contienen grupos de elementos básicos de Java, llamados clases e interfaces. \cite[pág. 6]{nunez2003investigacion}

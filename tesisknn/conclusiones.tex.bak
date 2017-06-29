@@ -1,0 +1,28 @@
+\chapter[Conclusiones y Trabajos Futuros]{\label{ch:intro}conclusion}
+
+
+\section{Conclusiones}
+
+En este trabajo se han buscado e implementados algoritmos presentes en la literatura para la realización de consultas K-nn en un software diseñado pensando en usuarios los cuales no tengan conocimientos previos en programación de este algoritmo, este software cuenta con algoritmos en tres tipos diferentes de plataformas paralelas: Procesador multi-core, coprocesador Xeon Phi y coprocesador GPU. 
+
+Los algoritmos seleccionados se basan en la utilización de heap y búsquedas exhaustivas, de manera que estos presentan buenos resultados en relación al tiempo, de manera que estos fueron implementados exitosamente en un software que junta mundo completamente opuestos, tales como son Xeon Phi y GPU. Cabe destacar que el software no afecta el funcionamiento del algoritmo en términos de tiempo, debido a la capacidad de JAVA de ejecutar la shell (Consola) a través de una rutina simple, de este modo es posible ejecutar los algoritmos programados en C, los cuales son compilados previamente en la instalación y luego solo son llamados para ser ejecutados. Esta idea es la que permite la unión de estos mundos opuestos dentro de un solo software.
+\\
+\\
+Este trabajo potencia la idea de juntar arquitecturas totalmente opuestas, si bien no es necesario realizar la interconectar entre ambas, es posible ampliar esta idea y realizar lo visto en esta tesis, donde un usuario puede disponer de diversas soluciones a un problema y no esta ligado a una arquitectura especifica. Además si no se cuenta con alguno de estos dos coprocesadores el usuario no esta forzado a adquirir uno de estos, puede realizar las consultas desde su propio equipo utilizando tanto el modo secuencial como paralelo pero utilizando las características propias del equipo.
+
+
+\section{Trabajos futuros}
+
+El presente trabajo es la primera versión de este software, el cual en un futuro puede contar con mejoras a este. Tales como:
+
+\begin{itemize}
+\item Llevar el software a otro sistema operativo como es windows, debido a ser el sistema operativo más utilizado. Además de intentar llevarlo a OSx, de manera que el software sea multi-plataforma y multi-copresadores. De esta manera se generarla un software más potente.
+\item Intercomunicación entre el paralelismo multi-núcleo con el paralelismo en Xeon phi\\
+Este trabajo futuro puede ser implementado de variados modos, de manera que se debe investigar y realizar la implementación de esta mejora. 
+\item Intercomunicación entre el paralelismo multi-núcleo con el paralelismo en GPU\\
+Este trabajo futuro puede ser implementado de variados modos, de manera que se debe investigar y realizar la implementación de esta mejora.
+\item Añadir nuevos métodos de exportación a otros tipos de archivo, que sean requeridos según ciertos criterios.
+\item Añadir aparte de los 4 métodos principales, nuevos métodos los cuales utilicen otras propuestas para el algoritmo.
+\item Además no solo se podrían añadir algoritmos Knn sino también otros asociados a métodos de clasificación, o bien el software puede contener una recopilación de algoritmos en diversas áreas.   
+
+\end{itemize}

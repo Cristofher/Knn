@@ -16,6 +16,9 @@ import java.awt.event.ActionListener;
 
 public class Interface_Knn extends javax.swing.JFrame {
 
+    //User Name
+    String property;
+    
     //Ruta de bases de datos
     String Ruta_DB;
     String Ruta_Queries;
@@ -63,6 +66,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     boolean flag_GPU = false;
 
     public Interface_Knn() throws IOException {
+        property = System.getProperty("user.name");
         setLocationRelativeTo(null);
         initComponents();
         Ruta_Queries = null;
@@ -76,7 +80,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jTextField_Hilos.setVisible(false);
         jButton_Examinar_BD.setVisible(false);
         jButton_Examinar_Queries.setVisible(false);
-        jButton_Exportar_PDF.setVisible(false);
         jButton_Procesar_Consultas.setVisible(false);
         jLabel_Archivo_BD.setVisible(false);
         jLabel_Archivo_Queries.setVisible(false);
@@ -91,8 +94,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jLabel_Vista_Queries.setVisible(false);
         jTextArea_Resultados.setVisible(false);
         jLabel_Vista_Queries1.setVisible(false);
-        jLabel2.setVisible(false);
-        jButton_Exportar_PDF1.setVisible(false);
         jTextArea_Resultados.setVisible(false);
         jTextArea_Vista_Queries.setVisible(false);
         jTextField_Archivo_BD.setVisible(false);
@@ -295,9 +296,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel_Vista_Queries = new javax.swing.JLabel();
         jLabel_Vista_Queries1 = new javax.swing.JLabel();
-        jButton_Exportar_PDF = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton_Exportar_PDF1 = new javax.swing.JButton();
         jLabel_Vista_Queries2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea_Resultados = new javax.swing.JTextArea();
@@ -390,7 +388,6 @@ public class Interface_Knn extends javax.swing.JFrame {
         jLabel_Hilos.setText("Threads");
 
         jTextField_Archivo_BD.setEditable(false);
-
 
         jTextField_Archivo_Queries.setEditable(false);
 
@@ -526,12 +523,6 @@ public class Interface_Knn extends javax.swing.JFrame {
 
         jLabel_Vista_Queries1.setText("Result");
 
-        jButton_Exportar_PDF.setText("TXT");
-
-        jLabel2.setText("Export to");
-
-        jButton_Exportar_PDF1.setText(" PDF");
-
         jLabel_Vista_Queries2.setText("Data Base");
 
         jTextArea_Resultados.setEditable(false);
@@ -561,16 +552,10 @@ public class Interface_Knn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel_Vista_Queries1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton_Exportar_PDF)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton_Exportar_PDF1)
-                        .addGap(22, 22, 22))
+                        .addGap(22, 418, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jScrollPane3))))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,9 +566,6 @@ public class Interface_Knn extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addComponent(jLabel3)
                         .addComponent(jLabel_Vista_Queries)
-                        .addComponent(jLabel2)
-                        .addComponent(jButton_Exportar_PDF)
-                        .addComponent(jButton_Exportar_PDF1)
                         .addComponent(jLabel_Vista_Queries2))
                     .addComponent(jLabel_Vista_Queries1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -639,6 +621,7 @@ public class Interface_Knn extends javax.swing.JFrame {
         Anadir_menu.setText("Menus");
 
         jMenuItem1.setText("Add menus");
+
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -713,7 +696,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Hilos.setVisible(true);
             jButton_Examinar_BD.setVisible(true);
             jButton_Examinar_Queries.setVisible(true);
-            jButton_Exportar_PDF.setVisible(true);
             jButton_Procesar_Consultas.setVisible(true);
             jLabel_Archivo_BD.setVisible(true);
             jLabel_Archivo_Queries.setVisible(true);
@@ -729,8 +711,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel_Vista_Queries.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jLabel_Vista_Queries1.setVisible(true);
-            jLabel2.setVisible(true);
-            jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jCheck.setVisible(true);
 
@@ -756,7 +736,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Hilos.setVisible(false);
             jButton_Examinar_BD.setVisible(true);
             jButton_Examinar_Queries.setVisible(true);
-            jButton_Exportar_PDF.setVisible(true);
             jButton_Procesar_Consultas.setVisible(true);
             jLabel_Archivo_BD.setVisible(true);
             jLabel_Archivo_Queries.setVisible(true);
@@ -775,8 +754,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel_Vista_Queries.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jLabel_Vista_Queries1.setVisible(true);
-            jLabel2.setVisible(true);
-            jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jCheck.setVisible(false);
         }
@@ -803,7 +780,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Hilos.setVisible(false);
             jButton_Examinar_BD.setVisible(true);
             jButton_Examinar_Queries.setVisible(true);
-            jButton_Exportar_PDF.setVisible(true);
             jButton_Procesar_Consultas.setVisible(true);
             jLabel_Archivo_BD.setVisible(true);
             jLabel_Archivo_Queries.setVisible(true);
@@ -819,8 +795,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel_Vista_Queries.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jLabel_Vista_Queries1.setVisible(true);
-            jLabel2.setVisible(true);
-            jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jCheck.setVisible(false);
         }
@@ -847,7 +821,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jTextField_Hilos.setVisible(false);
             jButton_Examinar_BD.setVisible(true);
             jButton_Examinar_Queries.setVisible(true);
-            jButton_Exportar_PDF.setVisible(true);
             jButton_Procesar_Consultas.setVisible(true);
             jLabel_Archivo_BD.setVisible(true);
             jLabel_Archivo_Queries.setVisible(true);
@@ -863,8 +836,6 @@ public class Interface_Knn extends javax.swing.JFrame {
             jLabel_Vista_Queries.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jLabel_Vista_Queries1.setVisible(true);
-            jLabel2.setVisible(true);
-            jButton_Exportar_PDF1.setVisible(true);
             jTextArea_Resultados.setVisible(true);
             jCheck.setVisible(false);
         }
@@ -956,11 +927,8 @@ public class Interface_Knn extends javax.swing.JFrame {
                         TOPK = jTextField_TOPK.getText();
                         DIM = jTextField_Dim.getText();
                         String path;
-                        path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/" + Ejecutable_Secuencial + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK;
-
-                        //path = Ejecutable_Secuencial + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + "\"" + "/home/cristofher/Documentos/Tesis/Knn.git/Codigos/Base de datos/BD_int" + "\"" + " " + 14 + " " + 1 + " " + 8;
-                        //ProcessBuilder pb = new ProcessBuilder(path);
-                        //Process p = pb.start();
+                        path = "/usr/lib/knn/Knn/Secuenciales/Fuentes/" + Ejecutable_Secuencial + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + DIM + " " + TOPK + " " + property ;
+                        System.out.println(path);
                         Process p = Runtime.getRuntime().exec(path);
                         muestraContenidoResultados(p);
                     } catch (IOException e) {
@@ -1044,6 +1012,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         Num_threads = jTextField_Hilos.getText();
                         String path;
                         path = "/usr/lib/knn/Knn/Gpu/Fuentes/" + Ejecutable_GPU + ".out" + " " + Ruta_DB + " " + Ruta_Queries + " " + tamanho_DB + " " + tamanho_Queries + " " + DIM + " " + TOPK;
+                        System.out.println(path);
                         Process p = Runtime.getRuntime().exec(path);
                         muestraContenidoResultados(p);
                     } catch (IOException e) {
@@ -1085,6 +1054,7 @@ public class Interface_Knn extends javax.swing.JFrame {
 
     void muestraContenidoDB(String archivo) throws FileNotFoundException, IOException {
         String cadena;
+        jTextArea_Vista_DB.setText("");
         jTextArea_Vista_DB.setText(" ");
         int linea = 0;
         FileReader f = new FileReader(archivo);
@@ -1112,6 +1082,7 @@ public class Interface_Knn extends javax.swing.JFrame {
     void muestraContenidoQueries(String archivo) throws FileNotFoundException, IOException {
         String cadena;
         int linea = 0;
+        jTextArea_Vista_Queries.setText("");
         FileReader f = new FileReader(archivo);
         try (BufferedReader b = new BufferedReader(f)) {
             while ((cadena = b.readLine()) != null && linea < 100) {
@@ -1135,9 +1106,7 @@ public class Interface_Knn extends javax.swing.JFrame {
             if (p.exitValue() == 0) {
                 JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
                 //Se abre la ventana de resultados
-                Resultados nuevo = new Resultados();
-                nuevo.setVisible(true);
-                nuevo.cadena1="HOLA";
+                new Resultados().setVisible(true);
             }
         }
     }
@@ -1313,13 +1282,10 @@ public class Interface_Knn extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton_Examinar_BD;
     private javax.swing.JButton jButton_Examinar_Queries;
-    private javax.swing.JButton jButton_Exportar_PDF;
-    private javax.swing.JButton jButton_Exportar_PDF1;
     private javax.swing.JButton jButton_Procesar_Consultas;
     private javax.swing.JCheckBox jCheck;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

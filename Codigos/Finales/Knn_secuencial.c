@@ -37,7 +37,7 @@ double leedato_cophir(double *dato, FILE *file);
 
 int main(int argc, char *argv[]) {
 
-    if (argc != 7) {
+    if (argc != 8) {
         printf("Error :: Ejecutar como : a.out archivo_BD Num_elem archivo_queries Num_queries DIM K\n");
         return 0;
     }
@@ -49,6 +49,7 @@ int main(int argc, char *argv[]) {
     int N_QUERIES, N_DB;
     char str_f[256];
     double dato[DIM];
+    char path[256];
     int I, i, j;
     FILE *f_dist, *fquery;
     double real_time;
@@ -157,8 +158,10 @@ int main(int argc, char *argv[]) {
             }
     }
     gettimeofday(&t2, 0);
-    
-    Salida_Secuencial = fopen("Salida_Secuencial.txt", "w");
+
+    sprintf(path, "home/%s/Documentos/",argv[8]);
+
+    Salida_Secuencial = fopen(path, "w");
     for (i = 0; i < N_QUERIES; ++i){
       fprintf(Salida_Secuencial, "Consulta id:: %d\n",i);
       for (j = 0; j < TOPK; ++j)

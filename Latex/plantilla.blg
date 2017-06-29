@@ -3,49 +3,63 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: plantilla.aux
 The style file: alpha.bst
 Database file #1: biblio.bib
-Warning--to sort, need author, organization, or key in xeonphi1
+Warning--entry type for "speed" isn't style-file defined
+--line 1810 of file biblio.bib
+Warning--entry type for "heap" isn't style-file defined
+--line 1827 of file biblio.bib
+Warning--entry type for "netbeans" isn't style-file defined
+--line 1835 of file biblio.bib
+Warning--entry type for "iclit2017" isn't style-file defined
+--line 1843 of file biblio.bib
+Warning--entry type for "poi" isn't style-file defined
+--line 1851 of file biblio.bib
+Warning--I didn't find a database entry for "itex"
 Warning--to sort, need author or key in cuda
+Warning--to sort, need author, organization, or key in xeonphi1
+Warning--to sort, need author or key in speed
 Warning--empty author in cuda
 Warning--empty year in cuda
-You've used 24 entries,
+Warning--empty publisher in c
+Warning--empty journal in pressman1988ingenieria
+You've used 37 entries,
             2543 wiz_defined-function locations,
-            688 strings with 8237 characters,
-and the built_in function-call counts, 9868 in all, are:
-= -- 1007
-> -- 430
-< -- 14
-+ -- 150
-- -- 145
-* -- 663
-:= -- 1558
-add.period$ -- 76
-call.type$ -- 24
-change.case$ -- 143
-chr.to.int$ -- 23
-cite$ -- 30
-duplicate$ -- 426
-empty$ -- 758
-format.name$ -- 172
-if$ -- 2083
+            744 strings with 9743 characters,
+and the built_in function-call counts, 13689 in all, are:
+= -- 1367
+> -- 583
+< -- 23
++ -- 197
+- -- 191
+* -- 885
+:= -- 2177
+add.period$ -- 110
+call.type$ -- 37
+change.case$ -- 211
+chr.to.int$ -- 36
+cite$ -- 47
+duplicate$ -- 596
+empty$ -- 1073
+format.name$ -- 237
+if$ -- 2866
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 25
-newline$ -- 121
-num.names$ -- 66
-pop$ -- 171
+missing$ -- 34
+newline$ -- 181
+num.names$ -- 102
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 254
 quote$ -- 0
-skip$ -- 348
+skip$ -- 504
 stack$ -- 0
-substring$ -- 533
-swap$ -- 96
-text.length$ -- 14
-text.prefix$ -- 6
+substring$ -- 649
+swap$ -- 113
+text.length$ -- 23
+text.prefix$ -- 13
 top$ -- 0
-type$ -- 176
-warning$ -- 4
-while$ -- 97
-width$ -- 29
-write$ -- 306
-(There were 4 warnings)
+type$ -- 272
+warning$ -- 7
+while$ -- 128
+width$ -- 44
+write$ -- 452
+(There were 13 warnings)

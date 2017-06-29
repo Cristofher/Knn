@@ -1,0 +1,33 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Plataforma multi-core.}}{7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de una arquitectura MIC de un n\IeC {\'u}cleo de un coprocesador Xeon Phi}}{10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama de una arquitectura MIC de un n\IeC {\'u}cleo de un coprocesador Xeon Phi}}{11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Composici\IeC {\'o}n del \textit {device}}}{12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de divisi\IeC {\'o}n de threads.}}{13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Composici\IeC {\'o}n de la GPU a) vs. CPU b).}}{14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ejemplo de suma de vectores con CUDA.}}{17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caption Subfigura 1}}}{18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Caption Subfigura 2}}}{18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Modelo incremental}}{20}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Ejemplo de Max Heap}}{23}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ejemplo de Min Heap}}{23}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Ejemplo de Min Max Heap}}{24}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Gr\IeC {\'a}fica de tiempo de velocidad}}{27}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Gr\IeC {\'a}fica de tiempo de velocidad}}{28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ejemplo Min Heap insert}}}{28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ejemplo Min Heap ExtractMin}}}{28}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Interfaz gr\IeC {\'a}fica inicial del software}}{39}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Interfaz gr\IeC {\'a}fica item multihilos del software}}{41}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Interfaz gr\IeC {\'a}fica item secuencial del software}}{42}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mensajes al usuario }}{43}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mensaje 1 - Error}}}{43}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Mensaje 2 - \IeC {\'E}xito}}}{43}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana de exportaci\IeC {\'o}n de resultados}}{57}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana de guardar archivo}}{57}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana Agregar men\IeC {\'u}}}{60}
+\addvspace {10\p@ }

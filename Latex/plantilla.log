@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  17 MAY 2017 02:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  29 MAY 2017 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,20 +6,19 @@ entering extended mode
 (./plantilla.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -32,11 +31,11 @@ Language: spanish.ldf 2016/01/15 v5.0o Spanish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count88
+\babel@savecnt=\count87
 \U@D=\dimen103
 )
 \es@quottoks=\toks14
-\es@quotdepth=\count89
+\es@quotdepth=\count88
 Package babel Info: Making " an active character on input line 533.
 Package babel Info: Making . an active character on input line 634.
 Package babel Info: Making < an active character on input line 679.
@@ -422,7 +421,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count90
+\Gread@gobject=\count89
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
@@ -447,13 +446,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count90
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count91
+\leftroot@=\count92
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count93
+\DOTSCASE@=\count94
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
@@ -462,15 +461,15 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
 \dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
 \tag@help=\toks19
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
 \andhelp@=\toks20
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
@@ -509,9 +508,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count103
-\Gm@cntv=\count104
-\c@Gm@tempcnt=\count105
+\Gm@cnth=\count102
+\Gm@cntv=\count103
+\c@Gm@tempcnt=\count104
 \Gm@bindingoffset=\dimen115
 \Gm@wd@mp=\dimen116
 \Gm@odd@mp=\dimen117
@@ -539,24 +538,24 @@ L3 Module: l3tl 2015/09/29 v6121 L3 Token lists
 L3 Module: l3str 2016/01/03 v6357 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2016/01/05 v6366 L3 Integers
-\c_max_int=\count106
-\l_tmpa_int=\count107
-\l_tmpb_int=\count108
-\g_tmpa_int=\count109
-\g_tmpb_int=\count110
+\c_max_int=\count105
+\l_tmpa_int=\count106
+\l_tmpb_int=\count107
+\g_tmpa_int=\count108
+\g_tmpb_int=\count109
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count111
+\g__prg_map_int=\count110
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2015/11/11 v6249 L3 Experimental token manipulation
 L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
 L3 Module: l3msg 2015/09/28 v6113 L3 Messages
 L3 Module: l3file 2015/12/03 v6317 L3 File and I/O operations
-\l_iow_line_count_int=\count112
-\l__iow_target_count_int=\count113
-\l__iow_current_line_int=\count114
-\l__iow_current_word_int=\count115
-\l__iow_current_indentation_int=\count116
+\l_iow_line_count_int=\count111
+\l__iow_target_count_int=\count112
+\l__iow_current_line_int=\count113
+\l__iow_current_word_int=\count114
+\l__iow_current_indentation_int=\count115
 L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \c_zero_dim=\dimen123
 \c_max_dim=\dimen124
@@ -577,18 +576,18 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count117
-\l_keys_choice_int=\count118
+\g__keyval_level_int=\count116
+\l_keys_choice_int=\count117
 L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
-\c__fp_leading_shift_int=\count119
-\c__fp_middle_shift_int=\count120
-\c__fp_trailing_shift_int=\count121
-\c__fp_big_leading_shift_int=\count122
-\c__fp_big_middle_shift_int=\count123
-\c__fp_big_trailing_shift_int=\count124
-\c__fp_Bigg_leading_shift_int=\count125
-\c__fp_Bigg_middle_shift_int=\count126
-\c__fp_Bigg_trailing_shift_int=\count127
+\c__fp_leading_shift_int=\count118
+\c__fp_middle_shift_int=\count119
+\c__fp_trailing_shift_int=\count120
+\c__fp_big_leading_shift_int=\count121
+\c__fp_big_middle_shift_int=\count122
+\c__fp_big_trailing_shift_int=\count123
+\c__fp_Bigg_leading_shift_int=\count124
+\c__fp_Bigg_middle_shift_int=\count125
+\c__fp_Bigg_trailing_shift_int=\count126
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box28
 \l_tmpa_box=\box29
@@ -638,78 +637,78 @@ L3 Module: l3luatex 2015/11/11 v6250 L3 Experimental LuaTeX-specific functions
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/11/11 v6250 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count128
+\l__driver_color_stack_int=\count127
 ))
 Package: regexpatch 2015/05/20 v0.2a Extending etoolbox patching commands
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count129
-\l__xparse_m_args_int=\count130
-\l__xparse_mandatory_args_int=\count131
-\l__xparse_processor_int=\count132
-\l__xparse_v_nesting_int=\count133
+\l__xparse_current_arg_int=\count128
+\l__xparse_m_args_int=\count129
+\l__xparse_mandatory_args_int=\count130
+\l__xparse_processor_int=\count131
+\l__xparse_v_nesting_int=\count132
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3regex.sty
 Package: l3regex 2016/01/19 v6377 L3 Experimental regular expressions
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3tl-build.sty
 Package: l3tl-build 2016/01/19 v6377 L3 Experimental token list construction
-\l__tl_build_start_index_int=\count134
-\l__tl_build_index_int=\count135
+\l__tl_build_start_index_int=\count133
+\l__tl_build_index_int=\count134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3tl-analysis.sty
 Package: l3tl-analysis 2015/11/09 v6244 L3 Experimental token lists analysis
-\l__tl_analysis_normal_int=\count136
-\l__tl_analysis_index_int=\count137
-\l__tl_analysis_nesting_int=\count138
-\l__tl_analysis_type_int=\count139
+\l__tl_analysis_normal_int=\count135
+\l__tl_analysis_index_int=\count136
+\l__tl_analysis_nesting_int=\count137
+\l__tl_analysis_type_int=\count138
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3flag.sty
 Package: l3flag 2016/01/19 v6377 L3 Experimental flags
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3experimental/l3str/l3str-convert.sty
 Package: l3str-convert 2015/09/26 v6106 L3 Experimental string encoding convers
 ions
-\l__str_internal_int=\count140
-\c__str_replacement_char_int=\count141
+\l__str_internal_int=\count139
+\c__str_replacement_char_int=\count140
 )
-\l__regex_internal_a_int=\count142
-\l__regex_internal_b_int=\count143
-\l__regex_internal_c_int=\count144
-\l__regex_balance_int=\count145
-\l__regex_group_level_int=\count146
-\l__regex_mode_int=\count147
-\l__regex_catcodes_int=\count148
-\l__regex_default_catcodes_int=\count149
-\c__regex_catcode_D_int=\count150
-\c__regex_catcode_S_int=\count151
-\c__regex_catcode_L_int=\count152
-\c__regex_catcode_O_int=\count153
-\c__regex_catcode_A_int=\count154
-\c__regex_all_catcodes_int=\count155
-\l__regex_show_lines_int=\count156
-\l__regex_min_state_int=\count157
-\l__regex_max_state_int=\count158
-\l__regex_left_state_int=\count159
-\l__regex_right_state_int=\count160
-\l__regex_capturing_group_int=\count161
-\l__regex_min_pos_int=\count162
-\l__regex_max_pos_int=\count163
-\l__regex_current_pos_int=\count164
-\l__regex_start_pos_int=\count165
-\l__regex_success_pos_int=\count166
-\l__regex_current_char_int=\count167
-\l__regex_current_catcode_int=\count168
-\l__regex_last_char_int=\count169
-\l__regex_case_changed_char_int=\count170
-\l__regex_current_state_int=\count171
-\l__regex_step_int=\count172
-\l__regex_min_active_int=\count173
-\l__regex_max_active_int=\count174
-\l__regex_replacement_csnames_int=\count175
-\l__regex_match_count_int=\count176
-\l__regex_submatch_int=\count177
-\l__regex_zeroth_submatch_int=\count178
+\l__regex_internal_a_int=\count141
+\l__regex_internal_b_int=\count142
+\l__regex_internal_c_int=\count143
+\l__regex_balance_int=\count144
+\l__regex_group_level_int=\count145
+\l__regex_mode_int=\count146
+\l__regex_catcodes_int=\count147
+\l__regex_default_catcodes_int=\count148
+\c__regex_catcode_D_int=\count149
+\c__regex_catcode_S_int=\count150
+\c__regex_catcode_L_int=\count151
+\c__regex_catcode_O_int=\count152
+\c__regex_catcode_A_int=\count153
+\c__regex_all_catcodes_int=\count154
+\l__regex_show_lines_int=\count155
+\l__regex_min_state_int=\count156
+\l__regex_max_state_int=\count157
+\l__regex_left_state_int=\count158
+\l__regex_right_state_int=\count159
+\l__regex_capturing_group_int=\count160
+\l__regex_min_pos_int=\count161
+\l__regex_max_pos_int=\count162
+\l__regex_current_pos_int=\count163
+\l__regex_start_pos_int=\count164
+\l__regex_success_pos_int=\count165
+\l__regex_current_char_int=\count166
+\l__regex_current_catcode_int=\count167
+\l__regex_last_char_int=\count168
+\l__regex_case_changed_char_int=\count169
+\l__regex_current_state_int=\count170
+\l__regex_step_int=\count171
+\l__regex_min_active_int=\count172
+\l__regex_max_active_int=\count173
+\l__regex_replacement_csnames_int=\count174
+\l__regex_match_count_int=\count175
+\l__regex_submatch_int=\count176
+\l__regex_zeroth_submatch_int=\count177
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -971,36 +970,79 @@ ions
 . 
 . Defining command \xpatchparametertext with sig. '+m+m+m+m+m' on line 892.
 .................................................
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+)
+*************************************************
+* xpatch message
+* `\chaptermark' is undefined; I'll ignore the request.
+*************************************************
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip52
 \LTright=\skip53
 \LTpre=\skip54
 \LTpost=\skip55
-\LTchunksize=\count179
+\LTchunksize=\count178
 \LTcapwidth=\dimen154
 \LT@head=\box43
 \LT@firsthead=\box44
 \LT@foot=\box45
 \LT@lastfoot=\box46
-\LT@cols=\count180
-\LT@rows=\count181
-\c@LT@tables=\count182
-\c@LT@chunks=\count183
+\LT@cols=\count179
+\LT@rows=\count180
+\c@LT@tables=\count181
+\c@LT@chunks=\count182
 \LT@p@ftn=\toks24
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count183
+\float@exts=\toks25
+\float@box=\box47
+\@float@everytoks=\toks26
+\@floatcapt=\box48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen155
+\epsfysize=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count184
+\lst@gtempboxa=\box49
+\lst@token=\toks27
+\lst@length=\count185
+\lst@currlwidth=\dimen157
+\lst@column=\count186
+\lst@pos=\count187
+\lst@lostspace=\dimen158
+\lst@width=\dimen159
+\lst@newlines=\count188
+\lst@lineno=\count189
+\lst@maxwidth=\dimen160
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count190
+\lst@skipnumbers=\count191
+\lst@framebox=\box50
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip56
 \subfigcapskip=\skip57
-\subfigcaptopadj=\dimen155
+\subfigcaptopadj=\dimen161
 \subfigbottomskip=\skip58
-\subfigcapmargin=\dimen156
+\subfigcapmargin=\dimen162
 \subfiglabelskip=\skip59
-\c@subfigure=\count184
-\c@lofdepth=\count185
-\c@subtable=\count186
-\c@lotdepth=\count187
+\c@subfigure=\count192
+\c@lofdepth=\count193
+\c@subtable=\count194
+\c@lotdepth=\count195
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -1009,44 +1051,6 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip60
 \subfig@bottom=\skip61
 )
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count188
-\float@exts=\toks25
-\float@box=\box47
-\@float@everytoks=\toks26
-\@floatcapt=\box48
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
-Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen157
-\epsfysize=\dimen158
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count189
-\lst@gtempboxa=\box49
-\lst@token=\toks27
-\lst@length=\count190
-\lst@currlwidth=\dimen159
-\lst@column=\count191
-\lst@pos=\count192
-\lst@lostspace=\dimen160
-\lst@width=\dimen161
-\lst@newlines=\count193
-\lst@lineno=\count194
-\lst@maxwidth=\dimen162
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count195
-\lst@skipnumbers=\count196
-\lst@framebox=\box50
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
@@ -1055,27 +1059,332 @@ nment
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks28
-\c@algorithm=\count197
+\c@algorithm=\count196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count198
-\c@ALC@line=\count199
-\c@ALC@rem=\count266
-\c@ALC@depth=\count267
+\c@ALC@unique=\count197
+\c@ALC@line=\count198
+\c@ALC@rem=\count199
+\c@ALC@depth=\count266
 \ALC@tlm=\skip62
 \algorithmicindent=\skip63
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
-LaTeX Warning: Unused global option(s):
-    [headings=optiontohead].
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 143.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+Package: inconsolata 2016/02/22 v1.10
+
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+\zifour@ocount=\count267
+)
+Runaway argument?
+{language=Java, showspaces=false, showtabs=false, breaklines=true, sh\ETC.
+! Paragraph ended before \lstset@ was complete.
+<to be read again> 
+                   \par 
+l.118 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Package color Info: Redefining color gray97 on input line 139.
+Package color Info: Redefining color gray75 on input line 140.
+Package color Info: Redefining color gray45 on input line 141.
+
+! Package Listings Error: Environment `listing' already defined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 {
+       \lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+Package color Info: Redefining color pblue on input line 181.
+Package color Info: Redefining color pgreen on input line 182.
+Package color Info: Redefining color pred on input line 183.
+Package color Info: Redefining color pgrey on input line 184.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 }z
+        e,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 201.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 201.
+
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 201
+.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 201
+.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 201.
+LaTeX Font Info:    Try loading font information for U+msa on input line 201.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 201.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.201   moredelim=[il][\textcolor{pgrey}]{$$}
+                                             ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.203 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.204 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.204 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
 
 (./plantilla.aux
-LaTeX Info: Redefining \. on input line 7.
-LaTeX Info: Redefining \% on input line 7.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+
+
+LaTeX Warning: Label `fig:plataforma' multiply defined.
 
 
 LaTeX Warning: Label `cod_gpu_sync-a' multiply defined.
@@ -1092,27 +1401,41 @@ LaTeX Warning: Label `sub@cod_gpu_sync-b' multiply defined.
 
 LaTeX Warning: Label `cod_gpu_sync' multiply defined.
 
+
+LaTeX Warning: Label `lst:distanciaxeon' multiply defined.
+
+
+LaTeX Warning: Label `exportar' multiply defined.
+
 )
 \openout1 = `plantilla.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 57.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 208.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 208.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 208.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1187,13 +1510,13 @@ e
 * \textheight=666.9326pt
 * \oddsidemargin=27.31465pt
 * \evensidemargin=27.31465pt
-* \topmargin=-33.0119pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
-* \headsep=19.8738pt
+* \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=47.0pt
-* \marginparsep=7.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -1206,47 +1529,58 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count274
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 224.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 73.
-[1
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 224.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--118
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
 
  []
 
 [2]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 156.
+! Undefined control sequence.
+l.307 \chapter
+              *{Sumario}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
@@ -1258,14 +1592,14 @@ Package epstopdf Info: Source file: <fig/plataforma.eps>
 (epstopdf)                    size: 7290 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/plataforma-eps-convert
 ed-to.pdf fig/plataforma.eps>
-(epstopdf)             \includegraphics on input line 164.
+(epstopdf)             \includegraphics on input line 315.
 Package epstopdf Info: Output file is already uptodate.
-<fig/plataforma-eps-converted-to.pdf, id=11, 371.3875pt x 309.155pt>
+<fig/plataforma-eps-converted-to.pdf, id=14, 371.3875pt x 309.155pt>
 File: fig/plataforma-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/plataforma-eps-converted-to.pdf>
 Package pdftex.def Info: fig/plataforma-eps-converted-to.pdf used on input line
- 164.
+ 315.
 (pdftex.def)             Requested size: 185.69328pt x 154.57712pt.
 Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
 (epstopdf)                    date: 2011-04-11 23:13:34
@@ -1275,15 +1609,15 @@ Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
 (epstopdf)                    size: 6579 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-a-eps-con
 verted-to.pdf fig/cod_gpu_sync-a.eps>
-(epstopdf)             \includegraphics on input line 179.
+(epstopdf)             \includegraphics on input line 330.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/cod_gpu_sync-a-eps-converted-to.pdf, id=12, 153.57375pt x 140.525pt>
+<fig/cod_gpu_sync-a-eps-converted-to.pdf, id=15, 153.57375pt x 140.525pt>
 File: fig/cod_gpu_sync-a-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/cod_gpu_sync-a-eps-converted-to.pdf>
 Package pdftex.def Info: fig/cod_gpu_sync-a-eps-converted-to.pdf used on input 
-line 179.
+line 330.
 (pdftex.def)             Requested size: 99.58507pt x 113.81174pt.
 Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
 (epstopdf)                    date: 2011-04-11 23:17:44
@@ -1293,77 +1627,35 @@ Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
 (epstopdf)                    size: 7190 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-b-eps-con
 verted-to.pdf fig/cod_gpu_sync-b.eps>
-(epstopdf)             \includegraphics on input line 183.
+(epstopdf)             \includegraphics on input line 334.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig/cod_gpu_sync-b-eps-converted-to.pdf, id=13, 153.57375pt x 140.525pt>
+<fig/cod_gpu_sync-b-eps-converted-to.pdf, id=16, 153.57375pt x 140.525pt>
 File: fig/cod_gpu_sync-b-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/cod_gpu_sync-b-eps-converted-to.pdf>
 Package pdftex.def Info: fig/cod_gpu_sync-b-eps-converted-to.pdf used on input 
-line 183.
+line 334.
 (pdftex.def)             Requested size: 99.58464pt x 91.12358pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 197.
-
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 197.
-
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 197
-.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 197
-.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 197.
+(Font)              <10> on input line 348.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 197.
+(Font)              <7> on input line 348.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 197.
-LaTeX Font Info:    Try loading font information for U+msa on input line 197.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 197.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+(Font)              <5> on input line 348.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 199.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 218.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 218.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 218.
- [3
-
- <./fig/plataforma-eps-converted-to.pdf>] [4 <./fig/cod_gpu_sync-a-eps-converte
-d-to.pdf> <./fig/cod_gpu_sync-b-eps-converted-to.pdf>] (./plantilla.toc
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 350.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 399.
+ (./plantilla.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [3 <./fig/plataforma-eps-converted-to.pdf> <./fig/cod_gpu_sync-a-eps-converted
+-to.pdf> <./fig/cod_gpu_sync-b-eps-converted-to.pdf>] [4])
 \tf@toc=\write3
 \openout3 = `plantilla.toc'.
 
- [5
-
-] (./plantilla.lof
+ [5] (./plantilla.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1371,43 +1663,44 @@ LaTeX Info: Redefining \% on input line 1.
 \openout4 = `plantilla.lof'.
 
 
-[6
-
-] (./plantilla.lot
+(./plantilla.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write5
 \openout5 = `plantilla.lot'.
 
- [7
-
-] (./plantilla.loa)
+ [6] (./plantilla.loa)
 \tf@loa=\write6
 \openout6 = `plantilla.loa'.
 
- [8
 
-] (./introduccion.tex
-Cap\'{\i }tulo 1.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
-) (./marco_teorico.tex [1
+! Undefined control sequence.
+l.407 \mainmatter
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(./introduccion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
+
+ []
 
 
-]
-Cap\'{\i }tulo 2.
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
+ []
+
+[7] [8]) (./marco_teorico.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--7
 \T1/ptm/m/n/12 Actualmente las ar-qui-tec-tu-ras de los dis-po-si-ti-vos per-so
--na-les es-tan di-se-ña-das con
+-na-les es-tán di-se-ña-das con
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--7
-
- []
-
+[9]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
 
@@ -1415,92 +1708,107 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-[2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
+Package epstopdf Info: Source file: <fig/plataforma.eps>
+(epstopdf)                    date: 2009-10-24 17:48:48
+(epstopdf)                    size: 9700 bytes
+(epstopdf)             Output file: <fig/plataforma-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-13 20:06:57
+(epstopdf)                    size: 7290 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/plataforma-eps-convert
+ed-to.pdf fig/plataforma.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/plataforma-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/plataforma-eps-converted-to.pdf>
+Package pdftex.def Info: fig/plataforma-eps-converted-to.pdf used on input line
+ 14.
+(pdftex.def)             Requested size: 185.69328pt x 154.57712pt.
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--35
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 30--33
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
 
  []
 
-<fig/core.png, id=69, 314.17375pt x 553.06625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+
+ []
+
+<fig/core.png, id=70, 314.17375pt x 553.06625pt>
 File: fig/core.png Graphic file (type png)
  <use fig/core.png>
-Package pdftex.def Info: fig/core.png used on input line 43.
+Package pdftex.def Info: fig/core.png used on input line 51.
 (pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
 File: fig/core.png Graphic file (type png)
 
 <use fig/core.png>
-Package pdftex.def Info: fig/core.png used on input line 50.
+Package pdftex.def Info: fig/core.png used on input line 58.
 (pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
+ [12] [13 <./fig/core.png>]
+<fig/p.png, id=78, 557.08125pt x 372.39125pt>
+File: fig/p.png Graphic file (type png)
+ <use fig/p.png>
+Package pdftex.def Info: fig/p.png used on input line 68.
+(pdftex.def)             Requested size: 341.43306pt x 228.24362pt.
 
-
-LaTeX Warning: Reference `' on page 4 undefined on input line 56.
-
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
-[4]
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
- [5 <./fig/core.png>]
-
-LaTeX Warning: Reference `' on page 6 undefined on input line 58.
-
-
-Underfull \hbox (badness 2671) in paragraph at lines 64--65
+Underfull \hbox (badness 2671) in paragraph at lines 78--79
 []\T1/ptm/m/n/12 Cada nú-cleo cuen-ta con sus pro-pios re-gis-tros y to-dos los
  nú-cleos del mis-mo
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 66--67
+Underfull \hbox (badness 2005) in paragraph at lines 80--81
 []\T1/ptm/b/n/12 Shared me-mory \T1/ptm/m/n/12 es una me-mo-ria que se en-cuen-
 tra pró-xi-ma a los nú-cleos del
  []
 
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
-[6]
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
- [7] <fig/Ejemplo_gpu.png, id=83, 623.32875pt x 817.0525pt>
+[14 <./fig/p.png>] <fig/threads.png, id=84, 484.81125pt x 628.3475pt>
+File: fig/threads.png Graphic file (type png)
+
+<use fig/threads.png>
+Package pdftex.def Info: fig/threads.png used on input line 95.
+(pdftex.def)             Requested size: 142.26378pt x 184.38295pt.
+ <fig/ab.png, id=85, 646.415pt x 240.9pt>
+File: fig/ab.png Graphic file (type png)
+
+<use fig/ab.png>
+Package pdftex.def Info: fig/ab.png used on input line 102.
+(pdftex.def)             Requested size: 341.43306pt x 127.24263pt.
+ [15 <./fig/threads.png> <./fig/ab.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+[16] [17] <fig/Ejemplo_gpu.png, id=96, 623.32875pt x 817.0525pt>
 File: fig/Ejemplo_gpu.png Graphic file (type png)
 
 <use fig/Ejemplo_gpu.png>
-Package pdftex.def Info: fig/Ejemplo_gpu.png used on input line 121.
+Package pdftex.def Info: fig/Ejemplo_gpu.png used on input line 167.
 (pdftex.def)             Requested size: 374.00014pt x 490.23529pt.
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
- [8]
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
- [9 <./fig/Ejemplo_gpu.png>]
 Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
 (epstopdf)                    date: 2011-04-11 23:13:34
 (epstopdf)                    size: 3857 bytes
@@ -1509,13 +1817,12 @@ Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
 (epstopdf)                    size: 6579 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-a-eps-con
 verted-to.pdf fig/cod_gpu_sync-a.eps>
-(epstopdf)             \includegraphics on input line 137.
+(epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
 File: fig/cod_gpu_sync-a-eps-converted-to.pdf Graphic file (type pdf)
-
-<use fig/cod_gpu_sync-a-eps-converted-to.pdf>
+ <use fig/cod_gpu_sync-a-eps-converted-to.pdf>
 Package pdftex.def Info: fig/cod_gpu_sync-a-eps-converted-to.pdf used on input 
-line 137.
+line 183.
 (pdftex.def)             Requested size: 142.27376pt x 113.81174pt.
 Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
 (epstopdf)                    date: 2011-04-11 23:17:44
@@ -1525,83 +1832,353 @@ Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
 (epstopdf)                    size: 7190 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-b-eps-con
 verted-to.pdf fig/cod_gpu_sync-b.eps>
-(epstopdf)             \includegraphics on input line 141.
+(epstopdf)             \includegraphics on input line 187.
 Package epstopdf Info: Output file is already uptodate.
 File: fig/cod_gpu_sync-b-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/cod_gpu_sync-b-eps-converted-to.pdf>
 Package pdftex.def Info: fig/cod_gpu_sync-b-eps-converted-to.pdf used on input 
-line 141.
+line 187.
 (pdftex.def)             Requested size: 142.26378pt x 130.18513pt.
-) (./estado_arte.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [10]
-Cap\'{\i }tulo 3.
-
+ [18] [19 <./fig/Ejemplo_gpu.png>] [20]) (./estado_arte.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-[11
-
-]) (./desarrollo.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [12]
-Cap\'{\i }tulo 4.
-) (./experimentos.tex [13
-
-]
-Cap\'{\i }tulo 5.
-) (./conclusiones.tex [14
-
-]
-Cap\'{\i }tulo 6.
-) [15
-
-] (./plantilla.bbl [16
+[21]) (./desarrollo.tex
+Underfull \hbox (badness 1038) in paragraph at lines 16--2
+\T1/ptm/m/n/12 k ele-men-tos más cer-ca-nos, pro-pues-ta por Ri-car-do Ba-rrien
+-tos y Jo-sé Gó-mez [[]]
+ []
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 72.
+Underfull \hbox (badness 1270) in paragraph at lines 5--7
+[]\T1/ptm/m/n/12 En es-te ca-pi-tu-lo se des-cri-bi-rá el pro-ce-so de crea-ció
+n del Soft-wa-re men-cio-na-do ya
+ []
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 10--16
+
+ []
+
+<fig/incremental.png, id=115, 897.3525pt x 496.85625pt>
+File: fig/incremental.png Graphic file (type png)
+
+<use fig/incremental.png>
+Package pdftex.def Info: fig/incremental.png used on input line 21.
+(pdftex.def)             Requested size: 358.93463pt x 198.73897pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+[23 <./fig/incremental.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 39--40
+[]\T1/ptm/m/n/12 Se en-tre-gan pri-me-ro los re-qui-si-tos prin-ci-pa-les de mo
+-do que al in-te-grar nue-vas
+ []
+
+[24] <fig/Max-Heap.png, id=122, 1204.5pt x 892.33376pt>
+File: fig/Max-Heap.png Graphic file (type png)
+ <use fig/Max-Heap.png>
+Package pdftex.def Info: fig/Max-Heap.png used on input line 63.
+(pdftex.def)             Requested size: 142.26378pt x 105.38705pt.
+
+<fig/Min-heap.png, id=123, 443.6575pt x 287.0725pt>
+File: fig/Min-heap.png Graphic file (type png)
+ <use fig/Min-heap.png>
+Package pdftex.def Info: fig/Min-heap.png used on input line 69.
+(pdftex.def)             Requested size: 142.26378pt x 92.04904pt.
+
+<fig/Min-max_heap.png, id=124, 401.5pt x 223.83624pt>
+File: fig/Min-max_heap.png Graphic file (type png)
+
+<use fig/Min-max_heap.png>
+Package pdftex.def Info: fig/Min-max_heap.png used on input line 75.
+(pdftex.def)             Requested size: 142.26378pt x 79.31384pt.
+ [25] [26 <./fig/Max-Heap.png> <./fig/Min-heap.png> <./fig/Min-max_heap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+[27]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 112.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [28]
+<fig/speed.png, id=139, 836.12375pt x 335.2525pt>
+File: fig/speed.png Graphic file (type png)
+ <use fig/speed.png>
+Package pdftex.def Info: fig/speed.png used on input line 142.
+(pdftex.def)             Requested size: 426.79134pt x 171.12997pt.
+
+<fig/tiempo.png, id=140, 502.87875pt x 394.47375pt>
+File: fig/tiempo.png Graphic file (type png)
+ <use fig/tiempo.png>
+Package pdftex.def Info: fig/tiempo.png used on input line 155.
+(pdftex.def)             Requested size: 199.16928pt x 156.23375pt.
+
+<fig/timepo.png, id=141, 493.845pt x 394.47375pt>
+File: fig/timepo.png Graphic file (type png)
+ <use fig/timepo.png>
+Package pdftex.def Info: fig/timepo.png used on input line 159.
+(pdftex.def)             Requested size: 199.16928pt x 159.08684pt.
+ [29]
+[30 <./fig/speed.png> <./fig/tiempo.png> <./fig/timepo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 209--210
+[]\T1/ptm/m/n/12 SMM es-tá fun-da-men-ta-do en un mo-de-lo de eje-cu-ción de-no
+-mi-na-do \T1/ptm/m/it/12 for-k/-join \T1/ptm/m/n/12 que
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--217
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 242--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--249
+
+ []
+
+[35] <fig/interfaz1.png, id=165, 998.73125pt x 724.7075pt>
+File: fig/interfaz1.png Graphic file (type png)
+
+<use fig/interfaz1.png>
+Package pdftex.def Info: fig/interfaz1.png used on input line 252.
+(pdftex.def)             Requested size: 398.33858pt x 289.04851pt.
+ [36 <./fig/interfaz1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+<fig/interfaz_multicore.png, id=169, 999.735pt x 713.66624pt>
+File: fig/interfaz_multicore.png Graphic file (type png)
+
+<use fig/interfaz_multicore.png>
+Package pdftex.def Info: fig/interfaz_multicore.png used on input line 273.
+(pdftex.def)             Requested size: 398.33858pt x 284.3507pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+<fig/interfaz_secuencial.png, id=170, 993.7125pt x 713.66624pt>
+File: fig/interfaz_secuencial.png Graphic file (type png)
+
+<use fig/interfaz_secuencial.png>
+Package pdftex.def Info: fig/interfaz_secuencial.png used on input line 281.
+(pdftex.def)             Requested size: 398.33858pt x 286.08214pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--288
+
+ []
+
+[37] [38 <./fig/interfaz_multicore.png> <./fig/interfaz_secuencial.png>]
+<fig/error.png, id=178, 277.035pt x 178.6675pt>
+File: fig/error.png Graphic file (type png)
+ <use fig/error.png>
+Package pdftex.def Info: fig/error.png used on input line 295.
+(pdftex.def)             Requested size: 142.26378pt x 91.74898pt.
+
+<fig/exito_knn.png, id=179, 274.02374pt x 121.45375pt>
+File: fig/exito_knn.png Graphic file (type png)
+ <use fig/exito_knn.png>
+Package pdftex.def Info: fig/exito_knn.png used on input line 299.
+(pdftex.def)             Requested size: 142.26378pt x 63.05621pt.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+) [39 <./fig/error.png> <./fig/exito_knn.png>] [40] [41] [42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
 
-Underfull \hbox (badness 1430) in paragraph at lines 96--100
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 577--580
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
+
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 673.
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--728
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--728
+
+ []
+
+[49] [50] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 734--736
+
+ []
+
+<fig/resultados.png, id=225, 791.95876pt x 452.69125pt>
+File: fig/resultados.png Graphic file (type png)
+
+<use fig/resultados.png>
+Package pdftex.def Info: fig/resultados.png used on input line 739.
+(pdftex.def)             Requested size: 398.33858pt x 227.69893pt.
+ <fig/guardar.png, id=226, 552.0625pt x 365.365pt>
+File: fig/guardar.png Graphic file (type png)
+
+<use fig/guardar.png>
+Package pdftex.def Info: fig/guardar.png used on input line 745.
+(pdftex.def)             Requested size: 284.52756pt x 188.3128pt.
+
+
+LaTeX Warning: Citation `itex' on page 52 undefined on input line 754.
+
+[52] [53 <./fig/resultados.png> <./fig/guardar.png>]
+<fig/add_menu.png, id=233, 840.13875pt x 381.425pt>
+File: fig/add_menu.png Graphic file (type png)
+ <use fig/add_menu.png>
+Package pdftex.def Info: fig/add_menu.png used on input line 859.
+(pdftex.def)             Requested size: 426.79134pt x 193.76173pt.
+)
+(./experimentos.tex) (./conclusiones.tex [54] [55] [56 <./fig/add_menu.png>])
+! Undefined control sequence.
+l.430 \backmatter
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(./plantilla.bbl [57] [58]
+Underfull \hbox (badness 1430) in paragraph at lines 134--138
 \T1/ptm/m/it/12 In-ter-na-tio-nal sym-po-sium on com-pu-ter scien-ce and compu-
 tatio-nal tech-no-logy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
-[]\T1/ptm/m/n/12 Intel LA.  Pro-ce-sa-do-res intel[] xeon phi$[]$.
+Underfull \hbox (badness 10000) in paragraph at lines 140--145
+[]\T1/ptm/m/n/12 Intel LA.  Pro-ce-sa-do-res in-tel\TS1/ptm/m/n/12 ® \T1/ptm/m/
+n/12 xeon phi\TS1/ptm/m/n/12 —\T1/ptm/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+Underfull \hbox (badness 10000) in paragraph at lines 140--145
 \T1/ptm/m/n/12 urlhttps://www.intel.la/content/www/xl/es/products/processors/xe
 on-phi/xeon-
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 109--113
+Underfull \hbox (badness 2644) in paragraph at lines 154--158
 []\T1/ptm/m/n/12 Bradford Ni-chols, Dick Buttlar, and Jac-que-li-ne Proulx Fa-r
 rell.  \T1/ptm/m/it/12 Pth-reads
  []
 
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
-[17])
-LaTeX Info: Redefining \. on input line 284.
-LaTeX Info: Redefining \% on input line 284.
- [18] (./plantilla.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
+[]\T1/ptm/m/n/12 Oracle.  ¾cuá-les son los re-qui-si-tos del sis-te-ma pa-ra ja
+-va?
+ []
+
+[59]) [60] (./plantilla.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 )
@@ -1612,36 +2189,41 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
  )
-(\end occurred inside a group at level 1)
+(\end occurred inside a group at level 4)
 
+### simple group (level 4) entered at line 201 ({)
+### semi simple group (level 3) entered at line 131 (\begingroup)
+### semi simple group (level 2) entered at line 103 (\begingroup)
 ### semi simple group (level 1) entered at line 47 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14456 strings out of 493029
- 251499 string characters out of 6136233
- 297301 words of memory out of 5000000
- 17753 multiletter control sequences out of 15000+600000
- 64801 words of font info for 73 fonts, out of 8000000 for 9000
+ 15934 strings out of 493029
+ 271259 string characters out of 6136233
+ 451470 words of memory out of 5000000
+ 19175 multiletter control sequences out of 15000+600000
+ 62683 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,42p,10403b,1768s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
-f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvi
-ps/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on plantilla.pdf (26 pages, 298420 bytes).
+ 38i,9n,51p,10403b,4533s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/us
+r/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/t
+exmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/cm-supe
+r/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on plantilla.pdf (60 pages, 961162 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 319 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 

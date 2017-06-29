@@ -1755,3 +1755,104 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
   year={1969},
   publisher={Elsevier}
 }
+
+@MISC {java,
+    author       = "Oracle	",
+    title        = "¿Cuáles son los requisitos del sistema para Java?",
+    howpublished = "{url{https://www.java.com/es/download/help/sysreq.xml}},",
+    month        = "jan",
+    year         = "2017"
+}
+
+@book{c,
+  title={The C programming language},
+  author={Kernighan, Brian W and Ritchie, Dennis M},
+  year={2006}
+}
+
+@article{deepak2001core,
+  title={Core J2EE Patterns: Best Practices and Design Strategies},
+  author={Deepak, Alur and Crupi, John and Malks, Dan},
+  journal={Sun Microsystems. Palo Alto},
+  year={2001}
+}
+
+@article{nunez2003investigacion,
+  title={Investigaci{\'o}n de la plataforma J2EE y su aplicacion practica},
+  author={Nu{\~n}ez, Juan Manuel Barrios},
+  journal={Chile: Universidad de Chile, Facultad de Ciencias F{\'\i}sicas y Matem{\'a}ticas, Departamento de Ciencias de la Computaci{\'o}n},
+  year={2003}
+}
+
+@article{joskowicz2008reglas,
+  title={Reglas y pr{\'a}cticas en eXtreme Programming},
+  author={Joskowicz, Jos{\'e}},
+  journal={Universidad de Vigo},
+  pages={22},
+  year={2008}
+}
+
+@article{pressman1988ingenieria,
+  title={Ingenier{\'\i}a del software},
+  author={Pressman, Roger S and Troya, Jose Maria},
+  year={1988},
+  publisher={McGraw Hill}
+}
+
+@BOOK {libromcd,
+    author    = "McDermid, J. y P. Rook",
+    title     = "“Software Development Process Models”, en Software Engineer’s Reference Book",
+    publisher = "CRC Press",
+    year      = "1993",
+    note      = "pp. 15/26-15/28."
+}
+
+@ONLINE {speed,
+    title = "Perl, Python, Ruby, PHP, C, C++, Lua, tcl, javascript and Java comparison",
+    month = "mar",
+    year  = "2011",
+    url   = "https://raid6.com.au/~onlyjob/posts/arena/"
+}
+
+@article{acosta2012guia,
+  title={Gu{\'\i}a y fundamentos de la programaci{\'o}n en paralelo},
+  author={Acosta, Fabio A and Segura, Oscar M and Ospina, Alvaro E},
+  journal={Revista en telecomunicaciones e inform{\'a}tica},
+  volume={2},
+  number={4},
+  pages={81--97},
+  year={2012}
+}
+
+@ONLINE {heap,
+    author = "Samuel Rodriguez Bernabeu",
+    title  = "Max/Min heap, priority queues… ¿Qué son y cómo lo hago? Comparativa Python, C/C++.",
+    month  = "oct",
+    year   = "2013",
+    url    = "https://porlasbarbasdekutta.wordpress.com/2013/10/10/maxmin-heap-priority-queues-que-son-y-como-lo-hago-comparativa-python-cc/"
+}
+
+@ONLINE {netbeans,
+    author = "Oracle Corporation and/or its affiliates",
+    title  = "NetBeans IDE Fits the Pieces Together",
+    month  = "apr",
+    year   = "2017",
+    url    = "https://netbeans.org/"
+}
+
+@ONLINE {iclit2017,
+    author = "ICL IT",
+    title  = "Papi - PAPIC:Profiling",
+    month  = "jan",
+    year   = "2017",
+    url    = "http://icl.cs.utk.edu/projects/papi/wiki/PAPIC:Profiling"
+}
+
+@ONLINE {poi,
+    author = "Apache fundation",
+    title  = "Apache POI - the Java API for Microsoft Documents",
+    month  = "apr",
+    year   = "2017",
+    url    = "https://poi.apache.org/"
+}
+

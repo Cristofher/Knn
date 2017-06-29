@@ -341,11 +341,8 @@ __attribute__((target(mic))) double distancia(double *p1, double *p2, int DIM)
     int i=0;
     double suma=0.0;
     double aux, aux2;
-
-
    __assume_aligned(p1, 64);
-   __assume_aligned(p2, 64);
-    
+   __assume_aligned(p2, 64);   
     #pragma vector aligned
     #pragma ivdep
     #pragma simd

@@ -1,0 +1,61 @@
+\chapter[Introducción]{\label{ch:intro}Introducción}
+
+En esta tesis se propone un software pensado en usuarios que poseen poco o nulo conocimientos de programación, de modo que puedan utilizar eventualmente este software para resolver consultas K-nn. Para esto se han recopilado distintas versiones del algoritmo K-nn propuestos en la literatura, de modo que se presentan al menos cuatro algoritmos diferentes, estos son: Algoritmo secuencial K-nn, Algoritmo paralelo K-nn utilizando la librería OpenMP (Multi-núcleo o  Multi-hilos), Algoritmo paralelo K-nn utilizando librería OpenMP para Intel Xeon Phi, Algoritmo paralelo K-nn GPU.
+Se utilizo JAVA 8 \cite{java} para programar la interfaz gráfica del software debido a que este lenguaje es soportado en los distintos sistemas operativos:
+\\Windows en sus versiones 10, 8.x (Escritorio), 7 SP1, Vista SP2, Windows Server 2008 R2 SP1 (64 bits), Windows Server 2012 y 2012 R2 (64 bits) y los recursos necesarios son 128 MB de RAM, un espacio minino de 124 MB, procesador pentium 2 a 266 MHz, a su vez en MAC OSx equipos Mac con Intel que ejecuta Mac OS X 10.8.3+, 10.9+, la instalación se debe realizar en modo administrador, En linux en cambio esta disponible para Oracle Linux desde la versión 5.5+ o en versiones superiores, en Red Hat Enterprise Linux desde la versión 5.5+ o en versiones superiores, Suse Linux Enterprise Server desde 10 SP2+ o versiones superiores y en Ubuntu Linux en desde versiones 12.04 LTS o en versiones superiores.\\
+\\
+Para la programación de los algoritmos se empleo el lenguaje de programación C \cite{c} dado que este lenguaje puede ser utilizando en diversos sistemas operativos, además de poder utilizar librerías que permiten el uso del paralelismo en los distintos tipos de plataformas paralelas, como son Multi-Hilos, Intel Xeon Phi y GPU.\\
+\\
+Las plataformas paralelas que se emplean en esta tesis son las mencionadas anteriormente, tanto para Multi-hilos y Intel Xeon Phi se utiliza la librería OpenMP \cite{libroOpenMP}\cite{libroPthreads}, esta librería esta pensada para lenguajes como C, C++ y Fortran, disponible además para diversos tipos de arquitecturas, incluidas algunas plataformas como Windows y Unix.
+A su vez para GPU se cuenta con librerías propuestas por NVIDIA y CUDA \cite{cuda} la cual permite trabajar las concurrencias en GPU y poder utilizar los hilos y bloques que propone GPU.   
+
+\section{Motivación}
+
+K-nn \textit{(K nearest neighbors)} es uno de los métodos de minería de datos más utilizado, este es un clasificador basado en instancias (aprendizaje por analogía). De manera que se buscan los casos más parecidos y la clasificación se realiza en función de la clase analizada, este es conocido por ser un paradigma perezoso debido a ser un análisis exhaustivo con la consulta y todos lo elementos del conjunto (Vease algoritmo \ref{alg:algoritmoRaro}).\\
+\label{alg:algoritmoRaro}
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE \textbf{D}, es el conjunto de datos de entrenamiento, El objeto de prueba \textbf{Z}, el cual es un vector descriptor y \textbf{L} es el conjunto de clases con objetos etiquetados.
+\ENSURE$ C_z$ $\in$ $\textbf{L}$, la clase de $\textbf{z}$
+\FOR{ objeto $y$ $D$ } 
+\STATE Calcular d\textbf{(z,y)}, la distancia entre \textbf{z} e \textbf{y};
+\ENDFOR
+\end{algorithmic}
+\caption{Algoritmo Knn básico}\label{alg:algoritmoRaro}
+\end{algorithm}
+
+Si bien el algoritmo Knn es bastante lento, al ser exhaustivo (evaluar cada opción del conjunto) es sumamente exacto con una complejidad del tipo O[D x N] donde N es el número de tuplas y D su dimensión, suele ser utilizado en muchos campos, como lo son minería de datos usado para estimar una función de densidad \textbf{F(x/$C_j$)} donde predice el valor $x$ para la clase $C_j$. Este algoritmo además es muy utilizado en el reconocimiento de patrones, imaginemos dado el caso de una base de datos con rostros y se desea identificar a quien de ellos corresponde un rostro en consulta, en este caso con las imágenes de los rostros se realizan descriptores de la imágenes tanto para la base de datos como para la consulta en cuestión; Este descriptor esta compuesto por un vector lineal el cual con el cálculo de la distancia entre dos puntos se obtiene la similitud entre ambos. Se debe considerar ciertos aspectos para establecer una variable K, dado que este depende fundamentalmente de los datos, de modo que si es se selecciona un valor muy pequeño estos pueden ser ruidos (ser elementos de otra clase) y si se selecciona un K muy grande puede pasar exactamente lo mismo (abarcar elementos de otra clase). De tal manera que la elección del K es recomendada a un valor pequeño de acuerdo a la cantidad de datos.\\
+\\
+No obstante, este algoritmo puede llevarse a un sin fin de otros usos, asociados a la clasificación y reconocimiento de patrones. En este punto es importante añadir que existen diferentes formas de emplear y aplicar el algoritmo de modo que en situaciones es utilizado como un clasificador previo a análisis más potentes.   
+
+\section{Objetivos}
+
+El objetivo general de esta tesis se centra en la recopilación de algoritmos de vecinos más cercanos (k-nearest neighbor) encontrados en la literatura que proponen una solución más óptima en tiempos de ejecución, para esto se estableció que los objetivos que cumplen con esta condición son aquellos que han sido propuestos en las lineas de paralelismo, donde a su vez se emplean heap para la resolución de este algoritmo.
+
+Para poder realizar la unión de los diferentes algoritmos paralelos, se propone un software el cual permite la agrupación de algoritmos de diferentes plataformas paralelas, además de añadir el algoritmo secuencial base como un agregado. En base a lo anteriormente mencionado se pretende que el software sea diseñado en consideración a usuarios los cuales no estén familiarizados con la programación de estos metidos, de modo que la utilización del software no se vea ligada a sus conocimientos en áreas de programación.
+
+
+Los objetivos específicos son los siguientes:
+
+\begin{itemize}
+
+\item Realizar la interfaz gráfica del software
+
+	\subitem Esta se realiza en JAVA debido a su capacidad de ser interpretada tanto en Windows, Linux y OSx
+\item Añadir los algoritmos K-nn al software
+	\subitem K-nn multi-núcleo
+	\subitem K-nn Xeon Phi
+	\subitem K-nn GPU
+	 
+\item Añadir menú para añadir nuevos métodos
+
+\item Permitir al usuario exportación de los resultados en los siguientes formatos
+	\subitem Excel
+	\subitem Word
+	\subitem Archivo de texto plano (TXT)
+	\subitem Documento portátil PDF
+	
+\end{itemize}
+
+
+

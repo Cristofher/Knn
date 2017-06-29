@@ -473,17 +473,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel_Vista_Queries1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="147" max="32767" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton_Exportar_PDF" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="jButton_Exportar_PDF1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace min="22" pref="418" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="440" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -498,9 +492,6 @@
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_Vista_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton_Exportar_PDF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton_Exportar_PDF1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_Vista_Queries2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel_Vista_Queries1" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -567,21 +558,6 @@
         <Component class="javax.swing.JLabel" name="jLabel_Vista_Queries1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Result"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton_Exportar_PDF">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TXT"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Export to"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton_Exportar_PDF1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=" PDF"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Vista_Queries2">

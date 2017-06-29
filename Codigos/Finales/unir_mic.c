@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		{
 			if (strcmp(cadena,palabra)==10)
 			{
-				printf("Entro\n");
+				//printf("Entro\n");
 				while(!feof(q))
 				{
 					fscanf(q, "%c", &c);

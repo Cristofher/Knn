@@ -1,16 +1,27 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
-\contentsline {section}{\numberline {1.1}Objetivos}{1}
-\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{2}
-\contentsline {section}{\numberline {2.1}Sistemas Multi-core y OpenMP}{2}
-\contentsline {subsection}{\numberline {2.1.1}Threads}{2}
-\contentsline {section}{\numberline {2.2}Coprocesadores}{3}
-\contentsline {subsection}{\numberline {2.2.1}Intel Xeon Phi}{3}
-\contentsline {subsection}{\numberline {2.2.2}NVIDIA GPU}{6}
-\contentsline {chapter}{\numberline {3}Estado del Arte}{11}
-\contentsline {chapter}{\numberline {4}Desarrollo}{13}
-\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{13}
-\contentsline {chapter}{\numberline {5}Experimentos}{14}
-\contentsline {chapter}{\numberline {6}Conclusiones}{15}
-\contentsline {section}{\numberline {6.1}Trabajos Futuros}{15}
-\contentsline {section}{\numberline {6.2}Contribuciones de la Tesis}{15}
+\contentsline {section}{\numberline {1}Objetivos}{8}
+\contentsline {section}{\numberline {2}Sistemas Multi-core y OpenMP}{9}
+\contentsline {subsection}{\numberline {2.1}Threads}{10}
+\contentsline {section}{\numberline {3}Coprocesadores}{11}
+\contentsline {subsection}{\numberline {3.1}Intel Xeon Phi}{11}
+\contentsline {subsection}{\numberline {3.2}NVIDIA GPU}{12}
+\contentsline {section}{\numberline {4}Plataforma JAVA}{18}
+\contentsline {subsection}{\numberline {4.1}Lenguaje JAVA}{20}
+\contentsline {subsection}{\numberline {4.2}La maquina virtual}{20}
+\contentsline {subsection}{\numberline {4.3}Bibliotecas}{21}
+\contentsline {section}{\numberline {5}Introducci\IeC {\'o}n}{22}
+\contentsline {section}{\numberline {6}Metodolog\IeC {\'\i }a}{23}
+\contentsline {section}{\numberline {7}Selecci\IeC {\'o}n de algoritmos}{25}
+\contentsline {section}{\numberline {8}Selecci\IeC {\'o}n de lenguajes}{27}
+\contentsline {section}{\numberline {9}Desarrollo interfaz}{35}
+\contentsline {section}{\numberline {10}Integraci\IeC {\'o}n de algoritmo K-nn Secuencial}{39}
+\contentsline {subsection}{\numberline {10.1}Funciones claves del algoritmo secuencial}{40}
+\contentsline {section}{\numberline {11}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo Multi-hilos}{44}
+\contentsline {subsection}{\numberline {11.1}Funciones claves del algoritmo multi-hilos}{46}
+\contentsline {section}{\numberline {12}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo Xeon Phi}{47}
+\contentsline {subsection}{\numberline {12.1}Funciones claves del algoritmo Xeon phi}{48}
+\contentsline {section}{\numberline {13}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo GPU}{52}
+\contentsline {section}{\numberline {14}M\IeC {\'e}todos de exportaci\IeC {\'o}n de resultados}{52}
+\contentsline {section}{\numberline {15}Nuevo modulo A\IeC {\~n}adir men\IeC {\'u}}{54}
+\contentsline {section}{\numberline {16}Trabajos Futuros}{54}
+\contentsline {section}{\numberline {17}Contribuciones de la Tesis}{57}

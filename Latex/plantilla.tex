@@ -1,4 +1,4 @@
-\documentclass[headings=optiontohead,12pt,letterpaper,oneside,spanish]{book}
+\documentclass[letterpaper, 12pt]{article}
 \usepackage[spanish, activeacute]{babel}% Utilizamos el paquete para utilizar espa\~nol
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -27,11 +27,11 @@
 %\setcounter{secnumdepth}{3}
 %\setcounter{tocdepth}{3}
 \usepackage{longtable}
-\usepackage{subfigure}
 \usepackage{float}
 \usepackage{epsfig}
 \usepackage{listings}%para escribir codigo C
 \usepackage{subfigure}%para figuras una al lado de otras
+
 
 \makeatletter
 
@@ -51,6 +51,157 @@
 \newfloat{algorithm}{tbp}{loa}
 \floatname{algorithm}{Algoritmo}
 
+\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0.4cm,
+framesep=0pt,
+rulesep=.4pt,
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=15pt,
+numberstyle=\scriptsize,
+numberfirstline = false,
+breaklines=true,
+}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily
+}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  texcl=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\scriptsi\usepackage{longtable}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{listings}%para escribir codigo C
+\usepackage{subfigure}%para figuras una al lado de otras
+
+
+\makeatletter
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Para atenuar el corte de palabras
+\sloppy 
+\hyphenpenalty=10000
+
+%Interlineado en 1.5
+\usepackage{setspace}
+\spacing{1.5}
+
+
+%Esto es para que se coloque la palabra 'Algoritmo' en vez de 'Algorithm'
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algoritmo}
+
+\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0.4cm,
+framesep=0pt,
+rulesep=.4pt,
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=15pt,
+numberstyle=\scriptsize,
+numberfirstline = false,
+breaklines=true,
+}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily
+}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  texcl=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\scriptsize,
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}ze,
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
 
 
 
@@ -58,7 +209,7 @@
 
 %Los 2 comando de a continuacion cambian el nombre 
 %"Cuadro" por "Tabla"
-\renewcommand{\listtablename}{'Indice de tablas}
+\renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla}
 
 \thispagestyle{empty}
@@ -181,12 +332,12 @@ y OpenMP (\cite{libroOpenMP}).
 	\includegraphics[width=3.5cm]{fig/cod_gpu_sync-b.eps}
     \label{cod_gpu_sync-b}
 }
-\caption{\label{cod_gpu_sync}Ejemplos para ilustrar la sincronizaci'on
+\caption{\label{cod_gpu_sync}Ejemplos para ilustrar la sincronización
 de los threads de un \emph{warp}.}
 \end{center}
 \end{figure}
 %Los caracteres '~' sirven para controlar el espacio entre las figuras. Si están presentes entonces las figuras quedarán una al lado de la otra obligatoriamente.
-
+	
 
 
 \begin{algorithm}
@@ -221,7 +372,7 @@ rango $r$ para la consulta $q$.}
 
    \begin{table}
 \begin{center} 
-   \caption{\label{tabla_hardware} Caracter'isticas Generales}
+   \caption{\label{tabla_hardware} Características Generales}
    \begin{tabular}{|c|c|}
 \hline
    Processor& 2xIntel Quad-Xeon (2.66 GHz)\\

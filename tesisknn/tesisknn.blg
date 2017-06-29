@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tesisknn.aux
+The style file: apalike.bst
+Database file #1: ref.bib.bib
+Warning--entry type for "speed" isn't style-file defined
+--line 1810 of file ref.bib.bib
+Warning--entry type for "heap" isn't style-file defined
+--line 1827 of file ref.bib.bib
+Warning--entry type for "netbeans" isn't style-file defined
+--line 1835 of file ref.bib.bib
+Warning--entry type for "iclit2017" isn't style-file defined
+--line 1843 of file ref.bib.bib
+Warning--entry type for "poi" isn't style-file defined
+--line 1851 of file ref.bib.bib
+Warning--I didn't find a database entry for "itex"
+Warning--to sort, need author or key in cuda
+Warning--to sort, need author or key in xeonphi1
+Warning--to sort, need author or key in speed
+Warning--empty author in cuda
+Warning--empty year in cuda
+Warning--empty year in xeonphi1
+Warning--empty publisher in c
+Warning--empty journal in pressman1988ingenieria
+You've used 37 entries,
+            1935 wiz_defined-function locations,
+            657 strings with 8975 characters,
+and the built_in function-call counts, 13204 in all, are:
+= -- 1325
+> -- 433
+< -- 33
++ -- 149
+- -- 138
+* -- 990
+:= -- 2252
+add.period$ -- 109
+call.type$ -- 37
+change.case$ -- 248
+chr.to.int$ -- 36
+cite$ -- 48
+duplicate$ -- 587
+empty$ -- 974
+format.name$ -- 192
+if$ -- 2650
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 34
+newline$ -- 179
+num.names$ -- 102
+pop$ -- 263
+preamble$ -- 1
+purify$ -- 254
+quote$ -- 0
+skip$ -- 446
+stack$ -- 0
+substring$ -- 839
+swap$ -- 98
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 210
+warning$ -- 8
+while$ -- 108
+width$ -- 0
+write$ -- 450
+(There were 14 warnings)

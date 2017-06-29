@@ -1,17 +1,32 @@
 \select@language {spanish}
 \contentsline {figure}{\numberline {1}{\ignorespaces Plataforma multi-core.}}{3}
-\contentsline {figure}{\numberline {2}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Subfigura 1}}}{4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Subfigura 2}}}{4}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de una arquitectura MIC de un nucleo de un coprocesador Xeon Phi}}{5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplo de suma de vectores con CUDA.}}{9}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caption Subfigura 1}}}{10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Caption Subfigura 2}}}{10}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2}{\ignorespaces Ejemplos para ilustrar la sincronizaci\IeC {\'o}n de los threads de un \emph {warp}.}}{3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Subfigura 1}}}{3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Subfigura 2}}}{3}
+\contentsline {figure}{\numberline {3}{\ignorespaces Plataforma multi-core.}}{10}
+\contentsline {figure}{\numberline {4}{\ignorespaces Diagrama de una arquitectura MIC de un n\IeC {\'u}cleo de un coprocesador Xeon Phi}}{13}
+\contentsline {figure}{\numberline {5}{\ignorespaces Diagrama de una arquitectura MIC de un n\IeC {\'u}cleo de un coprocesador Xeon Phi}}{13}
+\contentsline {figure}{\numberline {6}{\ignorespaces Composici\IeC {\'o}n del \textit {device}}}{14}
+\contentsline {figure}{\numberline {7}{\ignorespaces Esquema de divisi\IeC {\'o}n de threads.}}{15}
+\contentsline {figure}{\numberline {8}{\ignorespaces Composici\IeC {\'o}n de la GPU a) vs. CPU b).}}{15}
+\contentsline {figure}{\numberline {9}{\ignorespaces Ejemplo de suma de vectores con CUDA.}}{19}
+\contentsline {figure}{\numberline {10}{\ignorespaces Ejemplos para ilustrar la sincronizaci'on de los threads de un \emph {warp}.}}{20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caption Subfigura 1}}}{20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Caption Subfigura 2}}}{20}
+\contentsline {figure}{\numberline {11}{\ignorespaces Modelo incremental}}{23}
+\contentsline {figure}{\numberline {12}{\ignorespaces Ejemplo de Max Heap}}{26}
+\contentsline {figure}{\numberline {13}{\ignorespaces Ejemplo de Min Heap}}{26}
+\contentsline {figure}{\numberline {14}{\ignorespaces Ejemplo de Min Max Heap}}{26}
+\contentsline {figure}{\numberline {15}{\ignorespaces Gr\IeC {\'a}fica de tiempo de velocidad}}{30}
+\contentsline {figure}{\numberline {16}{\ignorespaces Gr\IeC {\'a}fica de tiempo de velocidad}}{30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Ejemplo Min Heap insert}}}{30}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ejemplo Min Heap ExtractMin}}}{30}
+\contentsline {figure}{\numberline {17}{\ignorespaces Interfaz gr\IeC {\'a}fica inicial del software}}{36}
+\contentsline {figure}{\numberline {18}{\ignorespaces Interfaz gr\IeC {\'a}fica item multihilos del software}}{38}
+\contentsline {figure}{\numberline {19}{\ignorespaces Interfaz gr\IeC {\'a}fica item secuencial del software}}{38}
+\contentsline {figure}{\numberline {20}{\ignorespaces Mensajes al usuario }}{39}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mensaje 1 - Error}}}{39}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Mensaje 2 - \IeC {\'E}xito}}}{39}
+\contentsline {figure}{\numberline {21}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana de exportaci\IeC {\'o}n de resultados}}{53}
+\contentsline {figure}{\numberline {22}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana de guardar archivo}}{53}
+\contentsline {figure}{\numberline {23}{\ignorespaces Interfaz gr\IeC {\'a}fica de ventana Agregar men\IeC {\'u}}}{56}

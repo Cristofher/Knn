@@ -1,0 +1,19 @@
+\contentsline {algorithm}{\numberline {1}{\ignorespaces Algoritmo Knn b\IeC {\'a}sico}}{3}
+\contentsline {algorithm}{\numberline {2}{\ignorespaces \emph {} Estructura para realizar los $Heap$.}}{43}
+\contentsline {algorithm}{\numberline {3}{\ignorespaces \emph {} Utilizaci\IeC {\'o}n de $malloc$.}}{44}
+\contentsline {algorithm}{\numberline {4}{\ignorespaces \emph {} Proceso iterativo de una consulta K-nn.}}{45}
+\contentsline {algorithm}{\numberline {5}{\ignorespaces \emph {} C\IeC {\'a}lculo de distancias entre vectores.}}{45}
+\contentsline {algorithm}{\numberline {6}{\ignorespaces \emph {} Valor de la ra\IeC {\'\i }z del heap.}}{46}
+\contentsline {algorithm}{\numberline {7}{\ignorespaces \emph {} Realiza la inserci\IeC {\'o}n de un elemento al heap.}}{46}
+\contentsline {algorithm}{\numberline {8}{\ignorespaces \emph {} Realiza la extracci\IeC {\'o}n de un elemento al heap.}}{47}
+\contentsline {algorithm}{\numberline {9}{\ignorespaces \emph {} Realiza la extracci\IeC {\'o}n y la inserci\IeC {\'o}n de un elemento al heap.}}{47}
+\contentsline {algorithm}{\numberline {10}{\ignorespaces \emph {} Ejecutar un programa o ejecutable desde $Java$.}}{48}
+\contentsline {algorithm}{\numberline {11}{\ignorespaces \emph {} Proceso iterativo de una consulta K-nn multi-core.}}{49}
+\contentsline {algorithm}{\numberline {12}{\ignorespaces \emph {} Utilizaci\IeC {\'o}n de $malloc$.}}{52}
+\contentsline {algorithm}{\numberline {13}{\ignorespaces \emph {} Proceso iterativo de una consulta K-nn Xeon phi.}}{53}
+\contentsline {algorithm}{\numberline {14}{\ignorespaces \emph {} Funci\IeC {\'o}n distancia \textit {Xeon phi}.}}{54}
+\contentsline {algorithm}{\numberline {15}{\ignorespaces \emph {} Pasa una matriz a vector.}}{54}
+\contentsline {algorithm}{\numberline {16}{\ignorespaces \emph {} Valor de la ra\IeC {\'\i }z del heap.}}{55}
+\contentsline {algorithm}{\numberline {17}{\ignorespaces \emph {} M\IeC {\'e}todo de exportaci\IeC {\'o}n de resultados a $Excel$.}}{58}
+\contentsline {algorithm}{\numberline {18}{\ignorespaces \emph {} M\IeC {\'e}todo de exportaci\IeC {\'o}n de resultados a $PDF$.}}{59}
+\contentsline {algorithm}{\numberline {19}{\ignorespaces \emph {} M\IeC {\'e}todo de exportaci\IeC {\'o}n de resultados a $TXT$.}}{59}

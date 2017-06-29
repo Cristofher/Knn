@@ -287,7 +287,35 @@ public class Agregar_menu extends javax.swing.JFrame {
             String seleccion = getSelectedButtonText(grupo);
             chequear(seleccion);
             if ("Secuencial".equals(seleccion)) {
-
+                try {
+                    String path;
+                    String Snombre_menu = nombre_menu.getText();
+                    String path_base = "/usr/lib/knn/Knn/Ejecutable/";
+                    String path_base_secuencial = "/usr/lib/knn/Knn/Ejecutable/base_secuencial.c";
+                    String path_ejecutable = "/usr/lib/knn/Knn/Ejecutable/unir_secuencial.out";
+                    String path_fuente = jTextField_archivo.getText();
+                    path = path_ejecutable + " " + path_base_secuencial + " " + path_fuente + " " + path_base + Snombre_menu + ".c";
+                    System.out.println(path);
+                    Process p = Runtime.getRuntime().exec(path);
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(p.getInputStream()));
+                    String line;
+                    String texto = "";
+                    System.out.println("Corriendo");
+                    while ((line = in.readLine()) != null) {
+                        texto = salida.getText() + "\n";
+                        salida.setText(texto + line);
+                        salida.updateUI();
+                    }
+                    p.waitFor();
+                    System.out.println("Termino");
+                    System.out.println(p.exitValue());
+                    if (p.exitValue() == 0) {
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                }
             }
             if ("Multicore".equals(seleccion)) {
                 try {
@@ -322,7 +350,7 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
 
             if ("Xeon Phi".equals(seleccion)) {
-                                try {
+                try {
                     String path;
                     String Snombre_menu = nombre_menu.getText();
                     String path_base = "/usr/lib/knn/Knn/Ejecutable/";
@@ -346,10 +374,10 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println("Termino");
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
-                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                        JOptionPane.showMessageDialog(null, "Sucess");
                     }
                 } catch (IOException | InterruptedException e) {
-                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                    JOptionPane.showMessageDialog(null, "Error \n" + e.getMessage());
                 }
 
             }
@@ -378,10 +406,10 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println("Termino");
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
-                        JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                        JOptionPane.showMessageDialog(null, "Success");
                     }
                 } catch (IOException | InterruptedException e) {
-                    JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
+                    JOptionPane.showMessageDialog(null, "Error \n" + e.getMessage());
                 }
             }
         }
@@ -392,7 +420,7 @@ public class Agregar_menu extends javax.swing.JFrame {
         if (!Character.isDigit(c) && !Character.isLetter(c) && c != '_') {
             getToolkit().beep();
             evt.consume();
-            Object msj = "Solo ingrese Números";
+            Object msj = "Only number";
             JOptionPane.showMessageDialog(null,
                     msj,
                     "Advertencia",
@@ -463,10 +491,10 @@ public class Agregar_menu extends javax.swing.JFrame {
                 msj = msj + nl + "- No ha seleccionado el tipo de menú";
             }
             if ("".equals(jTextField_archivo.getText()) || "".equals(muestra_contenido.getText())) {
-                msj = msj + nl + "- No se ha seleccionado un archivo fuente ";
+                msj = msj + nl + "- Choose code sources";
             }
             if ("".equals(nombre_menu.getText())) {
-                msj = msj + nl + "- No ha escrito el nombre del menú";
+                msj = msj + nl + "- Menu name";
             }
             JOptionPane.showMessageDialog(null,
                     msj,

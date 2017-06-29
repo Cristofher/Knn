@@ -1,10 +1,20 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{CJvdP07}
 
+\bibitem[aia17]{netbeans}
+Oracle~Corporation and/or~its affiliates.
+\newblock Netbeans ide fits the pieces together, apr 2017.
+
 \bibitem[AKA91]{knn1}
 David~W Aha, Dennis Kibler, and Marc~K Albert.
 \newblock Instance-based learning algorithms.
 \newblock {\em Machine learning}, 6(1):37--66, 1991.
+
+\bibitem[ASO12]{acosta2012guia}
+Fabio~A Acosta, Oscar~M Segura, and Alvaro~E Ospina.
+\newblock Gu{\'\i}a y fundamentos de la programaci{\'o}n en paralelo.
+\newblock {\em Revista en telecomunicaciones e inform{\'a}tica}, 2(4):81--97,
+  2012.
 
 \bibitem[BDHK06]{bustos2006graphics}
 Benjamin Bustos, Oliver Deussen, Stefan Hiller, and Daniel Keim.
@@ -12,6 +22,11 @@ Benjamin Bustos, Oliver Deussen, Stefan Hiller, and Daniel Keim.
   search.
 \newblock In {\em International Conference on Computational Science}, pages
   196--199. Springer, 2006.
+
+\bibitem[Ber13]{heap}
+Samuel~Rodriguez Bernabeu.
+\newblock Max/min heap, priority queues… ¿qué son y cómo lo hago?
+  comparativa python, c/c++., oct 2013.
 
 \bibitem[BF79]{bentley1979data}
 Jon~Louis Bentley and Jerome~H Friedman.
@@ -71,10 +86,19 @@ Daniel Cederman and Philippas Tsigas.
 Cuda: Compute unified device architecture.
 \newblock In {\em \textcopyright 2007 NVIDIA Corporation}.
 
+\bibitem[DCM01]{deepak2001core}
+Alur Deepak, John Crupi, and Dan Malks.
+\newblock Core j2ee patterns: Best practices and design strategies.
+\newblock {\em Sun Microsystems. Palo Alto}, 2001.
+
 \bibitem[Fre69]{freeman1969experiments}
 JJ~Freeman.
 \newblock Experiments in discrimination and classification.
 \newblock {\em Pattern Recognition}, 1(3):207--218, 1969.
+
+\bibitem[fun17]{poi}
+Apache fundation.
+\newblock Apache poi - the java api for microsoft documents, apr 2017.
 
 \bibitem[GDB08]{garcia2008fast}
 Vincent Garcia, Eric Debreuve, and Michel Barlaud.
@@ -92,6 +116,20 @@ CG~HILBORN.
 \newblock Dg lainiotis.
 \newblock {\em IEEE transactions on information theory}, 1968.
 
+\bibitem[IT17]{iclit2017}
+ICL IT.
+\newblock Papi - papic:profiling, jan 2017.
+
+\bibitem[Jos08]{joskowicz2008reglas}
+Jos{\'e} Joskowicz.
+\newblock Reglas y pr{\'a}cticas en extreme programming.
+\newblock {\em Universidad de Vigo}, page~22, 2008.
+
+\bibitem[KR06]{c}
+Brian~W Kernighan and Dennis~M Ritchie.
+\newblock {\em The C programming language}.
+\newblock 2006.
+
 \bibitem[KZ09]{kuang2009practical}
 Quansheng Kuang and Lei Zhao.
 \newblock A practical gpu based knn algorithm.
@@ -105,11 +143,29 @@ Intel LA.
   {url{https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}},,
   jan 2017.
 
+\bibitem[McD93]{libromcd}
+J.~y P.~Rook McDermid.
+\newblock {\em “Software Development Process Models”, en Software
+  Engineer’s Reference Book}.
+\newblock CRC Press, 1993.
+\newblock pp. 15/26-15/28.
+
 \bibitem[NBF96]{libroPthreads}
 Bradford\ Nichols, Dick Buttlar, and Jacqueline~Proulx Farrell.
 \newblock {\em Pthreads Programming: A POSIX Standard for Better
   Multiprocessing}.
 \newblock O'Reilly, 1996.
+
+\bibitem[Nu{\~n}03]{nunez2003investigacion}
+Juan Manuel~Barrios Nu{\~n}ez.
+\newblock Investigaci{\'o}n de la plataforma j2ee y su aplicacion practica.
+\newblock {\em Chile: Universidad de Chile, Facultad de Ciencias F{\'\i}sicas y
+  Matem{\'a}ticas, Departamento de Ciencias de la Computaci{\'o}n}, 2003.
+
+\bibitem[Ora17]{java}
+Oracle.
+\newblock ¿cuáles son los requisitos del sistema para java?
+\newblock {url{https://www.java.com/es/download/help/sysreq.xml}},, jan 2017.
 
 \bibitem[PK07]{plaku2007distributed}
 Erion Plaku and Lydia~E Kavraki.
@@ -125,11 +181,20 @@ Roberto~Uribe Paredes and Gonzalo Navarro.
   Similarity Search and Applications}, pages 57--64. IEEE Computer Society,
   2009.
 
+\bibitem[PT88]{pressman1988ingenieria}
+Roger~S Pressman and Jose~Maria Troya.
+\newblock Ingenier{\'\i}a del software.
+\newblock 1988.
+
 \bibitem[Rei07]{libroTBB}
 James Reinders.
 \newblock {\em Intel threading building blocks: outfitting C++ for multi-core
   processor parallelism}.
 \newblock O'Reilly, 2007.
+
+\bibitem[spe11]{speed}
+Perl, python, ruby, php, c, c++, lua, tcl, javascript and java comparison, mar
+  2011.
 
 \bibitem[Wan14]{wange2014}
 Q.~Shen B. Zhang G. Lu X. Wu Q. Wang~Y. Wang, E.~Zhang.
