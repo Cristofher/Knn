@@ -1,8 +1,7 @@
 \documentclass[headings=optiontohead,12pt,letterpaper,oneside,spanish]{book}
 \usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}
+%\usepackage[•]{•}1]{inputenc}
 \usepackage[spanish]{babel}
-
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{amssymb,amsmath,amsthm}
@@ -129,48 +128,56 @@ breaklines=true,
   keywordstyle=\color{pblue},
   stringstyle=\color{pred},
   basicstyle=\scriptsize,
-  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[il][\textcolor{pgrey}]{},
   moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
 }
-
+%%
 \begin{document}
-	
+	\thispagestyle{empty}
     \renewcommand{\tablename}{Tabla}
+    \thispagestyle{empty}
 	\renewcommand{\listtablename}{{\'I}ndice de tablas}
 	
 	%\maketitle
-	\setcounter{secnumdepth}{3}
-	\setcounter{tocdepth}{3}
 	\input{TapaUCM.tex}
 	\newpage
-	\input{TapaUCM2.tex}
-	%\newpage
-	%\input{TapaLFDP.tex}
-	\newpage
-	\newpage
 	
-	\pagenumbering{roman}
+	\input{TapaUCM2.tex}
+
+	\thispagestyle{empty}	
+	\newpage
+
+	\thispagestyle{empty}
+	\newpage
+
+	\thispagestyle{empty}
 	\input{agradecimientos2.tex}
 	\newpage
-    %\pagestyle{fancy}
-	%\pagenumbering{arabic}
-	%\newpage
-    %\thispagestyle{plain}
+	
 	\input{resumen2.tex}
+	\pagestyle{empty}
+	\thispagestyle{empty}
 	\newpage
-	%\input{resumen.tex}
-	%\input{agradecimientos.tex}
 	\thispagestyle{empty}
 	\tableofcontents{}
+	\thispagestyle{empty}
+	\newpage
+	\thispagestyle{empty}
 	\listoffigures
+	\thispagestyle{empty}
 	\listoftables
+	\thispagestyle{empty}
 	\listof{algorithm}{\'Indice de Algoritmos}
-	%\newtheorem{defi}{Definición}[section]
+	\clearpage
+	\thispagestyle{empty}
 	
+
+	
+	\thispagestyle{empty}	
+	\newpage
+	\thispagestyle{empty}
 	\pagestyle{fancy}
 	\pagenumbering{arabic}
-	
-	\newpage
 	\input{introduccion}
 	\newpage
 	\input{marco_teorico}

@@ -1,17 +1,20 @@
 \begin{thebibliography}{}
 
-\bibitem[cud, ]{cuda}
-Cuda: Compute unified device architecture.
-\newblock In {\em \textcopyright 2007 NVIDIA Corporation}.
-
-\bibitem[xeo, ]{xeonphi1}
-{\em PRACE (Partnership for Advanced Computing in Europe). Best Practice Guide
-  - Intel Xeon Phi}.
-
 \bibitem[spe, 2011]{speed}
  (2011).
 \newblock Perl, python, ruby, php, c, c++, lua, tcl, javascript and java
   comparison.
+\newblock {https://raid6.com.au/~onlyjob/posts/arena/}.
+
+\bibitem[cud, 2017]{cuda}
+ (2017).
+\newblock Cuda: Compute unified device architecture.
+\newblock In {\em \textcopyright 2007 NVIDIA Corporation}.
+
+\bibitem[xeo, 2017]{xeonphi1}
+ (2017).
+\newblock {\em PRACE (Partnership for Advanced Computing in Europe). Best
+  Practice Guide - Intel Xeon Phi}.
 
 \bibitem[Acosta et~al., 2012]{acosta2012guia}
 Acosta, F.~A., Segura, O.~M., and Ospina, A.~E. (2012).
@@ -26,11 +29,30 @@ Aha, D.~W., Kibler, D., and Albert, M.~K. (1991).
 \bibitem[and/or~its affiliates, 2017]{netbeans}
 and/or~its affiliates, O.~C. (2017).
 \newblock Netbeans ide fits the pieces together.
+\newblock {https://netbeans.org/}.
 
 \bibitem[Barrientos et~al., 2010]{barrientos2010heap}
 Barrientos, R., G{\'o}mez, J., Tenllado, C., and Prieto, M. (2010).
 \newblock Heap based k-nearest neighbor search on gpus.
 \newblock In {\em Congreso Espanol de Inform{\'a}tica (CEDI)}, pages 559--566.
+
+\bibitem[Barrientos et~al., 2011]{barrientos2011knn}
+Barrientos, R.~J., G{\'o}mez, J.~I., Tenllado, C., Matias, M.~P., and Marin, M.
+  (2011).
+\newblock knn query processing in metric spaces using gpus.
+\newblock In {\em European Conference on Parallel Processing}, pages 380--392.
+  Springer.
+
+\bibitem[Beliakov et~al., 2012]{beliakov2012computing2}
+Beliakov, G., Johnstone, M., and Nahavandi, S. (2012).
+\newblock Computing of high breakdown regression estimators without sorting on
+  graphics processing units.
+\newblock {\em Computing}, 94(5):433--447.
+
+\bibitem[Beliakov and Li, 2012]{beliakov2012improving}
+Beliakov, G. and Li, G. (2012).
+\newblock Improving the speed and stability of the k-nearest neighbors method.
+\newblock {\em Pattern Recognition Letters}, 33(10):1296--1301.
 
 \bibitem[Bentley and Friedman, 1979]{bentley1979data}
 Bentley, J.~L. and Friedman, J.~H. (1979).
@@ -41,6 +63,8 @@ Bentley, J.~L. and Friedman, J.~H. (1979).
 Bernabeu, S.~R. (2013).
 \newblock Max/min heap, priority queues… ¿qué son y cómo lo hago?
   comparativa python, c/c++.
+\newblock
+  {https://porlasbarbasdekutta.wordpress.com/2013/10/10/maxmin-heap-priority-queues-que-son-y-como-lo-hago-comparativa-python-cc/}.
 
 \bibitem[Brisaboa et~al., 2008]{brisaboa2008clustering}
 Brisaboa, N., Pedreira, O., Seco, D., Solar, R., and Uribe, R. (2008).
@@ -56,12 +80,25 @@ Brisaboa, N.~R., Farina, A., Pedreira, O., and Reyes, N. (2006).
 \newblock In {\em Multimedia, 2006. ISM'06. Eighth IEEE International Symposium
   on}, pages 881--888. IEEE.
 
+\bibitem[Britos et~al., 2012]{britos2012dsacl}
+Britos, L., Printista, A.~M., and Reyes, N. (2012).
+\newblock Dsacl+-tree: A dynamic data structure for similarity search in
+  secondary memory.
+\newblock In {\em International Conference on Similarity Search and
+  Applications}, pages 116--131. Springer.
+
 \bibitem[Bustos et~al., 2006]{bustos2006graphics}
 Bustos, B., Deussen, O., Hiller, S., and Keim, D. (2006).
 \newblock A graphics hardware accelerated algorithm for nearest neighbor
   search.
 \newblock In {\em International Conference on Computational Science}, pages
   196--199. Springer.
+
+\bibitem[Cayton, 2012]{cayton2012accelerating}
+Cayton, L. (2012).
+\newblock Accelerating nearest neighbor search on manycore systems.
+\newblock In {\em Parallel \& Distributed Processing Symposium (IPDPS), 2012
+  IEEE 26th International}, pages 402--413. IEEE.
 
 \bibitem[Cederman and Tsigas, 2009]{cederman2009gpu}
 Cederman, D. and Tsigas, P. (2009).
@@ -74,6 +111,11 @@ Chapman, B., Jost, G., and van~der Pas, R. (2007).
 \newblock {\em Using OpenMP: Portable Shared Memory Parallel Programming}.
 \newblock The MIT Press.
 
+\bibitem[Ch{\'a}vez et~al., 2015]{chavez2015near}
+Ch{\'a}vez, E., Graff, M., Navarro, G., and T{\'e}llez, E.~S. (2015).
+\newblock Near neighbor searching with k nearest references.
+\newblock {\em Information Systems}, 51:43--61.
+
 \bibitem[Ch{\'a}vez and Navarro, 2000]{chavez2000effective}
 Ch{\'a}vez, E. and Navarro, G. (2000).
 \newblock An effective clustering algorithm to index high dimensional metric
@@ -81,13 +123,13 @@ Ch{\'a}vez, E. and Navarro, G. (2000).
 \newblock In {\em String Processing and Information Retrieval, 2000. SPIRE
   2000. Proceedings. Seventh International Symposium on}, pages 75--86. IEEE.
 
-\bibitem[Cover and Hart, 1967a]{cover1967nearest}
-Cover, T. and Hart, P. (1967a).
-\newblock Nearest neighbor pattern classification.
-\newblock {\em IEEE transactions on information theory}, 13(1):21--27.
+\bibitem[Ch{\'a}vez and Navarro, 2005]{chavez2005compact}
+Ch{\'a}vez, E. and Navarro, G. (2005).
+\newblock A compact space decomposition for effective metric indexing.
+\newblock {\em Pattern Recognition Letters}, 26(9):1363--1376.
 
-\bibitem[Cover and Hart, 1967b]{knn2}
-Cover, T. and Hart, P. (1967b).
+\bibitem[Cover and Hart, 1967]{cover1967nearest}
+Cover, T. and Hart, P. (1967).
 \newblock Nearest neighbor pattern classification.
 \newblock {\em IEEE transactions on information theory}, 13(1):21--27.
 
@@ -104,6 +146,13 @@ Freeman, J. (1969).
 \bibitem[fundation, 2017]{poi}
 fundation, A. (2017).
 \newblock Apache poi - the java api for microsoft documents.
+\newblock {https://poi.apache.org/}.
+
+\bibitem[Gao et~al., 2009]{gao2009efficient}
+Gao, Y., Zheng, B., Chen, G., and Li, Q. (2009).
+\newblock On efficient mutual nearest neighbor query processing in spatial
+  databases.
+\newblock {\em Data \& Knowledge Engineering}, 68(8):705--727.
 
 \bibitem[Garcia et~al., 2008]{garcia2008fast}
 Garcia, V., Debreuve, E., and Barlaud, M. (2008).
@@ -116,6 +165,17 @@ Hart, P.~E. (1966).
 \newblock An asymptotic analysis of the nearest-neighbor decision rule.
 \newblock Technical report, DTIC Document.
 
+\bibitem[Hartigan and Wong, 1979]{hartigan1979algorithm}
+Hartigan, J.~A. and Wong, M.~A. (1979).
+\newblock Algorithm as 136: A k-means clustering algorithm.
+\newblock {\em Journal of the Royal Statistical Society. Series C (Applied
+  Statistics)}, 28(1):100--108.
+
+\bibitem[Hastie et~al., 2009]{hastie2009overview}
+Hastie, T., Tibshirani, R., and Friedman, J. (2009).
+\newblock Overview of supervised learning.
+\newblock In {\em The elements of statistical learning}, pages 9--41. Springer.
+
 \bibitem[HILBORN, 1968]{hilborn1968dg}
 HILBORN, C. (1968).
 \newblock Dg lainiotis.
@@ -124,6 +184,12 @@ HILBORN, C. (1968).
 \bibitem[IT, 2017]{iclit2017}
 IT, I. (2017).
 \newblock Papi - papic:profiling.
+\newblock {http://icl.cs.utk.edu/papi/}.
+
+\bibitem[iText Group~NV, 2017]{itex}
+iText Group~NV (2017).
+\newblock itext, the world's preferred pdf library.
+\newblock {https://itextpdf.com/}.
 
 \bibitem[Joskowicz, 2008]{joskowicz2008reglas}
 Joskowicz, J. (2008).
@@ -133,6 +199,10 @@ Joskowicz, J. (2008).
 \bibitem[Kernighan and Ritchie, 2006]{c}
 Kernighan, B.~W. and Ritchie, D.~M. (2006).
 \newblock {\em The C programming language}.
+
+\bibitem[Knuth, 1973]{knuth1973searching}
+Knuth, D. (1973).
+\newblock Searching and sorting, the art of computer programming, vol. 3.
 
 \bibitem[Kuang and Zhao, 2009]{kuang2009practical}
 Kuang, Q. and Zhao, L. (2009).
@@ -144,7 +214,7 @@ Kuang, Q. and Zhao, L. (2009).
 LA, I. (2017).
 \newblock Procesadores intel® xeon phi™.
 \newblock
-  {url{https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}},.
+  {https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}.
 
 \bibitem[McDermid, 1993]{libromcd}
 McDermid, J. y. P.~R. (1993).
@@ -153,11 +223,26 @@ McDermid, J. y. P.~R. (1993).
 \newblock CRC Press.
 \newblock pp. 15/26-15/28.
 
+\bibitem[Moujahid et~al., ]{moujahidtema}
+Moujahid, A., Inza, I., and Larranaga, P.
+\newblock Tema 5. clasificadores k-nn.
+
+\bibitem[Nguyen~Cong et~al., 2015]{nguyen2015aprendizaje}
+Nguyen~Cong, B., Rivero~P{\'e}rez, J.~L., and Morell, C. (2015).
+\newblock Aprendizaje supervisado de funciones de distancia: estado del arte.
+\newblock {\em Revista Cubana de Ciencias Inform{\'a}ticas}, 9(2):14--28.
+
 \bibitem[Nichols et~al., 1996]{libroPthreads}
 Nichols, B., Buttlar, D., and Farrell, J.~P. (1996).
 \newblock {\em Pthreads Programming: A POSIX Standard for Better
   Multiprocessing}.
 \newblock O'Reilly.
+
+\bibitem[Novak et~al., 2011]{novak2011metric}
+Novak, D., Batko, M., and Zezula, P. (2011).
+\newblock Metric index: An efficient and scalable solution for precise and
+  approximate similarity search.
+\newblock {\em Information Systems}, 36(4):721--733.
 
 \bibitem[Nu{\~n}ez, 2003]{nunez2003investigacion}
 Nu{\~n}ez, J. M.~B. (2003).
@@ -169,6 +254,14 @@ Nu{\~n}ez, J. M.~B. (2003).
 Oracle (2017).
 \newblock ¿cuáles son los requisitos del sistema para java?
 \newblock {url{https://www.java.com/es/download/help/sysreq.xml}},.
+
+\bibitem[Pan and Manocha, 2011]{pan2011fast}
+Pan, J. and Manocha, D. (2011).
+\newblock Fast gpu-based locality sensitive hashing for k-nearest neighbor
+  computation.
+\newblock In {\em Proceedings of the 19th ACM SIGSPATIAL international
+  conference on advances in geographic information systems}, pages 211--220.
+  ACM.
 
 \bibitem[Paredes and Navarro, 2009]{paredes2009egnat}
 Paredes, R.~U. and Navarro, G. (2009).
@@ -191,6 +284,20 @@ Reinders, J. (2007).
 \newblock {\em Intel threading building blocks: outfitting C++ for multi-core
   processor parallelism}.
 \newblock O'Reilly.
+
+\bibitem[Tellez et~al., 2012]{tellez2012polyphasic}
+Tellez, E., Chavez, E., and Figueroa, K. (2012).
+\newblock Polyphasic metric index: reaching the practical limits of proximity
+  searching.
+\newblock {\em Similarity Search and Applications}, pages 54--69.
+
+\bibitem[Uribe et~al., 2006]{egnat06}
+Uribe, R., Navarro, G., Barrientos, R., and Marin, M. (2006).
+\newblock An index data structure for searching in metric space databases.
+\newblock In Alexandrov, V., van Albada, G.~D., Sloot, P. M.~A., and Dongarra,
+  J., editors, {\em International Conference on Computational Science (1)},
+  volume 3991 of {\em Lecture Notes in Computer Science}, pages 611--617.
+  Springer.
 
 \bibitem[Wang, 2014]{wange2014}
 Wang, E.~Zhang, Q. S. B. Z. G. L. X. W. Q. W.~Y. (2014).

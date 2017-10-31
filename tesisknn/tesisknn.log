@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  4 JUN 2017 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.13)  30 OCT 2017 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,10 +778,10 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 
 
-LaTeX Warning: Label `alg:algoritmoRaro' multiply defined.
-
-
 LaTeX Warning: Label `lst:distanciaxeon' multiply defined.
+
+
+LaTeX Warning: Label `lst:mallocCUDA' multiply defined.
 
 
 LaTeX Warning: Label `exportar' multiply defined.
@@ -792,27 +792,27 @@ LaTeX Warning: Label `ch:intro' multiply defined.
 )
 \openout1 = `tesisknn.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 135.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 135.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Info: Redefining \. on input line 136.
-LaTeX Info: Redefining \% on input line 136.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -897,795 +897,794 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [2] [3]
-(./agradecimientos2.tex) [1] (./resumen2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
+) [2]) [3]
+(./agradecimientos2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+
+ []
+
+) [4] (./resumen2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--8
+)
+Underfull \hbox (badness 10000) in paragraph at lines 10--160
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--8
-
- []
-
-[2])
-Underfull \hbox (badness 10000) in paragraph at lines 9--160
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--160
-
- []
-
-[3] (./tesisknn.toc
+[5] [6] (./tesisknn.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [4
+ [7
 
 ])
 \tf@toc=\write3
 \openout3 = `tesisknn.toc'.
 
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
- [5] (./tesisknn.lof
+ [8] (./tesisknn.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [6
-
-])
+)
 \tf@lof=\write4
 \openout4 = `tesisknn.lof'.
 
-LaTeX Info: Redefining \. on input line 166.
-LaTeX Info: Redefining \% on input line 166.
- [7] (./tesisknn.lot
+ [9
+
+] [10] (./tesisknn.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write5
 \openout5 = `tesisknn.lot'.
 
- [8
 
-]
-(./tesisknn.loa)
+[11
+
+] (./tesisknn.loa [12
+
+])
 \tf@loa=\write6
 \openout6 = `tesisknn.loa'.
 
- [1
-
-] (./introduccion.tex
+ [13] (./introduccion.tex
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--11
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--11
+Underfull \hbox (badness 10000) in paragraph at lines 6--10
 
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 3--11
+Underfull \hbox (badness 1558) in paragraph at lines 6--10
 \T1/cmr/m/n/12 Las pla-ta-for-mas pa-ra-le-las que se em-plean en es-ta te-sis 
 son las men-cio-na-das
  []
 
-[2
+
+Underfull \hbox (badness 2617) in paragraph at lines 6--10
+\T1/cmr/m/n/12 [[]][[]]. Es-ta li-bre-ría es-tá pen-sa-da pa-ra los
+ []
+
+[1
+
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
+LaTeX Info: Redefining \. on input line 15.
+LaTeX Info: Redefining \% on input line 15.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 18.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
- [4])
-LaTeX Info: Redefining \. on input line 175.
-LaTeX Info: Redefining \% on input line 175.
- [5] (./marco_teorico.tex
+[2])
+LaTeX Info: Redefining \. on input line 182.
+LaTeX Info: Redefining \% on input line 182.
+ [3] (./marco_teorico.tex
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 1019) in paragraph at lines 5--6
+\T1/cmr/m/it/12 en instancias, tales como k-Means [[]], el prototipo más
+ []
+
+<fig/knn_paradigma.png, id=65, 676.5275pt x 249.93375pt>
+File: fig/knn_paradigma.png Graphic file (type png)
+
+<use fig/knn_paradigma.png>
+Package pdftex.def Info: fig/knn_paradigma.png used on input line 13.
+(pdftex.def)             Requested size: 270.6062pt x 99.97173pt.
+ [4
+
+]
+<fig/knn_ejemplo.png, id=69, 240.9pt x 210.7875pt>
+File: fig/knn_ejemplo.png Graphic file (type png)
+ <use fig/knn_ejemplo.png>
+Package pdftex.def Info: fig/knn_ejemplo.png used on input line 38.
+(pdftex.def)             Requested size: 168.62883pt x 147.55025pt.
+
+Underfull \hbox (badness 1005) in paragraph at lines 45--47
+\T1/cmr/m/n/12 (smartphone) hasta un computador personal (notebook), esto quier
+e decir que
+ []
+
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+[5 <./fig/knn_paradigma.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
-[6
-
-]
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+[6 <./fig/knn_ejemplo.png>]
 Package epstopdf Info: Source file: <fig/plataforma.eps>
-(epstopdf)                    date: 2009-10-24 17:48:48
+(epstopdf)                    date: 2017-08-30 21:53:02
 (epstopdf)                    size: 9700 bytes
 (epstopdf)             Output file: <fig/plataforma-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 20:06:57
+(epstopdf)                    date: 2017-08-31 19:16:40
 (epstopdf)                    size: 7290 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/plataforma-eps-convert
 ed-to.pdf fig/plataforma.eps>
-(epstopdf)             \includegraphics on input line 14.
+(epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
- <fig/plataforma-eps-converted-to.pdf, id=73, 371.3875pt x 309.155pt>
+
+<fig/plataforma-eps-converted-to.pdf, id=82, 371.3875pt x 309.155pt>
 File: fig/plataforma-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig/plataforma-eps-converted-to.pdf>
 Package pdftex.def Info: fig/plataforma-eps-converted-to.pdf used on input line
- 14.
+ 54.
 (pdftex.def)             Requested size: 185.69328pt x 154.57712pt.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
  [7 <./fig/plataforma-eps-converted-to.pdf>]
-Underfull \hbox (badness 1325) in paragraph at lines 26--27
-\T1/cmr/m/n/12 eje-cu-ta un sis-te-ma ope-ra-ti-vo li-nux y es com-pa-ti-ble co
-n to-das las prin-ci-pa-les
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 1803) in paragraph at lines 68--69
+\T1/cmr/m/n/12 ar-qui-tec-tu-ra de or-den (ba-sa-da en la fa-mi-lia de pro-ce-s
+a-do-res In-tel Pen-tium).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--33
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
 
  []
 
-LaTeX Info: Redefining \. on input line 34.
-LaTeX Info: Redefining \% on input line 34.
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
+
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 34--38
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-<fig/core.png, id=89, 314.17375pt x 553.06625pt>
+<fig/core.png, id=97, 314.17375pt x 553.06625pt>
 File: fig/core.png Graphic file (type png)
  <use fig/core.png>
-Package pdftex.def Info: fig/core.png used on input line 51.
-(pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
-File: fig/core.png Graphic file (type png)
-
-<use fig/core.png>
-Package pdftex.def Info: fig/core.png used on input line 58.
+Package pdftex.def Info: fig/core.png used on input line 88.
 (pdftex.def)             Requested size: 157.08649pt x 276.53244pt.
 
-Underfull \hbox (badness 1077) in paragraph at lines 64--65
+<fig/b.png, id=98, 650.43pt x 392.46625pt>
+File: fig/b.png Graphic file (type png)
+ <use fig/b.png>
+Package pdftex.def Info: fig/b.png used on input line 95.
+(pdftex.def)             Requested size: 325.2142pt x 196.23264pt.
+
+Underfull \hbox (badness 1077) in paragraph at lines 101--102
 []\T1/cmr/m/n/12 Todas las implementaciones sobre GPU se realizaron usando el m
 odelo de
  []
 
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
 [9]
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
- [10 <./fig/core.png>]
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
- [11] <fig/p.png, id=99, 557.08125pt x 372.39125pt>
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+ [10 <./fig/core.png> <./fig/b.png>]
+<fig/p.png, id=105, 557.08125pt x 372.39125pt>
 File: fig/p.png Graphic file (type png)
-
-<use fig/p.png>
-Package pdftex.def Info: fig/p.png used on input line 68.
+ <use fig/p.png>
+Package pdftex.def Info: fig/p.png used on input line 105.
 (pdftex.def)             Requested size: 341.43306pt x 228.24362pt.
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
- [12 <./fig/p.png>]
-<fig/threads.png, id=105, 484.81125pt x 628.3475pt>
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+ [11 <./fig/p.png>] <fig/threads.png, id=111, 484.81125pt x 628.3475pt>
 File: fig/threads.png Graphic file (type png)
  <use fig/threads.png>
-Package pdftex.def Info: fig/threads.png used on input line 95.
+Package pdftex.def Info: fig/threads.png used on input line 132.
 (pdftex.def)             Requested size: 142.26378pt x 184.38295pt.
 
-<fig/ab.png, id=106, 646.415pt x 240.9pt>
+<fig/ab.png, id=112, 646.415pt x 240.9pt>
 File: fig/ab.png Graphic file (type png)
  <use fig/ab.png>
-Package pdftex.def Info: fig/ab.png used on input line 102.
+Package pdftex.def Info: fig/ab.png used on input line 139.
 (pdftex.def)             Requested size: 341.43306pt x 127.24263pt.
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
- [13 <./fig/threads.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+ [12 <./fig/threads.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-LaTeX Info: Redefining \. on input line 137.
-LaTeX Info: Redefining \% on input line 137.
-[14 <./fig/ab.png>]
-LaTeX Info: Redefining \. on input line 151.
-LaTeX Info: Redefining \% on input line 151.
- [15]
-<fig/Ejemplo_gpu.png, id=118, 623.32875pt x 817.0525pt>
-File: fig/Ejemplo_gpu.png Graphic file (type png)
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+[13 <./fig/ab.png>]
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+ [14]
+Underfull \hbox (badness 2376) in paragraph at lines 212--213
+[]\T1/cmr/m/n/12 Ademas cuenta con varias memorias tales como: \T1/cmr/m/it/12 
+Memoria compartida de
+ []
 
-<use fig/Ejemplo_gpu.png>
-Package pdftex.def Info: fig/Ejemplo_gpu.png used on input line 167.
-(pdftex.def)             Requested size: 374.00014pt x 490.23529pt.
-LaTeX Info: Redefining \. on input line 176.
-LaTeX Info: Redefining \% on input line 176.
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
+[15]
+LaTeX Info: Redefining \. on input line 229.
+LaTeX Info: Redefining \% on input line 229.
  [16]
-LaTeX Info: Redefining \. on input line 176.
-LaTeX Info: Redefining \% on input line 176.
- [17 <./fig/Ejemplo_gpu.png>]
-Package epstopdf Info: Source file: <fig/cod_gpu_sync-a.eps>
-(epstopdf)                    date: 2011-04-11 23:13:34
-(epstopdf)                    size: 3857 bytes
-(epstopdf)             Output file: <fig/cod_gpu_sync-a-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 20:06:58
-(epstopdf)                    size: 6579 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-a-eps-con
-verted-to.pdf fig/cod_gpu_sync-a.eps>
-(epstopdf)             \includegraphics on input line 183.
-Package epstopdf Info: Output file is already uptodate.
-
-<fig/cod_gpu_sync-a-eps-converted-to.pdf, id=125, 153.57375pt x 140.525pt>
-File: fig/cod_gpu_sync-a-eps-converted-to.pdf Graphic file (type pdf)
-
-<use fig/cod_gpu_sync-a-eps-converted-to.pdf>
-Package pdftex.def Info: fig/cod_gpu_sync-a-eps-converted-to.pdf used on input 
-line 183.
-(pdftex.def)             Requested size: 142.27376pt x 113.81174pt.
-Package epstopdf Info: Source file: <fig/cod_gpu_sync-b.eps>
-(epstopdf)                    date: 2011-04-11 23:17:44
-(epstopdf)                    size: 3844 bytes
-(epstopdf)             Output file: <fig/cod_gpu_sync-b-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-13 20:06:58
-(epstopdf)                    size: 7190 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig/cod_gpu_sync-b-eps-con
-verted-to.pdf fig/cod_gpu_sync-b.eps>
-(epstopdf)             \includegraphics on input line 187.
-Package epstopdf Info: Output file is already uptodate.
-
-<fig/cod_gpu_sync-b-eps-converted-to.pdf, id=126, 153.57375pt x 140.525pt>
-File: fig/cod_gpu_sync-b-eps-converted-to.pdf Graphic file (type pdf)
-
-<use fig/cod_gpu_sync-b-eps-converted-to.pdf>
-Package pdftex.def Info: fig/cod_gpu_sync-b-eps-converted-to.pdf used on input 
-line 187.
-(pdftex.def)             Requested size: 142.26378pt x 130.18513pt.
-LaTeX Info: Redefining \. on input line 202.
-LaTeX Info: Redefining \% on input line 202.
- [18 <./fig/cod_gpu_sync-a-eps-converted-to.pdf> <./fig/cod_gpu_sync-b-eps-conv
-erted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 215--221
+Underfull \hbox (badness 10000) in paragraph at lines 237--243
 
  []
 
-LaTeX Info: Redefining \. on input line 221.
-LaTeX Info: Redefining \% on input line 221.
-[19] <fig/incremental.png, id=143, 897.3525pt x 496.85625pt>
+<fig/incremental.png, id=132, 897.3525pt x 496.85625pt>
 File: fig/incremental.png Graphic file (type png)
 
 <use fig/incremental.png>
-Package pdftex.def Info: fig/incremental.png used on input line 226.
+Package pdftex.def Info: fig/incremental.png used on input line 248.
 (pdftex.def)             Requested size: 358.93463pt x 198.73897pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
-
- []
-
-LaTeX Info: Redefining \. on input line 231.
-LaTeX Info: Redefining \% on input line 231.
-[20 <./fig/incremental.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+ [17]
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
-LaTeX Info: Redefining \. on input line 244.
-LaTeX Info: Redefining \% on input line 244.
-[21] <fig/Max-Heap.png, id=152, 1204.5pt x 892.33376pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+LaTeX Info: Redefining \. on input line 257.
+LaTeX Info: Redefining \% on input line 257.
+[18 <./fig/incremental.png>]
+Underfull \hbox (badness 2065) in paragraph at lines 265--266
+[]\T1/cmr/m/n/12 Como el sistema (software) se va probando gradualmente existe 
+menos
+ []
+
+LaTeX Info: Redefining \. on input line 274.
+LaTeX Info: Redefining \% on input line 274.
+[19] <fig/Max-Heap.png, id=143, 1204.5pt x 892.33376pt>
 File: fig/Max-Heap.png Graphic file (type png)
  <use fig/Max-Heap.png>
-Package pdftex.def Info: fig/Max-Heap.png used on input line 268.
+Package pdftex.def Info: fig/Max-Heap.png used on input line 291.
 (pdftex.def)             Requested size: 142.26378pt x 105.38705pt.
-LaTeX Info: Redefining \. on input line 271.
-LaTeX Info: Redefining \% on input line 271.
 
-[22] <fig/Min-heap.png, id=156, 443.6575pt x 287.0725pt>
+<fig/Min-heap.png, id=144, 443.6575pt x 287.0725pt>
 File: fig/Min-heap.png Graphic file (type png)
-
-<use fig/Min-heap.png>
-Package pdftex.def Info: fig/Min-heap.png used on input line 274.
+ <use fig/Min-heap.png>
+Package pdftex.def Info: fig/Min-heap.png used on input line 297.
 (pdftex.def)             Requested size: 142.26378pt x 92.04904pt.
- <fig/Min-max_heap.png, id=157, 401.5pt x 223.83624pt>
+
+<fig/Min-max_heap.png, id=145, 401.5pt x 223.83624pt>
 File: fig/Min-max_heap.png Graphic file (type png)
 
 <use fig/Min-max_heap.png>
-Package pdftex.def Info: fig/Min-max_heap.png used on input line 280.
+Package pdftex.def Info: fig/Min-max_heap.png used on input line 303.
 (pdftex.def)             Requested size: 142.26378pt x 79.31384pt.
-LaTeX Info: Redefining \. on input line 289.
-LaTeX Info: Redefining \% on input line 289.
- [23 <./fig/Max-Heap.png> <./fig/Min-heap.png>]
-LaTeX Info: Redefining \. on input line 297.
-LaTeX Info: Redefining \% on input line 297.
-
-[24 <./fig/Min-max_heap.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+LaTeX Info: Redefining \. on input line 306.
+LaTeX Info: Redefining \% on input line 306.
+ [20]
+LaTeX Info: Redefining \. on input line 315.
+LaTeX Info: Redefining \% on input line 315.
+ [21 <./fig/Max-Heap.png> <./fig/Min-heap.png> <./fig/Min-max_heap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
-LaTeX Info: Redefining \. on input line 320.
-LaTeX Info: Redefining \% on input line 320.
-[25]
-LaTeX Info: Redefining \. on input line 339.
-LaTeX Info: Redefining \% on input line 339.
- [26] <fig/speed.png, id=173, 836.12375pt x 335.2525pt>
+LaTeX Info: Redefining \. on input line 328.
+LaTeX Info: Redefining \% on input line 328.
+[22]
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
+ [23] <fig/speed.png, id=159, 836.12375pt x 335.2525pt>
 File: fig/speed.png Graphic file (type png)
 
 <use fig/speed.png>
-Package pdftex.def Info: fig/speed.png used on input line 347.
+Package pdftex.def Info: fig/speed.png used on input line 370.
 (pdftex.def)             Requested size: 426.79134pt x 171.12997pt.
- <fig/tiempo.png, id=174, 502.87875pt x 394.47375pt>
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
+ [24] <fig/tiempo.png, id=164, 502.87875pt x 394.47375pt>
 File: fig/tiempo.png Graphic file (type png)
 
 <use fig/tiempo.png>
-Package pdftex.def Info: fig/tiempo.png used on input line 360.
+Package pdftex.def Info: fig/tiempo.png used on input line 383.
 (pdftex.def)             Requested size: 199.16928pt x 156.23375pt.
- <fig/timepo.png, id=175, 493.845pt x 394.47375pt>
+ <fig/timepo.png, id=165, 493.845pt x 394.47375pt>
 File: fig/timepo.png Graphic file (type png)
 
 <use fig/timepo.png>
-Package pdftex.def Info: fig/timepo.png used on input line 364.
+Package pdftex.def Info: fig/timepo.png used on input line 387.
 (pdftex.def)             Requested size: 199.16928pt x 159.08684pt.
 
-Overfull \hbox (4.30956pt too wide) in paragraph at lines 360--365
+Overfull \hbox (4.30956pt too wide) in paragraph at lines 383--388
  []            [] 
  []
 
-LaTeX Info: Redefining \. on input line 370.
-LaTeX Info: Redefining \% on input line 370.
-[27 <./fig/speed.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 376--379
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--402
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--383
+LaTeX Info: Redefining \. on input line 402.
+LaTeX Info: Redefining \% on input line 402.
+[25 <./fig/speed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 403--406
 
  []
 
-LaTeX Info: Redefining \. on input line 383.
-LaTeX Info: Redefining \% on input line 383.
-[28 <./fig/tiempo.png> <./fig/timepo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
-
- []
-
-LaTeX Info: Redefining \. on input line 400.
-LaTeX Info: Redefining \% on input line 400.
-[29]
-Underfull \hbox (badness 1383) in paragraph at lines 401--402
-[]| \TS1/cmr/m/n/12 ˆ \T1/cmr/m/n/12 Funciones para el manejo de grupos y comun
-icadores: facilitan la
- []
-
-
-Underfull \hbox (badness 1442) in paragraph at lines 405--406
-[]| \TS1/cmr/m/n/12 ˆ \T1/cmr/m/n/12 Fun-cio-nes pa-ra co-mu-ni-ca-ción mul-ti-
-pun-to: in-ter-ac-túan con múl-ti-ples
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--410
-
- []
-
-
-Underfull \hbox (badness 2205) in paragraph at lines 407--410
-\T1/cmr/m/n/12 El mo-de-lo SMM es una abs-trac-ción del mo-de-lo de mul-ti-pro-
-ce-sa-mien-to
- []
-
-LaTeX Info: Redefining \. on input line 413.
-LaTeX Info: Redefining \% on input line 413.
-[30]
+LaTeX Info: Redefining \. on input line 409.
+LaTeX Info: Redefining \% on input line 409.
+[26 <./fig/tiempo.png> <./fig/timepo.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--422
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--422
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--427
-
+Underfull \hbox (badness 1383) in paragraph at lines 424--425
+[]| \TS1/cmr/m/n/12 ˆ \T1/cmr/m/n/12 Funciones para el manejo de grupos y comun
+icadores: facilitan la
  []
 
 LaTeX Info: Redefining \. on input line 427.
 LaTeX Info: Redefining \% on input line 427.
-[31]
-Underfull \hbox (badness 1057) in paragraph at lines 438--439
-[]\T1/cmr/m/n/12 Ademas cuenta con varias memorias tales como: \T1/cmr/m/it/12 
-Memoria compartida de
+[27]
+Underfull \hbox (badness 1442) in paragraph at lines 428--429
+[]| \TS1/cmr/m/n/12 ˆ \T1/cmr/m/n/12 Fun-cio-nes pa-ra co-mu-ni-ca-ción mul-ti-
+pun-to: in-ter-ac-túan con múl-ti-ples
  []
 
-)
-LaTeX Info: Redefining \. on input line 177.
-LaTeX Info: Redefining \% on input line 177.
- [32]
-LaTeX Info: Redefining \. on input line 177.
-LaTeX Info: Redefining \% on input line 177.
- [33] (./estado_del_arte.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 430--433
+\T1/cmr/m/n/12 El modelo SMM es una abstracción del modelo de multiprocesamient
+o
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--445
+
+ []
+
+LaTeX Info: Redefining \. on input line 445.
+LaTeX Info: Redefining \% on input line 445.
+[28])
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
+ [29] (./estado_del_arte.tex
 Cap\'{\i }tulo 3.
 
-Underfull \hbox (badness 2762) in paragraph at lines 7--8
-[]\T1/cmr/m/n/12 El al-go-rit-mo k-NN [[]] [[]] tie-ne gran-des
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
+[30
 
-Underfull \hbox (badness 1242) in paragraph at lines 9--11
+]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 12--14
 []\T1/cmr/m/n/12 Se aplica ampliamente en el reconocimiento de patrones y en cl
 asificación
  []
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 9--11
+Underfull \hbox (badness 1194) in paragraph at lines 12--14
 \T1/cmr/m/n/12 para minería de datos, debido a su simplicidad y baja tasa de er
 ror. Antes
  []
 
-[34
 
-]
-Underfull \hbox (badness 1024) in paragraph at lines 14--15
+Underfull \hbox (badness 1024) in paragraph at lines 17--20
 []\T1/cmr/m/n/12 El cálculo de la distancia exhaustiva en conjunción con la cla
 sificación en
  []
 
-)
-LaTeX Info: Redefining \. on input line 179.
-LaTeX Info: Redefining \% on input line 179.
- [35]
-LaTeX Info: Redefining \. on input line 179.
-LaTeX Info: Redefining \% on input line 179.
- [36] (./desarrollo.tex
-Cap\'{\i }tulo 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-
- []
-
-[37
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
-
- []
-
-<fig/interfaz1.png, id=212, 998.73125pt x 724.7075pt>
-File: fig/interfaz1.png Graphic file (type png)
- <use fig/interfaz1.png>
-Package pdftex.def Info: fig/interfaz1.png used on input line 20.
-(pdftex.def)             Requested size: 398.33858pt x 289.04851pt.
-LaTeX Info: Redefining \. on input line 26.
-LaTeX Info: Redefining \% on input line 26.
-
-[38]
-LaTeX Info: Redefining \. on input line 26.
-LaTeX Info: Redefining \% on input line 26.
- [39 <./fig/interfaz1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-<fig/interfaz_multicore.png, id=220, 999.735pt x 713.66624pt>
-File: fig/interfaz_multicore.png Graphic file (type png)
-
-<use fig/interfaz_multicore.png>
-Package pdftex.def Info: fig/interfaz_multicore.png used on input line 41.
-(pdftex.def)             Requested size: 398.33858pt x 284.3507pt.
-LaTeX Info: Redefining \. on input line 43.
-LaTeX Info: Redefining \% on input line 43.
- [40]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
-
-<fig/interfaz_secuencial.png, id=224, 993.7125pt x 713.66624pt>
-File: fig/interfaz_secuencial.png Graphic file (type png)
-
-<use fig/interfaz_secuencial.png>
-Package pdftex.def Info: fig/interfaz_secuencial.png used on input line 49.
-(pdftex.def)             Requested size: 398.33858pt x 286.08214pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
-
- []
-
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
-[41 <./fig/interfaz_multicore.png>]
-<fig/error.png, id=228, 277.035pt x 178.6675pt>
-File: fig/error.png Graphic file (type png)
- <use fig/error.png>
-Package pdftex.def Info: fig/error.png used on input line 63.
-(pdftex.def)             Requested size: 142.26378pt x 91.74898pt.
-
-<fig/exito_knn.png, id=229, 274.02374pt x 121.45375pt>
-File: fig/exito_knn.png Graphic file (type png)
- <use fig/exito_knn.png>
-Package pdftex.def Info: fig/exito_knn.png used on input line 67.
-(pdftex.def)             Requested size: 142.26378pt x 63.05621pt.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+[31] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
+Underfull \hbox (badness 1867) in paragraph at lines 83--86
+[]\T1/cmr/m/n/12 El trabajo relacionado para resolver consultas por rango es am
+plio, pero
+ []
+
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
- [42 <./fig/interfaz_secuencial.png>]
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
- [43 <./fig/error.png> <./fig/exito_knn.png>]
-LaTeX Info: Redefining \. on input line 141.
-LaTeX Info: Redefining \% on input line 141.
- [44]
-LaTeX Info: Redefining \. on input line 166.
-LaTeX Info: Redefining \% on input line 166.
+[32]
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+ [33]
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+ [34]
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+ [35])
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+ [36]
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+ [37] (./desarrollo.tex
+Cap\'{\i }tulo 4.
+[38
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+[39] <fig/interfaz1.png, id=220, 998.73125pt x 724.7075pt>
+File: fig/interfaz1.png Graphic file (type png)
+
+<use fig/interfaz1.png>
+Package pdftex.def Info: fig/interfaz1.png used on input line 23.
+(pdftex.def)             Requested size: 398.33858pt x 289.04851pt.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
+ [40 <./fig/interfaz1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+<fig/interfaz_multicore.png, id=224, 999.735pt x 713.66624pt>
+File: fig/interfaz_multicore.png Graphic file (type png)
+
+<use fig/interfaz_multicore.png>
+Package pdftex.def Info: fig/interfaz_multicore.png used on input line 44.
+(pdftex.def)             Requested size: 398.33858pt x 284.3507pt.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+ [41]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+<fig/interfaz_secuencial.png, id=228, 993.7125pt x 713.66624pt>
+File: fig/interfaz_secuencial.png Graphic file (type png)
+
+<use fig/interfaz_secuencial.png>
+Package pdftex.def Info: fig/interfaz_secuencial.png used on input line 52.
+(pdftex.def)             Requested size: 398.33858pt x 286.08214pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+
+ []
+
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+[42 <./fig/interfaz_multicore.png>]
+<fig/error.png, id=233, 277.035pt x 178.6675pt>
+File: fig/error.png Graphic file (type png)
+ <use fig/error.png>
+Package pdftex.def Info: fig/error.png used on input line 66.
+(pdftex.def)             Requested size: 142.26378pt x 91.74898pt.
+
+<fig/exito_knn.png, id=234, 274.02374pt x 121.45375pt>
+File: fig/exito_knn.png Graphic file (type png)
+ <use fig/exito_knn.png>
+Package pdftex.def Info: fig/exito_knn.png used on input line 70.
+(pdftex.def)             Requested size: 142.26378pt x 63.05621pt.
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+
+[43 <./fig/interfaz_secuencial.png>]
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+ [44 <./fig/error.png> <./fig/exito_knn.png>]
+LaTeX Info: Redefining \. on input line 116.
+LaTeX Info: Redefining \% on input line 116.
  [45]
-LaTeX Info: Redefining \. on input line 267.
-LaTeX Info: Redefining \% on input line 267.
-
-[46]
-LaTeX Info: Redefining \. on input line 267.
-LaTeX Info: Redefining \% on input line 267.
- [47]
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [46]
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
-LaTeX Info: Redefining \. on input line 300.
-LaTeX Info: Redefining \% on input line 300.
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+LaTeX Info: Redefining \. on input line 274.
+LaTeX Info: Redefining \% on input line 274.
+[47]
+LaTeX Info: Redefining \. on input line 274.
+LaTeX Info: Redefining \% on input line 274.
+ [48]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-LaTeX Info: Redefining \. on input line 333.
-LaTeX Info: Redefining \% on input line 333.
+LaTeX Info: Redefining \. on input line 280.
+LaTeX Info: Redefining \% on input line 280.
 [49]
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 294.
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2014/06/22 T1/zi4 (Inconsolata)
+)
+Underfull \hbox (badness 1082) in paragraph at lines 292--295
+\OML/cmm/m/it/12 num[]queries \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 dimaux$ \T1
+/cmr/m/n/12 don-de $\OML/cmm/m/it/12 num[]queries$ \T1/cmr/m/n/12 es el nú-me-r
+o tu-plas de vec-to-res
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--348
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--295
 
  []
 
-LaTeX Info: Redefining \. on input line 348.
-LaTeX Info: Redefining \% on input line 348.
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
 [50]
-LaTeX Info: Redefining \. on input line 348.
-LaTeX Info: Redefining \% on input line 348.
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
  [51]
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
+LaTeX Info: Redefining \. on input line 334.
+LaTeX Info: Redefining \% on input line 334.
 [52]
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
- [53]
-Underfull \hbox (badness 1014) in paragraph at lines 476--477
+Underfull \hbox (badness 1014) in paragraph at lines 368--369
 []\T1/cmr/m/n/12 De ma-ne-ra si-mi-lar a los mé-to-dos an-te-rio-res (Se-cuen-c
 ial y Multi-núcleo) se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
-LaTeX Info: Redefining \. on input line 477.
-LaTeX Info: Redefining \% on input line 477.
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
+LaTeX Info: Redefining \. on input line 369.
+LaTeX Info: Redefining \% on input line 369.
+[53]
+LaTeX Info: Redefining \. on input line 388.
+LaTeX Info: Redefining \% on input line 388.
+ [54]
+
+LaTeX Warning: Reference `lst:knncuda' on page 55 undefined on input line 389.
+
+
+LaTeX Warning: Reference `lst:knncuda' on page 55 undefined on input line 389.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
-
- []
-
-LaTeX Info: Redefining \. on input line 497.
-LaTeX Info: Redefining \% on input line 497.
+LaTeX Info: Redefining \. on input line 417.
+LaTeX Info: Redefining \% on input line 417.
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+LaTeX Info: Redefining \. on input line 421.
+LaTeX Info: Redefining \% on input line 421.
+ [56]
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 562--564
 
  []
 
-<fig/resultados.png, id=280, 791.95876pt x 452.69125pt>
+LaTeX Info: Redefining \. on input line 564.
+LaTeX Info: Redefining \% on input line 564.
+[57]
+LaTeX Info: Redefining \. on input line 564.
+LaTeX Info: Redefining \% on input line 564.
+ [58]
+LaTeX Info: Redefining \. on input line 564.
+LaTeX Info: Redefining \% on input line 564.
+ [59] <fig/resultados.png, id=291, 791.95876pt x 452.69125pt>
 File: fig/resultados.png Graphic file (type png)
 
 <use fig/resultados.png>
-Package pdftex.def Info: fig/resultados.png used on input line 509.
+Package pdftex.def Info: fig/resultados.png used on input line 567.
 (pdftex.def)             Requested size: 398.33858pt x 227.69893pt.
- <fig/guardar.png, id=281, 552.0625pt x 365.365pt>
+ <fig/guardar.png, id=292, 552.0625pt x 365.365pt>
 File: fig/guardar.png Graphic file (type png)
 
 <use fig/guardar.png>
-Package pdftex.def Info: fig/guardar.png used on input line 515.
+Package pdftex.def Info: fig/guardar.png used on input line 573.
 (pdftex.def)             Requested size: 284.52756pt x 188.3128pt.
 
-
-LaTeX Warning: Citation `itex' on page 56 undefined on input line 524.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 520--529
+Underfull \hbox (badness 10000) in paragraph at lines 578--587
 \T1/cmr/m/n/12 Los mé-to-dos men-cio-na-dos an-te-rior-men-te cuen-tan con una 
 fun-ción
  []
 
-LaTeX Info: Redefining \. on input line 529.
-LaTeX Info: Redefining \% on input line 529.
-[56]
-LaTeX Info: Redefining \. on input line 529.
-LaTeX Info: Redefining \% on input line 529.
- [57 <./fig/resultados.png> <./fig/guardar.png>]
-LaTeX Info: Redefining \. on input line 629.
-LaTeX Info: Redefining \% on input line 629.
- [58]
-LaTeX Info: Redefining \. on input line 629.
-LaTeX Info: Redefining \% on input line 629.
- [59]
-<fig/add_menu.png, id=295, 840.13875pt x 381.425pt>
+LaTeX Info: Redefining \. on input line 587.
+LaTeX Info: Redefining \% on input line 587.
+[60 <./fig/resultados.png>]
+LaTeX Info: Redefining \. on input line 685.
+LaTeX Info: Redefining \% on input line 685.
+ [61 <./fig/guardar.png>]
+LaTeX Info: Redefining \. on input line 685.
+LaTeX Info: Redefining \% on input line 685.
+ [62]
+<fig/add_menu.png, id=303, 840.13875pt x 381.425pt>
 File: fig/add_menu.png Graphic file (type png)
  <use fig/add_menu.png>
-Package pdftex.def Info: fig/add_menu.png used on input line 632.
+Package pdftex.def Info: fig/add_menu.png used on input line 688.
 (pdftex.def)             Requested size: 426.79134pt x 193.76173pt.
 )
-LaTeX Info: Redefining \. on input line 181.
-LaTeX Info: Redefining \% on input line 181.
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
 
-[60] (./experimentos.tex) (./conclusiones.tex
+[63] (./experimentos.tex) (./conclusiones.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [61 <./fig/add_menu.png>]
+ [64 <./fig/add_menu.png>]
 Cap\'{\i }tulo 5.
+
+Underfull \hbox (badness 1354) in paragraph at lines 8--12
+[]\T1/cmr/m/n/12 Los al-go-rit-mos se-lec-cio-na-dos lue-go de ha-cer una re-vi
+-sión bi-blio-grá-fi-ca, son
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
+[65
 
-Underfull \hbox (badness 1436) in paragraph at lines 8--12
-\T1/cmr/m/n/12 Este tra-ba-jo po-ten-cia la idea de jun-tar ar-qui-tec-tu-ras t
-o-tal-men-te opues-tas, si
+])
+LaTeX Info: Redefining \. on input line 194.
+LaTeX Info: Redefining \% on input line 194.
+ [66] (./tesisknn.bbl
+Underfull \hbox (badness 2418) in paragraph at lines 47--51
+[]\T1/cmr/m/n/12 Beliakov, G., Johnstone, M., and Nahavandi, S. (2012).
  []
 
-[62
+[67
 
 ]
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
- [63])
-LaTeX Info: Redefining \. on input line 187.
-LaTeX Info: Redefining \% on input line 187.
- [64] (./tesisknn.bbl [65
+Underfull \hbox (badness 1354) in paragraph at lines 53--56
+[]\T1/cmr/m/n/12 Beliakov, G. and Li, G. (2012).  Improving the speed
+ []
 
-]
-Underfull \hbox (badness 1275) in paragraph at lines 78--83
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--68
+[]\T1/cmr/m/n/12 Bernabeu, S. R. (2013).  Ma-x/-min heap, prio-rity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--68
+\T1/cmr/m/n/12 queues... ¾qué son y có-mo lo ha-go? com-pa-ra-ti-va pyt-hon, c/
+c++.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--68
+\T1/cmr/m/n/12 https://porlasbarbasdekutta.wordpress.com/2013/10/10/maxmin-heap
+-priority-
+ []
+
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+[68]
+Underfull \hbox (badness 1275) in paragraph at lines 120--125
 \T1/cmr/m/it/12 Information Retrieval, 2000. SPIRE 2000. Proceedings. Seventh I
 nternational
  []
 
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
-[66]
-Underfull \hbox (badness 10000) in paragraph at lines 144--148
+LaTeX Info: Redefining \. on input line 156.
+LaTeX Info: Redefining \% on input line 156.
+[69]
+Underfull \hbox (badness 1127) in paragraph at lines 204--206
+[]\T1/cmr/m/n/12 Knuth, D. (1973).  Searching and sorting, the art of computer
+ []
+
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
 []\T1/cmr/m/n/12 LA, I. (2017).  Pro-ce-sa-do-res in-tel\TS1/cmr/m/n/12 ® \T1/c
 mr/m/n/12 xeon phi\TS1/cmr/m/n/12 —\T1/cmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--148
-\T1/cmr/m/n/12 urlhttps://www.intel.la/content/www/xl/es/products/processors/xe
-on-phi/xeon-
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
+\T1/cmr/m/n/12 https://www.intel.la/content/www/xl/es/products/processors/xeon-
+phi/xeon-
  []
 
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
-[67]
-Underfull \hbox (badness 2042) in paragraph at lines 180--184
+LaTeX Info: Redefining \. on input line 265.
+LaTeX Info: Redefining \% on input line 265.
+[71]
+Underfull \hbox (badness 2042) in paragraph at lines 273--277
 []\T1/cmr/m/n/12 Plaku, E. and Kavraki, L. E. (2007).  Distributed
  []
 
 )
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
- [68] (./tesisknn.aux
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+ [72] (./tesisknn.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
@@ -1698,41 +1697,43 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 65 (\begingroup)
+### semi simple group (level 1) entered at line 64 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7518 strings out of 493029
- 97299 string characters out of 6136233
- 284541 words of memory out of 5000000
- 10814 multiletter control sequences out of 15000+600000
- 25112 words of font info for 58 fonts, out of 8000000 for 9000
+ 7720 strings out of 493029
+ 99731 string characters out of 6136233
+ 367730 words of memory out of 5000000
+ 11015 multiletter control sequences out of 15000+600000
+ 23059 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,51p,2506b,3703s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,51p,2562b,3725s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/u
-sr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1
-440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc14
-40.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm120
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200
-.pfb>
-Output written on tesisknn.pdf (79 pages, 1177224 bytes).
+sr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/tex
+mf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/
+fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfti1200.pfb>
+Output written on tesisknn.pdf (85 pages, 1206366 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
+ 422 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 

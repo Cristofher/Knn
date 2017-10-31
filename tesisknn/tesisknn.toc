@@ -1,33 +1,39 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{2}
-\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{3}
-\contentsline {section}{\numberline {1.2}Objetivos}{4}
-\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{6}
-\contentsline {section}{\numberline {2.1}Sistemas Multi-core y OpenMP}{6}
-\contentsline {subsection}{\numberline {2.1.1}Threads}{6}
-\contentsline {section}{\numberline {2.2}Coprocesadores}{7}
-\contentsline {subsection}{\numberline {2.2.1}Intel Xeon Phi}{8}
-\contentsline {subsection}{\numberline {2.2.2}NVIDIA GPU}{9}
-\contentsline {section}{\numberline {2.3}Plataforma JAVA}{18}
-\contentsline {subsection}{\numberline {2.3.1}Lenguaje JAVA}{18}
-\contentsline {subsection}{\numberline {2.3.2}La maquina virtual}{19}
-\contentsline {subsection}{\numberline {2.3.3}Bibliotecas}{19}
-\contentsline {section}{\numberline {2.4}Metodolog\IeC {\'\i }a}{20}
-\contentsline {section}{\numberline {2.5}Selecci\IeC {\'o}n de algoritmos}{22}
-\contentsline {section}{\numberline {2.6}Selecci\IeC {\'o}n de lenguajes}{25}
-\contentsline {chapter}{\numberline {3}Estado del Arte}{34}
-\contentsline {chapter}{\numberline {4}Desarrollo}{37}
-\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{37}
-\contentsline {section}{\numberline {4.2}Desarrollo interfaz}{37}
-\contentsline {section}{\numberline {4.3}Integraci\IeC {\'o}n de algoritmo K-nn Secuencial}{42}
-\contentsline {subsection}{\numberline {4.3.1}Funciones claves del algoritmo secuencial}{44}
-\contentsline {section}{\numberline {4.4}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo Multi-hilos}{48}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
+\contentsline {section}{\numberline {1.1}Objetivos}{3}
+\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{4}
+\contentsline {section}{\numberline {2.1}Knn}{4}
+\contentsline {subsection}{\numberline {2.1.1}Algoritmo Knn B\IeC {\'a}sico}{5}
+\contentsline {section}{\numberline {2.2}Sistemas Multi-n\IeC {\'u}cleo y OpenMP}{6}
+\contentsline {subsection}{\numberline {2.2.1}Hilos}{6}
+\contentsline {section}{\numberline {2.3}Coprocesadores}{7}
+\contentsline {subsection}{\numberline {2.3.1}Intel Xeon Phi}{8}
+\contentsline {subsection}{\numberline {2.3.2}NVIDIA GPU}{9}
+\contentsline {subsection}{\numberline {2.3.3}CUDA - \textit {(Compute Unified Device Architecture)}}{15}
+\contentsline {section}{\numberline {2.4}Plataforma JAVA}{16}
+\contentsline {subsection}{\numberline {2.4.1}Lenguaje JAVA}{16}
+\contentsline {subsection}{\numberline {2.4.2}La maquina virtual}{16}
+\contentsline {subsection}{\numberline {2.4.3}Bibliotecas}{17}
+\contentsline {section}{\numberline {2.5}Metodolog\IeC {\'\i }a}{17}
+\contentsline {section}{\numberline {2.6}Selecci\IeC {\'o}n de algoritmos}{20}
+\contentsline {section}{\numberline {2.7}Selecci\IeC {\'o}n de lenguajes}{22}
+\contentsline {chapter}{\numberline {3}Estado del Arte}{30}
+\contentsline {section}{\numberline {3.1}Algoritmos secuenciales y multi-n\IeC {\'u}cleo}{30}
+\contentsline {section}{\numberline {3.2}kNN Xeon Phi}{32}
+\contentsline {section}{\numberline {3.3}kNN GPU}{33}
+\contentsline {chapter}{\numberline {4}Desarrollo}{38}
+\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{38}
+\contentsline {section}{\numberline {4.2}Desarrollo interfaz}{39}
+\contentsline {section}{\numberline {4.3}Integraci\IeC {\'o}n de algoritmo kNN Secuencial}{43}
+\contentsline {subsection}{\numberline {4.3.1}Funciones claves del algoritmo secuencial}{45}
+\contentsline {section}{\numberline {4.4}Integraci\IeC {\'o}n de la plataforma multi-n\IeC {\'u}cleo}{47}
 \contentsline {subsection}{\numberline {4.4.1}Funciones claves del algoritmo multi-hilos}{50}
-\contentsline {section}{\numberline {4.5}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo Xeon Phi}{50}
-\contentsline {subsection}{\numberline {4.5.1}Funciones claves del algoritmo Xeon phi}{54}
-\contentsline {section}{\numberline {4.6}Integraci\IeC {\'o}n de algoritmo K-nn Paralelo GPU}{55}
-\contentsline {section}{\numberline {4.7}M\IeC {\'e}todos de exportaci\IeC {\'o}n de resultados}{56}
-\contentsline {section}{\numberline {4.8}Nuevo modulo A\IeC {\~n}adir men\IeC {\'u}}{58}
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajos Futuros}{62}
-\contentsline {section}{\numberline {5.1}Conclusiones}{62}
-\contentsline {section}{\numberline {5.2}Trabajos futuros}{63}
+\contentsline {section}{\numberline {4.5}Integraci\IeC {\'o}n de algoritmo kNN Paralelo Xeon Phi}{50}
+\contentsline {subsection}{\numberline {4.5.1}Funciones claves del algoritmo Xeon Phi}{52}
+\contentsline {section}{\numberline {4.6}Integraci\IeC {\'o}n de algoritmo kNN Paralelo GPU}{54}
+\contentsline {subsection}{\numberline {4.6.1}Funciones claves del algoritmo GPU NVIDIA}{56}
+\contentsline {section}{\numberline {4.7}M\IeC {\'e}todos de exportaci\IeC {\'o}n de resultados}{57}
+\contentsline {section}{\numberline {4.8}Nuevo m\IeC {\'o}dulo: A\IeC {\~n}adir men\IeC {\'u}}{61}
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajos Futuros}{65}
+\contentsline {section}{\numberline {5.1}Conclusiones}{65}
+\contentsline {section}{\numberline {5.2}Trabajos futuros}{66}

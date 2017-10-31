@@ -1,13 +1,53 @@
 \chapter[Marco Teórico]{\label{ch:marco-teorico}Marco Teórico}
 
-\section{Sistemas Multi-core y OpenMP}
+\section{Knn}
 
-En este capitulo se describen los conocimientos básicos sobre programación multi-núcleos, programación en coprocesadores tales como programación en Intel Xeon Phi, programación en GPU y trabajos relacionados que dan base a esta tesis.\\
-Actualmente las arquitecturas de los dispositivos personales están diseñadas con multiprocesadores o coprocesadores, desde un equipo de bolsillo como un celular (Smartphone) hasta un computador personal (notebook), esto quiere decir que los dispositivos cuentan con varios núcleos en una sola CPU (Unidad central de procesamiento) en el caso de multiprocesadores y con más de una CPU en el caso de un Coprocesador.\\ Imagen de referencia \ref{fig:plataforma}
+\textit{La regla de kNN clasifica cada instancia según la clase mayoritaria entre los vecinos más cercanos que se encuentran en el conjunto de entrenamiento utilizando una función de distancia o similitud. Por la propia naturaleza de su regla de decisión, la calidad de la clasificación del método depende de la manera en que se calculan las distancias entre las diferentes instancias. Cuando no hay ningún conocimiento previo disponible, o incluso cuando hay conocimiento previo, la mayoría de las implementaciones de k-NN utilizan la función de distancia Euclidiana (suponiendo que las instancias se representan como vectores de entrada). La selección de una función de distancia adecuada es fundamental para un buen comportamiento de cualquiera de los algoritmos de clasificación basados en instancias, tales como k-Means \cite{hartigan1979algorithm}, el prototipo más cercano (Hastie, et al. 2009), y otros. Las funciones de distancia como la Euclidiana ignoran cualquier regularidad estadística que existe entre los atributos de las instancias del conjunto de entrenamiento \cite{hastie2009overview}.} \cite[pag. 15]{nguyen2015aprendizaje}
 
-\subsection{Threads}
-Existen varias bibliotecas que permiten la programación en multi-hilos, con esto somos capaces de ejecutar hilos en paralelo, ejecutándose en un núcleo diferente.\\
-Existen diferentes modelos y estándares que permiten la programación de múltiples hilos, tales como Pthreads \cite{libroPthreads}, TBB \cite{libroTBB} u OpenMP \cite{libroOpenMP}, en particular en esta tesis se selecciono el uso de la biblioteca OpenMP que fue desarrollada en 1997. Además es importante mencionar el hecho de que actualmente los compiladores en esta linea son bastante robustos, como tambien el hecho de que el equipo que gestiona OpenMP esta conformado por diferentes compañías (AMD, Intel, Sun Mycrosystem y otros) y no siendo gestionada por una sola, esto nos proporciona confianza.\\
+\subsection{Algoritmo Knn Básico}
+
+La notación del algoritmo esta dada por la figura \ref{fig:knnpara}.
+
+\begin{figure}
+\begin{center}
+   \includegraphics[scale=0.4]{fig/knn_paradigma.png} 
+\end{center}
+\caption{\label{fig:knnpara}Notación para el paradigma kNN}
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{D} indica un fichero de N casos, cada uno de los cuales está caracterizado por n variables, $D = X_i, \dots, X_n$ y una variable a predecir, la clase C.
+\item Los \textbf{N} casos se denotan por\
+\begin{center}
+$(x_i,c_i),\dots,(x_N,c_N)$ donde\\
+$x_i = (x_{i,1} \dots x_{i,n})$ para todo $i = 1,\dots,N$\\
+$c_i \in {c^(1), \dots, c^{m}}$ para todo $i = 1,\dots,N$\\
+\end{center}
+
+
+$c^(1), \dots, c^{m}$ denotan los m posibles valores de la variable clase C.
+\item El nuevo caso que se pretende clasificar se denota por $x = (x_1, \dots , x_n)$.
+\cite[pag. 1]{moujahidtema}.
+\end{itemize}
+
+En la figura \ref{fig:knnejem} se presenta un ejemplo básico para el clasificador kNN. Tal y como se puede observar, se calculan las distancias de todos los casos a la instancia incógnita (?). Una vez seleccionados los k casos más cercanos se puede asignar la instancia a una clase ya definida. La instancia queda definida a la clase posea más elementos dentro de los k valores. 
+
+\begin{figure}
+\begin{center}
+   \includegraphics[scale=0.7]{fig/knn_ejemplo.png} 
+\end{center}
+\caption{\label{fig:knnejem}Ejemplo de aplicación algoritmo kNN}
+\end{figure}
+
+\section{Sistemas Multi-núcleo y OpenMP}
+
+En este capitulo se describen los conocimientos básicos sobre programación multi-núcleo, programación en coprocesadores tales como programación en Intel Xeon Phi, programación en GPU.\\
+Actualmente las arquitecturas de los dispositivos personales están diseñadas con multiprocesadores o coprocesadores, desde un equipo de bolsillo como un celular (smartphone) hasta un computador personal (notebook), esto quiere decir que los dispositivos cuentan con varios núcleos en una sola CPU (unidad central de procesamiento) en el caso de multiprocesadores (Figura \ref{fig:plataforma}) con más de una CPU en el caso de un coprocesador.
+
+\subsection{Hilos}
+Existen varias bibliotecas que permiten la programación multi-hilo, permitiendo la ejecución de un conjunto de hilos en paralelo, ejecutándose en un núcleo diferente.\\
+Existen diferentes modelos y estándares que permiten la programación de múltiples hilos, tales como Pthreads \cite{libroPthreads}, TBB \cite{libroTBB} u OpenMP \cite{libroOpenMP}, en particular en esta tesis se seleccionó el uso de la biblioteca OpenMP que fue desarrollada en 1997. También es importante mencionar el hecho de que actualmente los compiladores son bastante robustos y el equipo que gestiona OpenMP está conformado por diferentes compañías (AMD, Intel, Sun Mycrosystem y otros).\\
 
 \begin{figure}
 \begin{center}
@@ -19,49 +59,46 @@ Existen diferentes modelos y estándares que permiten la programación de múlti
 
 \section{Coprocesadores} \label{cap:coprocesadores}
 
-Un Coprocesador es utilizado para desligar funciones de la CPU, en esta linea existen desde coprocesadores matemáticos hasta coprocesadores gráficos, estos poseen características y especificaciones a ciertos tipos de operaciones, por ejemplo un coprocesador matemático solo esta desarrollado para revolver problemas aritméticos o afines al área esto quiere decir que pueden realizar operaciones matemáticas a una velocidad mayor que el procesador principal (CPU), a su vez un coprocesador gráfico esta diseñado en otra área. Estos proporcionan al hardware una aceleración en la operación solo cuando se ejecuta una tarea o software que se haya diseñado para aprovechar el coprocesador, las instrucciones para un coprocesador son diferentes que las instrucciones de una CPU de modo que existe un programa que detecta la existencia de un coprocesador y entonces se ejecutan las instrucciones escritas explícitamente para aquel coprocesador, por tanto existen diferentes lineas de coprocesadores en el mercado pero en esta tesis solo consideramos Intel Xeon Phi y GPU NVIDIA.
+Un coprocesador es utilizado para desligar funciones de la CPU, en esta línea existen desde coprocesadores matemáticos hasta coprocesadores gráficos. Estos poseen características y están diseñados para ciertos tipos de operaciones, por ejemplo un coprocesador matemático solo está desarrollado para revolver problemas aritméticos o afines al área, esto quiere decir que pueden realizar operaciones matemáticas a una velocidad mayor que el procesador principal (CPU). Los coprocesadores proporcionan al hardware una aceleración en la operación sólo cuando se ejecuta una tarea o software que se haya diseñado para aprovechar el coprocesador. Las instrucciones para un coprocesador son diferentes que las instrucciones de una CPU de modo que existe un programa que detecta la existencia de un coprocesador y entonces se ejecutan las instrucciones escritas explícitamente para aquel coprocesador, por tanto existen diferentes líneas de coprocesadores en el mercado pero en esta tesis sólo consideramos Intel Xeon Phi y NVIDIA GPU.
 
 \subsection{Intel Xeon Phi}
 
-El coprocesador Intel Xeon Phi \cite{xeonphi1} \cite{wange2014} \cite{xeonphila} consta de hasta 72 conectados en un anillo bidireccional de alto rendimiento en el chip. El coprocesador ejecuta un sistema operativo linux y es compatible con todas las principales herramientas de desarrollo de Intel como C / C ++, Fortran, MPI y OpenMP. El coprocesador se conecta a un procesador Intel Xeon (el host) a través del bus PCI Express (PCIe). Las propiedades más importantes de la arquitectura MIC se muestran en figura \ref{estructuraxeon}.\\
+El coprocesador Intel Xeon Phi \cite{xeonphi1} \cite{wange2014} \cite{xeonphila} consta de hasta 72 núcleos conectados en un anillo bidireccional de alto rendimiento en el chip. El coprocesador ejecuta un sistema operativo Linux y es compatible con todas las principales herramientas de desarrollo de Intel como C / C++, Fortran, MPI y OpenMP. El coprocesador se conecta a un procesador Intel Xeon (el host) a través del bus PCI Express (PCIe). Las propiedades más importantes de la arquitectura MIC se muestran en figura \ref{estructuraxeon}.\\
 
-\textbf{Core:} El núcleo de la intel Xeon phi (Scalar Unit en la figura \ref{estructuraxeon}) es una arquitectura de orden (basada en la familia de procesadores Intel Pentium),Implementa instrucciones de recuperación y decodificación para 4 hilos (hardware) por núcleo. Las instrucciones vectoriales que posee el coprocesador Intel Xeon Phi, utiliza una unidad de punto flotante (VPU) dedicada, con un ancho de 512-bit, la que está disponible en cada núcleo. Un núcleo puede ejecutar dos instrucciones por ciclo de reloj, una en U-pipe y otra en V-pipe (no todos los tipos de instrucciones pueden ser ejecutadas por el V-pipe). Cada núcleo compone una interconexión en anillo mediante la CRI (Core Ring Interface).\\
+\textbf{Core:} El núcleo de la intel Xeon Phi (\textit{scalar unit} en la figura \ref{estructuraxeon}) es una arquitectura de orden (basada en la familia de procesadores Intel Pentium). Implementa instrucciones de recuperación y decodificación para 4 hilos (hardware) por núcleo. Las instrucciones vectoriales que posee el coprocesador Intel Xeon Phi, utiliza una unidad de punto flotante (VPU) dedicada, con un ancho de 512-bit, la que está disponible en cada núcleo. Un núcleo puede ejecutar dos instrucciones por ciclo de reloj, una en U-pipe y otra en V-pipe (no todos los tipos de instrucciones pueden ser ejecutadas por el V-pipe). Cada núcleo compone una interconexión en anillo mediante la CRI (Core Ring Interface).\\
 
 \textbf{Vector Processing Unit (VPU):} La VPU incluye la EMU (Extended Math Unit), y es capaz de realizar 16
 operaciones en punto flotante con precisión simple por ciclo, 16 operaciones de enteros de 32-bit por ciclo u
 8 operaciones en punto flotante con precisión doble por ciclo.\\
 
-\textbf{L1 Cache:} Tiene una caché L1 de 32KB para instrucciones y de 32KB para datos, asociativa de 8-vías,
-con tamaño de línea de caché de 64 bytes. Tiene una latencia de cargado de 1 ciclo, que significa que un valor
-entero cargado desde L1 puede ser usado en el siguiente ciclo por una instrucción entera (instrucciones vectoriales
-tienen diferente latencia que las enteras).\\
+\textbf{L1 Cache:} Tiene una caché L1 de 32KB para instrucciones y de 32KB para datos, asociativa de 8-vías, con tamaño de línea de caché de 64 bytes. Tiene una latencia de cargado de 1 ciclo, lo que significa que un valor
+entero cargado desde L1 puede ser usado en el siguiente ciclo por una instrucción entera (instrucciones vectoriales tienen diferente latencia que las enteras).\\
 
-\textbf{L2 Cache:} Cada núcleo posee 512KB de caché L2. Si ningún núcleo comparte algún dato o código, entonces el
-tamaño total de la caché L2 es de 31 MB. Por otro lado, si todos los núcleos comparten exactamente el mismo
+\textbf{L2 Cache:} Cada núcleo posee 512KB de caché L2. Si ningún núcleo comparte algún dato o código, entonces el tamaño total de la caché L2 es de 31 MB. Por otro lado, si todos los núcleos comparten exactamente el mismo
 código y datos en perfecta sincronía, el tamaño total de la caché L2 sería solo de 512KB. Su latencia es de 11
 ciclos de reloj.\\
 
 \textbf{Ring:} Incluye interfaces y componentes, ring stops, ring turns, direccionamiento y control de flujo. Un coprocesador Xeon Phi tiene 2 de estos anillos, uno viajando en cada dirección (Figure \ref{estructuraxeon2}).\\
 
-La Figura \ref{estructuraxeon2} ilustra una visión general de la arquitectura, donde se muestra como los núcleos están conectados con cachés coherentes mediante un anillo bidireccional de 115GB/sec. La figura también muestra una memoria GDDR5 con 16 canales de memoria, que alcanzan una velocidad de hasta 5.5GB/sec.
+La Figura \ref{estructuraxeon2} ilustra una visión general de la arquitectura, donde se muestra cómo los núcleos están conectados con cachés coherentes mediante un anillo bidireccional de 115GB/seg. La figura también muestra una memoria GDDR5 con 16 canales de memoria que alcanza una velocidad de hasta 5.5GB/seg.
 
-\begin{figure}[hbtp]
-\centering
-\label{estructuraxeon}
-\includegraphics[scale=0.5]{fig/core.png}
-\caption{Diagrama de una arquitectura MIC de un núcleo de un coprocesador Xeon Phi}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.5]{fig/core.png}
+		\caption{\label{estructuraxeon}Diagrama de una arquitectura MIC de un núcleo de un coprocesador Xeon Phi}
+	\end{center}
 \end{figure}
 
-\begin{figure}[hbtp]
-\centering
-\label{estructuraxeon2}
-\includegraphics[scale=0.5]{fig/core.png}
-\caption{Diagrama de una arquitectura MIC de un núcleo de un coprocesador Xeon Phi}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{fig/b.png}
+	\caption{\label{estructuraxeon2}Diagrama de una arquitectura MIC interconectada}
 \end{figure}
 
 \subsection{NVIDIA GPU}\label{cap:cuda}
 
-Todas las implementaciones sobre GPU se realizaron usando el modelo de programación CUDA \cite{cuda} de NVIDIA. Este modelo hace una distinción entre el código ejecutado en la CPU (host) con su propia DRAM (host memory) y el ejecutado en GPU (device) sobre su DRAM (device memory). La GPU se representa como un coprocesador capaz de ejecutar funciones denominadas kernels, y provee extensiones para el lenguaje C que permiten alojar datos en la memoria de la GPU y transferir datos entre GPU y CPU. Por lo tanto, la GPU sólo puede ejecutar las funciones declaradas como kernels dentro del programa, y sólo puede usar variables alojadas en device memory, lo cual significa que todos los datos necesarios deberán ser movidos a esta memoria de forma previa a la ejecución la figura \ref{fig:composicion} muestra un esquema de la diferencia entre una CPU y una GPU. Esta última está especializada para cómputo intensivo, y por lo tanto más transistores están dedicados para el procesamiento de datos en vez de caching de datos y control de flujo. 
+Todas las implementaciones sobre GPU se realizaron usando el modelo de programación CUDA \cite{cuda} de NVIDIA. Este modelo hace una distinción entre el código ejecutado en la CPU (host) con su propia DRAM (host memory) y el ejecutado en GPU (device) sobre su DRAM (device memory). La GPU se representa como un coprocesador capaz de ejecutar funciones denominadas kernels, y provee extensiones para el lenguaje C que permiten alojar datos en la memoria de la GPU y transferir datos entre GPU y CPU. Por lo tanto, la GPU sólo puede ejecutar las funciones declaradas como \textit{kernels} dentro del programa, y sólo puede usar variables alojadas en device memory, lo cual significa que todos los datos necesarios deberán ser movidos a esta memoria de forma previa a la ejecución. La figura \ref{fig:composicion} muestra un esquema de la diferencia entre una CPU y una GPU. Esta última está especializada para cómputo intensivo, y por lo tanto más transistores están dedicados para el procesamiento de datos en vez de caching de datos y control de flujo. 
 
 \begin{figure}
 \begin{center}
@@ -94,26 +131,26 @@ Esto implica que la GPU es capaz de realizar un mayor número de operaciones ari
 \begin{center}
    \includegraphics[width=5cm]{fig/threads.png}
 \end{center}
-\caption{\label{fig:threads}Esquema de división de threads.}
+\caption{\label{fig:hilos}Esquema de división de hilos.}
 \end{figure}
 
 \begin{figure}
 \begin{center}
    \includegraphics[width=12cm]{fig/ab.png}
 \end{center}
-\caption{\label{fig:composicion}Composición de la GPU a) vs. CPU b).}
+\caption{\label{fig:composicion}Composición de la CPU a) vs. GPU b).}
 \end{figure}
 
 
-\subsection*{Organización y ejecución de threads}
+\subsection*{Organización y ejecución de hilos}
 
-Los threads son organizados en \textit{CUDA Blocks}, y cada uno de estos se ejecuta completamente en un único multiprocesador. Esto permite que todos los threads de un mismo CUDA Block compartan la misma \textit{shared memory}.
-Un \textit{kernel} puede ser ejecutado por un número limitado de CUDA Blocks, y cada CUDA Block por un número acotado de threads. Sólo los threads que pertenecen al mismo CUDA Block pueden ser sincronizados. Es decir, hilos que pertenezcan a CUDA Blocks distintos sólo pueden ser sincronizados realizando un nuevo lanzamiento de kernel.
+Los hilos son organizados en \textit{CUDA Blocks}, y cada uno de éstos se ejecuta completamente en un único multiprocesador. Esto permite que todos los hilos de un mismo CUDA Block compartan la misma \textit{shared memory}.
+Un \textit{kernel} puede ser ejecutado por un número limitado de CUDA Blocks, y cada CUDA Block por un número acotado de hilos. Sólo los hilos que pertenecen al mismo CUDA Block pueden ser sincronizados. Es decir, hilos que pertenezcan a CUDA Blocks distintos sólo pueden ser sincronizados realizando un nuevo lanzamiento de kernel.
 
-Para soportar la gran cantidad de threads en ejecución se emplea una arquitectura SIMT (Single-Instruction, Multiple-Thread). La unidad de ejecución no es un thread, sino un \textit{warp}, que es un conjunto de threads, y un \textit{half-warp} corresponde a la primera o segunda mitad del conjunto de threads de un \textit{warp}. La forma en que un CUDA Block es dividido en \textit{warps} es siempre la misma, el primer conjunto de threads representan el primer \textit{warp}, el segundo conjunto consecutivo de threads el segundo \textit{warp} y así sucesivamente.\\\\
+Para soportar la gran cantidad de hilos en ejecución se emplea una arquitectura SIMT (Single-Instruction, Multiple-Thread). La unidad de ejecución no es un hilo, sino un \textit{warp}, que es un conjunto de hilos, y un \textit{half-warp} corresponde a la primera o segunda mitad del conjunto de hilos de un \textit{warp}. La forma en que un CUDA Block es dividido en \textit{warps} es siempre la misma, el primer conjunto de hilos representan el primer \textit{warp}, el segundo conjunto consecutivo de hilos el segundo \textit{warp} y así sucesivamente.\\\\
 
-En la figura \ref{fig:threads} se aprecia como jerarquía donde los threads se agrupan en estructuras de 1, 2 ó 3 dimensiones denominados bloques, los bloques a su vez, se agrupan en un grid de bloques que también puede ser de 1, 2 ó 3 dimensiones.\\
-En la figura \ref{fig:composicion} se aprecia la comparación de una CPU (a) y GPU (b), estas poseen diferencias técnicas, como se aprecia en la siguiente tabla \ref{tabla_gpu}.\\
+La figura \ref{fig:hilos} muestra el esquema de división de los hilos, los hilos se agrupan en estructuras de 1, 2 ó 3 dimensiones denominados bloques, los bloques a su vez, se agrupan en un \textit{grid} de bloques que también puede ser de 1, 2 ó 3 dimensiones.\\
+En la figura \ref{fig:composicion} se aprecia la comparación de una CPU (a) y una GPU (b), las que poseen diferencias técnicas, como se aprecia en la tabla \ref{tabla_gpu}.\\
 \begin{table}
 	\begin{center} 
    	\caption{\label{tabla_gpu} Tabla comparativa CPU vs GPU}
@@ -133,11 +170,11 @@ En la figura \ref{fig:composicion} se aprecia la comparación de una CPU (a) y G
 
 \subsection*{Reducción de lecturas a memoria}
 
-Los accesos a memoria de un \textit{half-warp} a device memory son fusionados en una sola transacción de memoria si las direcciones accedidas caben en el mismo segmento de memoria. Por lo tanto, si los threads de un \textit{half-warp} acceden a \textit{n} diferentes segmentos, entonces se ejecutarán \textit{n} transacciones de memoria. Si es posible reducir el tamaño de la transacción, entonces se lee sólo la mitad de ésta.
+Los accesos a memoria de un \textit{half-warp} a device memory son fusionados en una sola transacción de memoria si las direcciones accedidas caben en el mismo segmento de memoria. Por lo tanto, si los hilos de un \textit{half-warp} acceden a \textit{n} diferentes segmentos, entonces se ejecutarán \textit{n} transacciones de memoria. Si es posible reducir el tamaño de la transacción, entonces se lee sólo la mitad de ésta.
 
 \subsection*{Funciones atómicas}
-Existe un grupo de funciones atómicas que realizan operaciones de tipo \textit{read-modify-write} sobre palabras de residentes en \textit{global memory o shared memory}. Estas funciones garantizan que serán realizadas completamente sin interferencia de los demás threads.
-Cuando un thread ejecuta una función atómica, ésta bloquea el acceso a la dirección de memoria donde reside la palabra involucrada hasta que se complete la operación. Las funciones atómicas se dividen en funciones aritméticas y funciones a nivel de bits, a continuación se muestran algunas de las funciones aritméticas relevantes para el presente trabajo:
+Existe un grupo de funciones atómicas que realizan operaciones de tipo \textit{read-modify-write} sobre palabras de residentes en \textit{global memory o shared memory}. Estas funciones garantizan que serán realizadas completamente sin interferencia de los demás hilos.
+Cuando un hilo ejecuta una función atómica, ésta bloquea el acceso a la dirección de memoria donde reside la palabra involucrada hasta que se complete la operación. Las funciones atómicas se divide en funciones aritméticas y funciones a nivel de bits, a continuación se muestran algunas de las funciones aritméticas relevantes para el presente trabajo:
 
 \begin{itemize}
 
@@ -159,46 +196,31 @@ Cuando un thread ejecuta una función atómica, ésta bloquea el acceso a la dir
 
 \end{itemize}
 
+\subsection{CUDA - \textit{(Compute Unified Device Architecture)}}
 
-\subsection*{Ejemplos}
+La Gpu \textit{(Graphic Processing Unit)} se caracteriza por tener funciones de punto flotante, en sus inicios nació como alternativas para grandes volúmenes de información, aplicables en el desarrollo de videojuegos, reproductores de vídeo y simulaciones complejas. Posteriormente se el modelo de programación extendida a C genero lo que hoy se conoce como CUDA. El hardware de CUDA se compone por la CPU de un equipo principal o host yCapítulo 2. Marco Teórico
+31 una GPU dispuesta en un dispositivo externo o device.
+\\
+Las ventajas de programación en GPU son:
+\subitem • Código compacto: una instrucción define N operaciones.
+\subitem • Reduce la frecuencia de los saltos en el código.
+\subitem • No se requiere de hardware adicional para detectar el paralelismo.
+\subitem • Permite la ejecución en paralelo asumiendo N flujos de datos paralelos.
+\subitem • No maneja dependencias.
+\subitem • Usa patrones de acceso a memoria continua.
+		
+Ademas cuenta con varias memorias tales como: \textit{Memoria compartida de lecto/escritura.}- \textit{Memoria de constantes} - \textit{Memoria de texturas}   
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.6]{fig/Ejemplo_gpu.png}
-\caption{\label{ejemplo_gpu_suma}Ejemplo de suma de vectores con CUDA.}
-\end{figure}
-
-La figura \ref{ejemplo_gpu_suma} muestra un código que suma 2 vectores utilizando la GPU. Para esto primero se asigna memoria a los arreglos en device memory, luego se copian los valores necesarios a estas variables, y posteriormente se invoca al kernel con 1 CUDA Block (dado por la variable N\_BLOQUES ) y 200 threads por cada CUDA Block (dado por la variable N).
-
-Cada thread obtiene su identificador (variable tid) usando variables predefinidas por la GPU, $ID_{Thread}$ (que retorna el ID del thread en el CUDA Block), $T_{Block}$ (que retorna la cantidad de threads de un CUDA Block) y $ID_{Block}$ (que retorna el identificador del CUDA Block). Cada thread realiza la suma del elemento tid-ésimo de ambos arreglos (dev\_A y dev\_B). Y ya una vez terminado el kernel se copia el arreglo resultado a la memoria de CPU para poder imprimir los resultados, pues no se puede invocar una función para imprimir dentro del kernel en la GPU utilizada.
-
-Los threads de un warp siempre están sincronizados, es decir, ningún thread se puede adelantar a otro que pertenezca al mismo warp en la ejecución de instrucciones. Un ejemplo de esto lo muestra la figura \ref{cod_gpu_sync}, donde en el código \ref{cod_gpu_sync-a} se deben realizar instrucciones de sincronización para garantizar el correcto valor del arreglo result, mientras que el código \ref{cod_gpu_sync-b} es realizado solamente por los threads de un warp, y debido a esto no es necesario utilizar sincronización.
-
-
-\begin{figure}
-\begin{center}
-\subfigure[Caption Subfigura 1]{
-	\includegraphics[width=5cm,height=4cm]{fig/cod_gpu_sync-a.eps}
-    \label{cod_gpu_sync-a}
-}~~~~~~~~~~~~
-\subfigure[Caption Subfigura 2]{
-	\includegraphics[width=5cm]{fig/cod_gpu_sync-b.eps}
-    \label{cod_gpu_sync-b}
-}
-\caption{\label{cod_gpu_sync}Ejemplos para ilustrar la sincronizaci'on
-de los threads de un \emph{warp}.}
-\end{center}
-\end{figure}
 
 \section{Plataforma JAVA}
 
-Una plataforma es el entorno de hardware o software en el cual se ejecuta un programa. A diferencia de las plataformas tradicionales como Linux, Windows y Solaris, la plataforma Java está basada sólo en software que se ejecuta sobre otras plataformas basadas en hardware. Por esto la plataforma Java y su software puede ser utilizado sobre variados sistemas operativos y hardware. 
+Una plataforma es el entorno de hardware o software en el cual se ejecuta un programa. A diferencia de las plataformas tradicionales como Linux, Windows y Solaris, la plataforma Java está basada sólo en software que se ejecuta sobre otras plataformas basadas en hardware. Por esto la plataforma Java y su software pueden ser utilizadas sobre variados sistemas operativos y hardware. 
 \\La plataforma Java está constituida de tres componentes: el lenguaje, la máquina virtual
 y las bibliotecas. \cite[pág. 5]{nunez2003investigacion}
 
 \subsection{Lenguaje JAVA}
 
-El lenguaje Java es un lenguaje de propósito general, de alto nivel, que utiliza el paradigma de orientación a objetos. Su sintaxis y tipos están basados principalmente en C++, sin embargo, las diferencias principales con éste son la administración de memoria, siendo ejecutada por la máquina virtual automáticamente y no por el código de cada programa, y el soporte de procesos livianos o threads a nivel del lenguaje, que ayuda a controlar la sincronización de procesos paralelos. Estas características dan al lenguaje Java las propiedades de robustez y seguridad, evitando por ejemplo problemas de buffer overflow utilizados en ataques a sistemas. \cite[pág. 5]{nunez2003investigacion}
+El lenguaje de programación Java es de propósito general, de alto nivel que utiliza el paradigma de orientación a objetos. Su sintaxis y tipos están basados principalmente en C++, sin embargo, las diferencias principales con éste es la administración de memoria, siendo ejecutada por la máquina virtual automáticamente y no por el código de cada programa, y el soporte de procesos livianos o hilos a nivel del lenguaje que ayuda a controlar la sincronización de procesos paralelos. Estas características dan al lenguaje Java las propiedades de robustez y seguridad, evitando por ejemplo problemas de buffer overflow utilizados en ataques a sistemas. \cite[pág. 5]{nunez2003investigacion}
 
 \subsection{La maquina virtual}
 
@@ -232,43 +254,44 @@ En relación con la figura \ref{metodologia}, el modelo incremental aplica secue
 
 \textit{El desarrollo incremental es útil en particular cuando no se dispone de personal para la implementación completa del proyecto en el plazo establecido por el negocio. Los primeros incrementos se desarrollan con pocos trabajadores. Si el producto básico es bien recibido, entonces se agrega más personal (si se requiere) para que labore en el siguiente incremento. Además, los incrementos se planean para administrar riesgos técnicos. Por ejemplo, un sistema grande tal vez requiera que se disponga de hardware nuevo que se encuentre en desarrollo y cuya fecha de entrega sea incierta. En este caso, tal vez sea posible planear los primeros incrementos de forma que eviten el uso de dicho hardware, y así proporcionar una funcionalidad parcial a los usuarios finales sin un retraso importante.} \cite[pág. 36]{pressman1988ingenieria}\\
 
-Se implemento esta metodología debido a la característica propia del software, donde una etapa del software no estaba ligada a otra, de manera que se agrego algoritmo por algoritmo a medida que su desarrollo se finalizaba correctamente y luego se añadían al software.
+Se implemento esta metodología debido a la característica propia del software desarrollado, dado que una etapa del software no estaba ligada a otra, de manera que era posible agregar un algoritmo a medida que su desarrollo se finalizaba correctamente y luego se añadían los siguientes al software.
 
 
 \subsection*{Ventajas del modelo}
 El modelo iterativo y creciente presenta excelentes ventajas para ser aprovechadas en el desarrollo del software propuesto, tales como:
 \begin{itemize}
-\item No se debe esperar a que el desarrollo del sistema o software este completo para poder ser utilizado por usuarios. Donde el primer incremente es el más importante y da paso a que los usuarios interesados ya puedan utilizar el sistema o software.
-\item Los usuarios pueden utilizar incrementos iniciales como el prototipo, esto genera una experiencia real sobre el cumplimiento de los requisitos del sistema o software.
-\item Como el sistema se va probando gradualmente existe menos probabilidad de errores en la etapa final
-\item Se entregan primero los requisitos principales de modo que al integrar nuevas características
-\item Al ser un proceso iterativo da una mejor retroalimentación del sistema o software final   
+\item No se debe esperar a que el desarrollo del sistema (software) este completo para poder ser utilizado por algún usuarios. Tomando en cuenta que el primer incremento es el más importante y da paso a que los usuarios interesados ya puedan utilizar el sistema (software).
+\item Los usuarios pueden utilizar incrementos iniciales como el prototipo, esto genera una experiencia real sobre el cumplimiento de los requisitos del sistema (software).
+\item Como el sistema (software) se va probando gradualmente existe menos probabilidad de errores en la etapa final.
+\item Se entregan primero los requisitos principales, de modo que al integrar nuevas características estas puede ser agregadas más fácilmente.
+\item Al ser un proceso iterativo da una mejor retroalimentación del sistema (software) final.  
 \end{itemize}
 
-En base a las ventajas mencionadas anteriormente y en base a la característica del software, se opto por emplear esta metodología. 
+Sobre la base de las ventajas mencionadas anteriormente y las características del software, se optó por emplear esta metodología. 
 \begin{itemize}
 
-\item Su primer incremento correspondió a la creación de la interfaz gráfica, ya que esta es la base de todo el software que se desarrollo y luego correspondió la comunicación entre la interfaz gráfica en JAVA y el algoritmo k-nn secuencial en el lenguaje de programación C. 
+\item Su primer incremento correspondió a la creación de la interfaz gráfica, ya que esta es la base de todo el software que se desarrolló y luego correspondió la comunicación entre la interfaz gráfica en JAVA y el algoritmo kNN secuencial en el lenguaje de programación C. 
 \end{itemize}
 
-En base a las ventajas del modelo, el primer incremento cumple con el punto anterior de entregar los requisitos principales y luego poder integrar nuevas características.
+A partir de las ventajas del modelo, el primer incremento cumple con el punto anterior de entregar los requisitos principales y luego integrar nuevas características.
 
 \section{Selección de algoritmos}
 
-La selección de algoritmos se realizo bajo la búsqueda de los algoritmos propuestos en la literatura que resuelven el algoritmo K-nn, con esto se realizo el filtro en base a los algoritmos que utilizan Heap.
+La selección de algoritmos se realizó mediante la búsqueda en la literatura, con el objetivo principal de responder de manera rápida a la consulta kNN, los algoritmos que presentan mejores resultados en la literatura son aquellos que utilizan Heap \cite{knuth1973searching}.
 
 \subsection*{Estructura Heap}\label{sec:heap}
 
-En programación un heap es una estructura de datos del tipo $"$árbol$"$ con información de un conjunto ordenado de datos. De manera que es utilizada para implementar colas con prioridad. En este tipo de colas, el elemento a ser eliminado o borrado es el cual tiene la mayor o menor prioridad. A su vez en cualquier momento se pueden insertar elementos con una prioridad arbitraria. 	
+En programación un heap es una estructura de datos del tipo $"$árbol$"$ con información de un conjunto ordenado de datos. Se utiliza para implementar colas con prioridad. En este tipo de colas, el elemento a ser eliminado o borrado es el que tiene la mayor o menor prioridad según sea el caso. A su vez en cualquier momento se pueden insertar elementos con una prioridad arbitraria.	
 \\
 Existen tres tipos de heap, de acuerdo a sus características de orden
 \begin{itemize}
-	\item Max heap: Es un árbol en el cual el valor del nodo padre es mayor a los valores de los nodos de sus hijos (en caso de poseer algún hijo), además de ser un árbol binario completo. Imagen de referencia \ref{fig:maxheap}\begin{figure}[hbtp]
+	\item Max heap: Es un árbol en el cual el valor del nodo padre es mayor a los valores de los nodos de sus hijos (en caso de poseer algún hijo), además de ser un árbol binario completo. Imagen de referencia \ref{fig:maxheap}.
+	\begin{figure}[hbtp]
 	\centering
 	\includegraphics[width=5cm]{fig/Max-Heap.png}
 	\caption{\label{fig:maxheap} Ejemplo de Max Heap}
 \end{figure} 
-	\item Min heap: Es un árbol en el cual el valor del nodo padre es menor a los valores de los nodos de sus hijos (en caso de poseer algún hijo), además de ser un árbol binario completo. Imagen de referencia \ref{fig:minheap}
+	\item Min heap: Es un árbol en el cual el valor del nodo padre es menor a los valores de los nodos de sus hijos (en caso de poseer algún hijo), además de ser un árbol binario completo. Imagen de referencia \ref{fig:minheap}.
 \begin{figure}[hbtp]
 	\centering
 	\includegraphics[width=5cm]{fig/Min-heap.png}
@@ -282,23 +305,23 @@ Existen tres tipos de heap, de acuerdo a sus características de orden
 \end{figure} 	
 \end{itemize} 
 
-Las operaciones basicas del un heap son las siguientes:
+Las operaciones básicas del un heap son las siguientes:
 \begin{itemize}
 	\item[1] Creación de un heap vacío.\\
 	Si no existe un heap se crea la estructura.
 	\item[2] Inserción de un nuevo elemento en la estructura heap.\\
-	Si existe un heap se inserta el elemento aplicando criterios de ordenación, de modo de respetar el orden de los tipos de heap vistos anteriormente, el árbol se ordena de manera tal que siempre cumpla con el orden binario.\\
+	Si existe un heap se inserta el elemento aplicando criterios de ordenación, de forma que se respeta el orden de los tipos de heap vistos anteriormente, el árbol se ordena de manera que siempre cumpla con el orden binario.\\
 	Si no existe un heap se crea uno y se añade como el nodo padre.
 	\item[3] Eliminación del elemento más grande del heap.\\
-	Si existe un heap se puede eliminar el elemento raíz (nodo padre) del heap y el heap debe respetar el orden binario de modo que se reordena el árbol y uno de sus nodos hijos debe ocupar la raíz vacía, luego de haber ocupado ese nodo se debe comparar con los hijos si otro puede ocupar el lugar de nodo padre de acuerdo a las características del tipo de heap. 
+	Si existe un heap se puede eliminar el elemento raíz (nodo padre) del heap y el heap debe respetar el orden binario de modo que se reordena el árbol y uno de sus nodos hijos debe ocupar la raíz vacía, luego de haber ocupado ese nodo se debe comparar con los hijos si otro puede ocupar el lugar de nodo padre de acuerdo con las características del tipo de heap. 
 \end{itemize}
 
-En esta tesis se han utilizado para los algoritmos el heap de tipo Max Heap, esto debido a que el algoritmo busca los K vecinos mas cercanos donde realiza el calculo exhaustivo de la distancia entre dos elementos vectorizados dentro de una base de datos con un numero variado de elementos para comparar, de modo que en un comienzo se debe ir llenado el heap de tamaño $K$, con los primeros $K$ elementos analizados, el heap realiza su organización de árbol binaria y el nodo padre siempre sera el elemento de mas distancia al elemento comparado. De esta manera si se descubre una nueva distancia mas cercana al valor del nodo padre (raíz del árbol), se procese a eliminar el valor del nodo actual y se realiza la inserción del nuevo valor y se reordena el árbol nuevamente. Con esto solo se debe comparar con el valor del nodo padre (raíz) con cada una de las distancias que se van obteniendo y no con todos los valores dentro del heap, siendo muy útil esta estructura para realizar las consultas K-nn y además de poder reducir tiempos en comparación debido a lo mencionado anteriormente de solo comparar con el valor del nodo padre (raíz del árbol). 
+En esta tesis se han utilizado para la implementación de los algoritmos el heap de tipo Max Heap, esto debido a que el algoritmo busca los K vecinos más cercanos. Se debe realizar el cálculo exhaustivo de la distancia entre dos elementos vectorizados, de una base de datos con un número variado de elementos para comparar, de modo que en un comienzo se debe ir llenado el heap de tamaño $K$, con los primeros $K$ elementos analizados, el heap realiza su organización de árbol binario y el nodo padre siempre será el elemento de más distancia al elemento comparado (consulta). De esta manera si se descubre una nueva distancia más cercana al valor del nodo padre (raíz del árbol), se procede a eliminar el valor del nodo actual y se realiza la inserción del nuevo valor y se reordena el árbol nuevamente. Con esto solamente se debe comparar el nodo padre (raíz) con cada una de las distancias que se van obteniendo y no con todos los valores dentro del heap, siendo muy útil esta estructura para realizar las consultas kNN debido a reducir tiempos en la comparación de elementos. 
 
 
 \section{Selección de lenguajes}
 
-Para la selección de un lenguaje de programación óptimo para el algoritmo K-nn, se debió considerar ciertas condiciones
+Para la selección de un lenguaje de programación óptimo para el algoritmo que procesa una consulta kNN, se debió considerar ciertas condiciones
 \\
 \begin{itemize}
 \item Tipo de lenguaje
@@ -308,17 +331,17 @@ Para la selección de un lenguaje de programación óptimo para el algoritmo K-n
 \end{itemize}  
 
 \subsection*{Tipo de lenguaje}
-En esta área se establecen muchas diferencias en los lenguajes de programación, como se sabe un computador solo reconoce el código binario y sus instrucciones están en ordenes de 0's y 1's. \\
-En base a esto existen lenguajes de programación de acuerdo a la proximidad a la arquitectura de un hardware, existiendo las siguientes categorías.
+En esta área se establecen muchas diferencias en los lenguajes de programación, como se sabe un computador sólo reconoce el código binario y sus instrucciones están en ordenes de 0's y 1's. \\
+A partir de esto existen lenguajes de programación de acuerdo a la proximidad de la arquitectura de un hardware, existiendo las siguientes categorías.
 
 \begin{itemize}
 	\item Lenguajes de bajo nivel:\\
-	Estos lenguajes son totalmente dependientes de la maquina para aprovechar al máximo las características de esta, dentro de esta categoría se consideran lenguajes como:
+	Estos lenguajes son totalmente dependientes de la máquina para aprovechar al máximo las características de ésta. Dentro de esta categoría se consideran lenguajes como:
 	\subitem •	 Lenguaje de maquina 
 	\subitem •	 Lenguaje ensamblador 
 
 	\item Lenguajes de alto nivel:\\
-	Estos lenguajes son los mas lejanos a la arquitectura de un computador, de modo que son totalmente independientes de la maquina y muy cercanos al lenguaje humano, dentro de esta categoría se consideran lenguajes como:
+	Estos lenguajes son los más lejanos a la arquitectura de un computador, de modo que son totalmente independientes de la máquina y muy cercanos al lenguaje humano. Dentro de esta categoría se consideran lenguajes como:
 	\subitem •	 Python
 	\subitem •	 Fortran
 	\subitem •	 Etc
@@ -328,19 +351,19 @@ En base a esto existen lenguajes de programación de acuerdo a la proximidad a l
 	\subitem •	 C	
 \end{itemize}  
 
-Además un lenguaje se puede agrupar en dos categorías de acuerdo a la naturaleza del lenguaje, estas categorías son:
+Además un lenguaje se puede agrupar en dos categorías de acuerdo con la naturaleza del lenguaje, estas categorías son:
 \begin{itemize}
 	\item Lenguaje interpretado	:\\
-	Estos lenguajes se caracterizan por que sus instrucciones o su código fuente, escritos mayoritariamente en lenguajes de altos nivel, estos son traducidos por un interprete (o maquina virtual según sea el caso) a un lenguaje que sea comprensible por la maquina, instrucción por instrucción. Este proceso se repite cada vez que se ejecuta un código de este tipo.\\
-	La principal ventaja es una gran independencia de la plataforma donde se ejecuta los códigos o instrucciones anteriormente mencionados.\\
-	Su principal desventaja es el tiempo que necesitan para ser interpretados, generalmente son más lentos en tiempo de ejecución de un lenguaje compilado.  
+	Estos lenguajes se caracterizan porque sus instrucciones o su código fuente, escritos mayoritariamente en lenguajes de altos nivel, estos son traducidos por un interprete (o máquina virtual según sea el caso) a un lenguaje que sea comprensible por la máquina, instrucción por instrucción. Este proceso se repite cada vez que se ejecuta un código de este tipo.\\
+	La principal ventaja es una gran independencia de la plataforma donde se ejecutan los códigos o instrucciones anteriormente mencionados.\\
+	Su principal desventaja es el tiempo que necesite para ser interpretados, generalmente son más lentos en tiempo de ejecución de un lenguaje compilado.  
 	\item Lenguaje compilado:\\
-	Estos lenguajes se caracterizan por que su código fuente escrito en alto nivel o medio nivel (C), es traducido por un compilador a un archivo ejecutable para una maquina en especifico, en otras palabras cada maquina debe compilar sus códigos fuentes. De manera que se pueden ejecutar las veces que sea necesario sin la necesidad de repetir el proceso de compilación.
+	Estos lenguajes se caracterizan porque su código fuente escrito en alto nivel o medio nivel (C), es traducido por un compilador a un archivo ejecutable para una máquina en específico, en otras palabras cada máquina debe compilar sus códigos fuentes. De manera que se pueden ejecutar las veces que sea necesario sin la necesidad de repetir el proceso de compilación.
 \end{itemize}
 
 \subsection*{Tiempos de ejecución de instrucciones}
 
-Según \cite{speed} realizo la comparación en términos de velocidad de los lenguajes de programación, obteniendo los resultados como se aprecian en la siguiente figura \ref{speed} 
+Según \cite{speed} realizó la comparación en términos de velocidad de los lenguajes de programación, obteniendo los resultados como se aprecian en la siguiente figura \ref{speed} 
 
 \begin{figure}[hbtp]
 	\centering
@@ -350,7 +373,7 @@ Según \cite{speed} realizo la comparación en términos de velocidad de los len
 
 \subsection*{Tiempos de ejecución de estructuras Heap} 
 
-Una métrica importante para seleccionar el lenguaje más acorde a las necesitas que requiere el algoritmo K-nn, recordando que el tiempo de ejecución de este es importante, según \cite{heap} realizo una comparación de tiempos en diversos lenguajes de programación, como C, C++ y Python, los resultados obtenidos se aprecian en la siguiente figura \ref{speedheap}
+Una métrica importante para seleccionar el lenguaje, es obtener una métrica objetiva en el procesamiento de Heap. Según \cite{heap} realizó una comparación de tiempos en diversos lenguajes de programación, como C, C++ y Python, los resultados obtenidos se aprecian en la figura \ref{speedheap}
 
 \begin{figure}
 \begin{center}
@@ -366,7 +389,7 @@ Una métrica importante para seleccionar el lenguaje más acorde a las necesitas
 \end{center}
 \end{figure}
 
-Como se aprecia en la figura \ref{speedheap} el tiempo de ejecución de un heap es menor en C vs C++ / Python, de manera que considerando los tiempos de ejecución el lenguaje de programación C es superior en base a esta características. 
+Como se aprecia en la figura \ref{speedheap} el tiempo de ejecución de un heap es menor en C vs C++ / Python, considerando los tiempos de ejecución el lenguaje de programación C es superior a partir de estas características. 
 
 \subsection*{Posibilidad de utilizar librerías para trabajos en paralelismo}
 
@@ -374,11 +397,11 @@ Basado en la guía de programación en paralelo \cite{acosta2012guia}, se establ
 
 \begin{itemize}
 	\item \textbf{MPM} - \textit{Message Passing Model} mediante la librería \textbf{MPI}
-	\\\\
+	\\
 	Este modelo aprovecha los múltiples \textit{cores} de trabajo que están instalados en los equipos de nueva tecnología. Se asume el \textit{hardware} como reunión de diferentes procesos a través de una red de interconexión donde cada uno tiene acceso directo y exclusivo a la información almacenada en su propia memoria local.\\
 	
 	MPM maneja un tipo de acceso a memoria denominado \textbf{NUMA} \textit{(Nom-Uniform Memory Access)}. En el que se describe que los procesos que se comunican por la red escalable de interconexión.\\
-	El hardware a su vez, cada memoria esta conectada directamente a una CPU, en vez de estar controlado a una memoria (modelo UMA). Las CPUs están conectadas con un I/O hub que permite el ordenamiento de los datos y reduciendo los problemas de tráfico.\\
+	El hardware a su vez, cada memoria está conectada directamente a una CPU, en vez de estar controlado a una memoria (modelo UMA). Las CPUs están conectadas con un I/O hub que permite el ordenamiento de los datos y reduciendo los problemas de tráfico.\\
 	Para el uso de un programa en MPM se debe especificar el número de procesos que cuenta la aplicación, cada proceso posee un ID o Rank.\\
 
 	Los mensajes de MPM generalmente contienen:
@@ -393,51 +416,31 @@ Basado en la guía de programación en paralelo \cite{acosta2012guia}, se establ
 	\item Librería MPI
 
 	La primera versión de esta librería en 1993 utilizo PVM V3 \textit{(Parallel Virtual machine)}, luego en 1994 se ajustaron complementos a la librería de PVM y nace la primera versión de MPI 1.0 \textit{(Message Passing Interface)}\\
-	Una característica llamativa de MPI es que permite trabajar con grupos de procesadores definidos según el programador lo disponga mediante objetos virtuales denominados comunicadores, que permiten distribuir los recursos según la tarea a realizar.
-Con la librería MPI se debe tener claro que sólo se puede declarar una única vez el ambiente en paralelo (sección comprendida entre las funciones MPI\_Init y MPI\_Finalize) y que todo el código que este dentro de la zona se ejecutará en simultáneo por todos los procesos.  
-\\
-Dentro de los grupos de funciones para MPI se destacan algunas como:
-\subitem •	 Funciones de control de flujo: permiten crear y establecer parámetros de la sección en paralelo como número de procesos a usar, el comunicador, los ID de los procesos de la aplicación, etc.
-\subitem •	 Funciones para el manejo de grupos y comunicadores: facilitan la conformación de los grupos de procesadores.
-\subitem •	 Funciones de administración de recurso.
-\subitem •	 Funciones de comunicación: permiten la interacción (enviar y recibir información) entre diferentes procesos. Según el número de procesos presentes en la comunicación ésta se clasifica en punto a punto y multipunto.
-\subitem •	 Funciones para comunicación punto a punto: implican la interacción de dos procesos exclusivamente (maestro y esclavo), que según el tipo de petición para establecer la conexión se dividen en método bloqueante y no bloqueante.
-\subitem •	 Funciones para comunicación multipunto: interactúan con múltiples procesos simultáneamente, el uso de ellas requiere que el desarrollador tenga claro el recurso con el que cuenta.\\\\
+	Una característica llamativa de MPI es que permite trabajar con grupos de procesadores definidos según el programador lo disponga mediante objetos virtuales denominados comunicadores que permiten distribuir los recursos según la tarea a realizar.
+	Con la librería MPI se debe tener claro que sólo se puede declarar una única vez el ambiente en paralelo (sección comprendida entre las funciones MPI\_Init y MPI\_Finalize) y que todo el código que este dentro de la zona se ejecutará en simultáneo por todos los procesos.  
+	\\
+	Dentro de los grupos de funciones para MPI se destacan algunas como:
+	\subitem •	 Funciones de control de flujo: permiten crear y establecer parámetros de la sección en paralelo como número de procesos a usar, el comunicador, los ID de los procesos de la aplicación, etc.
+	\subitem •	 Funciones para el manejo de grupos y comunicadores: facilitan la conformación de los grupos de procesadores.
+	\subitem •	 Funciones de administración de recurso.
+	\subitem •	 Funciones de comunicación: permiten la interacción (enviar y recibir información) entre diferentes procesos. Según el número de procesos presentes en la comunicación ésta se clasifica en punto a punto y multipunto.
+	\subitem •	 Funciones para comunicación punto a punto: implican la interacción de dos procesos exclusivamente (maestro y esclavo) que según el tipo de petición para establecer la conexión se dividen en método bloqueante y no bloqueante.
+	\subitem •	 Funciones para comunicación multipunto: interactúan con múltiples procesos simultáneamente, el uso de ellas requiere que el desarrollador tenga claro el recurso con el que cuenta.\\
 	
 	\item \textbf{SMM} - \textit{Shared Memory Model} mediante la librería \textbf{OpenMP} 
-	\\\\
+	\\
 	El modelo SMM es una abstracción del modelo de multiprocesamiento centralizado. El método de acceso a memoria es llamado UMA (\textit{Uniform Memory Access}), también conocido como SMP (\textit{Symmetric Multi- Processing}).
 	
-El hardware en SMM está basado en FSB (front-side bus) que a su vez es el modelo acceso a memoria usado en UMA (Uniform Memory Access). Consta de un controlador de memoria (MCH) al que se conecta a la memoria general, las
-CPU interactúan con el MCH cada vez que necesitan acceder a memoria. También, cuenta con un controlador de I/O que se conecta al MCH.
+	El hardware en SMM está basado en FSB (front-side bus) que a su vez es el modelo acceso a memoria usado en UMA (Uniform Memory Access). Consta de un controlador de memoria (MCH) al que se conecta a la memoria general, las
+	CPU interactúan con el MCH cada vez que necesitan acceder a memoria. También, cuenta con un controlador de I/O que se conecta al MCH.
 
-SMM está fundamentado en un modelo de ejecución denominado \textit{fork/join} que básicamente describe la posibilidad de pasar de una zona secuencial ejecutada por un único hilo maestro (\textit{master thread}) a una zona paralela ejecutada por varios hilos esclavos (\textit{fork}), posteriormente, cuando finalice la ejecución en paralelo, la información y resultados se agrupan de nuevo mediante un proceso de escritura en memoria en un proceso llamado \textit{join}.\\
+	SMM está fundamentado en un modelo de ejecución denominado \textit{fork/join} que básicamente describe la posibilidad de pasar de una zona secuencial ejecutada por un único hilo maestro (\textit{master thread}) a una zona paralela ejecutada por varios hilos esclavos (\textit{fork}), posteriormente, cuando finalice la ejecución en paralelo, la información y resultados se agrupan de nuevo mediante un proceso de escritura en memoria en un proceso llamado \textit{join}.\\
 
 	\item Librería OpenMP
 	\\
-La gran portabilidad es una característica de MPI debido a que está soportado para C, C++ y Fortran, disponible para sistemas operativos como Solaris, AIX, HP-UX, GNU/Linux, MAC OS, y Windows.\\
-Además, OpenMP soporta la interacción con el modelo de paso por mensajes (MPM) permitiendo la integración de la librería MPI en las aplicaciones, lo que amplía aún más las alternativas de programación.\\
-Una particularidad de OpenMP es que permite administrar el recurso en rutinas que contienen cálculos iterativos, mediante la distribución de iteraciones de los ciclos en los diferentes threads (hilos) que maneja la aplicación mediante funciones especiales denominadas constructores.
-\\\\	
-	
-	\item \textbf{CUDA} - \textit{(Compute Unified Device Architecture)}
-	
-	La Gpu \textit{(Graphic Processing Unit)} se caracteriza por tener funciones de punto flotante, en sus inicios nacio como alternativas para grandes volúmenes de información, aplicables en el desarrollo de videojuegos, reproductores de video y simulaciones complejas. Posteriormente se el modelo de programación extendida a C genero lo que hoy se conoce como CUDA.\\
-El hardware de CUDA se compone por la CPU de un equipo principal o host y una GPU dispuesta en un dispositivo externo o device.\\
-
-Las ventajas de programación en GPU son:
-
-
-\subitem • Código compacto: una instrucción define N operaciones.
-\subitem •  Reduce la frecuencia de los saltos en el código.
-\subitem • No se requiere de hardware adicional para detectar el paralelismo.
-\subitem • Permite la ejecución en paralelo asumiendo N flujos de datos paralelos.
-\subitem • No maneja dependencias.
-\subitem • Usa patrones de acceso a memoria continua.
-		
-Ademas cuenta con varias memorias tales como: \textit{Memoria compartida de lecto/escritura.}- \textit{Memoria de constantes} - \textit{Memoria de texturas}   		
+	La gran portabilidad es una característica de MPI debido a que está soportado para C, C++ y Fortran, disponible para sistemas operativos como Solaris, AIX, HP-UX, GNU/Linux, MAC OS, y Windows.\\
+	Además, OpenMP soporta la interacción con el modelo de paso por mensajes (MPM) permitiendo la integración de la librería MPI en las aplicaciones, lo que amplía aún más las alternativas de programación.\\
+	Una particularidad de OpenMP es que permite administrar el recurso en rutinas que contienen cálculos iterativos, mediante la distribución de iteraciones de los ciclos en los diferentes hilos que maneja la aplicación mediante funciones especiales denominadas constructores.
+\\			
 	
 \end{itemize}   
-
-En base a todos los puntos mencionados y dadas cada una de las características se opto por el \textit{Lenguaje de programación C} debido a ser un lenguaje de nivel medio, el que permite acceder a direcciones de memoria como un lenguaje de bajo nivel y además de su sintaxis estar considerada como alto nivel, esto lo hace un lenguaje más potente  en esta linea, también cabe destacar que el lenguaje de programación C es un lenguaje compilado, esto permite que no se necesita utilizar de una maquina virtual o un interprete para procesar sus ejecuciones o el código fuente como lo realizan otros lenguajes, con esto solo se debe compilar una vez y ejecutar el código iterativamente. En términos de tiempos de ejecución de instrucciones como se aprecia en la gráfica de la figura \ref{speed}, se aprecia que el lenguaje de programación C es más veloz que muchos otros lenguajes, debido a las características ya mencionadas.\\
-Ya acotando el rango de lenguajes entre C, C++, Python como se aprecia en la gráfica \ref{speedheap}, el lenguaje de programación C es considerablemente mas veloz para procesar la estructura Heap y a esto se le añade la característica de ser un lenguaje que soporta paralelismo en todas las plataformas y cuenta con diversas librerías como se menciono anteriormente, siendo utilizadas en esta tesis OpenMP y CUDA en la cual ambas son soportadas en el lenguaje de programación C.

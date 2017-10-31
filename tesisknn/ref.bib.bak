@@ -1,3 +1,94 @@
+@inproceedings{cayton2012accelerating,
+  title={Accelerating nearest neighbor search on manycore systems},
+  author={Cayton, Lawrence},
+  booktitle={Parallel \& Distributed Processing Symposium (IPDPS), 2012 IEEE 26th International},
+  pages={402--413},
+  year={2012},
+  organization={IEEE}
+}
+
+
+@article{chavez2015near,
+  title={Near neighbor searching with K nearest references},
+  author={Ch{\'a}vez, Edgar and Graff, Mario and Navarro, Gonzalo and T{\'e}llez, Eric Sadit},
+  journal={Information Systems},
+  volume={51},
+  pages={43--61},
+  year={2015},
+  publisher={Elsevier}
+}
+
+@article{gao2009efficient,
+  title={On efficient mutual nearest neighbor query processing in spatial databases},
+  author={Gao, Yunjun and Zheng, Baihua and Chen, Gencai and Li, Qing},
+  journal={Data \& Knowledge Engineering},
+  volume={68},
+  number={8},
+  pages={705--727},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@inproceedings{britos2012dsacl,
+  title={DSACL+-tree: A dynamic data structure for similarity search in secondary memory},
+  author={Britos, Luis and Printista, A Marcela and Reyes, Nora},
+  booktitle={International Conference on Similarity Search and Applications},
+  pages={116--131},
+  year={2012},
+  organization={Springer}
+}
+
+@article{beliakov2012computing2,
+  title={Computing of high breakdown regression estimators without sorting on graphics processing units},
+  author={Beliakov, Gleb and Johnstone, Michael and Nahavandi, Saeid},
+  journal={Computing},
+  volume={94},
+  number={5},
+  pages={433--447},
+  year={2012},
+  publisher={Springer}
+}
+@article{beliakov2012improving,
+  title={Improving the speed and stability of the k-nearest neighbors method},
+  author={Beliakov, Gleb and Li, Gang},
+  journal={Pattern Recognition Letters},
+  volume={33},
+  number={10},
+  pages={1296--1301},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@article{cederman2009gpu,
+  title={Gpu-quicksort: A practical quicksort algorithm for graphics processors},
+  author={Cederman, Daniel and Tsigas, Philippas},
+  journal={Journal of Experimental Algorithmics (JEA)},
+  volume={14},
+  pages={4},
+  year={2009},
+  publisher={ACM}
+}
+
+@article{chavez2005compact,
+  title={A compact space decomposition for effective metric indexing},
+  author={Ch{\'a}vez, Edgar and Navarro, Gonzalo},
+  journal={Pattern Recognition Letters},
+  volume={26},
+  number={9},
+  pages={1363--1376},
+  year={2005},
+  publisher={Elsevier}
+}
+
+@inproceedings{brisaboa2006similarity,
+  title={Similarity search using sparse pivots for efficient multimedia information retrieval},
+  author={Brisaboa, Nieves R and Farina, Antonio and Pedreira, Oscar and Reyes, Nora},
+  booktitle={Multimedia, 2006. ISM'06. Eighth IEEE International Symposium on},
+  pages={881--888},
+  year={2006},
+  organization={IEEE}
+}
+
 @article{eigenfaces,
    title={{Eigenfaces for recognition}},
    author={Turk, M. and Pentland, A.},
@@ -9,6 +100,18 @@
    publisher={MIT Press}
 }
 
+@article{moujahidtema,
+  title={Tema 5. Clasificadores K-NN},
+  author={Moujahid, Abdelmalik and Inza, Inaki and Larranaga, Pedro}
+}
+
+@misc{knuth1973searching,
+  title={Searching and Sorting, the art of computer programming, vol. 3},
+  author={Knuth, D},
+  year={1973},
+  publisher={Reading, MA, Addison-Wesley}
+}
+
 
 @conference{Phi05,
    title={{Overview of the face recognition grand challenge}},
@@ -16,6 +119,26 @@
    booktitle={IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2005. CVPR 2005},
    pages={947--954},
    year={2005}
+}
+
+@article{tellez2012polyphasic,
+  title={Polyphasic metric index: reaching the practical limits of proximity searching},
+  author={Tellez, Eric and Chavez, Edgar and Figueroa, Karina},
+  journal={Similarity Search and Applications},
+  pages={54--69},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{novak2011metric,
+  title={Metric index: An efficient and scalable solution for precise and approximate similarity search},
+  author={Novak, David and Batko, Michal and Zezula, Pavel},
+  journal={Information Systems},
+  volume={36},
+  number={4},
+  pages={721--733},
+  year={2011},
+  publisher={Elsevier}
 }
 
 
@@ -1404,7 +1527,8 @@ Neighbor search in General Metric Spaces.},
 
 @INPROCEEDINGS{cuda,
 TITLE = "CUDA: Compute Unified Device Architecture",
-BOOKTITLE = "\textcopyright 2007 NVIDIA Corporation"
+BOOKTITLE = "\textcopyright 2007 NVIDIA Corporation",
+year         = "2017"
 } 
 
 @book{Knu73,
@@ -1577,7 +1701,8 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
 }
 
 @MANUAL {xeonphi1,
-    title = "PRACE (Partnership for Advanced Computing in Europe). Best Practice Guide - Intel Xeon Phi"
+    title = "PRACE (Partnership for Advanced Computing in Europe). Best Practice Guide - Intel Xeon Phi",
+    year = "2017"
 }
 
 @BOOK {wange2014,
@@ -1590,7 +1715,7 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
 @MISC {xeonphila,
     author       = "Intel LA",
     title        = "PROCESADORES INTEL® XEON PHI™",
-    howpublished = "{url{https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}},",
+    howpublished = "{https://www.intel.la/content/www/xl/es/products/processors/xeon-phi/xeon-phi-processors.html}",
     month        = "jan",
     year         = "2017"
 }
@@ -1654,15 +1779,6 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
   organization={IEEE}
 }
 
-@inproceedings{brisaboa2006similarity,
-  title={Similarity search using sparse pivots for efficient multimedia information retrieval},
-  author={Brisaboa, Nieves R and Farina, Antonio and Pedreira, Oscar and Reyes, Nora},
-  booktitle={Multimedia, 2006. ISM'06. Eighth IEEE International Symposium on},
-  pages={881--888},
-  year={2006},
-  organization={IEEE}
-}
-
 @article{plaku2007distributed,
   title={Distributed computation of the knn graph for large high-dimensional point sets},
   author={Plaku, Erion and Kavraki, Lydia E},
@@ -1701,15 +1817,6 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
   organization={Citeseer}
 }
 
-@article{cederman2009gpu,
-  title={Gpu-quicksort: A practical quicksort algorithm for graphics processors},
-  author={Cederman, Daniel and Tsigas, Philippas},
-  journal={Journal of Experimental Algorithmics (JEA)},
-  volume={14},
-  pages={4},
-  year={2009},
-  publisher={ACM}
-}
 
 @inproceedings{barrientos2010heap,
   title={Heap based k-nearest neighbor search on GPUs},
@@ -1807,11 +1914,11 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
     note      = "pp. 15/26-15/28."
 }
 
-@ONLINE {speed,
+@misc {speed,
     title = "Perl, Python, Ruby, PHP, C, C++, Lua, tcl, javascript and Java comparison",
     month = "mar",
     year  = "2011",
-    url   = "https://raid6.com.au/~onlyjob/posts/arena/"
+    howpublished   = "{https://raid6.com.au/~onlyjob/posts/arena/}"
 }
 
 @article{acosta2012guia,
@@ -1832,27 +1939,84 @@ abstract= {exhasutivo. calculan todas las distancias y buscan SOLO el minimo. Us
     url    = "https://porlasbarbasdekutta.wordpress.com/2013/10/10/maxmin-heap-priority-queues-que-son-y-como-lo-hago-comparativa-python-cc/"
 }
 
-@ONLINE {netbeans,
+@misc {netbeans,
     author = "Oracle Corporation and/or its affiliates",
     title  = "NetBeans IDE Fits the Pieces Together",
     month  = "apr",
     year   = "2017",
-    url    = "https://netbeans.org/"
+    howpublished = "{https://netbeans.org/}"
 }
 
-@ONLINE {iclit2017,
+
+@MISC {iclit2017,
     author = "ICL IT",
     title  = "Papi - PAPIC:Profiling",
     month  = "jan",
     year   = "2017",
-    url    = "http://icl.cs.utk.edu/projects/papi/wiki/PAPIC:Profiling"
+    howpublished = "{http://icl.cs.utk.edu/papi/}",
 }
 
-@ONLINE {poi,
+@MISC {poi,
     author = "Apache fundation",
     title  = "Apache POI - the Java API for Microsoft Documents",
     month  = "apr",
     year   = "2017",
-    url    = "https://poi.apache.org/"
+    howpublished    = "{https://poi.apache.org/}"
 }
 
+@article{hartigan1979algorithm,
+  title={Algorithm AS 136: A k-means clustering algorithm},
+  author={Hartigan, John A and Wong, Manchek A},
+  journal={Journal of the Royal Statistical Society. Series C (Applied Statistics)},
+  volume={28},
+  number={1},
+  pages={100--108},
+  year={1979},
+  publisher={JSTOR}
+}
+
+@incollection{hastie2009overview,
+  title={Overview of supervised learning},
+  author={Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+  booktitle={The elements of statistical learning},
+  pages={9--41},
+  year={2009},
+  publisher={Springer}
+}
+
+@article{nguyen2015aprendizaje,
+  title={Aprendizaje supervisado de funciones de distancia: estado del arte},
+  author={Nguyen Cong, Bac and Rivero P{\'e}rez, Jorge Luis and Morell, Carlos},
+  journal={Revista Cubana de Ciencias Inform{\'a}ticas},
+  volume={9},
+  number={2},
+  pages={14--28},
+  year={2015},
+  publisher={Universidad de las Ciencias Inform{\'a}ticas}
+}
+
+@inproceedings{barrientos2011knn,
+  title={kNN query processing in metric spaces using GPUs},
+  author={Barrientos, Ricardo J and G{\'o}mez, Jos{\'e} I and Tenllado, Christian and Matias, Manuel Prieto and Marin, Mauricio},
+  booktitle={European Conference on Parallel Processing},
+  pages={380--392},
+  year={2011},
+  organization={Springer}
+}
+
+@inproceedings{pan2011fast,
+  title={Fast GPU-based locality sensitive hashing for k-nearest neighbor computation},
+  author={Pan, Jia and Manocha, Dinesh},
+  booktitle={Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems},
+  pages={211--220},
+  year={2011},
+  organization={ACM}
+}
+
+@misc {itex,
+    author = "iText Group NV",
+    title  = "iText, the world's preferred PDF library",
+    month  = "jun",
+    year   = "2017",
+    howpublished = "{https://itextpdf.com/}"
+}
