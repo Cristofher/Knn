@@ -25,6 +25,8 @@
 /* El valor Q es la cantidad de consultas lanzadas en un kernel. Q depende de la cantidad de memoria en la GPU */
 #define Q 3999
 
+FILE *Salida;
+
 struct _Elem
 {
   double dist;
@@ -63,6 +65,7 @@ main(int argc, char *argv[]){
    Elem *HEAPS_dev, *arr_Dist;
    size_t pitch, pitch_H, pitch_Q, pitch_Dist;  
    double prom, prom_cont;
+   char path[256] = DEFINE_PATH;
 
 //   cudaSetDevice(1);
   printf("#define DEFINE_TOPK     %d\n",  DEFINE_TOPK);
@@ -77,6 +80,8 @@ main(int argc, char *argv[]){
     printf("\nNo se pudo abrir el archivo %s\n" ,DEFINE_archivo_BD);
     return 0;
   }
+
+
 
   N_ELEM = DEFINE_N_ELEM;
   N_QUERIES = DEFINE_N_QUERIES;
@@ -249,11 +254,11 @@ main(int argc, char *argv[]){
 
   for (i=0; i<N_BLOQUES; i++)
   {
-    printf("\n\nResults array %d (smallest distances):", i);  
+    fprintf(Salida,"\n\nResults array %d (smallest distances):", i);  
     for (j=TOPK*i; j<(TOPK*i)+TOPK; j++)
-      printf("\nquery = %d :: dist = %lf", i, res_final_H[j]);
+      fprintf(Salida,"\nquery = %d :: dist = %lf", i, res_final_H[j]);
   }
-  printf("\n");
+  fprintf(Salida,"\n");
 
   user_time = (r2.ru_utime.tv_sec - r1.ru_utime.tv_sec) + (r2.ru_utime.tv_usec - r1.ru_utime.tv_usec)/1000000.0;
   sys_time = (r2.ru_stime.tv_sec - r1.ru_stime.tv_sec) + (r2.ru_stime.tv_usec - r1.ru_stime.tv_usec)/1000000.0;

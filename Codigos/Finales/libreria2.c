@@ -37,7 +37,7 @@ main(int argc, char *argv[])
 {
     if (argc != 7)
     {
-        printf("\nEjecutar como: a.out archivo_BD archivo_queries N_DB N_QUERIES DIM TOPK\n");
+        printf("\nEjecutar como: a.out archivo_BD archivo_queries N_DB N_QUERIES DIM TOPK NOMBRE_USUARIO\n");
         return 0;
     }
     
@@ -45,7 +45,11 @@ main(int argc, char *argv[])
     int devCount;
     cudaGetDeviceCount(&devCount);
 
+    system("touch libreria.h"); 
     Salida_Multihilo = fopen("libreria.h", "w");
+    char path[256];
+    sprintf(path, "/home/%s/Salida.txt",argv[7]);
+     
     fprintf(Salida_Multihilo, "#define devCount_cudaDevices         %d\n", devCount);
 
     fprintf(Salida_Multihilo, "#define DEFINE_N_ELEM                %d\n",  atoi(argv[3]));
@@ -54,6 +58,7 @@ main(int argc, char *argv[])
     fprintf(Salida_Multihilo, "#define DEFINE_archivo_BD            \"%s\" \n",  argv[1]);
     fprintf(Salida_Multihilo, "#define DEFINE_archivo_queries       \"%s\"\n",  argv[2]);
     fprintf(Salida_Multihilo, "#define DEFINE_TOPK                  %d\n",  atoi(argv[6]));
+    fprintf(Salida_Multihilo,"#define DEFINE_PATH		    %s\n",path);
 
 
     // Iterate through devices

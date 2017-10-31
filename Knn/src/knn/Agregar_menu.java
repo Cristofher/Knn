@@ -1,11 +1,15 @@
 package knn;
 
 import java.io.BufferedReader;
+import java.io.Console;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -319,13 +323,14 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
             if ("Multicore".equals(seleccion)) {
                 try {
+                    runWithPrivileges();
                     String path;
                     String Snombre_menu = nombre_menu.getText();
                     String path_base = "/usr/lib/knn/Knn/Ejecutable/";
-                    String path_base_gpu = "/usr/lib/knn/Knn/Ejecutable/base_multihilos.c";
-                    String path_ejecutable = "/usr/lib/knn/Knn/Ejecutable/unir_multihilos.out";
+                    String path_base_multi = "/usr/lib/knn/Knn/Ejecutable/base_multihilos.c";
+                    String path_ejecutable = "sudo /usr/lib/knn/Knn/Ejecutable/unir_multihilos.out";
                     String path_fuente = jTextField_archivo.getText();
-                    path = path_ejecutable + " " + path_base_gpu + " " + path_fuente + " " + path_base + Snombre_menu + ".c";
+                    path = path_ejecutable + " " + path_base_multi + " " + path_fuente + " " + path_base + Snombre_menu + ".c" + " " + Snombre_menu;
                     System.out.println(path);
                     Process p = Runtime.getRuntime().exec(path);
                     BufferedReader in = new BufferedReader(
@@ -343,6 +348,8 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
                         JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con errores");
                     }
                 } catch (IOException | InterruptedException e) {
                     JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
@@ -544,4 +551,51 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
         }
     }
+
+    public static boolean runWithPrivileges() {
+        InputStreamReader input;
+        OutputStreamWriter output;
+
+        try {
+            //Create the process and start it.
+            Process pb = new ProcessBuilder(new String[]{"/bin/bash", "-c", "/usr/bin/sudo -S /bin/cat /etc/sudoers 2>&1"}).start();
+            output = new OutputStreamWriter(pb.getOutputStream());
+            input = new InputStreamReader(pb.getInputStream());
+
+            int bytes, tryies = 0;
+            char buffer[] = new char[1024];
+            while ((bytes = input.read(buffer, 0, 1024)) != -1) {
+                if (bytes == 0) {
+                    continue;
+                }
+                //Output the data to console, for debug purposes
+                String data = String.valueOf(buffer, 0, bytes);
+                System.out.println(data);
+                // Check for password request
+                if (data.contains("[sudo] password")) {
+                    // creates a console object
+                    Console cnsl = null;
+                    String alpha = null;
+
+                    char[] password = cnsl.readPassword("Password: ");
+
+                    // prints
+                    System.out.println("Password is: " + password);
+                    output.write(password);
+                    output.write('\n');
+                    output.flush();
+                    // erase password data, to avoid security issues.
+                    Arrays.fill(password, '\0');
+                    tryies++;
+
+                }
+            }
+
+            return tryies < 3;
+        } catch (IOException ex) {
+        }
+
+        return false;
+    }
+
 }

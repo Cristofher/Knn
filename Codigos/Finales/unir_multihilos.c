@@ -71,13 +71,17 @@ int main(int argc, char *argv[])
 		char programa[500];
 		sprintf(programa, "gcc %s -o %s", argv[3],argv[4]);
 		printf("%s\n",programa );
-
 		system(programa);
 	}else{
 		printf("ERROR\n");
 	}
-
-	
+		
+		printf("AFUERA");
+		char programa[500];
+		sprintf(programa, "gcc %s -o %s", argv[3],argv[4]);
+		printf("%s\n",programa );
+		system(programa);
+		printf("AFUERA SALIO");
 
 	return 0; 
 }

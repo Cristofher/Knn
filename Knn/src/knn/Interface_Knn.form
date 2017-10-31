@@ -165,6 +165,7 @@
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuItem_SalirMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem_SalirActionPerformed"/>
               </Events>
             </MenuItem>
@@ -290,7 +291,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton_Examinar_Queries" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField_Archivo_Queries" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="jTextField_Archivo_Queries" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -298,9 +299,9 @@
                               <Component id="jTextField_Dim" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel_TOPK" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jTextField_TOPK" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="jLabel_TOPK" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -309,7 +310,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" pref="757" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -333,13 +334,18 @@
                       <Component id="jButton_Examinar_BD" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField_Dim" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton_Procesar_Consultas" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="jTextField_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButton_Procesar_Consultas" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jTextField_Archivo_BD" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_Archivo_Queries" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_Dim" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_TOPK" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_Hilos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="0" max="-2" attributes="0"/>
@@ -414,7 +420,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel_Archivo_Queries3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Size Obj"/>
+            <Property name="text" type="java.lang.String" value="Object dimension"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_Dim">
@@ -473,11 +479,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel_Vista_Queries1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="22" pref="418" max="32767" attributes="0"/>
+                          <EmptySpace min="22" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="440" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

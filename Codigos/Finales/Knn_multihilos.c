@@ -34,8 +34,8 @@ int leedato(double *dato, FILE *file);
 int leedato_cophir(double *dato, FILE *file);
 
 int main(int argc, char *argv[]) {
-    if (argc != 8) {
-        printf("Error :: Ejecutar como : a.out archivo_BD Num_elem archivo_queries Num_queries N_THREADS numero_K Dimension_objetos\n");
+    if (argc != 9) {
+        printf("Error :: Ejecutar como : a.out archivo_BD Num_elem archivo_queries Num_queries N_THREADS numero_K Dimension_objetos nombre_usuario\n");
         return 0;
     }
     TOPK = atoi(argv[6]);
@@ -55,6 +55,9 @@ int main(int argc, char *argv[]) {
     //N_QUERIES es el nro. de consultas
     N_QUERIES = atoi(argv[4]);
     N_DB = atoi(argv[2]);
+    char path[256];
+    sprintf(path, "/home/%s/Salida.txt",argv[8]);
+    printf("%s\n",path );
 
     printf("\nN_QUERIES = %d\nN_THREADS = %d\n", N_QUERIES, N_THREADS);
     fflush(stdout);
@@ -157,12 +160,16 @@ int main(int argc, char *argv[]) {
                     e_temp.ind = j;
                     inserta2(heap, &e_temp, &n_elem);
                 }
-                else{
+                if (n_elem==TOPK){
                 if (d < topH(heap, &n_elem)) {
                     e_temp.dist = d;
                     e_temp.ind = j;
-                    //Si el heap está lleno, se inserta el elemento nuevo y se saca el que era antes de mayor de distancia. popush2() hace las operaciones de sacar el elemento mayor e insertar el nuevo.
-                    popush2(heap, &n_elem, &e_temp);
+                    //Si el heap no está lleno, se inserta el elemento
+                    if (n_elem < TOPK)
+                        inserta2(heap, &e_temp, &n_elem);
+                        //Si el heap está lleno, se inserta el elemento nuevo y se saca el que era antes de mayor de distancia. popush2() hace las operaciones de sacar el elemento mayor e insertar el nuevo.
+                    else
+                        popush2(heap, &n_elem, &e_temp);
                 }}
             }
             
@@ -183,7 +190,7 @@ int main(int argc, char *argv[]) {
             gettimeofday(&t2, 0);
             real_time = (t2.tv_sec - t1.tv_sec) + (float) (t2.tv_usec - t1.tv_usec) / 1000000;
 
-            Salida_Multihilo = fopen("Salida_Multihilo.txt", "w");
+            Salida_Multihilo = fopen(path, "w");
             for (i = 0; i < N_QUERIES; ++i){
               fprintf(Salida_Multihilo, "Consulta id:: %d\n",i);
                 for (j = 0; j < TOPK; ++j){

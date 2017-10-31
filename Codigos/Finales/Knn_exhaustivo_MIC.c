@@ -43,8 +43,8 @@ int main(int argc, char *argv[]){
    struct rusage r1, r2;
    double user_time, sys_time, real_time;
    struct timeval t1, t2;
-  if (argc != 7){
-		printf("Error :: Ejecutar como : main.out archivo_BD Num_elem archivo_queries Num_queries dim k\n");
+  if (argc != 8){
+		printf("Error :: Ejecutar como : main.out archivo_BD Num_elem archivo_queries Num_queries dim k nombre_usuario\n");
 		return 1;
 	}
   
@@ -58,6 +58,10 @@ int main(int argc, char *argv[]){
    int dimaux=0,add=0;
    dim = atoi(argv[5]);
    k = atoi(argv[6]);
+
+   char path[256];
+   sprintf(path, "/home/%s/Salida.txt",argv[7]);
+   printf("%s\n",path );
 
    int validamod=dim%16;
    if(validamod!=0){
@@ -159,7 +163,7 @@ int main(int argc, char *argv[]){
    }   
    gettimeofday(&t2, 0);
    getrusage(RUSAGE_SELF, &r2);
-   Salida = fopen("Salida.txt", "w");
+   Salida = fopen(path, "w");
     for (i = 0; i < num_queries; ++i){
       fprintf(Salida, "Consulta id:: %d\n",i);
       for (j = 0; j < k; ++j)
