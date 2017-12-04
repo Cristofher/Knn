@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int system(const char *command);
+
 int return_major(cudaDeviceProp devProp)
 {
 	return devProp.major;

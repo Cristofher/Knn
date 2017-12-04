@@ -2,6 +2,7 @@
 #include <string.h>
 
 int existsFile(char* filename);
+int system(const char *command);
 
 int main(int argc, char *argv[])
 {

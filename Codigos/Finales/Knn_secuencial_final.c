@@ -160,7 +160,7 @@ int main(int argc, char *argv[]) {
     }
     gettimeofday(&t2, 0);
     
-    Salida_Secuencial = fopen("Salida_Secuencial.txt", "w");
+    Salida_Secuencial = fopen("Salida.txt", "w");
     for (i = 0; i < N_QUERIES; ++i){
       fprintf(Salida_Secuencial, "Consulta id:: %d\n",i);
       for (j = 0; j < TOPK; ++j)

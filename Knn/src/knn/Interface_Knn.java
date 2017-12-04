@@ -64,7 +64,6 @@ public class Interface_Knn extends javax.swing.JFrame {
     boolean flag_Multihilos = false;
     boolean flag_Xenon_Phi = false;
     boolean flag_GPU = false;
-    
 
     public Interface_Knn() throws IOException {
         property = System.getProperty("user.name");
@@ -174,71 +173,80 @@ public class Interface_Knn extends javax.swing.JFrame {
         //FIN Lectura de archivos Multihilos
 
         //INICIO Lectura de archivos Xeon Phi
-        FileReader CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
-        b = new BufferedReader(CfXeon_phi);
-        num_xeon_phi = 0;
-        while ((cadena = b.readLine()) != null) {
-            if (!"".equals(cadena)) {
+        File Arch = new File("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
+        File Arch2 = new File("/usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat");
+        if (Arch.exists()&&Arch2.exists()) {
+            System.out.println("Existen");
+            FileReader CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
+            b = new BufferedReader(CfXeon_phi);
+            num_xeon_phi = 0;
+            while ((cadena = b.readLine()) != null) {
+                if (!"".equals(cadena)) {
+                    num_xeon_phi++;
+                }
+            }
+            rutas_Xeon_phi = new String[num_xeon_phi];
+            nombres_Xeon_phi = new String[num_xeon_phi];
+            menus_Xeon_Phi = new JMenuItem[num_xeon_phi];
+            num_xeon_phi = 0;
+            CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
+            b = new BufferedReader(CfXeon_phi);
+            while ((cadena = b.readLine()) != null) {
+                if (!"".equals(cadena)) {
+                    rutas_Xeon_phi[num_xeon_phi] = cadena;
+                }
                 num_xeon_phi++;
             }
-        }
-        rutas_Xeon_phi = new String[num_xeon_phi];
-        nombres_Xeon_phi = new String[num_xeon_phi];
-        menus_Xeon_Phi = new JMenuItem[num_xeon_phi];
-        num_xeon_phi = 0;
-        CfXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat");
-        b = new BufferedReader(CfXeon_phi);
-        while ((cadena = b.readLine()) != null) {
-            if (!"".equals(cadena)) {
-                rutas_Xeon_phi[num_xeon_phi] = cadena;
+            b.close();
+            FileReader MnXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat");
+            b = new BufferedReader(MnXeon_phi);
+            for (int i = 0; i < num_xeon_phi; i++) {
+                nombres_Xeon_phi[i] = b.readLine();
+                menus_Xeon_Phi[i] = new JMenuItem(nombres_Xeon_phi[i]);
+                menus_Xeon_Phi[i].addActionListener(new MenuActionXeonPhi(i));
+                jMenu_Xeon_phi.add(menus_Xeon_Phi[i]);
             }
-            num_xeon_phi++;
+            b.close();
         }
-        b.close();
-        FileReader MnXeon_phi = new FileReader("/usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat");
-        b = new BufferedReader(MnXeon_phi);
-        for (int i = 0; i < num_xeon_phi; i++) {
-            nombres_Xeon_phi[i] = b.readLine();
-            menus_Xeon_Phi[i] = new JMenuItem(nombres_Xeon_phi[i]);
-            menus_Xeon_Phi[i].addActionListener(new MenuActionXeonPhi(i));
-            jMenu_Xeon_phi.add(menus_Xeon_Phi[i]);
-        }
-        b.close();
         //FIN Lectura de archivos XeonPhi
 
         //INICIO Lectura de archivos Nvidia GPU
-        FileReader CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
-        b = new BufferedReader(CfGpu);
-        num_gpu = 0;
-        while ((cadena = b.readLine()) != null) {
-            if (!"".equals(cadena)) {
+        Arch = new File("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
+        Arch2 = new File("/usr/lib/knn/Knn/Gpu/Menus/nombres.dat");
+        if (Arch.exists()&&Arch2.exists()) {
+            FileReader CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
+            b = new BufferedReader(CfGpu);
+            num_gpu = 0;
+            while ((cadena = b.readLine()) != null) {
+                if (!"".equals(cadena)) {
+                    num_gpu++;
+                }
+            }
+            rutas_GPU = new String[num_gpu];
+            nombres_GPU = new String[num_gpu];
+            menus_GPU = new JMenuItem[num_gpu];
+
+            num_gpu = 0;
+            CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
+            b = new BufferedReader(CfGpu);
+            while ((cadena = b.readLine()) != null) {
+                if (!"".equals(cadena)) {
+                    rutas_GPU[num_gpu] = cadena;
+                }
                 num_gpu++;
             }
-        }
-        rutas_GPU = new String[num_gpu];
-        nombres_GPU = new String[num_gpu];
-        menus_GPU = new JMenuItem[num_gpu];
+            b.close();
 
-        num_gpu = 0;
-        CfGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Fuentes/fuentes.dat");
-        b = new BufferedReader(CfGpu);
-        while ((cadena = b.readLine()) != null) {
-            if (!"".equals(cadena)) {
-                rutas_GPU[num_gpu] = cadena;
+            FileReader MnGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Menus/nombres.dat");
+            b = new BufferedReader(MnGpu);
+            for (int i = 0; i < num_gpu; i++) {
+                nombres_GPU[i] = b.readLine();
+                menus_GPU[i] = new JMenuItem(nombres_GPU[i]);
+                menus_GPU[i].addActionListener(new MenuActionGPU(i));
+                jMenu_GPU.add(menus_GPU[i]);
             }
-            num_gpu++;
+            b.close();
         }
-        b.close();
-
-        FileReader MnGpu = new FileReader("/usr/lib/knn/Knn/Gpu/Menus/nombres.dat");
-        b = new BufferedReader(MnGpu);
-        for (int i = 0; i < num_gpu; i++) {
-            nombres_GPU[i] = b.readLine();
-            menus_GPU[i] = new JMenuItem(nombres_GPU[i]);
-            menus_GPU[i].addActionListener(new MenuActionGPU(i));
-            jMenu_GPU.add(menus_GPU[i]);
-        }
-        b.close();
 
         String procesadores;
         FileReader numProce = new FileReader("/usr/lib/knn/Knn/Procesadores.dat");
@@ -957,7 +965,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         DIM = jTextField_Dim.getText();
                         Num_threads = jTextField_Hilos.getText();
                         String path;
-                        path = "/usr/lib/knn/Knn/Multihilos/Fuentes/" + Ejecutable_Multihilos + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM +" "+ property;
+                        path = "/usr/lib/knn/Knn/Multihilos/Fuentes/" + Ejecutable_Multihilos + ".out" + " " + Ruta_DB + " " + tamanho_DB + " " + Ruta_Queries + " " + tamanho_Queries + " " + " " + Num_threads + " " + TOPK + " " + DIM + " " + property;
                         Process p = Runtime.getRuntime().exec(path);
                         muestraContenidoResultados(p);
                     } catch (IOException e) {
@@ -1019,7 +1027,7 @@ public class Interface_Knn extends javax.swing.JFrame {
                         DIM = jTextField_Dim.getText();
                         Num_threads = jTextField_Hilos.getText();
                         String path;
-                        path = "/usr/lib/knn/Knn/Gpu/Fuentes/" + Ejecutable_GPU + ".out" + " " + Ruta_DB + " " + Ruta_Queries + " " + tamanho_DB + " " + tamanho_Queries + " " + DIM + " " + TOPK  + " " + property;
+                        path = "/usr/lib/knn/Knn/Gpu/Fuentes/" + Ejecutable_GPU + ".out" + " " + Ruta_DB + " " + Ruta_Queries + " " + tamanho_DB + " " + tamanho_Queries + " " + DIM + " " + TOPK + " " + property;
                         System.out.println(path);
                         Process p = Runtime.getRuntime().exec(path);
                         muestraContenidoResultados(p);
@@ -1119,8 +1127,9 @@ public class Interface_Knn extends javax.swing.JFrame {
             if (p.exitValue() == 0) {
                 JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
                 //Se abre la ventana de resultados
-                if(!jCheck.isSelected())
+                if (!jCheck.isSelected()) {
                     new Resultados().setVisible(true);
+                }
             }
         }
     }

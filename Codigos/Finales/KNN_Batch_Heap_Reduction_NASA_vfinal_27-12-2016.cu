@@ -38,7 +38,7 @@ __device__ void insertaH(Elem *heap, Elem *elem, int *n_elem, int pitch, int id)
 __device__ void extraeH(Elem *heap, int *n_elem, int pitch, int id, Elem *eresult);
 __device__ double topH(Elem *heap, int id);
 __device__ void popush(Elem *heap, Elem *elem, int *n_elem, int pitch, int id);
-__global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final);
+__global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final, int *res_id);
 __device__ double distancia_trans(double *p1, int pitch_p1, int col_1, double *q);
 void imprime_trans(double **MAT, int col);
 int leedato(double *dato, FILE *file);
@@ -61,6 +61,7 @@ main(int argc, char *argv[]){
    struct timeval t1, t2;
    double *Elems, *QUERY_dev;
    double **consultas, *res_final, *res_final_H;
+   int *res_id, *res_id_H;
    int retorno, T_per_BLOCK, N_BLOQUES, contQ, cont;
    Elem *HEAPS_dev, *arr_Dist;
    size_t pitch, pitch_H, pitch_Q, pitch_Dist;  
@@ -82,7 +83,7 @@ main(int argc, char *argv[]){
   }
 
 
-
+  Salida = fopen(path, "w");
   N_ELEM = DEFINE_N_ELEM;
   N_QUERIES = DEFINE_N_QUERIES;
   dimension = DEFINE_DIMENSION;
@@ -115,13 +116,31 @@ main(int argc, char *argv[]){
     return 0;
   }
 
+  if (cudaSuccess != cudaMalloc((void **)&res_id, sizeof(int)*Q*TOPK)){
+    printf("\nERROR 21 :: cudaMalloc\n");
+    cudaThreadExit();
+    return 0;
+  }
+
   res_final_H = (double *)malloc(sizeof(double)*Q*TOPK);
    
   for (i=0; i<Q*TOPK; i++){
     res_final_H[i] = 0;
+  }  
+
+  res_id_H = (int *)malloc(sizeof(int)*Q*TOPK);
+   
+  for (i=0; i<Q*TOPK; i++){
+    res_id_H[i] = 0;
   }
 
   if (cudaSuccess != cudaMemset(res_final, 0, sizeof(double)*Q*TOPK)){
+    printf("\nERROR :: cudaMemset\n");
+    cudaThreadExit();
+    return 0;
+  }
+
+  if (cudaSuccess != cudaMemset(res_id, 0, sizeof(int)*Q*TOPK)){
     printf("\nERROR :: cudaMemset\n");
     cudaThreadExit();
     return 0;
@@ -150,7 +169,7 @@ main(int argc, char *argv[]){
 
    //arr_Dist[Q][N_ELEM]
   if (cudaSuccess != cudaMallocPitch((void **)&arr_Dist, &pitch_Dist, N_ELEM*sizeof(Elem), (size_t)Q)){
-    printf("\nERROR 41 :: cudaMallocPitch\n");
+    printf("\nERROR 41 :: cudaMallocPitch - Q muy grande\n");
     cudaThreadExit();
     return 0;
   }
@@ -188,7 +207,7 @@ main(int argc, char *argv[]){
           printf("\nERROR 2 -> cudaErrorInvalidValue :: i=%d :: pitch=%d\n", i, pitch);
           break;
         default: 
-          printf("\nERROR 2 -> Checkear esto.\n");
+          printf("\nERROR 2 -> cudaError.\n");
           break;
       }
       return 0;
@@ -233,32 +252,40 @@ main(int argc, char *argv[]){
   getrusage(RUSAGE_SELF, &r1);
   gettimeofday(&t1, 0);
 
+  int k=0;
   while(contQ < N_QUERIES){
     contQ += Q;
     if (contQ > N_QUERIES)
     N_BLOQUES = N_QUERIES - (contQ-Q);
     printf("\nN_BLOQUES = %d :: T_per_BLOCK = %d\n", N_BLOQUES, T_per_BLOCK);
     
-    Batch_Heap_Reduction<<<N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final);
-    
+    Batch_Heap_Reduction<<<N_BLOQUES, T_per_BLOCK>>> (Elems, (int)pitch, HEAPS_dev, (int)pitch_H, QUERY_dev, (int)pitch_Q, arr_Dist, (int)pitch_Dist, Q*cont, res_final, res_id);
+
     if (cudaSuccess != cudaMemcpy((double *)res_final_H, (double *)res_final, sizeof(double)*Q*TOPK, cudaMemcpyDeviceToHost)){  
       printf("\nERROR 41 :: cudaMemcpy :: iteraH\n");
       cudaThreadExit();
       return 0;
     }
+    if (cudaSuccess != cudaMemcpy((int *)res_id_H, (int *)res_id, sizeof(int)*Q*TOPK, cudaMemcpyDeviceToHost)){  
+      printf("\nERROR 41 :: cudaMemcpy :: iteraH\n");
+      cudaThreadExit();
+      return 0;
+    }
+
     cont++;
+    for (i=0; i<N_BLOQUES; i++)
+    {
+      fprintf(Salida,"\n\nResults array %d (smallest distances):", i+Q*k);  
+      for (j=TOPK*i; j<(TOPK*i)+TOPK; j++)
+        fprintf(Salida,"\nquery = %d :: dist = %lf", res_id_H[j], res_final_H[j]);
+    }
+    fprintf(Salida,"\n");
+    k++;
   }
 
   gettimeofday(&t2, 0);
   getrusage(RUSAGE_SELF, &r2);
 
-  for (i=0; i<N_BLOQUES; i++)
-  {
-    fprintf(Salida,"\n\nResults array %d (smallest distances):", i);  
-    for (j=TOPK*i; j<(TOPK*i)+TOPK; j++)
-      fprintf(Salida,"\nquery = %d :: dist = %lf", i, res_final_H[j]);
-  }
-  fprintf(Salida,"\n");
 
   user_time = (r2.ru_utime.tv_sec - r1.ru_utime.tv_sec) + (r2.ru_utime.tv_usec - r1.ru_utime.tv_usec)/1000000.0;
   sys_time = (r2.ru_stime.tv_sec - r1.ru_stime.tv_sec) + (r2.ru_stime.tv_usec - r1.ru_stime.tv_usec)/1000000.0;
@@ -454,7 +481,7 @@ int leedato_trans_cophir(double **dato, FILE *file, int col){
   return 1;
 }
 
-__global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final){
+__global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, int pitch_H, double *QUERY_dev, int pitch_QUERY, Elem *arr_Dist, int pitch_Dist, int beginQ, double *res_final, int *res_id){
   int i, j, n_elem=0, n_elemWarp=0;
   int id;
   Elem eresult;
@@ -523,6 +550,7 @@ __global__ void Batch_Heap_Reduction(double *DB_dev, int pitch_DB, Elem *heap, i
     for (i=TOPK*blockIdx.x; i < (TOPK*blockIdx.x)+TOPK; i++){
       extraeH(&(heapfin[0][0]), &n_elem, sizeof(Elem), 0, &eresult);
       res_final[i] = eresult.dist;
+      res_id[i] = eresult.ind;
     }
   }
 

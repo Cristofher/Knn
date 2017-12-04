@@ -2,48 +2,46 @@
 # -*- ENCODING: UTF-8 -*-
 
 
+if type java > /dev/null 2>&1; then
+echo "Java Instalado"
+
 if type gcc > /dev/null 2>&1; then
 echo "gcc Instalado"
 echo "Recorriendo documentos"
 echo "---------------"
  
-for LINEA in `cat fuentes.dat ` #LINEA guarda el resultado del fichero datos.txt
-do
-    NOMBRE=`echo $LINEA | cut -d ":" -f1` #Extrae nombre
-    echo "$NOMBRE tiene años." #Muestra resultado.
-done
-gcc numProc.c -fopenmp -lm -o Knn/Procesadores.out
+gcc Knn/Ejecutable/numProc.c -fopenmp -lm -o Knn/Procesadores.out
+Knn/Procesadores.out > Procesadores.dat
 
-gcc Knn_secuencial.c -lm -o Knn/Secuencial.out
-echo "Knn/Secuencial.out" >> Knn/rutas.dat
-gcc Knn_multihilos.c -fopenmp -lm -o Knn/Multihilos.out
-echo "Knn/Multihilos.out" >> Knn/rutas.dat
+gcc Knn/Secuenciales/Fuentes/Knn_secuencial.c -lm -o Knn/Secuencial.out
+echo "Secuencial.c" > Knn/Secuenciales/Fuentes/fuentes.dat
+echo "Secuencial" > Knn/Secuenciales/Menu/nombres.dat
+gcc Knn/Multihilos/Fuentes/Knn_multihilos.c -fopenmp -lm -o Knn/Multihilos.out
+echo "Multihilos.c" > Knn/Multihilos/Fuentes/fuentes.dat
+echo "Multihilos" > Knn/Multihilos/Menu/nombres.dat
 else
 echo "Instalando gcc"
-apt-get install gcc
-sh scrip.sh
+sudo apt-get install gcc
+sh knn.sh
 fi
 
 if type icc > /dev/null 2>&1; then
 echo "icc Instalado"
-icc Knn_exhaustivo_MIC.c -openmp -lm -o Mic.out
-echo "Knn/Mic.out" >> Knn/rutas.dat
-else
-echo "icc no instalado, este compilador es requerido para utilizar la Xeon Phi"
-echo "" >> Knn/rutas.dat
+icc Knn/Xeon_Phi/Fuentes/Knn_exhaustivo_MIC.c -openmp -lm -o Mic.out
+echo "Mic.c" > Knn/Xeon_Phi/Fuentes/fuentes.dat
+echo "Mic" > Knn/Xeon_Phi/Menu/nombres.dat
 fi
 
 if type nvcc > /dev/null 2>&1; then
 echo "Nvcc Instalado"
-nvcc libreria.cu -gencode arch=compute_35,code=sm_35 -o Knn/Gpu.out
-echo "Knn/Gpu.out" >> Knn/rutas.dat
-mv -f final.cu Knn/final.cu
-else
-echo "nvcc no instalado, este compilador es requerido para utilizar la Nvidia GPU"
-echo "" >> Knn/rutas.dat
+nvcc Knn/Gpu/Fuentes/libreria.cu -gencode arch=compute_35,code=sm_35 -o Knn/Gpu.out
+echo "libreria.cu" > Knn/Xeon_Phi/Fuentes/fuentes.dat
+echo "Gpu" > Knn/Xeon_Phi/Menu/nombres.dat
 fi
 
-echo "Archivo rutas.dat"
-cat Knn/rutas.dat
+
+else
+echo "Ud. no cuenta con Java, la instalación no se puede realizar"
+fi
 
 exit

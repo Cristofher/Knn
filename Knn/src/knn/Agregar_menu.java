@@ -316,6 +316,8 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
                         JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con errores\n Copy and paste in the terminal: \n" +path);
                     }
                 } catch (IOException | InterruptedException e) {
                     JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
@@ -323,7 +325,6 @@ public class Agregar_menu extends javax.swing.JFrame {
             }
             if ("Multicore".equals(seleccion)) {
                 try {
-                    runWithPrivileges();
                     String path;
                     String Snombre_menu = nombre_menu.getText();
                     String path_base = "/usr/lib/knn/Knn/Ejecutable/";
@@ -348,8 +349,9 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
                         JOptionPane.showMessageDialog(null, "Ha finalizado con exito");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Ha finalizado con errores");
+                    } else{
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con errores\nCopy and paste in the terminal: \n" +path);
+                        salida.setText(path);
                     }
                 } catch (IOException | InterruptedException e) {
                     JOptionPane.showMessageDialog(null, "Se ha producido un error \n" + e.getMessage());
@@ -414,6 +416,9 @@ public class Agregar_menu extends javax.swing.JFrame {
                     System.out.println(p.exitValue());
                     if (p.exitValue() == 0) {
                         JOptionPane.showMessageDialog(null, "Success");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Ha finalizado con errores\n Copy and paste in the terminal: \n" +path);
                     }
                 } catch (IOException | InterruptedException e) {
                     JOptionPane.showMessageDialog(null, "Error \n" + e.getMessage());
@@ -552,50 +557,6 @@ public class Agregar_menu extends javax.swing.JFrame {
         }
     }
 
-    public static boolean runWithPrivileges() {
-        InputStreamReader input;
-        OutputStreamWriter output;
 
-        try {
-            //Create the process and start it.
-            Process pb = new ProcessBuilder(new String[]{"/bin/bash", "-c", "/usr/bin/sudo -S /bin/cat /etc/sudoers 2>&1"}).start();
-            output = new OutputStreamWriter(pb.getOutputStream());
-            input = new InputStreamReader(pb.getInputStream());
-
-            int bytes, tryies = 0;
-            char buffer[] = new char[1024];
-            while ((bytes = input.read(buffer, 0, 1024)) != -1) {
-                if (bytes == 0) {
-                    continue;
-                }
-                //Output the data to console, for debug purposes
-                String data = String.valueOf(buffer, 0, bytes);
-                System.out.println(data);
-                // Check for password request
-                if (data.contains("[sudo] password")) {
-                    // creates a console object
-                    Console cnsl = null;
-                    String alpha = null;
-
-                    char[] password = cnsl.readPassword("Password: ");
-
-                    // prints
-                    System.out.println("Password is: " + password);
-                    output.write(password);
-                    output.write('\n');
-                    output.flush();
-                    // erase password data, to avoid security issues.
-                    Arrays.fill(password, '\0');
-                    tryies++;
-
-                }
-            }
-
-            return tryies < 3;
-        } catch (IOException ex) {
-        }
-
-        return false;
-    }
 
 }

@@ -151,7 +151,6 @@ int main(int argc, char *argv[]){
 
             for(j=0; j<k; j++){
                extrae2(heap, &n_elem, &e_temp);
-               printf("%d ind = %d :: dist = %f posición:: %d \n", j, e_temp.ind, e_temp.dist,(i/dimaux)*k+j);
                answer[(i/dimaux)*k+j].ind = e_temp.ind;
                answer[(i/dimaux)*k+j].dist = e_temp.dist;
             }

@@ -1,0 +1,30 @@
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 1000 20 10 alumnos/crojas > salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 1000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 1000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 1000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 1000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 5000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 5000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 5000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 5000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 5000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 10000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 10000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 10000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 10000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 10000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 15000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 15000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 15000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 15000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 15000 20 10 alumnos/crojas >> salida_t_cuda.txt 
+
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 23831 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 23831 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 23831 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 23831 20 10 alumnos/crojas >> salida_t_cuda.txt 
+./gpu.out Basededatos/NASA_80 Basededatos/NASA_20 95325 23831 20 10 alumnos/crojas >> salida_t_cuda.txt 
+

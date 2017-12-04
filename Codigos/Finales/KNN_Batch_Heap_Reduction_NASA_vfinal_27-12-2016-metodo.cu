@@ -88,7 +88,7 @@ main(int argc, char *argv[])
 
    if (argc != 1)
    {
-      printf("\nEjecutar como: a.out archivo_BD archivo_queries N_ELEM N_QUERIES DIM\n");
+      printf("\nEjecutar como: a.out archivo_BD archivo_queries N_ELEM N_QUERIES DIM NOMBRE_USUARIO\n");
       return 0;
    }
    if ((pf = fopen(DEFINE_archivo_BD, "r")) == NULL)

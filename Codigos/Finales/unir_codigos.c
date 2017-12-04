@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int system(const char *command);
+
 int main(int argc, char *argv[])
 {
 
