@@ -1,0 +1,64 @@
+#!/bin/bash
+# -*- ENCODING: UTF-8 -*-
+
+
+if type java > /dev/null 2>&1; then
+echo "Java Instalado"
+if type gcc > /dev/null 2>&1; then
+echo "gcc Instalado"
+echo "Recorriendo documentos"
+echo "---------------"
+ 
+gcc usr/lib/knn/Knn/Ejecutable/numProc.c -fopenmp -lm -o /usr/lib/knn/Knn/Procesadores.out
+sudo /usr/lib/knn/Knn/Procesadores.out > /usr/lib/knn/Knn/Procesadores.dat
+
+gcc usr/lib/knn/Knn/Ejecutable/unir_mic.c -lm -o usr/lib/knn/Knn/Ejecutable/unir_mic.out 
+gcc usr/lib/knn/Knn/Ejecutable/unir_multihilos.c -lm -o usr/lib/knn/Knn/Ejecutable/unir_multihilos.out
+
+gcc usr/lib/knn/Knn/Secuenciales/Fuentes/Knn_secuencial.c -lm -o /usr/lib/knn/Knn/Secuenciales/Fuentes/Secuencial.out
+sudo echo "Secuencial.c" > usr/lib/knn/Knn/Secuenciales/Fuentes/fuentes.dat
+sudo echo "Secuencial" > usr/lib/knn/Knn/Secuenciales/Menus/nombres.dat
+gcc usr/lib/knn/Knn/Multihilos/Fuentes/Knn_multihilos.c -fopenmp -lm -o /usr/lib/knn/Knn/Multihilos/Fuentes/Multihilos.out
+sudo echo "Multihilos.c" > usr/lib/knn/Knn/Multihilos/Fuentes/fuentes.dat
+sudo echo "Multihilos" > usr/lib/knn/Knn/Multihilos/Menus/nombres.dat
+
+if type papi_version > /dev/null 2>&1; then
+echo "Papic instalado"
+gcc -I. -c usr/lib/knn/Knn/Ejecutable/handle_error.c
+gcc -I.. -I../testlib -I/usr/local/include -g -O -O0 handle_error.o usr/lib/knn/Knn/Ejecutable/Knn_multihilos_papic.c  /usr/local/share/papi/testlib/libtestlib.a  /usr/local/lib/libpapi.a -ldl -fopenmp  -lm -o /usr/lib/knn/Knn/Multihilos/Fuentes/multihilos_papic.out
+else
+echo "No cuenta con papic no podra utilizar version profiler"
+fi
+
+else
+echo "Instalando gcc"
+sudo apt-get install gcc
+sh knn.sh
+fi
+
+if type icc > /dev/null 2>&1; then
+echo "icc Instalado"
+icc usr/lib/knn/Knn/Xeon_Phi/Fuentes/Knn_exhaustivo_MIC.c -openmp -lm -o /usr/lib/knn/Knn/Xeon_Phi/Fuentes/Mic.out
+sudo echo "Mic.c" > usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat
+sudo echo "Mic" > usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat
+else
+echo "icc no instalado, este compilador es requerido para utilizar la Xeon Phi"
+fi
+
+if type nvcc > /dev/null 2>&1; then
+echo "Nvcc Instalado"
+nvcc usr/lib/knn/Knn/Gpu/Fuentes/libreria.cu -gencode arch=compute_35,code=sm_35 -o /usr/lib/knn/Knn/Gpu/Fuentes/Gpu.out
+sudo echo "libreria.cu" > usr/lib/knn/Knn/Xeon_Phi/Fuentes/fuentes.dat
+sudo echo "Gpu" > usr/lib/knn/Knn/Xeon_Phi/Menus/nombres.dat
+nvcc usr/lib/knn/Knn/Ejecutable/unir_metodo_gpu.c -gencode arch=compute_35,code=sm_35 -ousr/lib/knn/Knn/Ejecutable/unir_metodo_gpu.out
+else
+echo "nvcc no instalado, este compilador es requerido para utilizar la Nvidia GPU"
+fi
+
+
+else
+echo "Ud. no cuenta con Java, la instalación no se puede realizar"
+fi
+
+exit
+
